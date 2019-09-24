@@ -55,18 +55,7 @@ class SiteController extends Controller
     }
 
 
-    public function actionTest()
-    {
-        return 1;
-    }
-
-
-
-
-
-
-
-
+    
 
     /**
      * Displays homepage.
