@@ -15,6 +15,6 @@ use yii\web\Controller;
 class ReviewController extends Controller
 {
     public function actionIndex(){
-
+        return $this->render('index');
     }
 }
