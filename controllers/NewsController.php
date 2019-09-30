@@ -11,10 +11,18 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
+// подключил модель новостей
+use app\models\News;
+
 // Страница "Новостей"
 class NewsController extends Controller
 {
     public function actionIndex(){
-        return $this->render('index');
+
+        $query = new News();
+
+        $model = $query::find()->all();
+
+        return $this->render('index', ['model' => $model]);
     }
 }

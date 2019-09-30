@@ -6,4 +6,6 @@
  * Time: 9:51
  */
 
-echo 'News';
+echo 'News: <br>';
+
+debug($model);

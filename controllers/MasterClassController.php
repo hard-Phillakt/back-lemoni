@@ -10,10 +10,20 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
+// подключил модель мастер классов
+use app\models\MasterClass;
+
 // Страница "Мастер классов"
 class MasterClassController extends Controller
 {
     public function actionIndex(){
-        return $this->render('index');
+
+
+        $query = new MasterClass();
+
+        $model = $query::find()->all();
+        
+
+        return $this->render('index', ['model' => $model]);
     }
 }

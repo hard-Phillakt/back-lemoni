@@ -6,4 +6,7 @@
  * Time: 9:50
  */
 
-echo 'MasterClass';
+echo 'MasterClass: <br> ';
+
+
+debug($model);
