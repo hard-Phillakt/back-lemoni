@@ -24,15 +24,27 @@ use Yii;
  * @property string $lm_img_two
  * @property string $lm_img_three
  */
-class CatCake extends \yii\db\ActiveRecord
+class CakeGoods extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'cat_cake';
+        return 'cake_goods';
     }
+ 
+
+
+
+
+//    Связь многие ко многим tag и промежуточная cake_tag (связующая)
+    public function getTag()
+    {
+        return $this->hasMany(Tag::class, ['id' => 'tag_id'])
+            ->viaTable('cake_tag', ['cake_id' => 'id']);
+    }
+
 
     /**
      * {@inheritdoc}
