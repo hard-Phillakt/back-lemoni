@@ -33,12 +33,12 @@ class CakeGoods extends \yii\db\ActiveRecord
     {
         return 'cake_goods';
     }
- 
 
 
 
 
-//    Связь многие ко многим tag и промежуточная cake_tag (связующая)
+
+//  Связь многие ко многим tag и промежуточная cake_tag (связующая)
     public function getTag()
     {
         return $this->hasMany(Tag::class, ['id' => 'tag_id'])
