@@ -13,9 +13,13 @@ if($data_cake){
     debug($data_cake);
 }
 
+if($richCakes){
+    debug($richCakes);
+}
+
 //debug($model);
 
-echo 'CatCake: <br>';
+echo 'CakeGoods: <br>';
 
 //debug($filter);
 
@@ -44,7 +48,7 @@ echo 'CatCake: <br>';
 
     <div class="col-lg-6">
 
-        <?= $form->field($filter, 'create_box[]')->checkboxList($filter['create_box'])->label('Готовые подборки:'); ?>
+        <?= $form->field($filter, 'tag')->radioList($filter['tag'])->label('Готовые подборки:'); ?>
 
     </div>
 
