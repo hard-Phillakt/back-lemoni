@@ -52,7 +52,7 @@ class FilterCake extends Model
         11 => '8 марта'
     ];
 
-    public function rules()
+    public function rules() 
     {
 
         return [

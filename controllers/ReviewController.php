@@ -14,7 +14,14 @@ use yii\web\Controller;
 //Страница "Отзывов"
 class ReviewController extends Controller
 {
+
+    public $layout = 'base';
+
+
     public function actionIndex(){
+
+
+
         return $this->render('index');
     }
 }

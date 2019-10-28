@@ -14,6 +14,8 @@ use yii\web\Controller;
 // Страница "Контакты"
 class ContactController extends Controller
 {
+    public $layout = 'base';
+
     public function actionIndex(){
 
         return $this->render('index');

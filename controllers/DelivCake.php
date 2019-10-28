@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: NET-USER3
- * Date: 24.09.2019
- * Time: 10:49
+ * Date: 28.10.2019
+ * Time: 16:21
  */
 
 namespace app\controllers;
@@ -11,11 +11,13 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
-//Страница "Доставка"
-class DeliveriController extends Controller
+class DelivCake extends Controller
 {
-    public function actionIndex(){
 
+    public $layout = 'base';
+
+    public function actionIndex(){
+        
         return $this->render('index');
     }
 }

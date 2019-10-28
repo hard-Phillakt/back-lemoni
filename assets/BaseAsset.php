@@ -20,9 +20,15 @@ class BaseAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/main.css',
+        'https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap',
     ];
     public $js = [
+        'js/main.js',
+        'js/card-options.js',
+        'js/map.js',
+        'js/news.js',
+        'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

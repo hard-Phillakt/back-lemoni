@@ -15,10 +15,17 @@ BaseAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">-->
+<!--    <link rel="icon" href="favicon.ico" type="image/x-icon">-->
+<!--    <link rel="stylesheet" href="./style/main.css">-->
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU" type="text/javascript">
+    </script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -26,14 +33,214 @@ BaseAsset::register($this);
 
 <div class="wrap">
 
-    <div class="container">
+    <!-- Full menu -->
+    <div class="box-reletive">
 
-        <?= $content ?>
 
+        <div class="header-full-menu pt-35 close-menu">
+
+            <div class="container mb-60">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-box">
+
+                            <!-- nav-menu-icon -->
+                            <nav class="nav-menu-icon">
+                                <a href="#!" class="nav-menu-icon__link">
+                                    <span class="nav-menu-icon__link_img mr-15">
+                                        <img src="../img/icons/black/icon-close.svg" alt="icon-close"
+                                             class="img-responsive">
+                                    </span>
+                                    <span class="nav-menu-icon__link_title">
+                                        Закрыть
+                                    </span>
+                                </a>
+                            </nav>
+
+
+                            <!-- additional-modules -->
+                            <div class="additional-modules">
+                                <div class="additional-modules__phone">
+                                    <a href="#!" class="link link__a">+7 (915) 576 4500</a>
+                                </div>
+
+                                <div class="additional-modules__search">
+                                    <a href="#!"><img src="../img/icons/black/icon-search.svg" alt="icon-search"></a>
+                                </div>
+
+                                <div class="additional-modules__cart">
+                                    <a href="#!"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-box-full">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3">
+                            <ul class="header-box-full__ul">
+                                <li>
+                                    <a href="#!" class="link link__a">Главная</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Каталог тортов</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Candy Bar</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Конструктор тортов</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <ul class="header-box-full__ul">
+                                <li>
+                                    <a href="#!" class="link link__a">Новости</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Мастер-классы</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Отзывы</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <ul class="header-box-full__ul">
+                                <li>
+                                    <a href="#!" class="link link__a">О нас</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Контакты</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Заказ и оплата</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="link link__a">Доставка и прием товара</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-</div>
+    <!-- header start -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
 
+                    <div class="header-box">
+
+                        <!-- nav-menu-icon -->
+                        <nav class="nav-menu-icon">
+                            <a href="#!" class="nav-menu-icon__link">
+                                <span class="nav-menu-icon__link_img">
+                                    <img src="../img/icons/black/icon-menu.svg" alt="icon-menu" class="img-responsive">
+                                </span>
+                                <span class="nav-menu-icon__link_title">
+                                    Меню
+                                </span>
+                            </a>
+                        </nav>
+
+
+                        <!-- section-logo -->
+                        <div class="section-logo">
+                            <a href="#!">
+                                <img src="../img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
+                            </a>
+                        </div>
+
+
+                        <!-- additional-modules -->
+                        <div class="additional-modules">
+                            <div class="additional-modules__phone">
+                                <a href="#!" class="link link__a">+7 (915) 576 4500</a>
+                            </div>
+
+                            <div class="additional-modules__search">
+                                <a href="#!"><img src="../img/icons/black/icon-search.svg" alt="icon-search"></a>
+                            </div>
+
+                            <div class="additional-modules__cart">
+                                <a href="#!"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <?= $content ?>
+
+    <!-- footer start -->
+    <footer class="footer mt-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="section-logo">
+                        <a href="#!">
+                            <img src="../img/logo/logo-white.svg" alt="white">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <ul class="footer__ul">
+                        <li><a href="#!" class="link link__a_w">Главная</a></li>
+                        <li><a href="#!" class="link link__a_w">Контакты</a></li>
+                        <li><a href="#!" class="link link__a_w">Доставка</a></li>
+                        <li><a href="#!" class="link link__a_w">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2">
+                    <ul class="footer__ul">
+                        <li><a href="#!" class="link link__a_w">Торты</a></li>
+                        <li><a href="#!" class="link link__a_w">CandyBar</a></li>
+                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <ul class="footer__ul">
+                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>
+                        <li><a href="#!" class="link link__a_w">Мастер-классы</a></li>
+                        <li><a href="#!" class="link link__a_w">Новости</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2">
+                    <ul class="footer__ul">
+                        <li>Контакты:</li>
+                        <li><a href="#!" class="link link__a_w">+7 (4722) 50-51-54</a></li>
+                        <li><a href="#!" class="link link__a_w">+7 (915) 576 4500</a></li>
+                        <li><a href="#!" class="link link__a_w">info@cafelemoni.ru</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
 
 <?php $this->endBody() ?>
 </body>
