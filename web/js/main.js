@@ -5,7 +5,8 @@ var navMenuIconlink = document.querySelectorAll('.nav-menu-icon__link');
 var headerFullMenu = document.querySelector('.header-full-menu');
 
 
-navMenuIconlink[1].onclick = function () {
+navMenuIconlink[1].onclick = function (e) {
+    e.preventDefault();
 
     if (headerFullMenu.classList[2] == 'close-menu') {
         headerFullMenu.classList.remove('close-menu');
@@ -13,7 +14,8 @@ navMenuIconlink[1].onclick = function () {
 
 }
 
-navMenuIconlink[0].onclick = function () {
+navMenuIconlink[0].onclick = function (e) {
+    e.preventDefault();
 
     if (headerFullMenu.classList[2] != 'close-menu') {
         headerFullMenu.classList.add('close-menu');

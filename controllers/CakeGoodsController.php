@@ -40,6 +40,14 @@ class CakeGoodsController extends Controller
 
         if ($data_filter = Yii::$app->request->post('FilterCake')) {
 
+
+//            if($data_filter){
+//                echo 'есть контакт';
+//
+//                debug($data_filter);die;
+//            }
+
+
             $cake = $query_cake_goods::find()->with(['tag']);
 
 //          1.фильтр по "Цена за килограм"
@@ -61,6 +69,7 @@ class CakeGoodsController extends Controller
             $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['lm_subjects']]);
 
             $data_cake = $cake->asArray()->all();
+
 
 //          5.фильт по "Тегам" пока делаю страницами в место фильтра
 //            if ($data_filter['tag']) {
@@ -91,7 +100,108 @@ class CakeGoodsController extends Controller
 
         }
 
+
+        if ($data_filter_id = Yii::$app->request->get('compilation')) {
+
+            $model = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+
+
+//          фильт по готовым подборкам
+            return $this->render('index', ['model' => $model, 'filter' => $filter]);
+        }
+
+
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
+    }
+
+
+
+
+
+    public function actionCandie()
+    {
+
+        $query_cake_goods = new CakeGoods();
+
+        $model = $query_cake_goods::find()->with(['tag'])->asArray()->all();
+
+        $filter = new FilterCake();
+
+        if ($data_filter = Yii::$app->request->post('FilterCake')) {
+
+
+//            if($data_filter){
+//                echo 'есть контакт';
+//
+//                debug($data_filter);die;
+//            }
+
+
+            $cake = $query_cake_goods::find()->with(['tag']);
+
+//          1.фильтр по "Цена за килограм"
+            $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
+
+            if ($data_filter['type']) {
+                foreach ($data_filter['type'] as $key => $value) {
+
+//                  2.фильтр по "Тип продукта"
+                    $cake->andFilterWhere(['like', 'lm_type', $value]);
+
+                }
+            }
+
+//          3.фильтр по "Колличество уровней"
+            $cake->andFilterWhere(['like', 'lm_count_level', $data_filter['lm_count_level']]);
+
+//          4.фильтр по "Тематическое оформление"
+            $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['lm_subjects']]);
+
+            $data_cake = $cake->asArray()->all();
+
+
+//          5.фильт по "Тегам" пока делаю страницами в место фильтра
+//            if ($data_filter['tag']) {
+//
+////              если в запросе есть id тега делаем выборку данных в классе Tag ( в классе объявдляются связи и условия выборки)
+//                $chosenTag = Tag::find()->where(['id' => $data_filter['tag']])->one();
+//
+//
+////              если в параметрах есть цена то
+//                if($data_filter['price_for_kg']){
+//
+//                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
+//                } else {
+//
+//                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
+//
+////                    $richCakes = $chosenTag->getCake()->asArray()->all();
+//                }
+//
+//
+////              делаю рендер по тегам и фильтрам
+//                return $this->render('index', ['richCakes' => $richCakes, 'model' => $model, 'filter' => $filter]);
+//            }
+
+
+//          делаю рендер по фильтрам без тегов
+            return $this->render('candie', ['data_cake' => $data_cake, 'model' => $model, 'filter' => $filter]);
+
+        }
+
+
+        if ($data_filter_id = Yii::$app->request->get('compilation')) {
+
+            $model = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+
+
+//          фильт по готовым подборкам
+            return $this->render('candie', ['model' => $model, 'filter' => $filter]);
+        }
+
+
+//      делаю рендер без фильтров и тегов
+        return $this->render('candie', ['model' => $model, 'filter' => $filter]);
     }
 }

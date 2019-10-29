@@ -18,8 +18,83 @@ class CardController extends Controller
     public $layout = 'base';
 
 
-    public function actionIndex(){
+//    букет
+    public function actionBouquet(){
 
+
+        return $this->render('bouquet');
     }
 
+
+//    шадлав
+    public function actionShadlaw(){
+
+
+        return $this->render('shadlaw');
+    }
+
+
+//    конфеты
+    public function actionCandie(){
+
+
+        return $this->render('candie');
+    }
+
+
+//    торты
+    public function actionCake(){
+
+ 
+        return $this->render('cake');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

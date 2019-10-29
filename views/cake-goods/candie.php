@@ -17,7 +17,7 @@ use yii\helpers\Url;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Торты</span>
+                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Candie-bar</span>
             </div>
         </div>
     </div>

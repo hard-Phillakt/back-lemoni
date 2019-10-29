@@ -25,7 +25,7 @@ class BaseAsset extends AssetBundle
     ];
     public $js = [
         'js/main.js',
-        'js/card-options.js',
+//      'js/card-options.js',
         'js/map.js',
         'js/news.js',
         'https://use.fontawesome.com/releases/v5.0.6/js/all.js'

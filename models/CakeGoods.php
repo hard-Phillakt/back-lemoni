@@ -52,7 +52,7 @@ class CakeGoods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['lm_essence', 'lm_title', 'lm_description', 'lm_content', 'lm_weight', 'lm_price_for_kg', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet', 'lm_img_one', 'lm_img_two', 'lm_img_three'], 'required'],
+            [['lm_essence', 'lm_title', 'lm_description', 'lm_content', 'lm_weight', 'lm_price_for_kg', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet', 'lm_img_one', 'lm_img_two', 'lm_img_three', 'lm_alter_card'], 'required'],
             [['lm_title', 'lm_description', 'lm_content', 'lm_img_one', 'lm_img_two', 'lm_img_three'], 'string'],
             [['lm_price_for_kg'], 'integer'],
             [['lm_essence', 'lm_weight', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet'], 'string', 'max' => 255],
@@ -81,6 +81,7 @@ class CakeGoods extends \yii\db\ActiveRecord
             'lm_img_one' => 'Lm Img One',
             'lm_img_two' => 'Lm Img Two',
             'lm_img_three' => 'Lm Img Three',
+            'lm_alter_card' => 'lm_alter_card',
         ];
     }
 }

@@ -19,12 +19,13 @@ BaseAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">-->
-<!--    <link rel="icon" href="favicon.ico" type="image/x-icon">-->
-<!--    <link rel="stylesheet" href="./style/main.css">-->
+    <!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
+    <!--    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">-->
+    <!--    <link rel="icon" href="favicon.ico" type="image/x-icon">-->
+    <!--    <link rel="stylesheet" href="./style/main.css">-->
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU" type="text/javascript">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
+            type="text/javascript">
     </script>
     <?php $this->head() ?>
 </head>
@@ -93,8 +94,11 @@ BaseAsset::register($this);
                                 <li>
                                     <a href="#!" class="link link__a">Candy Bar</a>
                                 </li>
+                                <!--                                <li>-->
+                                <!--                                    <a href="#!" class="link link__a">Конструктор тортов</a>-->
+                                <!--                                </li>-->
                                 <li>
-                                    <a href="#!" class="link link__a">Конструктор тортов</a>
+                                    <a href="#!" class="link link__a">Контакты</a>
                                 </li>
                             </ul>
                         </div>
@@ -117,9 +121,6 @@ BaseAsset::register($this);
                             <ul class="header-box-full__ul">
                                 <li>
                                     <a href="#!" class="link link__a">О нас</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="link link__a">Контакты</a>
                                 </li>
                                 <li>
                                     <a href="#!" class="link link__a">Заказ и оплата</a>

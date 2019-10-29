@@ -9,7 +9,7 @@
         </div>
     </div>
 </section>
-
+ 
 <!-- filter-sidebar-catalog start -->
 <section class="filter-sidebar-catalog">
     <div class="container">
