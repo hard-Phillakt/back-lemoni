@@ -113,7 +113,8 @@ function GlogalOptionsCard() {
             //  обрабатываем click
             dvizhOption_label[i].children[0].onclick = function () {
 
-                console.dir(this.labels[0].dataset.img);
+                // console.dir(this.labels[0].dataset.img);
+
 
 
                 if (this.labels[0].classList[0] == 'optDecore__input') {
@@ -125,9 +126,10 @@ function GlogalOptionsCard() {
 
                     this.checked = true;
 
-                    console.log(this.checked);
+                    // console.log(this.checked);
 
                 } else {
+
                     this.labels[0].classList.remove('optDecore__input_check');
                     this.labels[0].classList.add('optDecore__input');
 
@@ -135,7 +137,7 @@ function GlogalOptionsCard() {
 
                     this.checked = false;
 
-                    console.log(this.checked);
+                    // console.log(this.checked);
 
                 }
 
@@ -192,23 +194,22 @@ function GlogalOptionsCard() {
 
         dvizhOption_label[0].children[0].setAttribute('type', 'text');
         dvizhOption_label[0].children[0].setAttribute('placeholder', 'Введите текст');
+        dvizhOption_label[0].children[0].setAttribute('value', '');
         dvizhOption_label[0].children[0].classList.add('optString__input');
     }
 // optString(3, 'optString', [0]);
 
 
+
+// 5. removeOpt (удаление опций) ##########################################################################################
+
+    this.removeOpt = function () {
+
+    }
+
+
 }
 //  Глобальный класс карточки товара  end
-
-
-
-var mainCard = new GlogalOptionsCard();
-
-// Колличество гостей:
-mainCard.optGuests(0, 'optGuests', [0, 1, 2]);
-
-// Выберите цвет глазури:
-mainCard.optGlaze(1, 'optGlaze', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB']);
 
 
 // картинки для опций
@@ -217,8 +218,8 @@ var arrOptDecore = [
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
-    ['decore__1_clear', 'decore__1_check'],
-]
+    ['decore__1_clear', 'decore__1_check']
+];
 
 //  Заголовки опций
 var miniTitle = [
@@ -226,8 +227,19 @@ var miniTitle = [
     ['На прянике'],
     ['Топер '],
     ['Открытка'],
-    ['блюдо'],
-]
+    ['блюдо']
+];
+
+
+var mainCard = new GlogalOptionsCard();
+
+// удаление опций: class - optDesabled
+
+// Колличество гостей:
+mainCard.optGuests(0, 'optGuests', [0, 1, 2]);
+
+// Выберите цвет глазури:
+mainCard.optGlaze(1, 'optGlaze', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB']);
 
 // декор
 mainCard.optDecore(2, 'optDecore', arrOptDecore, 'radio', false, miniTitle);
@@ -240,6 +252,8 @@ mainCard.optDecore(4, 'optDecore', arrOptDecore, 'radio', false, miniTitle);
 
 // Выберите упаковку
 mainCard.optDecore(5, 'optDecore', arrOptDecore, 'radio', false, null);
+
+// mainCard.optDecore(5, 'optDesabled', arrOptDecore, 'radio', false, null);
 
 
 

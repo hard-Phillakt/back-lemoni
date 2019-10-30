@@ -1,8 +1,36 @@
-
-
 <?php
-    $this->registerJsFile('/js/card-cake.js');
+// для настройки корзины
+//$this->registerJsFile('/js/cart.js');
+
+// для настройки опций товара
+//$this->registerJsFile('/js/card-cake.js');
+
+use app\assets\CakeAsset;
+
+CakeAsset::register($this);
+
+
+//use dvizh\cart\widgets\BuyButton;
+//use dvizh\cart\widgets\TruncateButton;
+//use dvizh\cart\widgets\CartInformer;
+//use dvizh\cart\widgets\ElementsList;
+//use dvizh\cart\widgets\DeleteButton;
+//use dvizh\cart\widgets\ChangeCount;
+//use dvizh\cart\widgets\ChangeOptions;
+
+
+use app\widgets\customcart\BuyButton;
+use app\widgets\customcart\TruncateButton;
+use app\widgets\customcart\CartInformer;
+use app\widgets\customcart\ElementsList;
+use app\widgets\customcart\DeleteButton;
+use app\widgets\customcart\ChangeCount;
+use app\widgets\customcart\ChangeOptions;
+
+
 ?>
+
+
 
 
 <!-- breadcrumbs-line -->
@@ -23,8 +51,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-35">
-                    <a class="button button__circle" href="#!"><img src="../img/icons/arrow-right.svg"
-                                                                    alt="arrow-right" class="rotate__180"></a>
+                    <a class="button button__circle" href="#!">
+                        <img src="../img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
+                    </a>
+
                 </div>
             </div>
             <div class="col-lg-5">
@@ -74,179 +104,58 @@
                 </div>
 
 
-                <div class="dvizh-change-options">
+                <!-- Начало опций товара -->
 
-                    <!-- Колличество гостей -->
-                    <div class="dvizh-option">
+                <?php
 
-                        <div class="mb-15">
-                            <h4 class="title title__h4">
-                                Колличество гостей:
-                            </h4>
-                        </div>
+//                debug($model);
 
-                        <div>
-                            <label>
-                                <input type="radio">
-                            </label>
+                ?>
 
-                            <label>
-                                <input type="radio">
-                            </label>
+                <?=ChangeOptions::widget([
+                    'model' => $model,
+                    'type' => 'radio',
+                ]);?>
 
-                            <label>
-                                <input type="radio">
-                            </label>
-                        </div>
-
-                        <div class="mt-15">
-                            <p class="desc desc__sm opac__05">
-                                При заказе от 5 кг, срок изготовления составляет от 3 дней <br>
-                                Рекомендуемая порция 240г на 1 персону
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <!-- Выберите цвет глазури: -->
-                    <div class="dvizh-option">
-                        <div class="mb-15">
-                            <h4 class="title title__h4">
-                                Выберите цвет глазури:
-                            </h4>
-                        </div>
-
-                        <div>
-                            <label>
-                                <input type="radio" value="">
-                            </label>
-                            <label>
-                                <input type="radio" value="">
-                            </label>
-                            <label>
-                                <input type="radio" value="">
-                            </label>
-                            <label>
-                                <input type="radio" value="">
-                            </label>
-                            <label>
-                                <input type="radio" value="">
-                            </label>
-                            <label>
-                                <input type="radio" value="">
-                            </label>
-                        </div>
-
-                    </div>
-
-                    <!-- Выберите декор -->
-                    <div class="dvizh-option">
-                        <h4 class="title title__h4">
-                            Выберите декор:
-                        </h4>
-
-                        <div>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Добавьте поздравительную надпись: -->
-                    <div class="dvizh-option">
-                        <div class="mb-15">
-                            <h4 class="title title__h4">
-                                Добавьте поздравительную надпись:
-                            </h4>
-                        </div>
-
-                        <div>
-                            <label>
-                                <input type="radio">
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Формат поздравительной надписи: -->
-                    <div class="dvizh-option">
-                        <div class="mb-15">
-                            <h4 class="title title__h4">
-                                Формат поздравительной надписи:
-                            </h4>
-                        </div>
-
-                        <div>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Выберите упаковку: -->
-                    <div class="dvizh-option">
-                        <div class="mb-15">
-                            <h4 class="title title__h4">
-                                Выберите упаковку:
-                            </h4>
-                        </div>
-
-                        <div>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                            <label>
-                                <input type="radio">
-                            </label>
-                        </div>
-                    </div>
-
-                </div>
 
 
                 <div class="mt-35">
                     <div class="card-goods__total">
-                        Итого: <span>1 800</span> руб
+                        Итого: <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{p}']); ?> руб
                     </div>
                 </div>
 
+<!--                <div class="mt-35">-->
+<!--                    <div class="card-goods__total">-->
+<!--                        Итого: <span>1 800</span> руб-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+                <?php
+
+//                debug($model);die;
+                ?>
 
                 <div class="mt-35">
                     <a class="button button__rectangle mr-15">Купить в один клик</a>
-                    <a class="button button__rectangle">В корзину</a>
+
+                    <?= BuyButton::widget([
+                        'model' => $model,
+                        'text' => 'В корзину',
+                        'htmlTag' => 'a',
+                        'cssClass' => 'custom_class button button__rectangle',
+                    ]) ?>
+
+                    <div class="mt-35">
+                        <?= TruncateButton::widget(['text' => 'Х']); ?>
+                    </div>
                 </div>
+
+<!--                <div class="mt-35">-->
+<!--                    <a class="button button__rectangle mr-15">Купить в один клик</a>-->
+<!--                    <a class="button button__rectangle">В корзину</a>-->
+<!--                </div>-->
 
             </div>
 

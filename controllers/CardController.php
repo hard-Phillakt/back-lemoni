@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 use yii\web\Controller;
+use app\models\CakeGoods;
 
 // Карточка товара под вопросом (как лучше сделать 4 карточки)
 class CardController extends Controller
@@ -43,10 +44,14 @@ class CardController extends Controller
 
 
 //    торты
-    public function actionCake(){
+    public function actionCake($id = null){
 
- 
-        return $this->render('cake');
+
+        $cake_goods = new CakeGoods();
+
+        $model = $cake_goods::findOne($id);
+
+        return $this->render('cake', ['model' => $model]);
     }
 }
 

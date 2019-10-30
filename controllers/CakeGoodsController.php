@@ -117,8 +117,6 @@ class CakeGoodsController extends Controller
 
 
 
-
-
     public function actionCandie()
     {
 

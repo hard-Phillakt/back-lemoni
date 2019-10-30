@@ -15,7 +15,7 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class BaseAsset extends AssetBundle
+class CakeAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -25,13 +25,12 @@ class BaseAsset extends AssetBundle
         'https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap',
     ];
     public $js = [
-        'js/main.js',
-        'js/map.js',
-        'js/news.js',
+//        'js/main.js',
+//        'js/cart_custom_opt.js',
+        'js/cart.js',
         'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'dvizh\cart\assets\WidgetAsset',
     ];
 }

@@ -12,6 +12,11 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'layout' => 'base',
+    'modules' => [
+        'cart' => [
+            'class' => 'dvizh\cart\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -51,6 +56,12 @@ $config = [
             'rules' => [
                 '/' => 'index',
             ],
+        ],
+        'cart' => [
+            'class' => 'dvizh\cart\Cart',
+            'currency' => '', //Валюта
+            'currencyPosition' => 'after', //after или before (позиция значка валюты относительно цены)
+            'priceFormat' => [1,'.', ''], //Форма цены
         ],
     ],
     'params' => $params,

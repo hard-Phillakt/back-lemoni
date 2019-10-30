@@ -24,8 +24,57 @@ use Yii;
  * @property string $lm_img_two
  * @property string $lm_img_three
  */
-class CakeGoods extends \yii\db\ActiveRecord
+class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartElement
 {
+
+
+    public function getCartId()
+    {
+        return $this->id;
+    }
+
+    public function getCartName()
+    {
+        return $this->lm_title;
+    }
+
+    public function getCartPrice()
+    {
+        return $this->lm_price_for_kg;
+    }
+
+    //Опции продукта для выбора при добавлении в корзину
+    public function getCartOptions()
+    {
+        return [
+            '0' => [
+                'name' => 'Колличество гостей:',
+                'variants' => ['', '', '']
+            ],
+            '1' => [
+                'name' => 'Колличество гостей:',
+                'variants' => ['', '', '', '', '', '',]
+            ],
+            '2' => [
+//                'name' => 'Колличество гостей:',
+                'variants' => ['title-50' => 'title', '', '', '',]
+            ],
+            '3' => [
+                'name' => 'Колличество гостей:',
+                'variants' => ['',]
+            ],
+            'four-4' => [
+                'name' => 'Колличество гостей:',
+                'variants' => ['', '', '', '',]
+            ],
+            '5' => [
+                'name' => 'Колличество гостей:',
+                'variants' => ['', '', '', '',]
+            ],
+        ];
+    }
+
+
     /**
      * {@inheritdoc}
      */

@@ -68,32 +68,81 @@ use yii\helpers\Url;
 
                             <span for="global-form__input_el2"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
-                                           class="global-form__checkbox mt-35" value="Классический">
-                                    Классический
+                                           class="global-form__checkbox mt-35" value="Классические пирожные">
+                                    Классические пирожные
                                 </span>
 
                                 <span for="global-form__input_el3"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
-                                           class="global-form__checkbox mt-35" value="Мусовый">
-                                    Мусовый
+                                           class="global-form__checkbox mt-35" value="Мусовые пирожные">
+                                    Мусовые пирожные
                                 </span>
 
                                 <span for="global-form__input_el4"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
-                                           class="global-form__checkbox mt-35" value="Шадлав">
-                                    Шадлав
+                                           class="global-form__checkbox mt-35" value="Конфеты">
+                                    Конфеты
                                 </span>
 
                                 <span for="global-form__input_el5"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
-                                           class="global-form__checkbox mt-35" value="Диетические">
-                                    Диетические
+                                           class="global-form__checkbox mt-35" value="Пряники">
+                                    Пряники
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
-                                           class="global-form__checkbox mt-35" value="Постные">
-                                    Постные
+                                           class="global-form__checkbox mt-35" value="Щербет">
+                                    Щербет
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Зефир">
+                                    Зефир
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Фруктовый букет">
+                                    Фруктовый букет
+                                </span>
+
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Куличи">
+                                    Куличи
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Кейкпопсы">
+                                    Кейкпопсы
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Укусики">
+                                    Укусики
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Постное">
+                                    Постное
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Штрудель">
+                                    Штрудель
+                                </span>
+
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Кексы на фруктовом пюре">
+                                    Кексы на фруктовом пюре
                                 </span>
 
                         </div>
@@ -214,7 +263,7 @@ use yii\helpers\Url;
 
                                     <div class="mt-15 mb-30">
                                         <span class="card-price pl-15 opac__07"><?= $value['lm_price_for_kg']; ?>
-                                            руб/кг</span>
+                                            руб/шт</span>
                                     </div>
 
                                 </div>
@@ -244,7 +293,7 @@ use yii\helpers\Url;
 
                                     <div class="mt-15 mb-30">
                                         <span class="card-price pl-15 opac__07"><?= $value['lm_price_for_kg']; ?>
-                                            руб/кг</span>
+                                            руб/шт</span>
                                     </div>
 
                                 </div>
