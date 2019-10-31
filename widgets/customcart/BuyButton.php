@@ -46,6 +46,9 @@ class BuyButton extends \yii\base\Widget
         }
 
         $model = $this->model;
+
+
+//        debug($model);
         return Html::tag($this->htmlTag, $this->text, [
             'href' => Url::toRoute($this->addElementUrl),
             'class' => "dvizh-cart-buy-button dvizh-cart-buy-button{$this->model->getCartId()} {$this->cssClass}",
@@ -53,7 +56,8 @@ class BuyButton extends \yii\base\Widget
             'data-url' => Url::toRoute($this->addElementUrl),
             'data-role' => 'cart-buy-button',
             'data-count' => $this->count,
-            'data-price' => (int)$this->price,
+//            'data-price' => (int)$this->price,
+            'data-price' => (int)$this->model['lm_price_for_kg'],
             'data-options' => json_encode($this->options),
             'data-description' => $this->description,
             'data-model' => $model::className()

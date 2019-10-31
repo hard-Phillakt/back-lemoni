@@ -46,7 +46,6 @@ class CardController extends Controller
 //    торты
     public function actionCake($id = null){
 
-
         $cake_goods = new CakeGoods();
 
         $model = $cake_goods::findOne($id);

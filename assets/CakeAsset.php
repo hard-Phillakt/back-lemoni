@@ -25,8 +25,6 @@ class CakeAsset extends AssetBundle
         'https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap',
     ];
     public $js = [
-//        'js/main.js',
-//        'js/cart_custom_opt.js',
         'js/cart.js',
         'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
     ];

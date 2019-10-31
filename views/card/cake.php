@@ -1,13 +1,9 @@
 <?php
 // для настройки корзины
-//$this->registerJsFile('/js/cart.js');
+$this->registerJsFile('/js/cart.js');
 
 // для настройки опций товара
-//$this->registerJsFile('/js/card-cake.js');
-
-use app\assets\CakeAsset;
-
-CakeAsset::register($this);
+$this->registerJsFile('/js/card-cake.js');
 
 
 //use dvizh\cart\widgets\BuyButton;
@@ -28,6 +24,10 @@ use app\widgets\customcart\ChangeCount;
 use app\widgets\customcart\ChangeOptions;
 
 
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+//debug($model);
 ?>
 
 
@@ -59,7 +59,9 @@ use app\widgets\customcart\ChangeOptions;
             </div>
             <div class="col-lg-5">
                 <div class="card-goods__img mt-35">
-                    <img src="../img/goods/cake/cake__1.png" alt="cake__1" class="img-responsive">
+
+                    <?= Html::img('@web/' . $model->lm_img_one, ['alt' => '']) ?>
+                    
                 </div>
 
                 <div class="row">
@@ -92,7 +94,11 @@ use app\widgets\customcart\ChangeOptions;
 
 
                 <div class="mt-60">
-                    <div class="card-goods__price">1 800 руб/кг</div>
+                    <div class="card-goods__price">
+<!--                        <span>1700</span>-->
+                        <span><?= $model->lm_price_for_kg;?></span>
+                        руб/кг
+                    </div>
                 </div>
 
 

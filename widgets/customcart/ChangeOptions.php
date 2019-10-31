@@ -54,7 +54,11 @@ class ChangeOptions extends \yii\base\Widget
                 $optionsArray = ['' => $optionData['name']];
                 if (isset($optionData['variants'])) {
                     foreach ($optionData['variants'] as $variantId => $value) {
-                        $optionsArray[$variantId] = $value;
+                        $optionsArray[$variantId] = '';
+
+
+//                      вывожу ключи из опций в input value
+//                        $optionsArray[$value] = '';
                     }
                 }
 
@@ -67,7 +71,7 @@ class ChangeOptions extends \yii\base\Widget
                     );
                 } else {
                     $list = Html::tag('div', Html::tag('strong', $optionData['name']), ['class' => 'dvizh-option-heading']);
-                    $list .= Html::radioList('cart_options' . $id . '-' . $i,
+                    $list .= Html::radioList('cart_options-' . $id . '-' . $i,
                         $this->_defaultValue($optionId),
                         $optionsArray,
                         ['itemOptions' => ['data-href' => Url::toRoute(["/cart/element/update"]), 'data-filter-id' => $optionId, 'data-name' => Html::encode($optionData['name']), 'data-id' => $id, 'class' => $cssClass]]

@@ -49,27 +49,49 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
         return [
             '0' => [
                 'name' => 'Колличество гостей:',
-                'variants' => ['', '', '']
+                'variants' => ['-', '1', '+']
             ],
             '1' => [
-                'name' => 'Колличество гостей:',
-                'variants' => ['', '', '', '', '', '',]
+                'name' => 'Выберите цвет глазури:',
+                'variants' => [
+                    '#C76445;-10-glaze_1' => '',
+                    '#F5ECDF-20-glaze_2' => '',
+                    '#C75A5A-30-glaze_3' => '',
+                    '#8CA5E3-40-glaze_4' => '',
+                    '#8CE3A5-50-glaze_5' => '',
+                    '#E38CCB-60-glaze_6' => '',
+                ]
             ],
             '2' => [
-//                'name' => 'Колличество гостей:',
-                'variants' => ['title-50' => 'title', '', '', '',]
+                'name' => 'Выберите декор:',
+                'variants' => [
+                    'decor-10-decor_1' => '',
+                    'decor-20-decor_2' => '',
+                    'decor-30-decor_3' => '',
+                    'decor-40-decor_4' => '',
+                ]
             ],
             '3' => [
-                'name' => 'Колличество гостей:',
-                'variants' => ['',]
+                'name' => 'Добавьте поздравительную надпись:',
+                'variants' => ['inscription-0' => '',]
             ],
             'four-4' => [
-                'name' => 'Колличество гостей:',
-                'variants' => ['', '', '', '',]
+                'name' => 'Формат поздравительной надписи:',
+                'variants' => [
+                    'cream-10-cream' => '',
+                    'gingerbread-20-gingerbread' => '',
+                    'topper-30-topper' => '',
+                    'postcard-40-postcard' => '',
+                ]
             ],
             '5' => [
-                'name' => 'Колличество гостей:',
-                'variants' => ['', '', '', '',]
+                'name' => 'Выберите упаковку:',
+                'variants' => [
+                    'packaging-10-packaging_1' => '',
+                    'packaging-20-packaging_2' => '',
+                    'packaging-30-packaging_3' => '',
+                    'packaging-40-packaging_4' => '',
+                ]
             ],
         ];
     }
@@ -82,9 +104,6 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     {
         return 'cake_goods';
     }
-
-
-
 
 
 //  Связь многие ко многим tag и промежуточная cake_tag (связующая)

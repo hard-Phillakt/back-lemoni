@@ -11,13 +11,14 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
-class CartController extends Controller
+class CheckOutController extends Controller
 {
+
+    public $layout = 'base';
 
     public  function actionIndex(){
 
         
-
         return $this->render('index');
     }
 }

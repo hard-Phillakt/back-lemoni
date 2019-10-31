@@ -23,6 +23,11 @@ $config = [
             'cookieValidationKey' => 'dROtL969gIkihl3mUrmakK0iKS0QCw83',
             'baseUrl' => ''
         ],
+        'assetManager' => [
+            'assetMap' => [
+                'scripts.js' => '/web/js/cart_custom_opt.js',
+            ],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
