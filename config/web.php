@@ -24,9 +24,11 @@ $config = [
             'baseUrl' => ''
         ],
         'assetManager' => [
+//          зарезал scripts.js плагина корзины. переопредил на свой cart_custom_opt.js
             'assetMap' => [
                 'scripts.js' => '/web/js/cart_custom_opt.js',
             ],
+            'appendTimestamp' => true,
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -66,7 +68,7 @@ $config = [
             'class' => 'dvizh\cart\Cart',
             'currency' => '', //Валюта
             'currencyPosition' => 'after', //after или before (позиция значка валюты относительно цены)
-            'priceFormat' => [1,'.', ''], //Форма цены
+            'priceFormat' => [2,'.', ''], //Форма цены
         ],
     ],
     'params' => $params,

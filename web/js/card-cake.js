@@ -312,7 +312,6 @@ var arrOptDecore2 = [
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
-    ['decore__1_clear', 'decore__1_check']
 ];
 
 // картинки для опций
@@ -321,7 +320,6 @@ var arrOptDecore4 = [
     ['optString__1_clear', 'optString__1_check'],
     ['optString__2_clear', 'optString__2_check'],
     ['optString__3_clear', 'optString__3_check'],
-    ['optString__4_clear', 'optString__4_check']
 ];
 
 // картинки для опций
@@ -330,7 +328,6 @@ var arrOptDecore5 = [
     ['optString__5_clear', 'optString__5_check'],
     ['optString__5_clear', 'optString__5_check'],
     ['optString__5_clear', 'optString__5_check'],
-    ['optString__5_clear', 'optString__5_check']
 ];
 
 //  Заголовки опций

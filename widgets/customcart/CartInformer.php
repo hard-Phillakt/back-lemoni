@@ -38,12 +38,12 @@ class CartInformer extends \yii\base\Widget
 
         if($this->showOldPrice == false | $cart->cost == $cart->getCost(false)) {
             $this->text = str_replace(['{c}', '{p}'],
-                ['<span class="dvizh-cart-count">'.$cart->getCount().'</span>', '<strong class="dvizh-cart-price">'.$cart->getCostFormatted().'</strong>'],
+                ['<span class="dvizh-cart-count">'.$cart->getCount().'</span>', '<span class="dvizh-cart-price">'.$cart->getCostFormatted().'</span>'],
                 $this->text
             );
         } else {
             $this->text = str_replace(['{c}', '{p}'],
-                ['<span class="dvizh-cart-count">'.$cart->getCount().'</span>', '<strong class="dvizh-cart-price"><s>'.round($cart->getCost(false)).'</s>'.$cart->getCostFormatted().'</strong>'],
+                ['<span class="dvizh-cart-count">'.$cart->getCount().'</span>', '<span class="dvizh-cart-price"><s>'.round($cart->getCost(false)).'</s>'.$cart->getCostFormatted().'</span>'],
                 $this->text
             );
         }

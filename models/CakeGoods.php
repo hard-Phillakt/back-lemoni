@@ -49,26 +49,26 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
         return [
             '0' => [
                 'name' => 'Колличество гостей:',
-                'variants' => ['-', '1', '+']
+                'variants' => ['-', '5', '+']
             ],
             '1' => [
                 'name' => 'Выберите цвет глазури:',
                 'variants' => [
-                    '#C76445;-10-glaze_1' => '',
-                    '#F5ECDF-20-glaze_2' => '',
-                    '#C75A5A-30-glaze_3' => '',
-                    '#8CA5E3-40-glaze_4' => '',
-                    '#8CE3A5-50-glaze_5' => '',
-                    '#E38CCB-60-glaze_6' => '',
+                    '#C76445;-10-glaze_test' => '',
+                    '#F5ECDF;-20-glaze_test' => '',
+                    '#C75A5A;-30-glaze_test' => '',
+                    '#8CA5E3;-40-glaze_test' => '',
+                    '#8CE3A5;-50-glaze_test' => '',
+                    '#E38CCB;-60-glaze_test' => '',
                 ]
             ],
             '2' => [
                 'name' => 'Выберите декор:',
                 'variants' => [
-                    'decor-10-decor_1' => '',
-                    'decor-20-decor_2' => '',
-                    'decor-30-decor_3' => '',
-                    'decor-40-decor_4' => '',
+                    'decore__1_check-10-decor_test' => '',
+                    'decore__1_check-20-decor_test' => '',
+                    'decore__1_check-30-decor_test' => '',
+                    'decore__1_check-40-decor_test' => '',
                 ]
             ],
             '3' => [
@@ -78,19 +78,19 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
             'four-4' => [
                 'name' => 'Формат поздравительной надписи:',
                 'variants' => [
-                    'cream-10-cream' => '',
-                    'gingerbread-20-gingerbread' => '',
-                    'topper-30-topper' => '',
-                    'postcard-40-postcard' => '',
+                    'optString__0_check-10-cream_test' => '',
+                    'optString__1_check-20-gingerbread_test' => '',
+                    'optString__2_check-30-topper_test' => '',
+                    'optString__3_check-40-postcard_test' => '',
                 ]
             ],
             '5' => [
                 'name' => 'Выберите упаковку:',
                 'variants' => [
-                    'packaging-10-packaging_1' => '',
-                    'packaging-20-packaging_2' => '',
-                    'packaging-30-packaging_3' => '',
-                    'packaging-40-packaging_4' => '',
+                    'decore__1_check-10-packaging_test' => '',
+                    'decore__1_check-20-packaging_test' => '',
+                    'decore__1_check-30-packaging_test' => '',
+                    'decore__1_check-40-packaging_test' => '',
                 ]
             ],
         ];

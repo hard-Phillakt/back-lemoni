@@ -88,7 +88,9 @@ custom_class.onclick = function (e) {
             // console.log('item.children[0].value.split', item.children[0].value.split('-')[1]);
 
             // arr_options[item.children[0].value] = item.children[0].value.split('-')[2];
+            
             arr_options[i] = item.children[0].value;
+            
             // arr_options[item.children[0].value];
 
             // Добавляем объект опций в data-options

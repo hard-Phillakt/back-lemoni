@@ -1,11 +1,26 @@
+<?php
 
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+
+use app\widgets\customcart\BuyButton;
+use app\widgets\customcart\TruncateButton;
+use app\widgets\customcart\CartInformer;
+use app\widgets\customcart\ElementsList;
+use app\widgets\customcart\DeleteButton;
+use app\widgets\customcart\ChangeCount;
+use app\widgets\customcart\ChangeOptions;
+
+?> 
 
 <!-- breadcrumbs-line -->
 <section class="breadcrumbs-line">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная - Торты -</a><span> Фруктовый букет №23
+                <a href="#!" class="breadcrumbs-line__active">Главная -</a><span> получение товара
                     </span>
             </div>
         </div>
@@ -98,7 +113,6 @@
                             </div>
 
 
-
                         </div>
 
                         <div class="col-lg-6 col-lg-offset-1">
@@ -131,21 +145,24 @@
 
                         <div class="row mt-35 line-white">
                             <div class="col-lg-6">
-                                <span class="total-delivery__box_key opac__07">Состав:</span>
+                                <span class="total-delivery__box_key opac__07">Способ получения:</span>
                             </div>
 
                             <div class="col-lg-6">
-                                <span class="total-delivery__box_value">2 товара</span>
+                                <span class="total-delivery__box_value">Доставка</span>
                             </div>
                         </div>
 
                         <div class="row mt-35">
                             <div class="col-lg-6">
-                                <span class="total-delivery__box_key opac__07">Состав:</span>
+                                <span class="total-delivery__box_key opac__07">Товары:</span>
                             </div>
 
                             <div class="col-lg-6">
-                                <span class="total-delivery__box_value">2 товара</span>
+                                <!--                                <span class="total-delivery__box_value">2 товара</span>-->
+                                <span
+                                    class="total-delivery__box_value"><?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{c}']); ?>
+                                    шт</span>
                             </div>
                         </div>
 
@@ -156,7 +173,9 @@
 
                             <div class="col-lg-6">
                                     <span class="total-delivery__box_value">
-                                        <span class="total-delivery__summ">5 428</span>
+<!--                                        <span class="total-delivery__summ">5 428</span>-->
+                                        <span
+                                            class="total-delivery__summ"><?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']); ?></span>
                                         руб
                                     </span>
                             </div>
@@ -165,7 +184,6 @@
                     </div>
 
                 </div>
-
 
 
                 <div class="row">

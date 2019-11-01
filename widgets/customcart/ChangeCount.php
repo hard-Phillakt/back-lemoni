@@ -2,15 +2,20 @@
 //namespace dvizh\cart\widgets;
 namespace app\widgets\customcart;
 
+use app\assets\BaseAsset;
 use yii\helpers\Url;
 use yii\helpers\Html;
+
+//$this->registerJsFile('cart_custom_opt.js');
 
 class ChangeCount extends \yii\base\Widget
 {
     public $model = NULL;
     public $lineSelector = 'li'; //Селектор материнского элемента, где выводится элемент
-    public $downArr = '⟨';
-    public $upArr = '⟩';
+//    public $downArr = '⟨';
+//    public $upArr = '⟩';
+    public $downArr = '-';
+    public $upArr = '+';
     public $cssClass = 'dvizh-change-count';
     public $defaultValue = 1;
     public $showArrows = true;
@@ -21,8 +26,11 @@ class ChangeCount extends \yii\base\Widget
     {
         parent::init();
 
-        \dvizh\cart\assets\WidgetAsset::register($this->getView());
-        
+//        \dvizh\cart\assets\WidgetAsset::register($this->getView());
+//        \dvizh\cart\assets\WidgetAsset::register($this->getView());
+
+        BaseAsset::register($this->getView());
+
         return true;
     }
 
@@ -42,7 +50,8 @@ class ChangeCount extends \yii\base\Widget
                 'data-role' => 'cart-element-count',
                 'data-line-selector' => $this->lineSelector,
                 'data-id' => $this->model->getId(),
-                'data-href' => Url::toRoute($this->actionUpdateUrl),
+                'data-href' => Url::toRoute('/cart/element/update'),
+//                'data-href' => Url::toRoute($this->url_update),
             ]);
         } else {
             $input = Html::input('number', 'count', $this->defaultValue, [

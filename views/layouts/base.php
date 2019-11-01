@@ -62,7 +62,7 @@ BaseAsset::register($this);
                             <!-- additional-modules -->
                             <div class="additional-modules">
                                 <div class="additional-modules__phone">
-                                    <a href="#!" class="link link__a">+7 (915) 576 4500</a>
+                                    <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
                                 </div>
 
                                 <div class="additional-modules__search">
@@ -70,7 +70,7 @@ BaseAsset::register($this);
                                 </div>
 
                                 <div class="additional-modules__cart">
-                                    <a href="#!"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
+                                    <a href="/check-out"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
                                 </div>
                             </div>
 
@@ -86,19 +86,19 @@ BaseAsset::register($this);
                         <div class="col-lg-3">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="#!" class="link link__a">Главная</a>
+                                    <a href="/" class="link link__a">Главная</a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="link link__a">Каталог тортов</a>
+                                    <a href="/cake-goods" class="link link__a">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="link link__a">Candy Bar</a>
+                                    <a href="/candie-bar" class="link link__a">Candy Bar</a>
                                 </li>
                                 <!--                                <li>-->
                                 <!--                                    <a href="#!" class="link link__a">Конструктор тортов</a>-->
                                 <!--                                </li>-->
                                 <li>
-                                    <a href="#!" class="link link__a">Контакты</a>
+                                    <a href="/contact" class="link link__a">Контакты</a>
                                 </li>
                             </ul>
                         </div>
@@ -106,13 +106,13 @@ BaseAsset::register($this);
                         <div class="col-lg-3">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="#!" class="link link__a">Новости</a>
+                                    <a href="/news" class="link link__a">Новости</a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="link link__a">Мастер-классы</a>
+                                    <a href="/master-class" class="link link__a">Мастер-классы</a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="link link__a">Отзывы</a>
+                                    <a href="/review" class="link link__a">Отзывы</a>
                                 </li>
                             </ul>
                         </div>
@@ -120,13 +120,13 @@ BaseAsset::register($this);
                         <div class="col-lg-3">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="#!" class="link link__a">О нас</a>
+                                    <a href="/about" class="link link__a">О нас</a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="link link__a">Заказ и оплата</a>
+                                    <a href="/order" class="link link__a">Заказ и оплата</a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="link link__a">Доставка и прием товара</a>
+                                    <a href="/deliv-cake" class="link link__a">Доставка и прием товара</a>
                                 </li>
                             </ul>
                         </div>
@@ -161,7 +161,7 @@ BaseAsset::register($this);
 
                         <!-- section-logo -->
                         <div class="section-logo">
-                            <a href="#!">
+                            <a href="/">
                                 <img src="../img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
                             </a>
                         </div>
@@ -170,7 +170,7 @@ BaseAsset::register($this);
                         <!-- additional-modules -->
                         <div class="additional-modules">
                             <div class="additional-modules__phone">
-                                <a href="#!" class="link link__a">+7 (915) 576 4500</a>
+                                <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
                             </div>
 
                             <div class="additional-modules__search">
@@ -178,7 +178,7 @@ BaseAsset::register($this);
                             </div>
 
                             <div class="additional-modules__cart">
-                                <a href="#!"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
+                                <a href="/check-out"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
                             </div>
                         </div>
 
@@ -198,7 +198,7 @@ BaseAsset::register($this);
             <div class="row">
                 <div class="col-lg-2">
                     <div class="section-logo">
-                        <a href="#!">
+                        <a href="/">
                             <img src="../img/logo/logo-white.svg" alt="white">
                         </a>
                     </div>
@@ -206,35 +206,36 @@ BaseAsset::register($this);
 
                 <div class="col-lg-2">
                     <ul class="footer__ul">
-                        <li><a href="#!" class="link link__a_w">Главная</a></li>
-                        <li><a href="#!" class="link link__a_w">Контакты</a></li>
-                        <li><a href="#!" class="link link__a_w">Доставка</a></li>
-                        <li><a href="#!" class="link link__a_w">О нас</a></li>
+                        <li><a href="/" class="link link__a_w">Главная</a></li>
+                        <li><a href="/contact" class="link link__a_w">Контакты</a></li>
+                        <li><a href="/deliv-cake" class="link link__a_w">Доставка</a></li>
+                        <li><a href="/about" class="link link__a_w">О нас</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2">
                     <ul class="footer__ul">
-                        <li><a href="#!" class="link link__a_w">Торты</a></li>
-                        <li><a href="#!" class="link link__a_w">CandyBar</a></li>
-                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>
+                        <li><a href="/cale-goods" class="link link__a_w">Торты</a></li>
+                        <li><a href="/candie-bar" class="link link__a_w">CandyBar</a></li>
+<!--                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>-->
                     </ul>
                 </div>
 
                 <div class="col-lg-3">
                     <ul class="footer__ul">
-                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>
-                        <li><a href="#!" class="link link__a_w">Мастер-классы</a></li>
-                        <li><a href="#!" class="link link__a_w">Новости</a></li>
+<!--                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>-->
+                        <li><a href="/master-class" class="link link__a_w">Мастер-классы</a></li>
+                        <li><a href="/news" class="link link__a_w">Новости</a></li>
+                        <li><a href="/review" class="link link__a_w">Отзывы</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2">
                     <ul class="footer__ul">
                         <li>Контакты:</li>
-                        <li><a href="#!" class="link link__a_w">+7 (4722) 50-51-54</a></li>
-                        <li><a href="#!" class="link link__a_w">+7 (915) 576 4500</a></li>
-                        <li><a href="#!" class="link link__a_w">info@cafelemoni.ru</a></li>
+                        <li><a href="tel:+74722505154" class="link link__a_w">+7 (4722) 50-51-54</a></li>
+                        <li><a href="tel:+7915)5764500" class="link link__a_w">+7 (915) 576 4500</a></li>
+                        <li><a href="mailto:info@cafelemoni.ru" class="link link__a_w">info@cafelemoni.ru</a></li>
                     </ul>
                 </div>
             </div>

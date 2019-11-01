@@ -3,3 +3,24 @@
 .optDesabled {
     display: none;
 }
+
+.dvizh-cart-show-options__circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 0.5em;
+}
+
+.dvizh-cart-show-options__img {
+    width: 64px;
+    height: 64px;
+    border-radius: 0.5em;
+}
+
+.dvizh-cart-row__img {
+    width: 98px;
+    height: 98px;
+}
+
+.dvizh-cart-row {
+    border-bottom: none;
+}
