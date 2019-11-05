@@ -17,10 +17,99 @@
 }
 
 .dvizh-cart-row__img {
-    width: 98px;
-    height: 98px;
+    width: 185px;
+    height: 185px;
 }
 
 .dvizh-cart-row {
     border-bottom: none;
 }
+
+input[disabled] {
+    background: transparent !important;
+}
+
+.category-cake-box:hover {
+    cursor: inherit;
+}
+
+.CartInformerBox {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    background: #8f5541;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    font-size: 10px;
+    transform: translateY(-10px);
+    transition: all .3s ease-in-out;
+}
+
+.additional-modules__cart a {
+    text-decoration: none;
+}
+
+
+.dvizh-cart-row  {
+    /*background: #f1f0f0;*/
+}
+
+
+.dvizh-cart-row .mt-15 {
+    background: transparent;
+}
+
+
+.additional-modules__cart:hover .CartInformerBox {
+    color: #8f5541;
+    background: #fff;
+    border: 1px solid #8f5541;
+}
+
+.cart-goods__total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 90px;
+}
+
+
+.global-form__select::before {
+    top: 48px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,7 +11,8 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
-class DelivCake extends Controller
+// страница доставки "описание"
+class DelivCakeController extends Controller
 {
 
     public $layout = 'base';

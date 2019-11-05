@@ -27,6 +27,8 @@ class CheckOutController extends Controller
 
     public $layout = 'base';
 
+
+    
     public  function actionIndex(){
 
         

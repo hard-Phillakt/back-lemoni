@@ -1,38 +1,22 @@
+<?php
 
+
+use app\widgets\sidebar\Sidebar;
+
+?>
 
 <section class="contact mt-90">
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-3">
+            <div class="col-lg-2">
 
-                <ul class="news-sidebar mt-35">
-                    <li>
-                        <a href="#!" class="link link__a">О компании</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Новости компании</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Заказ и оплата</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Доставка и прием торта</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Отзывы</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Контакты</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Мастер-классы</a>
-                    </li>
-                </ul>
+                <!-- Sidebar -->
+                <?=  Sidebar::widget(); ?>
 
             </div>
 
-            <div class="col-lg-8 col-lg-offset-1">
+            <div class="col-lg-9 col-lg-offset-1">
 
                 <h1 class="title title__h1 opac__07">Контакты</h1>
 

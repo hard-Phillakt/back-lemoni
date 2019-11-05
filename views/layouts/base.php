@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\BaseAsset;
-
+use app\widgets\customcart\CartInformer;
 
 BaseAsset::register($this);
 ?>
@@ -70,7 +70,12 @@ BaseAsset::register($this);
                                 </div>
 
                                 <div class="additional-modules__cart">
-                                    <a href="/check-out"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
+                                    <a href="/check-out">
+                                        <img src="../img/icons/black/icon-cart.svg" alt="icon-cart">
+                                        <span class="CartInformerBox">
+                                            <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
 
@@ -92,7 +97,7 @@ BaseAsset::register($this);
                                     <a href="/cake-goods" class="link link__a">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candie-bar" class="link link__a">Candy Bar</a>
+                                    <a href="/candie-goods" class="link link__a">Candy bar</a>
                                 </li>
                                 <!--                                <li>-->
                                 <!--                                    <a href="#!" class="link link__a">Конструктор тортов</a>-->
@@ -178,7 +183,11 @@ BaseAsset::register($this);
                             </div>
 
                             <div class="additional-modules__cart">
-                                <a href="/check-out"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart"></a>
+                                <a href="/check-out"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart">
+                                    <span class="CartInformerBox">
+                                        <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
+                                    </span>
+                                </a>
                             </div>
                         </div>
 
@@ -215,15 +224,15 @@ BaseAsset::register($this);
 
                 <div class="col-lg-2">
                     <ul class="footer__ul">
-                        <li><a href="/cale-goods" class="link link__a_w">Торты</a></li>
-                        <li><a href="/candie-bar" class="link link__a_w">CandyBar</a></li>
-<!--                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>-->
+                        <li><a href="/cake-goods" class="link link__a_w">Торты</a></li>
+                        <li><a href="/candie-goods" class="link link__a_w">Candy bar</a></li>
+                        <!--                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>-->
                     </ul>
                 </div>
 
                 <div class="col-lg-3">
                     <ul class="footer__ul">
-<!--                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>-->
+                        <!--                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>-->
                         <li><a href="/master-class" class="link link__a_w">Мастер-классы</a></li>
                         <li><a href="/news" class="link link__a_w">Новости</a></li>
                         <li><a href="/review" class="link link__a_w">Отзывы</a></li>

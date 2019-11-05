@@ -23,14 +23,14 @@ use app\widgets\customcart\DeleteButton;
 use app\widgets\customcart\ChangeCount;
 use app\widgets\customcart\ChangeOptions;
 
-
 use yii\helpers\Html;
 use yii\helpers\Url;
 
 //debug($model);
+
+Url::remember();
+
 ?>
-
-
 
 
 <!-- breadcrumbs-line -->
@@ -38,8 +38,7 @@ use yii\helpers\Url;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная - Торты -</a><span> Фруктовый букет №23
-                    </span>
+                <a href="/" class="breadcrumbs-line__active">Главная</a> <span> - <?= $model['lm_title']; ?></span>
             </div>
         </div>
     </div>
@@ -51,7 +50,7 @@ use yii\helpers\Url;
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-35">
-                    <a class="button button__circle" href="#!">
+                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>-goods">
                         <img src="../img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
 
@@ -141,6 +140,7 @@ use yii\helpers\Url;
                 <?php
 
 //                debug($model);die;
+                
                 ?>
 
                 <div class="mt-35">
@@ -154,7 +154,9 @@ use yii\helpers\Url;
                     ]) ?>
 
                     <div class="mt-35">
-                        <?= TruncateButton::widget(['text' => 'Х']); ?>
+
+                        <?= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
+
                     </div>
                 </div>
 

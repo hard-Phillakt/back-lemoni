@@ -61,7 +61,7 @@ custom_class.onclick = function (e) {
     // началная сумма
     var priceElement = parseInt(cardGoods__price);
 
-    console.log(priceElement);
+
 
     var arr_options = {};
     var item_summ = null;
@@ -70,11 +70,11 @@ custom_class.onclick = function (e) {
 
         console.log(item.children[0].checked);
 
+        console.log('priceElement :', priceElement);
+
         if (item.children[0].checked) {
 
-
             console.log(item.children[0].value);
-
 
             // у ключа опции title-50 разрезаю его на массив ["title", "50"]
             item_price = item.children[0].value.split('-')[1];
@@ -99,7 +99,7 @@ custom_class.onclick = function (e) {
 
             custom_class.dataset.options = JSON.stringify(arr_options);
 
-            // У кнопки "заказать" есть data-price нужно запихнуть сумму товара из всех опций.
+            // У кнопки "заказать" есть data-price нужно положить сумму товара из всех опций.
             custom_class.dataset.price = item_summ + priceElement;
 
             // custom_class.dataset.comment = 'img-test.png';
@@ -120,6 +120,7 @@ custom_class.onclick = function (e) {
             // }, 100);
         }
 
+        // custom_class.dataset.price = priceElement;
 
     });
 

@@ -5,9 +5,10 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-//    debug($model);
+//    debug($data_cake);
 
-//    debug($filter);die;
+//    debug($filter);
+Url::remember();
 
 ?>
 
@@ -44,11 +45,11 @@ use yii\helpers\Url;
                     <!-- filter kg -->
                     <div class="filter-sidebar-catalog__box">
 
-                        <h5 class="title title__h5 mt-35">
-                            Цена за килограм
-                        </h5>
+                        <!--                        <h5 class="title title__h5 mt-35">-->
+                        <!--                            Цена за килограм-->
+                        <!--                        </h5>-->
 
-                        <?= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
+                        <?= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
 
                         <!--                        <input type="text" class="global-form__input mt-35" placeholder="Максимум 6000 руб/кг">-->
 
@@ -62,7 +63,7 @@ use yii\helpers\Url;
                             Тип продукта
                         </h5>
 
-                        <div class="filter-sidebar-catalog__box_ul global-form mt-35">
+                        <div class="filter-sidebar-catalog__box_ul global-form mt-15">
 
                             <? //= $form->field($filter, 'type[]')->checkboxList($filter['type'], ['class' => 'filter-sidebar-catalog__box_ul global-form'])->label('Тип продукта'); ?>
 
@@ -104,11 +105,27 @@ use yii\helpers\Url;
                     <!-- filter leavel -->
                     <div class="filter-sidebar-catalog__box mt-35">
 
-                        <h5 class="title title__h5">Колличество уровней</h5>
+                        <!--                        <h5 class="title title__h5">Колличество уровней</h5>-->
 
                         <div class="global-form__select mt-35">
 
-                            <?= $form->field($filter, 'count_level')->dropDownList($filter['count_level'], ['class' => 'global-form__input'])->label(false) ?>
+                            <div class="form-group field-filtercake-count_level">
+                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество уровней</label>
+                                <select id="filtercake-count_level" class="global-form__input" name="FilterCake[count_level]">
+                                    <option value="1" selected="">1</option>
+                                    <option value="2" selected="">2</option>
+                                    <option value="3" selected="">3</option>
+                                    <option value="4" selected="">4</option>
+                                    <option value="5" selected="">5</option>
+                                    <option value="" selected="">...</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
+
+<!--                            --><?//= $form->field($filter, 'count_level')
+//                                ->dropDownList($filter['count_level'], ['class' => 'global-form__input'])
+//                                ->label('Колличество уровней', ['class' => 'title title__h5 pb-15']) ?>
 
                             <!--                            <select name="" id="">-->
                             <!--                                <option value="1">test</option>-->
@@ -121,12 +138,26 @@ use yii\helpers\Url;
                     <!-- filter subjects -->
                     <div class="filter-sidebar-catalog__box mt-35">
 
-                        <h5 class="title title__h5">Тематическое оформление</h5>
+                        <!--                        <h5 class="title title__h5">Тематическое оформление</h5>-->
 
                         <div class="global-form__select mt-35">
 
+<!--                            --><?//= $form->field($filter, 'subjects')
+//                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
+//                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
 
-                            <?= $form->field($filter, 'subjects')->dropDownList($filter['subjects'], ['class' => 'global-form__input'])->label(false) ?>
+
+                            <div class="form-group field-filtercake-subjects">
+                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое оформление</label>
+                                <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">
+                                    <option value="Свадебный торт" selected="">Свадебный торт</option>
+                                    <option value="День рождения" selected="">День рождения</option>
+                                    <option value="Юбилей" selected="">Юбилей</option>
+                                    <option value="" selected="">...</option>
+                                </select>
+
+                                <div class="help-block"></div>
+                            </div>
 
                             <!--                            <select name="" id="">-->
                             <!--                                <option value="1">test</option>-->
@@ -236,7 +267,7 @@ use yii\helpers\Url;
                                        style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/card/<?php $value['lm_alter_card']; ?>?id=<?php $value['id']; ?>"
+                                        <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>

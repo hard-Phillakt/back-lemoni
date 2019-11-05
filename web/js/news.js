@@ -9,13 +9,13 @@ var myModal = document.querySelector('#myModal .modal-body');
 
 $(document).ready(function () {
 
-
     for (var i = 0; i < newsBoxContent_link.length; i++) {
         
         
         if(newsBoxContent_link[i].tagName != 'SPAN'){
 
-            newsBoxContent_link[i].onclick = function () {
+            newsBoxContent_link[i].onclick = function (e) {
+                e.preventDefault();
 
                 if (this.children[0].innerHTML) {
     
@@ -34,7 +34,8 @@ $(document).ready(function () {
 
             console.log(newsBoxContent_linkA);
 
-            newsBoxContent_linkA[i].onclick = function () {
+            newsBoxContent_linkA[i].onclick = function (e) {
+                e.preventDefault();
 
                 if (this.children[0].innerHTML) {
 

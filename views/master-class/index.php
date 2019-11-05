@@ -1,3 +1,9 @@
+<?php
+
+
+use app\widgets\sidebar\Sidebar;
+
+?>
 
 <section class="news mt-90">
     <div class="container">
@@ -5,35 +11,14 @@
 
             <div class="col-lg-3">
 
-                <ul class="news-sidebar mt-35">
-                    <li>
-                        <a href="#!" class="link link__a">О компании</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Новости компании</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Заказ и оплата</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Доставка и прием торта</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Отзывы</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Контакты</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="link link__a">Мастер-классы</a>
-                    </li>
-                </ul>
+                <!-- Sidebar -->
+                <?=  Sidebar::widget(); ?>
 
             </div>
 
             <div class="col-lg-8 col-lg-offset-1">
 
-                <h1 class="title title__h1 opac__07">Новости компании</h1>
+                <h1 class="title title__h1 opac__07">Мастер-классы</h1>
 
                 <div class="news-box">
 
@@ -239,3 +224,26 @@
         </div>
     </div>
 </section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <img src="./img/icons/Button_Close.svg" alt="Button_Close">
+                </button>
+            </div>
+
+            <div class="modal-body-wrapp">
+                <div class="modal-body">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

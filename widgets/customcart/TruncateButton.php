@@ -10,7 +10,8 @@ use yii;
 class TruncateButton extends \yii\base\Widget
 {
     public $text = NULL;
-    public $cssClass = 'btn btn-danger';
+//    public $cssClass = 'btn btn-danger';
+    public $cssClass = 'link link__a';
     public $truncateCartUrl = '/cart/default/truncate';
  
     public function init()

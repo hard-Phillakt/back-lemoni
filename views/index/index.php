@@ -17,10 +17,10 @@
                 <div class="section-cake__module-1 mt-60">
 
                     <p class="desc desc__sm">
-                        Перейти в каталог
+                        <a href="/cake-goods" class="link link__a">Перейти в каталог</a>
                     </p>
 
-                    <a href="#!" class="button button__circle">
+                    <a href="/cake-goods" class="button button__circle">
                         <img src="../img/icons/arrow-right.svg" alt="arrow-right">
                     </a>
 
@@ -42,7 +42,7 @@
                         <div class="category-cake-box__img_1"></div>
                     </div>
                     <h3 class="title title__h3">
-                        Торты
+                        <a href="/cake-goods" class="link link__a">Торты</a>
                     </h3>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         <div class="category-cake-box__img_2"></div>
                     </div>
                     <h3 class="title title__h3">
-                        Пряники
+                        <a href="/candie-bar" class="link link__a">Пряники</a>
                     </h3>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                         <div class="category-cake-box__img_3"></div>
                     </div>
                     <h3 class="title title__h3">
-                        Шадлавы
+                        <a href="/cake-goods" class="link link__a">Шадлавы</a>
                     </h3>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         <div class="category-cake-box__img_4"></div>
                     </div>
                     <h3 class="title title__h3">
-                        Десерты
+                        <a href="/candie-bar" class="link link__a">Десерты</a>
                     </h3>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                         <a href="#!" class="link link__a">Диета</a>
                     </div>
                     <div class="col-lg-6">
-                        <a href="#!" class="link link__a">Собери сам!</a>
+<!--                        <a href="#!" class="link link__a">Собери сам!</a>-->
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@
                         <a href="#!" class="link link__a">Диета</a>
                     </div>
                     <div class="col-lg-6">
-                        <a href="#!" class="link link__a">Собери сам!</a>
+<!--                        <a href="#!" class="link link__a">Собери сам!</a>-->
                     </div>
                 </div>
 

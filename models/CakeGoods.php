@@ -49,48 +49,48 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
         return [
             '0' => [
                 'name' => 'Колличество гостей:',
-                'variants' => ['-', '5', '+']
+                'variants' => ['-', '1', '+']
             ],
             '1' => [
                 'name' => 'Выберите цвет глазури:',
                 'variants' => [
-                    '#C76445;-10-glaze_test' => '',
-                    '#F5ECDF;-20-glaze_test' => '',
-                    '#C75A5A;-30-glaze_test' => '',
-                    '#8CA5E3;-40-glaze_test' => '',
-                    '#8CE3A5;-50-glaze_test' => '',
-                    '#E38CCB;-60-glaze_test' => '',
+                    '#C76445;-10.00-glaze_test' => '',
+                    '#F5ECDF;-20.00-glaze_test' => '',
+                    '#C75A5A;-30.00-glaze_test' => '',
+                    '#8CA5E3;-40.00-glaze_test' => '',
+                    '#8CE3A5;-50.00-glaze_test' => '',
+                    '#E38CCB;-60.00-glaze_test' => '',
                 ]
             ],
             '2' => [
                 'name' => 'Выберите декор:',
                 'variants' => [
-                    'decore__1_check-10-decor_test' => '',
-                    'decore__1_check-20-decor_test' => '',
-                    'decore__1_check-30-decor_test' => '',
-                    'decore__1_check-40-decor_test' => '',
+                    'decore__1_check-10.00-decor_test' => '',
+                    'decore__1_check-20.00-decor_test' => '',
+                    'decore__1_check-30.00-decor_test' => '',
+                    'decore__1_check-40.00-decor_test' => '',
                 ]
             ],
             '3' => [
                 'name' => 'Добавьте поздравительную надпись:',
-                'variants' => ['inscription-0' => '',]
+                'variants' => ['inscription-10-nadpis' => '',]
             ],
             'four-4' => [
                 'name' => 'Формат поздравительной надписи:',
                 'variants' => [
-                    'optString__0_check-10-cream_test' => '',
-                    'optString__1_check-20-gingerbread_test' => '',
-                    'optString__2_check-30-topper_test' => '',
-                    'optString__3_check-40-postcard_test' => '',
+                    'optString__0_check-10.00-cream_test' => '',
+                    'optString__1_check-20.00-gingerbread_test' => '',
+                    'optString__2_check-30.00-topper_test' => '',
+                    'optString__3_check-40.00-postcard_test' => '',
                 ]
             ],
             '5' => [
                 'name' => 'Выберите упаковку:',
                 'variants' => [
-                    'decore__1_check-10-packaging_test' => '',
-                    'decore__1_check-20-packaging_test' => '',
-                    'decore__1_check-30-packaging_test' => '',
-                    'decore__1_check-40-packaging_test' => '',
+                    'optString__5_check-10.00-packaging_test' => '',
+                    'optString__5_check-20.00-packaging_test' => '',
+                    'optString__5_check-30.00-packaging_test' => '',
+                    'optString__5_check-40.00-packaging_test' => '',
                 ]
             ],
         ];

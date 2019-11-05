@@ -13,6 +13,7 @@ use app\widgets\customcart\ChangeCount;
 use app\widgets\customcart\ChangeOptions;
 
 
+
 $this->registerJsFile('/js/checkout.js');
 
 ?>
@@ -22,15 +23,12 @@ $this->registerJsFile('/js/checkout.js');
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="/" class="breadcrumbs-line__active">Главная -</a><span> корзина
+                <a href="/" class="breadcrumbs-line__active">Главная -</a><span> Корзина
                     </span>
             </div>
         </div>
     </div>
 </section>
-
-
-
 
 
 <!-- cart-goods -->
@@ -50,7 +48,7 @@ $this->registerJsFile('/js/checkout.js');
         <!-- под товары разметка -->
         <div class="row mt-35">
             <div class="col-lg-5">
-                <a class="button button__circle" href="#!">
+                <a class="button button__circle" href="<?= Url::previous();?>">
                     <img src="./img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                 </a>
             </div>
@@ -65,7 +63,6 @@ $this->registerJsFile('/js/checkout.js');
 
             <div class="col-lg-2">
                 <div class="">
-
                     <h4 class="title title__h4">Кол-во</h4>
                 </div>
             </div>
@@ -77,10 +74,8 @@ $this->registerJsFile('/js/checkout.js');
 
             <div class="col-lg-12">
 
-
-<!--                выводим список товаров из корзины    -->
+<!--            выводим список товаров из корзины    -->
                 <?= ElementsList::widget(['type' => ElementsList::TYPE_FULL]);?>
-
 
             </div>
 
@@ -91,7 +86,9 @@ $this->registerJsFile('/js/checkout.js');
             <div class="col-lg-5 col-lg-offset-7">
                 <div class="mt-35">
 <!--                    <h3 class="title title__h1">Итого: <span>1 800</span> руб</h3>-->
-                    <h3 class="title title__h1">Итого: <?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']); ?> руб</h3>
+                    <div class="cart-goods__total">
+                        <h3 class="title title__h1">Итого: <?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']); ?> руб</h3>
+                    </div>
 
                 </div>
             </div>

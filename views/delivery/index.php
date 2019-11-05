@@ -20,7 +20,7 @@ use app\widgets\customcart\ChangeOptions;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная -</a><span> получение товара
+                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Доставка
                     </span>
             </div>
         </div>
@@ -76,7 +76,7 @@ use app\widgets\customcart\ChangeOptions;
 
                             <p class="mt-35">
                                 <label>Ваше имя</label>
-                                <input type="text" class="global-form__input">
+                                <input type="text" class="global-form__input" placeholder="Укажите имя">
                             </p>
 
                             <p class="mt-35">
@@ -85,29 +85,30 @@ use app\widgets\customcart\ChangeOptions;
                             </p>
 
                             <div class="global-form__select mt-35">
+                                <label class="title title__h5 pb-15">Город</label>
                                 <select name="" id="">
-                                    <option value="1">test-1</option>
-                                    <option value="1">test-2</option>
-                                    <option value="1">test-3</option>
+                                    <option value="belgorod">Белгород</option>
+                                    <option value="st-oskol">Ст. Оскол</option>
+                                    <option value="voronez">Вронеж</option>
                                 </select>
                             </div>
 
                             <p class="mt-35">
                                 <label>Улица</label>
-                                <input type="text" class="global-form__input" placeholder="+7">
+                                <input type="text" class="global-form__input" placeholder="Укажите улицу">
                             </p>
 
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p class="mt-35">
                                         <label>Дом</label>
-                                        <input type="text" class="global-form__input">
+                                        <input type="text" class="global-form__input" placeholder="№">
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
                                     <p class="mt-35">
-                                        <label>квартира</label>
-                                        <input type="text" class="global-form__input">
+                                        <label>Квартира</label>
+                                        <input type="text" class="global-form__input" placeholder="№">
                                     </p>
                                 </div>
                             </div>

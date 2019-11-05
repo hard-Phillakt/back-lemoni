@@ -52,6 +52,7 @@ function GlogalOptionsCard() {
         // dvizhOption_label[count[1]].children[0].disabled = true;
         dvizhOption_label[count[1]].children[0].classList.add('optGuests__input');
         dvizhOption_label[count[1]].children[0].value = 5;
+        dvizhOption_label[count[1]].children[0].disabled = true;
 
 
         dvizhOption_label[count[2]].children[0].setAttribute('type', 'button');
@@ -67,43 +68,34 @@ function GlogalOptionsCard() {
         // началная сумма
         var price = parseInt(cardGoods__price.innerText);
 
-        // текущая сумма
-        var summ = 0;
+
 
         if (cardGoods__price) {
 
+            // делаем выборку кнопки "В корзину"
+            var custom_class = document.querySelector('.custom_class');
 
 
             // мнимальное колличество гостей
             var guest = 5;
             var total = 0;
-
+            // текущая сумма
+            var summ = 0;
 
             // декримент
             left_btn.onclick = function (e) {
                 e.preventDefault();
 
-                var custom_class = document.querySelector('.custom_class');
+                if(dvizhOption_label[count[1]].children[0].value > 5){
+                    summ -= price / 100 * 20;
+                    total = price + summ;
+                    guest--;
 
+                    console.log(total);
+                    cardGoods__price.innerHTML = total;
 
-                summ -= price / 100 * 20;
-
-                console.log(summ);
-
-                total = price + summ;
-
-                console.log('summ: ', total);
-
-                console.log(cardGoods__price.innerHTML = total);
-
-                cardGoods__price.innerHTML = total >= price ? total : price;
-
-                custom_class.dataset.price = total >= price ? total : price;
-
-                guest--;
-
-                // декримент не меньше 5
-                if (dvizhOption_label[count[1]].children[0].value > 5) {
+                    // добавляю в дата атрибут сумму после декримента
+                    custom_class.dataset.price = total;
                     dvizhOption_label[count[1]].children[0].value = guest;
                 }
 
@@ -114,28 +106,16 @@ function GlogalOptionsCard() {
             right_btn.onclick = function (e) {
                 e.preventDefault();
 
-                var custom_class = document.querySelector('.custom_class');
-
-
                 summ += price / 100 * 20;
-
-                console.log(summ);
-
                 total = price + summ;
-
-                console.log('summ: ', total);
-
-                console.log(cardGoods__price.innerHTML = total);
-
-                cardGoods__price.innerHTML = total >= price ? total : price;
-
-                custom_class.dataset.price = total;
-
                 guest++;
 
-                // инкремент больше 5
-                dvizhOption_label[count[1]].children[0].value = guest;
+                console.log(total);
+                cardGoods__price.innerHTML = total;
 
+                // добавляю в дата атрибут сумму после инкремент
+                custom_class.dataset.price = total;
+                dvizhOption_label[count[1]].children[0].value = guest;
 
             };
 
@@ -364,7 +344,7 @@ mainCard.optDecore(5, 'optDecore', arrOptDecore5, 'radio', false, null);
 
 
 // дизейблид секцию по порядковому номеру
-// mainCard.optDecore(5, 'optDesabled', arrOptDecore, 'radio', false, null);
+// mainCard.optGuests(0, 'optDesabled', [0, 1, 2]);
 
 
 

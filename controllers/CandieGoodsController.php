@@ -24,7 +24,7 @@ use app\models\FilterCake;
 use app\models\Tag;
 
 //  Создал контроллер тортов
-class CandieBarController extends Controller
+class CandieGoodsController extends Controller
 {
 
     public $layout = 'base';

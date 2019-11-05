@@ -28,6 +28,9 @@ class DeleteButton extends \yii\base\Widget
 
     public function run()
     {
+
+//        debug($this->model->getId());
+
         return Html::a($this->text, [$this->deleteElementUrl],
             [
                 'data-url' => Url::toRoute($this->deleteElementUrl),

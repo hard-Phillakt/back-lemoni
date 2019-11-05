@@ -31,7 +31,6 @@ $item = $cake_goods_item::findOne($model->item_id);
 
 //debug($item)
 
-
 ?>
 
 
@@ -74,7 +73,7 @@ $item = $cake_goods_item::findOne($model->item_id);
 
             <div class="dvizh-cart-row__wrapp-price">
 
-                <!--                <span class="dvizh-cart-element-price3">-->
+<!--            <span class="dvizh-cart-element-price3">-->
                 <? //= $item->lm_price_for_kg; ?><!--.00</span> руб-->
 
                 <?= ElementPrice::widget(['model' => $model]); ?>
@@ -178,7 +177,7 @@ $item = $cake_goods_item::findOne($model->item_id);
             </div>
 
             <div class="col-lg-2">
-                <div class="price-option"><span><?= $arr_options[1]; ?></span>.00 руб</div>
+                <div class="price-option"><span><?= $arr_options[1]; ?></span></div>
             </div>
 
             <div class="col-lg-1 col-lg-offset-2">

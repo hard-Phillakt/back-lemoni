@@ -34,12 +34,13 @@ class CakeGoodsController extends Controller
 
         $query_cake_goods = new CakeGoods();
 
-        $model = $query_cake_goods::find()->with(['tag'])->asArray()->all();
+        $model = $query_cake_goods::find()->asArray()->all();
 
         $filter = new FilterCake();
 
         if ($data_filter = Yii::$app->request->post('FilterCake')) {
 
+//            debug($data_filter);
 
 //            if($data_filter){
 //                echo 'есть контакт';
@@ -47,28 +48,38 @@ class CakeGoodsController extends Controller
 //                debug($data_filter);die;
 //            }
 
+//            $query_cake_goods = new CakeGoods();
 
-            $cake = $query_cake_goods::find()->with(['tag']);
+//            debug($query_cake_goods);
+
+            $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
             $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
+//            $cake->andFilterWhere(['like', 'lm_price_for_kg', 1800]);
 
             if ($data_filter['type']) {
+
                 foreach ($data_filter['type'] as $key => $value) {
 
 //                  2.фильтр по "Тип продукта"
                     $cake->andFilterWhere(['like', 'lm_type', $value]);
 
                 }
+
             }
 
 //          3.фильтр по "Колличество уровней"
-            $cake->andFilterWhere(['like', 'lm_count_level', $data_filter['lm_count_level']]);
+            $cake->andFilterWhere(['like', 'lm_count_level', $data_filter['count_level']]);
 
 //          4.фильтр по "Тематическое оформление"
-            $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['lm_subjects']]);
+            $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['subjects']]);
+
 
             $data_cake = $cake->asArray()->all();
+
+//            debug($data_cake);
+
 
 
 //          5.фильт по "Тегам" пока делаю страницами в место фильтра
@@ -95,6 +106,8 @@ class CakeGoodsController extends Controller
 //            }
 
 
+
+
 //          делаю рендер по фильтрам без тегов
             return $this->render('index', ['data_cake' => $data_cake, 'model' => $model, 'filter' => $filter]);
 
@@ -105,8 +118,7 @@ class CakeGoodsController extends Controller
 
             $model = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
 
-
-//          фильт по готовым подборкам
+//          фильтр по готовым подборкам
             return $this->render('index', ['model' => $model, 'filter' => $filter]);
         }
 
