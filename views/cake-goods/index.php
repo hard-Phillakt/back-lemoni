@@ -112,12 +112,12 @@ Url::remember();
                             <div class="form-group field-filtercake-count_level">
                                 <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество уровней</label>
                                 <select id="filtercake-count_level" class="global-form__input" name="FilterCake[count_level]">
-                                    <option value="1" selected="">1</option>
-                                    <option value="2" selected="">2</option>
-                                    <option value="3" selected="">3</option>
-                                    <option value="4" selected="">4</option>
-                                    <option value="5" selected="">5</option>
-                                    <option value="" selected="">...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="" selected>...</option>
                                 </select>
 
                                 <div class="help-block"></div>
@@ -146,14 +146,13 @@ Url::remember();
 //                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
 //                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
 
-
                             <div class="form-group field-filtercake-subjects">
                                 <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое оформление</label>
                                 <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">
-                                    <option value="Свадебный торт" selected="">Свадебный торт</option>
-                                    <option value="День рождения" selected="">День рождения</option>
-                                    <option value="Юбилей" selected="">Юбилей</option>
-                                    <option value="" selected="">...</option>
+                                    <option value="Свадебный торт">Свадебный торт</option>
+                                    <option value="День рождения">День рождения</option>
+                                    <option value="Юбилей">Юбилей</option>
+                                    <option value="" selected>...</option>
                                 </select>
 
                                 <div class="help-block"></div>

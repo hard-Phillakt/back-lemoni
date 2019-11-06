@@ -45,7 +45,7 @@ use app\widgets\customcart\ChangeOptions;
         <div class="row mt-35">
 
             <div class="col-lg-12">
-                <a class="button button__circle" href="#!"><img src="./img/icons/arrow-right.svg" alt="arrow-right"
+                <a class="button button__circle" href="/check-out"><img src="./img/icons/arrow-right.svg" alt="arrow-right"
                                                                 class="rotate__180"></a>
             </div>
 

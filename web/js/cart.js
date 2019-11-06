@@ -54,78 +54,96 @@ for (var i = 0; i < dvizh_option_label.length; i++) {
 }
 
 
-custom_class.onclick = function (e) {
-    e.preventDefault();
-
-    var cardGoods__price = document.querySelector('.card-goods__price span').innerText;
-    // началная сумма
-    var priceElement = parseInt(cardGoods__price);
+window.onload = function () {
 
 
 
-    var arr_options = {};
-    var item_summ = null;
 
-    dvizh_option_label.forEach(function (item, i) {
+    custom_class.onclick = function (e) {
+        e.preventDefault();
 
-        console.log(item.children[0].checked);
+        var dvizhOption_label = document.querySelectorAll('.optGuests .wrapper-options label')[4].children[0].value;
 
-        console.log('priceElement :', priceElement);
+        var dvizhOption_labelKg = dvizhOption_label.split(' ')[0];
 
-        if (item.children[0].checked) {
-
-            console.log(item.children[0].value);
-
-            // у ключа опции title-50 разрезаю его на массив ["title", "50"]
-            item_price = item.children[0].value.split('-')[1];
-
-            item_summ += parseInt(item_price);
+        console.log('dvizhOption_label: ', dvizhOption_labelKg);
 
 
-            // arr_options[item.children[0].value] = item.innerText;
-
-            // console.log('item.children[0].value :', item.children[0].value);
-            // console.log('item.children[0].value.split', item.children[0].value.split('-')[1]);
-
-            // arr_options[item.children[0].value] = item.children[0].value.split('-')[2];
-            
-            arr_options[i] = item.children[0].value;
-            
-            // arr_options[item.children[0].value];
-
-            // Добавляем объект опций в data-options
-
-            console.log(JSON.stringify(arr_options));
-
-            custom_class.dataset.options = JSON.stringify(arr_options);
-
-            // У кнопки "заказать" есть data-price нужно положить сумму товара из всех опций.
-            custom_class.dataset.price = item_summ + priceElement;
-
-            // custom_class.dataset.comment = 'img-test.png';
-
-            // Костыль для корректного отображения
-            // setTimeout(function () {
-            //     if(custom_class.dataset.options = JSON.stringify(arr_options)){
-            //         window.location.reload(true);
-            //     }
-            // }, 100);
-
-        } else {
-
-            // setTimeout(function () {
-            //     if(custom_class.dataset.price = parseInt(priceElement)){
-            //         window.location.reload(true);
-            //     }
-            // }, 100);
-        }
-
-        // custom_class.dataset.price = priceElement;
-
-    });
+        var cardGoods__price = document.querySelector('.card-goods__price span').innerText;
+        // началная сумма
+        var priceElement = parseInt(cardGoods__price);
 
 
-};
+        var arr_options = {};
+        var item_summ = null;
+
+
+        dvizh_option_label.forEach(function (item, i) {
+
+            console.log(item.children[0].checked);
+
+            console.log('priceElement :', priceElement);
+
+
+            if (item.children[0].checked) {
+
+                console.log(item.children[0].value);
+
+
+                // у ключа опции title-50 разрезаю его на массив ["title", "50"]
+               var item_price = item.children[0].value.split('-')[1];
+
+                item_summ += parseInt(item_price);
+
+
+                // arr_options[item.children[0].value] = item.innerText;
+
+                // console.log('item.children[0].value :', item.children[0].value);
+                // console.log('item.children[0].value.split', item.children[0].value.split('-')[1]);
+
+                // arr_options[item.children[0].value] = item.children[0].value.split('-')[2];
+
+                arr_options[item.children[0].value.split('-')[2]] = item.children[0].value;
+
+                // arr_options[item.children[0].value];
+
+                // Добавляем объект опций в data-options
+
+                console.log(JSON.stringify(arr_options['optGuests_kg'] = dvizhOption_labelKg));
+
+                custom_class.dataset.options = JSON.stringify(arr_options);
+
+                // У кнопки "заказать" есть data-price нужно положить сумму товара из всех опций.
+                custom_class.dataset.price = item_summ + priceElement;
+
+                // custom_class.dataset.comment = 'img-test.png';
+
+                // Костыль для корректного отображения
+                // setTimeout(function () {
+                //     if(custom_class.dataset.options = JSON.stringify(arr_options)){
+                //         window.location.reload(true);
+                //     }
+                // }, 100);
+
+            } else {
+
+                console.log(JSON.stringify(arr_options['optGuests_kg'] = dvizhOption_labelKg));
+
+                custom_class.dataset.options = JSON.stringify(arr_options);
+
+                // setTimeout(function () {
+                //     if(custom_class.dataset.price = parseInt(priceElement)){
+                //         window.location.reload(true);
+                //     }
+                // }, 100);
+            }
+
+            // custom_class.dataset.price = priceElement;
+
+        });
+
+
+    };
 // Скрипты для корзины end
 
 
@@ -161,3 +179,4 @@ custom_class.onclick = function (e) {
 //
 // });
 
+}

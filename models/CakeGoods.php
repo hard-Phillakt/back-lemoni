@@ -49,7 +49,7 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
         return [
             '0' => [
                 'name' => 'Колличество гостей:',
-                'variants' => ['-', '1', '+']
+                'variants' => ['-', '5', '+', '-', '1', '+']
             ],
             '1' => [
                 'name' => 'Выберите цвет глазури:',

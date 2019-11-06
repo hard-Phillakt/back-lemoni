@@ -93,7 +93,15 @@ $this->registerJsFile('/js/checkout.js');
                 </div>
             </div>
 
-            <div class="col-lg-2 col-lg-offset-10">
+
+            <div class="col-lg-2 col-lg-offset-8">
+                <div class="mt-35">
+
+                    <?= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
+
+                </div>
+            </div>
+            <div class="col-lg-2">
                 <div class="mt-35">
                     <?= Html::a('Оформить заказ', Url::to('/delivery'), ['class' => 'button button__rectangle']); ?>
 <!--                    <a href="#!" class="button button__rectangle">Оформить заказ</a>-->

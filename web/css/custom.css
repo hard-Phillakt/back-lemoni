@@ -5,14 +5,14 @@
 }
 
 .dvizh-cart-show-options__circle {
-    width: 64px;
-    height: 64px;
+    width: 84px;
+    height: 84px;
     border-radius: 0.5em;
 }
 
 .dvizh-cart-show-options__img {
-    width: 64px;
-    height: 64px;
+    width: 84px;
+    height: 84px;
     border-radius: 0.5em;
 }
 
@@ -77,6 +77,10 @@ input[disabled] {
 
 .global-form__select::before {
     top: 48px;
+}
+
+.optGuests__input {
+    width: 90px !important;
 }
 
 

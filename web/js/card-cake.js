@@ -40,34 +40,30 @@ function GlogalOptionsCard() {
         // колекции lable из боксов (выборка по боксу)
         var dvizhOption_label = document.querySelectorAll('.dvizh-option')[box_count].children[1].children;
 
-        dvizhOption_label[count[0]].children[0].setAttribute('type', 'button');
-        dvizhOption_label[count[0]].children[0].setAttribute('value', '-');
 
-        // декремент
-        // console.log(dvizhOption_label[count[0]].children[0]);
+
+        // декремент по гостям
         var left_btn = dvizhOption_label[count[0]].children[0];
+            left_btn.setAttribute('type', 'button');
+            left_btn.setAttribute('value', '-');
 
+        var dvizhOption_inputGuests = dvizhOption_label[count[1]].children[0];
+            dvizhOption_inputGuests.setAttribute('type', 'text');
+            dvizhOption_inputGuests.classList.add('optGuests__input');
+            dvizhOption_inputGuests.value = 5;
+            dvizhOption_inputGuests.disabled = true;
 
-        dvizhOption_label[count[1]].children[0].setAttribute('type', 'text');
-        // dvizhOption_label[count[1]].children[0].disabled = true;
-        dvizhOption_label[count[1]].children[0].classList.add('optGuests__input');
-        dvizhOption_label[count[1]].children[0].value = 5;
-        dvizhOption_label[count[1]].children[0].disabled = true;
-
-
-        dvizhOption_label[count[2]].children[0].setAttribute('type', 'button');
-        dvizhOption_label[count[2]].children[0].setAttribute('value', '+');
-
-        // инкримент
-        // console.log(dvizhOption_label[count[2]].children[0]);
+        // инкримент по гостям
         var right_btn = dvizhOption_label[count[2]].children[0];
+            right_btn.setAttribute('type', 'button');
+            right_btn.setAttribute('value', '+');
+
 
 
         // делаем выборку цены товара
         var cardGoods__price = document.querySelector('.card-goods__price span');
         // началная сумма
         var price = parseInt(cardGoods__price.innerText);
-
 
 
         if (cardGoods__price) {
@@ -82,11 +78,13 @@ function GlogalOptionsCard() {
             // текущая сумма
             var summ = 0;
 
-            // декримент
-            left_btn.onclick = function (e) {
-                e.preventDefault();
+            //текущий вес в кг
+            var kgTotal = 1;
 
-                if(dvizhOption_label[count[1]].children[0].value > 5){
+
+            // function декримент
+            function rightBtnDecriment() {
+                if (dvizhOption_inputGuests.value > 5) {
                     summ -= price / 100 * 20;
                     total = price + summ;
                     guest--;
@@ -96,16 +94,27 @@ function GlogalOptionsCard() {
 
                     // добавляю в дата атрибут сумму после декримента
                     custom_class.dataset.price = total;
-                    dvizhOption_label[count[1]].children[0].value = guest;
-                }
+                    dvizhOption_inputGuests.value = guest;
 
+                    // уменьшаю кг в value
+                    kgTotal -= .20;
+
+                    // toFixed фиксирую шлак
+                    dvizhOption_inputKg.value = kgTotal.toFixed(2) + ' кг';
+
+                    console.log(kgTotal);
+                }
+            }
+            // декримент
+            left_btn.onclick = function (e) {
+                e.preventDefault();
+
+                rightBtnDecriment();
             };
 
 
-            // инкремент
-            right_btn.onclick = function (e) {
-                e.preventDefault();
-
+            // function инкремент
+            function rightBtnIncrement() {
                 summ += price / 100 * 20;
                 total = price + summ;
                 guest++;
@@ -115,11 +124,64 @@ function GlogalOptionsCard() {
 
                 // добавляю в дата атрибут сумму после инкремент
                 custom_class.dataset.price = total;
-                dvizhOption_label[count[1]].children[0].value = guest;
+                dvizhOption_inputGuests.value = guest;
 
+
+                // увеличиваю кг в value
+                kgTotal += .20;
+
+                // toFixed фиксирую шлак
+                dvizhOption_inputKg.value = kgTotal.toFixed(2) + ' кг';
+
+                console.log(kgTotal);
+            }
+            // инкремент
+            right_btn.onclick = function (e) {
+                e.preventDefault();
+
+                rightBtnIncrement();
             };
 
         }
+
+
+        // декремент по кг
+        var left_btnKg = dvizhOption_label[count[3]].children[0];
+            left_btnKg.setAttribute('type', 'button');
+            left_btnKg.setAttribute('value', '-');
+
+
+        var dvizhOption_inputKg = dvizhOption_label[count[4]].children[0];
+            dvizhOption_inputKg.setAttribute('type', 'text');
+            dvizhOption_inputKg.classList.add('optGuests__input');
+            dvizhOption_inputKg.value = 1 + ' кг';
+            dvizhOption_inputKg.disabled = true;
+
+
+        // инкримент по кг
+        var right_btnKg = dvizhOption_label[count[5]].children[0];
+            right_btnKg.setAttribute('type', 'button');
+            right_btnKg.setAttribute('value', '+');
+
+
+        if(dvizhOption_inputKg){
+            // декремент по кг
+            left_btnKg.onclick = function (e) {
+                e.preventDefault();
+
+                // function декримент
+                rightBtnDecriment();
+            };
+
+            // инкримент по кг
+            right_btnKg.onclick = function (e) {
+                e.preventDefault();
+
+                // function инкремент
+                rightBtnIncrement();
+            };
+        }
+
 
 
     };
@@ -325,7 +387,7 @@ var mainCard = new GlogalOptionsCard();
 // удаление опций: class - optDesabled
 
 // Колличество гостей:
-mainCard.optGuests(0, 'optGuests', [0, 1, 2]);
+mainCard.optGuests(0, 'optGuests', [0, 1, 2, 3, 4, 5]);
 
 // Выберите цвет глазури:
 mainCard.optGlaze(1, 'optGlaze', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB']);

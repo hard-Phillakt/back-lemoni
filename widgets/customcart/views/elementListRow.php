@@ -17,8 +17,6 @@ use yii\helpers\Url;
 use yii\widgets\Pjax;
 
 
-
-
 //debug($options);
 
 //debug($model);
@@ -66,14 +64,30 @@ $item = $cake_goods_item::findOne($model->item_id);
         </div>
 
         <div class="col-lg-2">
-            <span><?= $item->lm_weight; ?></span> кг
+
+            <!-- Options Kg start -->
+            <?php
+
+
+            if ($options):foreach ($options as $key => $value):?>
+
+
+                <?= $key == 'optGuests_kg' ? '<span>' . $value . '</span> кг' : false; ?>
+
+
+            <?php endforeach; ?>
+
+            <?php endif; ?>
+
+            <!-- Options Kg end -->
+
         </div>
 
         <div class="col-xs-2">
 
             <div class="dvizh-cart-row__wrapp-price">
 
-<!--            <span class="dvizh-cart-element-price3">-->
+                <!--            <span class="dvizh-cart-element-price3">-->
                 <? //= $item->lm_price_for_kg; ?><!--.00</span> руб-->
 
                 <?= ElementPrice::widget(['model' => $model]); ?>
@@ -121,73 +135,71 @@ $item = $cake_goods_item::findOne($model->item_id);
     </div>
 
 
-
-<!-- Options start -->
+    <!-- Options start -->
     <?php
 
 
-    if($options):
+    //    debug($options);
 
-    foreach ($options as $key => $value):
+    if ($options):
 
+        foreach ($options as $key => $value):
 
-//        echo $value;
+            $array_data = [$value];
 
-        $array_data = [
-            $value
-        ];
+            $arr_options = explode('-', $value);
 
-        $arr_options = explode('-', $value);
+//          фильтрую опции по ключам
+            if ($key != 'optGuests_kg'): ?>
 
-//        debug($arr_options);die;
-        ?>
+                <div class="row mt-15">
+                    <div class="col-lg-6 col-lg-offset-1">
+                        <div class="dvizh-cart-show-options">
 
-        <div class="row mt-15">
-            <div class="col-lg-6 col-lg-offset-1">
-                <div class="dvizh-cart-show-options">
+                            <div class="box-option">
 
-                    <div class="box-option">
+                                <?php
 
-                        <?php
+                                //                      делаю проверку на глазурь
+                                if ($arr_options[0][0] == '#'): ?>
 
-//                      делаю проверку на глазурь
-                        if ($arr_options[0][0] == '#'): ?>
+                                    <div class="dvizh-cart-show-options__circle mr-30"
+                                         style="background: <?= $arr_options[0]; ?>"></div>
 
-                            <div class="dvizh-cart-show-options__circle mr-30"
-                                 style="background: <?= $arr_options[0]; ?>"></div>
+                                    <h5 class="title title__h4"><?= $arr_options[2]; ?></h5>
 
-                            <h5 class="title title__h4"><?= $arr_options[2]; ?></h5>
+                                <?php else: ?>
 
-                        <?php else: ?>
+                                    <div class="dvizh-cart-show-options__img mr-30"
+                                         style="background: url(./img/card-opt/<?= $arr_options[0] ?>.png);">
+                                        <!-- style="background: url(./img/goods/cake/cake__1.png);"> -->
 
-                            <div class="dvizh-cart-show-options__img mr-30"
-                                 style="background: url(./img/card-opt/<?= $arr_options[0] ?>.png);">
-                                <!-- style="background: url(./img/goods/cake/cake__1.png);"> -->
+                                    </div>
+
+                                    <h5 class="title title__h4"><?= $arr_options[2]; ?></h5>
+                                    <!--                            <h5 class="title title__h4">Топер “День рождения”</h5>-->
+
+                                <?php endif; ?>
 
                             </div>
 
-                            <h5 class="title title__h4"><?= $arr_options[2]; ?></h5>
-<!--                            <h5 class="title title__h4">Топер “День рождения”</h5>-->
+                        </div>
+                    </div>
 
-                        <?php endif; ?>
+                    <div class="col-lg-2">
+                        <div class="price-option"><span><?= $arr_options[1]; ?></span></div>
+                    </div>
 
+                    <div class="col-lg-1 col-lg-offset-2">
+                        <!-- сделаю на потом (в беке методы уже сделаны для удаления опций) -->
+                        <!--            <span class="delete-option" data-option="title-50" data-id="3">╳</span>-->
                     </div>
 
                 </div>
-            </div>
 
-            <div class="col-lg-2">
-                <div class="price-option"><span><?= $arr_options[1]; ?></span></div>
-            </div>
+            <?php endif; ?>
 
-            <div class="col-lg-1 col-lg-offset-2">
-                <!-- сделаю на потом (в беке методы уже сделаны для удаления опций) -->
-<!--            <span class="delete-option" data-option="title-50" data-id="3">╳</span>-->
-            </div>
-
-        </div>
-
-    <?php endforeach; ?>
+        <?php endforeach; ?>
 
     <?php endif; ?>
 
@@ -195,51 +207,49 @@ $item = $cake_goods_item::findOne($model->item_id);
 </li>
 
 
+<!-- Options by cart deafult -->
 
-
-    <!-- Options by cart deafult -->
-
-    <!--    <div class="row">-->
-    <!--        <div class="col-lg-8 col-lg-offset-1">-->
-    <!--            --><?php
-    //
-    //            $canonical_url = Url::canonical();
-    //
-    //            if ($options) {
-    //
-    ////              $productOptions = '';
-    //
-    //                $id_goods = $model->id;
-    //
-    //                foreach ($options as $optionId => $valueId) {
-    //
-    ////                    if ($optionData = $allOptions[$optionId]) {
-    ////                        $option = $optionData['name'];
-    ////                        $value = $optionData['variants'][$valueId];
-    ////                        $productOptions .= Html::tag('div', Html::tag('strong', $option) . ':' . $value);
-    ////                    }
-    //
-    ////                    debug($optionId);
-    //
-    //                    $inc = $valueId;
-    //
-    //                    $arr = [
-    //                        $id_goods => $optionId
-    //                    ];
-    //
-    //                    $json = json_encode($arr);
-    //
-    //                    $price = explode('-', $optionId);
-    //
-    ////                    debug($price);die;
-    //
-    //                    $productOptions .= Html::tag('div class="box-option" ', $optionId . ':' . $valueId . '<span class="price-option">');
-    ////                  $productOptions .= Html::tag('div class="box-option" ', $optionId . ':' . $valueId . '<span class="price-option">' . $price[1] . '</span>' . '<span class="delete-option" data-option="' . $optionId . '" data-id="' . $model->getId() . '">╳');
-    //
-    //                }
-    //
-    //                echo Html::tag('div', $productOptions, ['class' => 'dvizh-cart-show-options']);
-    //            } ?>
-    <!--        </div>-->
-    <!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-8 col-lg-offset-1">-->
+<!--            --><?php
+//
+//            $canonical_url = Url::canonical();
+//
+//            if ($options) {
+//
+////              $productOptions = '';
+//
+//                $id_goods = $model->id;
+//
+//                foreach ($options as $optionId => $valueId) {
+//
+////                    if ($optionData = $allOptions[$optionId]) {
+////                        $option = $optionData['name'];
+////                        $value = $optionData['variants'][$valueId];
+////                        $productOptions .= Html::tag('div', Html::tag('strong', $option) . ':' . $value);
+////                    }
+//
+////                    debug($optionId);
+//
+//                    $inc = $valueId;
+//
+//                    $arr = [
+//                        $id_goods => $optionId
+//                    ];
+//
+//                    $json = json_encode($arr);
+//
+//                    $price = explode('-', $optionId);
+//
+////                    debug($price);die;
+//
+//                    $productOptions .= Html::tag('div class="box-option" ', $optionId . ':' . $valueId . '<span class="price-option">');
+////                  $productOptions .= Html::tag('div class="box-option" ', $optionId . ':' . $valueId . '<span class="price-option">' . $price[1] . '</span>' . '<span class="delete-option" data-option="' . $optionId . '" data-id="' . $model->getId() . '">╳');
+//
+//                }
+//
+//                echo Html::tag('div', $productOptions, ['class' => 'dvizh-cart-show-options']);
+//            } ?>
+<!--        </div>-->
+<!--    </div>-->
 

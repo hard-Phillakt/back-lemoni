@@ -3,10 +3,16 @@
 namespace app\widgets\customcart;
 
 
-use dvizh\cart\widgets\DeleteButton;
-use dvizh\cart\widgets\TruncateButton;
-use dvizh\cart\widgets\ChangeCount;
-use dvizh\cart\widgets\CartInformer;
+//use dvizh\cart\widgets\DeleteButton;
+//use dvizh\cart\widgets\TruncateButton;
+//use dvizh\cart\widgets\ChangeCount;
+//use dvizh\cart\widgets\CartInformer;
+
+use  app\widgets\customcart\DeleteButton;
+use  app\widgets\customcart\TruncateButton;
+use  app\widgets\customcart\ChangeCount;
+use  app\widgets\customcart\CartInformer;
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii;
