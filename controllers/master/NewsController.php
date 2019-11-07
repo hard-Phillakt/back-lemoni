@@ -14,6 +14,10 @@ use yii\filters\VerbFilter;
  */
 class NewsController extends Controller
 {
+
+
+    public $layout = 'master';
+
     /**
      * {@inheritdoc}
      */

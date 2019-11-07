@@ -232,7 +232,7 @@ Url::remember();
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="#!" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
                                        style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
@@ -248,7 +248,7 @@ Url::remember();
                                     </div>
 
                                 </div>
-
+ 
                             </div>
 
                         <?php endforeach; ?>
@@ -262,7 +262,7 @@ Url::remember();
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="#!" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
                                        style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">

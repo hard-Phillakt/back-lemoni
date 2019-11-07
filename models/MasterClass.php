@@ -48,15 +48,15 @@ class MasterClass extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'lm_essence' => 'Lm Essence',
-            'lm_title' => 'Lm Title',
-            'lm_img' => 'Lm Img',
-            'lm_description' => 'Lm Description',
-            'lm_content' => 'Lm Content',
-            'lm_price' => 'Lm Price',
-            'lm_date' => 'Lm Date',
-            'lm_publicate' => 'Lm Publicate',
-            'lm_prioritet' => 'Lm Prioritet',
+            'lm_essence' => 'Сущность',
+            'lm_title' => 'Заголовок',
+            'lm_img' => 'Картинка',
+            'lm_description' => 'Описание',
+            'lm_content' => 'Контент',
+            'lm_price' => 'Цена',
+            'lm_date' => 'Дата',
+            'lm_publicate' => 'Публикация',
+            'lm_prioritet' => 'Приоритет',
         ];
     }
 }

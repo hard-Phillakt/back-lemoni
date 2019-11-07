@@ -16,7 +16,8 @@ use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 
 //  Подключил модель "тортов"
-use app\models\CakeGoods;
+//use app\models\CakeGoods;
+use app\models\CandieGoods;
 
 //  Подключил модель "фильтров тортов"
 use app\models\FilterCake;
@@ -32,7 +33,7 @@ class CandieGoodsController extends Controller
     public function actionIndex()
     {
 
-        $query_cake_goods = new CakeGoods();
+        $query_cake_goods = new CandieGoods();
 
         $model = $query_cake_goods::find()->with(['tag'])->asArray()->all();
 
@@ -77,7 +78,7 @@ class CandieGoodsController extends Controller
 //
 //                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
 //
-////                    $richCakes = $chosenTag->getCake()->asArray()->all();
+////                  $richCakes = $chosenTag->getCake()->asArray()->all();
 //                }
 //
 //
