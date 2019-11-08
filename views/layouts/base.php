@@ -49,7 +49,7 @@ BaseAsset::register($this);
                             <nav class="nav-menu-icon">
                                 <a href="#!" class="nav-menu-icon__link">
                                     <span class="nav-menu-icon__link_img mr-15">
-                                        <img src="../img/icons/black/icon-close.svg" alt="icon-close"
+                                        <img src="/img/icons/black/icon-close.svg" alt="icon-close"
                                              class="img-responsive">
                                     </span>
                                     <span class="nav-menu-icon__link_title">
@@ -66,12 +66,12 @@ BaseAsset::register($this);
                                 </div>
 
                                 <div class="additional-modules__search">
-                                    <a href="#!"><img src="../img/icons/black/icon-search.svg" alt="icon-search"></a>
+                                    <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
                                 </div>
 
                                 <div class="additional-modules__cart">
                                     <a href="/check-out">
-                                        <img src="../img/icons/black/icon-cart.svg" alt="icon-cart">
+                                        <img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
                                         <span class="CartInformerBox">
                                             <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
                                         </span>
@@ -155,7 +155,7 @@ BaseAsset::register($this);
                         <nav class="nav-menu-icon">
                             <a href="#!" class="nav-menu-icon__link">
                                 <span class="nav-menu-icon__link_img">
-                                    <img src="../img/icons/black/icon-menu.svg" alt="icon-menu" class="img-responsive">
+                                    <img src="/img/icons/black/icon-menu.svg" alt="icon-menu" class="img-responsive">
                                 </span>
                                 <span class="nav-menu-icon__link_title">
                                     Меню
@@ -167,7 +167,7 @@ BaseAsset::register($this);
                         <!-- section-logo -->
                         <div class="section-logo">
                             <a href="/">
-                                <img src="../img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
+                                <img src="/img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
                             </a>
                         </div>
 
@@ -179,11 +179,11 @@ BaseAsset::register($this);
                             </div>
 
                             <div class="additional-modules__search">
-                                <a href="#!"><img src="../img/icons/black/icon-search.svg" alt="icon-search"></a>
+                                <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
                             </div>
 
                             <div class="additional-modules__cart">
-                                <a href="/check-out"><img src="../img/icons/black/icon-cart.svg" alt="icon-cart">
+                                <a href="/check-out"><img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
                                     <span class="CartInformerBox">
                                         <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
                                     </span>
@@ -208,7 +208,7 @@ BaseAsset::register($this);
                 <div class="col-lg-2">
                     <div class="section-logo">
                         <a href="/">
-                            <img src="../img/logo/logo-white.svg" alt="white">
+                            <img src="/img/logo/logo-white.svg" alt="white">
                         </a>
                     </div>
                 </div>

@@ -59,7 +59,7 @@ class DeliveryController extends Controller
         }
 
 
-//        $queryTable = Yii::$app->db->createCommand('CREATE TABLE lm_user (id int PRIMARY KEY AUTO_INCREMENT, name varchar(10), password varchar(255), master varchar(60))')->execute();
+//        $queryTable = Yii::$app->db->createCommand('CREATE TABLE user (id int PRIMARY KEY AUTO_INCREMENT, name varchar(20), password varchar(255), rule varchar(60))')->execute();
 
 //        $queryUser = Yii::$app->db->createCommand('INSERT INTO lm_user VALUES (null, "admin-di", "cNCq37s3", 1)')->execute();
 
@@ -67,7 +67,7 @@ class DeliveryController extends Controller
 
 //        $queryUser = Yii::$app->db->createCommand('SELECT `name`, `password` FROM lm_user WHERE `status` = "master"')->queryOne();
 
-//        $queryTable = Yii::$app->db->createCommand('DROP TABLE lm_user')->execute();
+//        $queryTable = Yii::$app->db->createCommand('DROP TABLE user')->execute();
 
 
 //        debug($queryUser);

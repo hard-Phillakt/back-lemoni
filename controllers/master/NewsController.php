@@ -8,6 +8,8 @@ use app\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+
 
 /**
  * NewsController implements the CRUD actions for News model.
@@ -29,6 +31,21 @@ class NewsController extends Controller
                 'actions' => [
                     'delete' => ['POST'],
                 ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => [],
+                'rules' => [
+                    // разрешаем аутентифицированным пользователям
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                    // всё остальное по умолчанию запрещено
+                ],
+                'denyCallback' => function() {
+                    $this->redirect('/');
+                }
             ],
         ];
     }

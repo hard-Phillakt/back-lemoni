@@ -26,8 +26,7 @@ BaseAsset::register($this);
     <!--    <link rel="stylesheet" href="./style/main.css">-->
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
-            type="text/javascript">
-    </script>
+            type="text/javascript"></script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -50,6 +49,20 @@ BaseAsset::register($this);
                             </a>
                         </div>
 
+                        <?php if(!Yii::$app->user->isGuest): ?>
+
+                            <div class="additional-modules">
+
+                                <div class="log-out-link">
+                                    <strong>
+                                        <a href="/master/login/log-out" class="link link__a">ВЫХОД &nbsp; <i class="fas fa-sign-out-alt"></i></a>
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        <?php endif; ?>
+
                     </div>
 
                 </div>
@@ -58,7 +71,7 @@ BaseAsset::register($this);
     </header>
 
     <!-- content -->
-    <section class="content mt-90">
+    <section class="content">
         <div class="container">
             <div class="row">
                 <?= $content ?>

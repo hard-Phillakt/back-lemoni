@@ -38,7 +38,8 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+//            'errorAction' => 'site/error',
+            'errorAction' => 'error/index',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -70,6 +71,9 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'index',
+                'master' => 'master/index',
+                'card/cake/<id:\d+>' => '/card/cake',
+                'card/candie/<id:\d+>' => '/card/candie',
             ],
         ],
         'cart' => [

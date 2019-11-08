@@ -51,7 +51,7 @@ Url::remember();
             <div class="col-lg-12">
                 <div class="mt-35">
                     <a class="button button__circle" href="/<?= $model['lm_essence'] ?>-goods">
-                        <img src="../img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
+                        <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
 
                 </div>

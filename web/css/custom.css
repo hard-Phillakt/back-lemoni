@@ -91,10 +91,14 @@ input[disabled] {
     height: 100vh;
 }
 
+.log-out-link a {
+    display: flex;
+    align-items: center;
+}
 
-
-
-
+.table-responsive a {
+    align-items: center;
+}
 
 
 

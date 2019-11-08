@@ -8,6 +8,7 @@ use app\models\MasterClassSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * MasterClassController implements the CRUD actions for MasterClass model.
@@ -29,6 +30,21 @@ class MasterClassController extends Controller
                 'actions' => [
                     'delete' => ['POST'],
                 ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => [],
+                'rules' => [
+                    // разрешаем аутентифицированным пользователям
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                    // всё остальное по умолчанию запрещено
+                ],
+                'denyCallback' => function() {
+                    $this->redirect('/');
+                }
             ],
         ];
     }

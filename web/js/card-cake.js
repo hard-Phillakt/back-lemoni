@@ -233,7 +233,7 @@ function GlogalOptionsCard() {
 
             dvizhOption_label[i].classList.add('optDecore__input');
 
-            dvizhOption_label[i].style.background = 'url("../img/card-opt/' + arr[i][0] + '.png")';
+            dvizhOption_label[i].style.background = 'url("/img/card-opt/' + arr[i][0] + '.png")';
 
             dvizhOption_label[i].setAttribute('data-img', i);
 
@@ -251,7 +251,7 @@ function GlogalOptionsCard() {
                 // после события click очищаем слассы и фоны
                 for (var i = 0; i < count_node; i++) {
                     node.children[i].className = 'optDecore__input';
-                    node.children[i].style.background = 'url("../img/card-opt/' + arr[i][0] + '.png")';
+                    node.children[i].style.background = 'url("/img/card-opt/' + arr[i][0] + '.png")';
                     // console.dir(node.children[i].className);
                 }
 
@@ -261,7 +261,7 @@ function GlogalOptionsCard() {
                     this.labels[0].classList.remove('optDecore__input');
                     this.labels[0].classList.add('optDecore__input_check');
 
-                    this.labels[0].style.background = 'url("../img/card-opt/' + arr[this.labels[0].dataset.img][1] + '.png")';
+                    this.labels[0].style.background = 'url("/img/card-opt/' + arr[this.labels[0].dataset.img][1] + '.png")';
 
                     this.checked = true;
 
@@ -272,7 +272,7 @@ function GlogalOptionsCard() {
                     this.labels[0].classList.remove('optDecore__input_check');
                     this.labels[0].classList.add('optDecore__input');
 
-                    this.labels[0].style.background = 'url("../img/card-opt/' + arr[this.labels[0].dataset.img][0] + '.png")';
+                    this.labels[0].style.background = 'url("/img/card-opt/' + arr[this.labels[0].dataset.img][0] + '.png")';
 
                     this.checked = false;
 
