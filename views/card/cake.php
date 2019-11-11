@@ -59,8 +59,9 @@ Url::remember();
             <div class="col-lg-5">
                 <div class="card-goods__img mt-35">
 
-                    <?= Html::img('@web/' . $model->lm_img_one, ['alt' => '']) ?>
-                    
+<!--                    --><?//= Html::img('@web/' . $model->lm_img_one, ['alt' => '']) ?>
+                    <?= Html::img($model->lm_img_one, ['alt' => '']) ?>
+
                 </div>
 
                 <div class="row">
@@ -96,7 +97,7 @@ Url::remember();
                     <div class="card-goods__price">
 <!--                        <span>1700</span>-->
                         <span><?= $model->lm_price_for_kg;?></span>
-                        руб/кг
+                        руб
                     </div>
                 </div>
 

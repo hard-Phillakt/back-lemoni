@@ -100,14 +100,31 @@ input[disabled] {
     align-items: center;
 }
 
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    background-color: #8f5541;
+    border: 0;
+    border-radius: 4px;
+}
+
+.datepicker table tr td.active:active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active {
+    color: #fff;
+    background-color: #8f5541;
+    border-color: #8f5541;
+}
 
 
 
-
-
-
-
-
+.datepicker table tr td.active:active:hover, .datepicker table tr td.active.highlighted:active:hover, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.highlighted.active:hover, .datepicker table tr td.active:active:focus, .datepicker table tr td.active.highlighted:active:focus, .datepicker table tr td.active.active:focus, .datepicker table tr td.active.highlighted.active:focus, .datepicker table tr td.active:active.focus, .datepicker table tr td.active.highlighted:active.focus, .datepicker table tr td.active.active.focus, .datepicker table tr td.active.highlighted.active.focus {
+    color: #fff;
+    background-color: rgba(143, 85, 65, 0.7);
+    border-color: rgba(143, 85, 65, 0.7);
+}
 
 
 

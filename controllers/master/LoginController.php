@@ -46,7 +46,7 @@ class LoginController extends Controller
 
                     Yii::$app->user->login($user);
 
-                    return $this->redirect('/master/index');
+                    return $this->redirect('/master/news');
 
                 }
 
@@ -54,7 +54,7 @@ class LoginController extends Controller
 
         } else {
 
-            return $this->redirect('/master/index');
+            return $this->redirect('/master/news');
         }
 
 

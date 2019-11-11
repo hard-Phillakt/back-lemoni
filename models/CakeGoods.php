@@ -141,6 +141,7 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
             'lm_img_one' => 'Картинка - 1',
             'lm_img_two' => 'Картинка - 2',
             'lm_img_three' => 'Картинка - 3',
+            'lm_alter_card' => 'Тип карточки',
         ];
     }
 }

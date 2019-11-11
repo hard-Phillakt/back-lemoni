@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use yii\web\Controller;
 use app\models\CakeGoods;
+use app\models\CandieGoods;
 
 // Карточка товара под вопросом (как лучше сделать 4 карточки)
 class CardController extends Controller
@@ -36,10 +37,13 @@ class CardController extends Controller
 
 
 //    конфеты
-    public function actionCandie(){
+    public function actionCandie($id = null){
 
+        $candie_goods = new CandieGoods();
 
-        return $this->render('candie');
+        $model = $candie_goods::findOne($id);
+
+        return $this->render('candie', ['model' => $model]);
     }
 
 

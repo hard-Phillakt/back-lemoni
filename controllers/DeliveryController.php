@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use yii\web\Controller;
 use app\models\CakeGoods;
+use app\models\DeliveryContact;
 use Yii;
 
 
@@ -23,6 +24,8 @@ class DeliveryController extends Controller
         $elements = yii::$app->cart->elements;
 
         $modelCake = new CakeGoods();
+
+        $modelDeliveryContact = new DeliveryContact();
 
         $data = '';
 
@@ -69,25 +72,29 @@ class DeliveryController extends Controller
 
 //        $queryTable = Yii::$app->db->createCommand('DROP TABLE user')->execute();
 
-
 //        debug($queryUser);
 
 
 
 
-        if ($data) {
+        if (!empty($data) && $modelDeliveryContact->load(Yii::$app->request->post())) {
+
+
+            $dataForm = Yii::$app->request->post();
+
+            debug($dataForm);
 
 //            Yii::$app->mailer->compose()
 //                ->setFrom('hard-phillakt@mail.ru')
 //                ->setTo('hard-phillakt@mail.ru')
 //                ->setSubject('Тема сообщения')
 //                ->setTextBody('Текст сообщения')
-//                ->setHtmlBody('<div>' . $data . '</div>')
+//                ->setHtmlBody('<div>'. $dataForm .'<div><div class="mt-90">' . $data . '</div>')
 //                ->send();
 
         }
 
 
-        return $this->render('index');
+        return $this->render('index', ['modelDeliveryContact' => $modelDeliveryContact]);
     }
 }

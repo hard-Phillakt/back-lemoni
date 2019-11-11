@@ -22,12 +22,27 @@ use yii\widgets\Pjax;
 //debug($model);
 
 use app\models\CakeGoods;
+use app\models\CandieGoods;
 
-$cake_goods_item = new CakeGoods();
 
-$item = $cake_goods_item::findOne($model->item_id);
+//debug($model->model);
 
-//debug($item)
+
+switch ($model->model){
+
+    case 'app\models\CakeGoods':
+        $cake_goods_item = new CakeGoods();
+
+        $item = $cake_goods_item::findOne($model->item_id);
+        break;
+
+    case 'app\models\CandieGoods':
+        $candie_goods_item = new CandieGoods();
+
+        $item = $candie_goods_item::findOne($model->item_id);
+        break;
+}
+
 
 ?>
 

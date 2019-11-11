@@ -35,7 +35,7 @@ class CandieGoodsController extends Controller
 
         $query_cake_goods = new CandieGoods();
 
-        $model = $query_cake_goods::find()->with(['tag'])->asArray()->all();
+        $model = $query_cake_goods::find()->asArray()->all();
 
         $filter = new FilterCake();
 

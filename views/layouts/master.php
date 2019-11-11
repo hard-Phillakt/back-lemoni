@@ -49,6 +49,11 @@ BaseAsset::register($this);
                             </a>
                         </div>
 
+                        <a href="/master/news/index" class="link link__a">Новости</a>
+                        <a href="/master/master-class" class="link link__a">Мастер-классы</a>
+                        <a href="/master/cake-goods" class="link link__a">Торты</a>
+                        <a href="/master/candie-goods" class="link link__a">Кенди бар</a>
+
                         <?php if(!Yii::$app->user->isGuest): ?>
 
                             <div class="additional-modules">

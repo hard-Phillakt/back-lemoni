@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\InputFile;
+use mihaildev\elfinder\ElFinder;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\News */
@@ -12,24 +16,42 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
+    <div class="row">
 
-    <?= $form->field($model, 'lm_img')->textInput(['maxlength' => true]) ?>
+        <div class="col-lg-6">
+            <?= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'lm_title')->textarea(['rows' => 6]) ?>
+            <?= $form->field($model, 'lm_img')->textInput(['maxlength' => true])->widget(InputFile::class, [
+                'options'       => ['class' => 'form-control'],
+                'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
+                'buttonName' => 'Загрузить',
+            ]) ?>
 
-    <?= $form->field($model, 'lm_description')->textarea(['rows' => 6]) ?>
+            <?= $form->field($model, 'lm_title')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'lm_content')->textarea(['rows' => 6]) ?>
+        <div class="col-lg-6">
+            <?= $form->field($model, 'lm_date')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'lm_date')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
+        </div>
 
-    <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
+        <div class="col-lg-12">
+            <?= $form->field($model, 'lm_description')->textarea(['rows' => 6])->widget(CKEditor::class, [
+                'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
+            ]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?= $form->field($model, 'lm_content')->textarea(['rows' => 20])->widget(CKEditor::class, [
+                'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
+            ]) ?>
+
+            <div class="form-group">
+                <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+            </div>
+        </div>
+
     </div>
 
     <?php ActiveForm::end(); ?>

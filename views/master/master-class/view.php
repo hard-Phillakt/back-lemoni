@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
+$previous = Url::previous();
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MasterClass */
@@ -14,6 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="master-class-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
+
+    <div class="mt-35">
+        <?= Html::a('назад', $previous, ['class' => 'link link__a mb-35']); ?>
+    </div>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

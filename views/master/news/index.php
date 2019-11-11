@@ -3,9 +3,8 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
+Url::remember();
 
-
-$previous = Url::previous();
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\NewsSearch */
@@ -13,14 +12,12 @@ $previous = Url::previous();
 
 $this->title = 'Новости';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="news-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="mt-35">
-        <?= Html::a('назад', $previous, ['class' => 'link link__a mb-35']); ?>
-    </div>
 
     <p>
         <?= Html::a('Создать новость', ['create'], ['class' => 'btn btn-success mb-35']) ?>
