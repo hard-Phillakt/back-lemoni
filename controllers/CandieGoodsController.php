@@ -41,7 +41,8 @@ class CandieGoodsController extends Controller
 
         if ($data_filter = Yii::$app->request->post('FilterCake')) {
 
-            $cake = $query_cake_goods::find()->with(['tag']);
+//            $cake = $query_cake_goods::find()->with(['tag']);
+            $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
             $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
