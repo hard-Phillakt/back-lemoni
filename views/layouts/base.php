@@ -88,7 +88,7 @@ BaseAsset::register($this);
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
                                     <a href="/" class="link link__a">Главная</a>
@@ -108,7 +108,7 @@ BaseAsset::register($this);
                             </ul>
                         </div>
 
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
                                     <a href="/news" class="link link__a">Новости</a>
@@ -122,7 +122,7 @@ BaseAsset::register($this);
                             </ul>
                         </div>
 
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
                                     <a href="/about" class="link link__a">О нас</a>
@@ -205,7 +205,7 @@ BaseAsset::register($this);
     <footer class="footer mt-90">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="section-logo">
                         <a href="/">
                             <img src="/img/logo/logo-white.svg" alt="white">
@@ -213,7 +213,7 @@ BaseAsset::register($this);
                     </div>
                 </div>
 
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                     <ul class="footer__ul">
                         <li><a href="/" class="link link__a_w">Главная</a></li>
                         <li><a href="/contact" class="link link__a_w">Контакты</a></li>
@@ -222,7 +222,7 @@ BaseAsset::register($this);
                     </ul>
                 </div>
 
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <ul class="footer__ul">
                         <li><a href="/cake-goods" class="link link__a_w">Торты</a></li>
                         <li><a href="/candie-goods" class="link link__a_w">Candy bar</a></li>
@@ -230,7 +230,7 @@ BaseAsset::register($this);
                     </ul>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <ul class="footer__ul">
                         <!--                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>-->
                         <li><a href="/master-class" class="link link__a_w">Мастер-классы</a></li>
@@ -239,7 +239,7 @@ BaseAsset::register($this);
                     </ul>
                 </div>
 
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                     <ul class="footer__ul">
                         <li>Контакты:</li>
                         <li><a href="tel:+74722505154" class="link link__a_w">+7 (4722) 50-51-54</a></li>

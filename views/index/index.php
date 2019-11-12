@@ -53,7 +53,7 @@
                         <div class="category-cake-box__img_2"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candie-bar" class="link link__a">Пряники</a>
+                        <a href="/candie-goods" class="link link__a">Пряники</a>
                     </h3>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         <div class="category-cake-box__img_4"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candie-bar" class="link link__a">Десерты</a>
+                        <a href="/candie-goods" class="link link__a">Десерты</a>
                     </h3>
                 </div>
             </div>

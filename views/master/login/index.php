@@ -21,6 +21,8 @@ use yii\helpers\Html;
 
                 <?= $form->field($model, 'password')->passwordInput(); ?>
 
+                <?= $form->field($model, 'remember')->checkbox(['checked' => true]); ?>
+
                 <?= Html::submitButton('Отправить', ['class' => 'btn btn-success']) ?>
 
             <?php $form::end(); ?>

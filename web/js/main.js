@@ -1,13 +1,9 @@
-
-
-
-
 // Menu start
 
 var navMenuIconlink = document.querySelectorAll('.nav-menu-icon__link');
 var headerFullMenu = document.querySelector('.header-full-menu');
 
-if(navMenuIconlink[1] || navMenuIconlink[0]){
+if (navMenuIconlink[1] || navMenuIconlink[0]) {
     navMenuIconlink[1].onclick = function (e) {
         e.preventDefault();
 
@@ -29,8 +25,6 @@ if(navMenuIconlink[1] || navMenuIconlink[0]){
 }
 
 // Menu end
-
-
 
 
 // Filter Cake-category-type-product
@@ -80,12 +74,11 @@ filterSidebarCatalogBoxCompilation_ul.forEach(function (item, i) {
 })
 
 
-
 // Slider  Revievs
 
 var wpper = document.querySelector('.swiper-container');
 
-if(wpper){
+if (wpper) {
     var swiper = new Swiper('.swiper-container', {
         navigation: {
             nextEl: '.swiper-button-next',
@@ -94,4 +87,46 @@ if(wpper){
     });
 }
 
+
+
+// pjax call-back
+$(document).on('pjax:success', function() {
+
+    var count = $('#delivery-form')[0].length;
+
+    for(var i = 0; i < count; i++){
+
+        if($('#delivery-form')[0][i].nodeName != 'BUTTON'){
+            $('#delivery-form')[0][i].value = '';
+        }
+
+    }
+
+});
+
+
+
+// Ajax delivery data
+$(document).ready(function () {
+
+    // console.log($('#delivery-form')[0]);
+
+    // $('#delivery-form').on('submit', function (e) {
+    //     e.preventDefault();
+
+    //     $.ajax({
+    //         type: 'post',
+    //         url: '/delivery',
+    //         data: $(this).serialize(),
+    //         success: function (res) {
+    //             console.log(res);
+    //         },
+    //         error: function (err) {
+    //             console.log(err);
+    //         }
+    //     });
+    //
+    // })
+
+});
 

@@ -8,11 +8,10 @@
 
 namespace app\controllers;
 
-
+use Yii;
 use yii\web\Controller;
 use app\models\CakeGoods;
 use app\models\DeliveryContact;
-use Yii;
 
 
 //Страница "Доставка"
@@ -27,6 +26,25 @@ class DeliveryController extends Controller
 
         $modelDeliveryContact = new DeliveryContact();
 
+        $dataForm = Yii::$app->request->post();
+        $dataUser = '';
+
+        $dataUser .= '<div style="margin-bottom: 30px; font-weight: 600;">';
+        $dataUser .= '<p><strong><h3>Заказчик:</h3></strong><p>';
+        $dataUser .= '<p><strong style="color:#8F5541;">Имя: </strong>' . $dataForm['DeliveryContact']['name'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Телефон: </strong>' . $dataForm['DeliveryContact']['phone'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Город: </strong>' . $dataForm['DeliveryContact']['city'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Улица: </strong>' . $dataForm['DeliveryContact']['street'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Дом: </strong>' . $dataForm['DeliveryContact']['house'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Квартира: </strong>' . $dataForm['DeliveryContact']['room'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Комментарий: </strong>' . $dataForm['DeliveryContact']['comment'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Дата приготовления: </strong>' . $dataForm['check_issue_date'];
+        $dataUser .= '</div>';
+        $dataUser .= '<hr>';
+
+//        debug($dataUser);
+
+
         $data = '';
 
         foreach ($elements as $key => $value) {
@@ -34,18 +52,49 @@ class DeliveryController extends Controller
 //          Вытаскиваю доп данные для отправки по id из корзины
             $query = $modelCake::findOne($value->item_id);
 
-//          debug($query);
-//
             $json_decode = json_decode($value['options']);
 
-            $data .= '<p style="margin-top: 30px;"><strong>Id товара: </strong>' . $value['item_id'] . '<p>';
-            $data .= '<p><strong>Название товара: </strong>' . $query->lm_title . '<p>';
-            $data .= '<p><strong>Количество: </strong>' . $value['count'] . ' шт <p>';
-            $data .= '<p><strong>Сумма: </strong>' . $value['price'] . ' руб <p>';
-            $data .= '<p><strong>Вес в кг: </strong>' . $json_decode->optGuests_kg . ' кг <p>';
-            $data .= '<p><strong>Тип: </strong>' . $query->lm_type . ' <p>';
-            $data .= '<p><strong>Описание товара: </strong>' . $query->lm_description . ' <p>';
+            $data .= '<style>
 
+                        .table {
+                            font-weight: 600;  
+                            width: 100%;
+                        }
+                        
+                        .table td {
+                            margin-right: 15px;
+                            display: inline-block;
+                            padding: 5px 15px;
+                        }
+                        
+                        .table td strong {
+                            color:#8F5541;
+                         }
+                         
+                        .table td span {
+                            margin-top: 10px; 
+                            display: block;
+                         }
+                         
+                     </style>';
+            $data .= '<div style="margin-bottom: 30px; font-weight: 600;">';
+            $data .= '<p><strong><h3>Товар:</h3></strong><p>';
+            $data .= '<table class="table">';
+            $data .= '<tr>';
+//          $data .= '<td><strong><h3>Товар</h3></strong><br><p>';
+            $data .= '<td style=""><strong>Id товара: </strong><br>' . '<span>' . $value['item_id'];
+            $data .= '<td><strong>Название товара: </strong><br>' . '<span>' . $query->lm_title;
+            $data .= '<td><strong>Количество: </strong><br>' . '<span>' . $value['count'] . ' шт';
+            $data .= '<td><strong>Сумма: </strong><br>' . '<span>' . $value['price'] . ' руб';
+            $data .= '<td><strong>Вес в кг: </strong><br>' . '<span>' . $json_decode->optGuests_kg . ' кг';
+            $data .= '<td><strong>Тип: </strong><br>' . '<span>' . $query->lm_type;
+//          $data .= '<td><strong style="color:#8F5541;">Описание товара: </strong><br>' . $query->lm_description . ' <td>';
+            $data .= '</tr>';
+            $data .= '</table>';
+
+
+            $data .= '<table class="table" style="font-weight: 600; margin-top: 30px; width: 100%;">';
+            $data .= '<tr>';
             if ($value['options']) {
 
                 foreach ($json_decode as $key => $value) {
@@ -53,44 +102,36 @@ class DeliveryController extends Controller
                     $explode_str = explode('-', $value);
 
                     if (!(int)$explode_str[0]) {
-                        $data .= '<p><strong>Опция: </strong>' . $explode_str[2] . ' - ' . $explode_str[1] . ' руб' . '<p>';
+                        $data .= '<td style="padding: 5px;"><strong style="color:#8F5541;">Опция: </strong><br>' . '<span>' . $explode_str[2] . ' - ' . $explode_str[1] . ' руб';
                     }
 
                 }
             }
-
+            $data .= '</tr>';
+            $data .= '</table>';
+            $data .= '</div>';
+            $data .= '<hr>';
         }
 
 
-//        $queryTable = Yii::$app->db->createCommand('CREATE TABLE user (id int PRIMARY KEY AUTO_INCREMENT, name varchar(20), password varchar(255), rule varchar(60))')->execute();
-
-//        $queryUser = Yii::$app->db->createCommand('INSERT INTO lm_user VALUES (null, "admin-di", "cNCq37s3", 1)')->execute();
-
-//        $queryUser = Yii::$app->db->createCommand('DELETE FROM lm_user WHERE `id`=1 ')->execute();
-
-//        $queryUser = Yii::$app->db->createCommand('SELECT `name`, `password` FROM lm_user WHERE `status` = "master"')->queryOne();
-
-//        $queryTable = Yii::$app->db->createCommand('DROP TABLE user')->execute();
-
-//        debug($queryUser);
+        if (!empty($data) && $modelDeliveryContact->load(Yii::$app->request->post()) && Yii::$app->request->isAjax && !empty($dataUser)) {
 
 
+//            Yii::$app->session->setFlash('success', "Спасибо, сообщение успешно отправленно!");
 
+//            echo '<div>' . $dataUser . '<div><div>' . $data . '</div>';
 
-        if (!empty($data) && $modelDeliveryContact->load(Yii::$app->request->post())) {
+            Yii::$app->mailer->compose()
+                ->setFrom('hard-phillakt@mail.ru')
+                ->setTo('hard-phillakt@mail.ru')
+                ->setSubject('Тема сообщения')
+                ->setTextBody('Текст сообщения')
+                ->setHtmlBody('<div>' . $dataUser . '<div><div>' . $data . '</div>')
+                ->send();
 
+//            echo 'успешно отправленно!';
 
-            $dataForm = Yii::$app->request->post();
-
-            debug($dataForm);
-
-//            Yii::$app->mailer->compose()
-//                ->setFrom('hard-phillakt@mail.ru')
-//                ->setTo('hard-phillakt@mail.ru')
-//                ->setSubject('Тема сообщения')
-//                ->setTextBody('Текст сообщения')
-//                ->setHtmlBody('<div>'. $dataForm .'<div><div class="mt-90">' . $data . '</div>')
-//                ->send();
+//            $this->redirect('/delivery');
 
         }
 

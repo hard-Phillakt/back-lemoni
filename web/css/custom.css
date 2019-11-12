@@ -1,5 +1,4 @@
 
-
 .optDesabled {
     display: none;
 }
@@ -51,16 +50,13 @@ input[disabled] {
     text-decoration: none;
 }
 
-
-.dvizh-cart-row  {
+.dvizh-cart-row {
     /*background: #f1f0f0;*/
 }
-
 
 .dvizh-cart-row .mt-15 {
     background: transparent;
 }
-
 
 .additional-modules__cart:hover .CartInformerBox {
     color: #8f5541;
@@ -74,7 +70,6 @@ input[disabled] {
     margin-top: 90px;
 }
 
-
 .global-form__select::before {
     top: 48px;
 }
@@ -82,7 +77,6 @@ input[disabled] {
 .optGuests__input {
     width: 90px !important;
 }
-
 
 .wrap-master {
     display: flex;
@@ -118,17 +112,76 @@ input[disabled] {
     border-color: #8f5541;
 }
 
-
-
 .datepicker table tr td.active:active:hover, .datepicker table tr td.active.highlighted:active:hover, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.highlighted.active:hover, .datepicker table tr td.active:active:focus, .datepicker table tr td.active.highlighted:active:focus, .datepicker table tr td.active.active:focus, .datepicker table tr td.active.highlighted.active:focus, .datepicker table tr td.active:active.focus, .datepicker table tr td.active.highlighted:active.focus, .datepicker table tr td.active.active.focus, .datepicker table tr td.active.highlighted.active.focus {
     color: #fff;
     background-color: rgba(143, 85, 65, 0.7);
     border-color: rgba(143, 85, 65, 0.7);
 }
 
+.master-class-form {
+    width: 100%;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.modal-body {
+    padding: 0;
+}
 
 
+@media (min-width: 300px) and (max-width: 991px) {
+    .additional-modules__search {
+        display: none;
+    }
 
+    .additional-modules__phone {
+        margin-right: 60px;
+    }
+
+    .footer {
+        position: inherit;
+    }
+
+    .header-full-menu {
+        height: 100vh;
+    }
+
+    .footer .section-logo {
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .modal-body-wrapp {
+        padding: 0;
+    }
+
+    .modal-body-wrapp .master-class-form {
+        padding: 15px;
+    }
+
+    .wrap .mt-90 {
+        margin-top: 0;
+    }
+}
+
+
+@media (min-width: 300px) and (max-width: 667px) {
+
+    .additional-modules__phone {
+        display: none;
+    }
+
+    .header-full-menu .mb-60 {
+        margin-bottom: 30px;
+    }
+
+}
 
 
 

@@ -2,7 +2,11 @@
 
 
 use app\widgets\sidebar\Sidebar;
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 
+//debug($model);
+//debug($masterClassForm);
 ?>
 
 <section class="news mt-90">
@@ -12,7 +16,7 @@ use app\widgets\sidebar\Sidebar;
             <div class="col-lg-3">
 
                 <!-- Sidebar -->
-                <?=  Sidebar::widget(); ?>
+                <?= Sidebar::widget(); ?>
 
             </div>
 
@@ -24,196 +28,176 @@ use app\widgets\sidebar\Sidebar;
 
                     <ul class="news-box__wrapp">
 
-                        <li class="mt-35 top-news">
+
+                        <?php foreach ($model as $key => $value): ?>
 
 
-                            <div class="news-box__img"></div>
+                            <?php if ($value->lm_publicate == 1): ?>
 
-                            <div class="news-box__content">
+                                <li class="mt-35 top-news">
 
-                                <div class="news-box__content_tag">
 
-                                    <div class="flex-box">
-                                        <div>
-                                            <div class="tag__news" style="background: #E69F9C;"></div>
-                                            <span>Новость</span>
+                                    <div class="news-box__img"></div>
+
+                                    <div class="news-box__content">
+
+                                        <div class="news-box__content_tag">
+
+                                            <?php
+
+                                            //                                            Взрослый || Детский
+
+                                            ?>
+
+                                            <?php $essence = $value->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
+
+                                            <span class="tag__news" style="background: <?= $essence; ?>"></span>
+
+                                            <span><?= $value->lm_essence; ?></span>
                                         </div>
-                                        <div>
-                                            <span>2990</span>
-                                            <span>руб</span>
+
+                                        <div class="mt-45">
+                                            <h2 class="title title__h4">
+
+                                                <span class="news-box__content_link">
+
+                                                    <?= $value->lm_title; ?>
+
+                                                </span>
+
+                                            </h2>
                                         </div>
-                                    </div>
 
-                                </div>
+                                        <div class="mt-35">
+                                            <div class="desc desc__sm">
 
-                                <div class="mt-45">
-                                    <h2 class="title title__h4">
-                                            <span href="#!" class="news-box__content_link">
-                                                Лучший рецепт месяца по мнению
-                                                наших кондитеров
-                                            </span>
-                                    </h2>
-                                </div>
+                                                <?= $value->lm_description; ?>
 
-                                <div class="mt-35">
-                                    <div class="desc desc__sm">
-                                        Приближающийся летний сезон — прекрасное время, чтобы
-                                        попробовать самые вкусные и разнообразные сочетания
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="mt-35">
-                                    <div class="flex-box">
-                                        <div class="news-box__content_date">14.09.2019</div>
-                                        <div>
-                                            <a href="#!" class="link link__a">
-                                                Записаться
+                                        <div class="mt-35">
+                                            <div class="flex-box">
+                                                <div class="news-box__content_date"><?= $value->lm_date; ?></div>
+                                                <div>
+                                                    <a href="#!" class="link link__a">
+                                                        Записаться
 
+                                                        <div class="news-box__content_hidden">
 
-                                                <div class="news-box__content_hidden">
-                                                    <div class="mt-30">
-                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">
-                                                    </div>
+                                                            <?= $value->lm_content; ?>
 
-                                                    <div class="mt-35" style="color: #8F5541">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                        Illum
-                                                        voluptatum
-                                                        corrupti cumque voluptates, incidunt provident recusandae
-                                                        officiis
-                                                        nam mollitia
-                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.
-                                                        Facere,
-                                                        magni dolores
-                                                        harum distinctio eum nisi!
-                                                    </div>
+                                                        </div>
 
-                                                    <div class="mt-35">
-                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">
-                                                    </div>
-
-                                                    <div class="mt-35" style="color: #8F5541">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                        Illum
-                                                        voluptatum
-                                                        corrupti cumque voluptates, incidunt provident recusandae
-                                                        officiis
-                                                        nam mollitia
-                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.
-                                                        Facere,
-                                                        magni dolores
-                                                        harum distinctio eum nisi!
-                                                    </div>
+                                                    </a>
                                                 </div>
-
-                                            </a>
+                                            </div>
                                         </div>
+
                                     </div>
 
-                                </div>
+
+                                </li>
+
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
 
 
-                            </div>
+                        <!--                        <li class="mt-35 top-news">-->
+                        <!---->
+                        <!---->
+                        <!--                            <div class="news-box__img"></div>-->
+                        <!---->
+                        <!--                            <div class="news-box__content">-->
+                        <!---->
+                        <!--                                <div class="news-box__content_tag">-->
+                        <!---->
+                        <!--                                    <div class="flex-box">-->
+                        <!--                                        <div>-->
+                        <!--                                            <div class="tag__news" style="background: #E69F9C;"></div>-->
+                        <!--                                            <span>Новость</span>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div>-->
+                        <!--                                            <span>2990</span>-->
+                        <!--                                            <span>руб</span>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!---->
+                        <!--                                </div>-->
+                        <!---->
+                        <!--                                <div class="mt-45">-->
+                        <!--                                    <h2 class="title title__h4">-->
+                        <!--                                            <span href="#!" class="news-box__content_link">-->
+                        <!--                                                Лучший рецепт месяца по мнению-->
+                        <!--                                                наших кондитеров-->
+                        <!--                                            </span>-->
+                        <!--                                    </h2>-->
+                        <!--                                </div>-->
+                        <!---->
+                        <!--                                <div class="mt-35">-->
+                        <!--                                    <div class="desc desc__sm">-->
+                        <!--                                        Приближающийся летний сезон — прекрасное время, чтобы-->
+                        <!--                                        попробовать самые вкусные и разнообразные сочетания-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!---->
+                        <!--                                <div class="mt-35">-->
+                        <!--                                    <div class="flex-box">-->
+                        <!--                                        <div class="news-box__content_date">14.09.2019</div>-->
+                        <!--                                        <div>-->
+                        <!--                                            <a href="#!" class="link link__a">-->
+                        <!--                                                Записаться-->
+                        <!---->
+                        <!---->
+                        <!--                                                <div class="news-box__content_hidden">-->
+                        <!--                                                    <div class="mt-30">-->
+                        <!--                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">-->
+                        <!--                                                    </div>-->
+                        <!---->
+                        <!--                                                    <div class="mt-35" style="color: #8F5541">-->
+                        <!--                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.-->
+                        <!--                                                        Illum-->
+                        <!--                                                        voluptatum-->
+                        <!--                                                        corrupti cumque voluptates, incidunt provident recusandae-->
+                        <!--                                                        officiis-->
+                        <!--                                                        nam mollitia-->
+                        <!--                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.-->
+                        <!--                                                        Facere,-->
+                        <!--                                                        magni dolores-->
+                        <!--                                                        harum distinctio eum nisi!-->
+                        <!--                                                    </div>-->
+                        <!---->
+                        <!--                                                    <div class="mt-35">-->
+                        <!--                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">-->
+                        <!--                                                    </div>-->
+                        <!---->
+                        <!--                                                    <div class="mt-35" style="color: #8F5541">-->
+                        <!--                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.-->
+                        <!--                                                        Illum-->
+                        <!--                                                        voluptatum-->
+                        <!--                                                        corrupti cumque voluptates, incidunt provident recusandae-->
+                        <!--                                                        officiis-->
+                        <!--                                                        nam mollitia-->
+                        <!--                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.-->
+                        <!--                                                        Facere,-->
+                        <!--                                                        magni dolores-->
+                        <!--                                                        harum distinctio eum nisi!-->
+                        <!--                                                    </div>-->
+                        <!--                                                </div>-->
+                        <!---->
+                        <!--                                            </a>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!---->
+                        <!--                                </div>-->
+                        <!---->
+                        <!---->
+                        <!--                            </div>-->
+                        <!---->
+                        <!---->
+                        <!--                        </li>-->
 
-
-                        </li>
-
-
-                        <!-- list news -->
-                        <li class="mt-35">
-
-                            <div class="news-box__img"></div>
-
-                            <div class="news-box__content">
-
-                                <div class="news-box__content_tag">
-                                    <div class="flex-box">
-                                        <div>
-                                            <div class="tag__news" style="background: #E69F9C;"></div>
-                                            <span>Новость</span>
-                                        </div>
-                                        <div>
-                                            <span>2990</span>
-                                            <span>руб</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-45">
-                                    <h2 class="title title__h4">
-
-                                            <span href="#!" class="news-box__content_link">
-
-                                                Лучший рецепт месяца по мнению
-                                                наших кондитеров
-
-                                            </span>
-
-                                    </h2>
-                                </div>
-
-                                <div class="mt-35">
-                                    <div class="desc desc__sm">
-                                        Приближающийся летний сезон — прекрасное время, чтобы
-                                        попробовать самые вкусные и разнообразные сочетания
-                                    </div>
-                                </div>
-
-                                <div class="mt-35">
-                                    <div class="flex-box">
-                                        <div class="news-box__content_date">14.09.2019</div>
-                                        <div>
-                                            <a href="#!" class="link link__a">
-                                                Записаться
-
-                                                <div class="news-box__content_hidden">
-
-                                                    <div class="mt-30">
-                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">
-                                                    </div>
-
-                                                    <div class="mt-35" style="color: #8F5541">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                        Illum
-                                                        voluptatum
-                                                        corrupti cumque voluptates, incidunt provident recusandae
-                                                        officiis
-                                                        nam mollitia
-                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.
-                                                        Facere,
-                                                        magni dolores
-                                                        harum distinctio eum nisi!
-                                                    </div>
-
-                                                    <div class="mt-35">
-                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">
-                                                    </div>
-
-                                                    <div class="mt-35" style="color: #8F5541">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                        Illum
-                                                        voluptatum
-                                                        corrupti cumque voluptates, incidunt provident recusandae
-                                                        officiis
-                                                        nam mollitia
-                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.
-                                                        Facere,
-                                                        magni dolores
-                                                        harum distinctio eum nisi!
-                                                    </div>
-
-                                                </div>
-
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-
-                        </li>
 
                     </ul>
 
@@ -224,7 +208,6 @@ use app\widgets\sidebar\Sidebar;
         </div>
     </div>
 </section>
-
 
 
 <!-- Modal -->
@@ -242,6 +225,20 @@ use app\widgets\sidebar\Sidebar;
                 <div class="modal-body">
 
                 </div>
+                
+                <?php $form = ActiveForm::begin([
+                    'options' => ['class' => 'master-class-form mt-60']
+                ]); ?>
+
+                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input']) ?>
+
+                <?= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input']) ?>
+
+                <?= $form->field($masterClassForm, 'comment')->textarea(['class' => 'global-form__input']) ?>
+
+                <?= Html::submitButton('Оправить', ['class' => 'button button__rectangle']) ?>
+
+                <?php $form = ActiveForm::end(); ?>
             </div>
 
         </div>

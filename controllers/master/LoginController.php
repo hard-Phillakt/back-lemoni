@@ -36,6 +36,12 @@ class LoginController extends Controller
 
             if ($data = $model->load(Yii::$app->request->post()) && $login = Yii::$app->request->post()) {
 
+                $remember = Yii::$app->request->post();
+//
+//                $remember['Login']['rememberMe'];
+
+//                debug(Yii::$app->request->post());
+
                 $query = new User();
 
                 $user = $query::findOne(['name' => $login['Login']['name']]);
@@ -44,7 +50,7 @@ class LoginController extends Controller
 
                 if ($successPass) {
 
-                    Yii::$app->user->login($user);
+                    Yii::$app->user->login($user, $remember['Login']['rememberMe'] == 1 ? 3600*24*30 : 0);
 
                     return $this->redirect('/master/news');
 

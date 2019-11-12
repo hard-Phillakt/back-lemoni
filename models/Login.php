@@ -16,12 +16,14 @@ class Login extends Model {
 
     public $name;
     public $password;
+    public $remember = true;
 
     public function rules(){
 
         return [
             ['name', 'required', 'message' => 'Неверное имя',],
             ['password', 'required', 'message' => 'Неверный пароль'],
+            ['remember', 'safe'],
         ];
     }
 

@@ -14,6 +14,7 @@ use app\widgets\customcart\ChangeCount;
 use app\widgets\customcart\ChangeOptions;
 
 //debug($modelDeliveryContact);
+use yii\widgets\Pjax;
 use kartik\date\DatePicker;
 
 ?>
@@ -63,8 +64,30 @@ use kartik\date\DatePicker;
         </div>
 
         <div class="row mt-35">
+            <div class="col-lg-12">
 
-            <?php $form = ActiveForm::begin(); ?>
+<!--                --><?php //if( Yii::$app->session->hasFlash('success') ): ?>
+<!---->
+<!--                    <div class="alert alert-success alert-dismissible" role="alert">-->
+<!--                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--                        --><?php //echo Yii::$app->session->getFlash('success'); ?>
+<!--                    </div>-->
+<!---->
+<!--                --><?php //endif;?>
+
+            </div>
+        </div>
+
+        <div class="row mt-35">
+
+            <?php Pjax::begin(); ?>
+
+            <?php $form = ActiveForm::begin([
+                'options' => [
+                    'id' => 'delivery-form',
+                    'data-pjax' => true
+                ]
+            ]); ?>
 
             <div class="col-lg-8">
 
@@ -261,6 +284,8 @@ use kartik\date\DatePicker;
             </div>
 
             <?php $form = ActiveForm::end(); ?>
+
+            <?php Pjax::end(); ?>
 
         </div>
 
