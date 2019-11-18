@@ -11,7 +11,7 @@ if (navMenuIconlink[1] || navMenuIconlink[0]) {
             headerFullMenu.classList.remove('close-menu');
         }
 
-    }
+    };
 
     navMenuIconlink[0].onclick = function (e) {
         e.preventDefault();
@@ -25,6 +25,41 @@ if (navMenuIconlink[1] || navMenuIconlink[0]) {
 }
 
 // Menu end
+
+
+// active menu, sidebar, footer start
+
+var menuNavA = document.querySelectorAll('.header-box-full__ul .link__a');
+var menuSideBarA = document.querySelectorAll('.news-sidebar .link__a');
+var menuFooterA = document.querySelectorAll('.footer__ul .link__a_w');
+
+function ActiveItem(data) {
+    var element = data;
+    this.activeItem(element);
+}
+
+ActiveItem.prototype = {
+    activeItem: function (el) {
+        el.forEach(function (item, i) {
+            if (item.pathname == window.location.pathname && item.classList[1] !== 'link__a_w') {
+                item.classList.add('active-link-a');
+            }
+
+            if(item.classList[1] == 'link__a_w' && item.pathname == window.location.pathname){
+                item.classList.add('active-link-a_w');
+            }
+        });
+    }
+};
+
+var menu = new ActiveItem(menuNavA);
+var sidebar = new ActiveItem(menuSideBarA);
+var footer = new ActiveItem(menuFooterA);
+
+// active menu, sidebar, footer end
+
+
+
 
 
 // Filter Cake-category-type-product
@@ -88,22 +123,21 @@ if (wpper) {
 }
 
 
-
 // pjax call-back
-$(document).on('pjax:success', function() {
+$(document).on('pjax:success', function () {
 
     var count = $('#delivery-form')[0].length;
 
-    for(var i = 0; i < count; i++){
+    for (var i = 0; i < count; i++) {
 
-        if($('#delivery-form')[0][i].nodeName != 'BUTTON'){
+        // очищаем поля формы кроме кнопки
+        if ($('#delivery-form')[0][i].nodeName != 'BUTTON') {
             $('#delivery-form')[0][i].value = '';
         }
 
     }
 
 });
-
 
 
 // Ajax delivery data

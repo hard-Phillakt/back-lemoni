@@ -42,8 +42,10 @@ input[disabled] {
     justify-content: center;
     border-radius: 1em;
     font-size: 10px;
-    transform: translateY(-10px);
     transition: all .3s ease-in-out;
+    position: absolute;
+    top: -10px;
+    left: 30px;
 }
 
 .additional-modules__cart a {
@@ -130,6 +132,130 @@ input[disabled] {
 .modal-body {
     padding: 0;
 }
+
+
+.additional-modules__search {
+    margin: 0;
+    text-align: center;
+}
+
+.section-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-aling-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+
+.news-box__img {
+    cursor: pointer;
+}
+
+.category-cake-box {
+    padding: 30px 0;
+}
+
+/*.active-link-a {*/
+    /*position: relative;*/
+/*}*/
+
+.active-link-a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #1B86D5;
+    transition: all .3s ease-in-out;
+}
+
+.active-link-a_w::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transition: all .3s ease-in-out;
+}
+
+
+
+.contact-italic {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.contact-title {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.contact .font-family {
+    font-family: "Open Sans", sans-serif;
+}
+
+.flter-min-max {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-filtercake-price_for_kg_min, .field-filtercake-price_for_kg_max {
+    width: 45%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 300px) and (max-width: 991px) {

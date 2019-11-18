@@ -14,7 +14,7 @@ use Yii;
 
 // подключил модель мастер классов
 use app\models\MasterClass;
-use app\controllers\MasterClassForm;
+use app\models\MasterClassForm;
 
 
 // Страница "Мастер классов"
@@ -39,6 +39,7 @@ class MasterClassController extends Controller
             $data .= '<p><strong style="color:#8F5541;">Имя: </strong>' . $userData['MasterClassForm']['name']. '</p>';
             $data .= '<p><strong style="color:#8F5541;">Телефон: </strong>' . $userData['MasterClassForm']['phone']. '</p>';
             $data .= '<p><strong style="color:#8F5541;">Комментарий: </strong>' . $userData['MasterClassForm']['comment']. '</p>';
+            $data .= '<p><strong style="color:#8F5541;">Мастер-класс: </strong>' . $userData['MasterClassForm']['title_master']. '</p>';
             $data .= '</div>';
 
             Yii::$app->mailer->compose()
@@ -49,9 +50,11 @@ class MasterClassController extends Controller
                 ->setHtmlBody('<div>'. $data .'</div>')
                 ->send();
 
+
+            return $this->redirect('/master-class');
+
         }
 
-        
 
         return $this->render('index', ['model' => $model, 'masterClassForm' => $masterClassForm]);
     }

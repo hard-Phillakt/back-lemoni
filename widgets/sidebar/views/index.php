@@ -1,10 +1,10 @@
 
 <ul class="news-sidebar mt-35">
     <li>
-        <a href="/about" class="link link__a">О компании</a>
+        <a href="/about" class="link link__a">О Нас</a>
     </li>
     <li>
-        <a href="/news" class="link link__a">Новости компании</a>
+        <a href="/news" class="link link__a">Новости</a>
     </li>
     <li>
         <a href="/order" class="link link__a">Заказ и оплата</a>

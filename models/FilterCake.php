@@ -14,7 +14,8 @@ use yii\base\Model;
 class FilterCake extends Model
 {
 
-    public $price_for_kg;
+    public $price_for_kg_min;
+    public $price_for_kg_max;
 
     public $type = [
         'Классический' => 'Классический',
@@ -75,7 +76,7 @@ class FilterCake extends Model
     {
 
         return [
-            [['price_for_kg', 'type', 'count_level', 'subjects', 'tag',], 'safe']
+            [['price_for_kg_min', 'price_for_kg_max', 'type', 'count_level', 'subjects', 'tag',], 'safe']
         ];
 
     }

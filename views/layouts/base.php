@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\BaseAsset;
 use app\widgets\customcart\CartInformer;
+use yii\bootstrap\NavBar;
 
 BaseAsset::register($this);
 ?>
@@ -42,7 +43,8 @@ BaseAsset::register($this);
 
             <div class="container mb-60">
                 <div class="row">
-                    <div class="col-lg-12">
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="header-box">
 
                             <!-- nav-menu-icon -->
@@ -58,29 +60,33 @@ BaseAsset::register($this);
                                 </a>
                             </nav>
 
+                        </div>
+                    </div>
 
-                            <!-- additional-modules -->
-                            <div class="additional-modules">
-                                <div class="additional-modules__phone">
-                                    <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
-                                </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <!-- additional-modules -->
+                        <div class="additional-modules__phone">
+                            <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
+                        </div>
+                    </div>
 
-                                <div class="additional-modules__search">
-                                    <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
-                                </div>
+                    <div class="col-lg-1">
+                        <div class="additional-modules__search">
+                            <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
+                        </div>
+                    </div>
 
-                                <div class="additional-modules__cart">
-                                    <a href="/check-out">
-                                        <img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
+                    <div class="col-lg-1">
+                        <div class="additional-modules__cart">
+                            <a href="/check-out">
+                                <img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
                                         <span class="CartInformerBox">
                                             <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
                                         </span>
-                                    </a>
-                                </div>
-                            </div>
-
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -136,6 +142,7 @@ BaseAsset::register($this);
                             </ul>
                         </div>
 
+
                     </div>
                 </div>
             </div>
@@ -146,54 +153,65 @@ BaseAsset::register($this);
     <!-- header start -->
     <header class="header">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+            <div class="row flex-aling-center">
 
-                    <div class="header-box">
-
-                        <!-- nav-menu-icon -->
-                        <nav class="nav-menu-icon">
-                            <a href="#!" class="nav-menu-icon__link">
+                <div class="col-lg-4">
+                    <!-- nav-menu-icon -->
+                    <nav class="nav-menu-icon">
+                        <a href="#!" class="nav-menu-icon__link">
                                 <span class="nav-menu-icon__link_img">
                                     <img src="/img/icons/black/icon-menu.svg" alt="icon-menu" class="img-responsive">
                                 </span>
                                 <span class="nav-menu-icon__link_title">
                                     Меню
                                 </span>
-                            </a>
-                        </nav>
+                        </a>
+                    </nav>
+                </div>
 
 
-                        <!-- section-logo -->
-                        <div class="section-logo">
-                            <a href="/">
-                                <img src="/img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
-                            </a>
-                        </div>
+                <div class="col-lg-4">
+                    <!-- section-logo -->
+                    <div class="section-logo">
+                        <a href="/">
+                            <img src="/img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
 
+                <div class="col-lg-2">
 
-                        <!-- additional-modules -->
-                        <div class="additional-modules">
-                            <div class="additional-modules__phone">
-                                <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
-                            </div>
-
-                            <div class="additional-modules__search">
-                                <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
-                            </div>
-
-                            <div class="additional-modules__cart">
-                                <a href="/check-out"><img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
-                                    <span class="CartInformerBox">
-                                        <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-
+                    <!-- additional-modules__phone -->
+                    <div class="additional-modules__phone">
+                        <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
                     </div>
 
                 </div>
+
+
+                <div class="col-lg-1">
+
+                    <!-- additional-modules__search -->
+                    <div class="additional-modules__search">
+                        <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-1">
+
+                    <!-- additional-modules__cart -->
+                    <div class="additional-modules__cart">
+                        <a href="/check-out"><img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
+                            <span class="CartInformerBox">
+                                <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </header>

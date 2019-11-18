@@ -218,7 +218,7 @@
                         <a href="#!" class="link link__a">Заказать</a>
                     </div>
                     <div class="col-lg-6 mb-35">
-                        <a href="#!" class="link link__a">Мини-шадлавы</a>
+<!--                        <a href="#!" class="link link__a">Мини-шадлавы</a>-->
                     </div>
                 </div>
             </div>

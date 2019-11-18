@@ -1,8 +1,6 @@
 <?php
 
-
 use app\widgets\sidebar\Sidebar;
-
 
 //debug($model);
 ?>
@@ -16,7 +14,6 @@ use app\widgets\sidebar\Sidebar;
                 <!-- Sidebar -->
                 <?= Sidebar::widget(); ?>
 
-
             </div>
 
             <div class="col-lg-9 col-lg-offset-1">
@@ -28,15 +25,17 @@ use app\widgets\sidebar\Sidebar;
                     <ul class="news-box__wrapp">
 
 
-                        <?php foreach ($model as $key => $value): ?>
+                        <?php
+                        $newsBoxCount = 0;
 
+                        foreach ($model as $key => $value): ?>
 
                             <?php if ($value->lm_publicate == 1): ?>
 
                                 <li class="mt-35 top-news">
 
 
-                                    <div class="news-box__img"></div>
+                                    <div class="news-box__img" data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
 
@@ -52,7 +51,7 @@ use app\widgets\sidebar\Sidebar;
                                         <div class="mt-45">
                                             <h2 class="title title__h4">
 
-                                                <a href="#!" class="news-box__content_link">
+                                                <a href="#!" class="news-box__content_link" data-link-count="<?= $newsBoxCount; ?>">
 
                                                     <?= $value->lm_title; ?>
 
@@ -84,7 +83,11 @@ use app\widgets\sidebar\Sidebar;
 
                                 </li>
 
-                            <?php endif; ?>
+                            <?php
+
+                                $newsBoxCount++;
+
+                            endif; ?>
 
                         <?php endforeach; ?>
 
@@ -190,6 +193,10 @@ use app\widgets\sidebar\Sidebar;
             <div class="modal-body-wrapp">
                 <div class="modal-body">
 
+                </div>
+
+                <div class="mt-35">
+                    <button type="submit" data-dismiss="modal" class="button button__rectangle mt-60">Закрыть</button>
                 </div>
             </div>
 

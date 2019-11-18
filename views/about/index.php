@@ -11,8 +11,7 @@ use app\widgets\sidebar\Sidebar;
             <div class="col-lg-2">
 
                 <!-- Sidebar -->
-                <?=  Sidebar::widget(); ?>
-
+                <?= Sidebar::widget(); ?>
 
             </div>
 
@@ -57,15 +56,61 @@ use app\widgets\sidebar\Sidebar;
                         </div>
                     </div>
 
+
+
+
+
                     <div class="col-lg-12 mb-35">
-                        <div class="mt-35">
-                            <img src="./img/about/infograph.png" alt="infograph" class="img-responsive">
+
+                        <div class="flex-justify-center mt-35">
+                            <h2 class="title title__h2 contact-italic contact-title">Почему вы выберете «Лемони»?</h2>
                         </div>
+
+                        <div class="row mt-60">
+                            <div class="col-lg-6">
+                                <p class="desc desc__md contact-italic">
+                                    Готовим только из высококачественных
+                                    натуральных продуктов
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="desc desc__md contact-italic">
+                                    Выбираем шоколад проверенных марок:
+                                    Luker, Cacao Barry, Callebaut
+                                </p>
+                            </div>
+
+                            <div class="col-lg-12 flex-justify-center mt-15">
+                                <div class="mb-15">
+                                    <img src="./img/about/infograph.png" alt="infograph" class="img-responsive">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <p class="desc desc__md contact-italic">
+                                    Не используем консерванты и сухие смеси
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="desc desc__md contact-italic">
+                                    Собственное производство и ручная работа
+                                    делают десерты уникальными
+                                    и такими вкусными.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
+
+
+
+
+
+
 
                     <div class="col-lg-12">
                         <div class="mt-35">
-                            <h3 class="title title__h3">О кондитерской</h3>
+                            <h3 class="title title__h3 contact-title">О нашей продукции</h3>
                         </div>
                     </div>
 

@@ -49,7 +49,15 @@ Url::remember();
                         <!--                            Цена за килограм-->
                         <!--                        </h5>-->
 
-                        <?= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
+<!--                        --><?//= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
+
+                        <div class="flter-min-max">
+
+                            <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум') ?>
+
+                            <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум') ?>
+
+                        </div>
 
                         <!--                        <input type="text" class="global-form__input mt-35" placeholder="Максимум 6000 руб/кг">-->
 
@@ -57,7 +65,7 @@ Url::remember();
 
 
                     <!-- filter type-goods -->
-                    <div class="filter-sidebar-catalog__box mt-35">
+                    <div class="filter-sidebar-catalog__box mt-15">
 
                         <h5 class="title title__h5 mt-35">
                             Тип продукта
@@ -110,22 +118,22 @@ Url::remember();
                         <div class="global-form__select mt-35">
 
                             <div class="form-group field-filtercake-count_level">
-                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество уровней</label>
-                                <select id="filtercake-count_level" class="global-form__input" name="FilterCake[count_level]">
+                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество
+                                    уровней</label>
+                                <select id="filtercake-count_level" class="global-form__input"
+                                        name="FilterCake[count_level]">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
                                     <option value="" selected>...</option>
                                 </select>
 
                                 <div class="help-block"></div>
                             </div>
 
-<!--                            --><?//= $form->field($filter, 'count_level')
-//                                ->dropDownList($filter['count_level'], ['class' => 'global-form__input'])
-//                                ->label('Колличество уровней', ['class' => 'title title__h5 pb-15']) ?>
+                            <!--                            --><? //= $form->field($filter, 'count_level')
+                            //                                ->dropDownList($filter['count_level'], ['class' => 'global-form__input'])
+                            //                                ->label('Колличество уровней', ['class' => 'title title__h5 pb-15']) ?>
 
                             <!--                            <select name="" id="">-->
                             <!--                                <option value="1">test</option>-->
@@ -142,12 +150,13 @@ Url::remember();
 
                         <div class="global-form__select mt-35">
 
-<!--                            --><?//= $form->field($filter, 'subjects')
-//                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
-//                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
+                            <!--                            --><? //= $form->field($filter, 'subjects')
+                            //                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
+                            //                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
 
                             <div class="form-group field-filtercake-subjects">
-                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое оформление</label>
+                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое
+                                    оформление</label>
                                 <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">
                                     <option value="Свадебный торт">Свадебный торт</option>
                                     <option value="День рождения">День рождения</option>
@@ -174,6 +183,7 @@ Url::remember();
 
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
+
                 <h2 class="title title__h1 opac__07">Каталог продукции</h2>
 
 
@@ -218,7 +228,6 @@ Url::remember();
 
                 <div class="row mt-60">
 
-
                     <!-- card-filter -->
 
                     <?php
@@ -232,7 +241,8 @@ Url::remember();
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                       class="card-img card-img__bg"
                                        style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
@@ -248,7 +258,7 @@ Url::remember();
                                     </div>
 
                                 </div>
- 
+
                             </div>
 
                         <?php endforeach; ?>
@@ -262,7 +272,8 @@ Url::remember();
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>"
+                                       class="card-img card-img__bg"
                                        style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">

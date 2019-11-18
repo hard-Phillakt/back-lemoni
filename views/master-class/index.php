@@ -29,7 +29,11 @@ use yii\helpers\Html;
                     <ul class="news-box__wrapp">
 
 
-                        <?php foreach ($model as $key => $value): ?>
+                        <?php
+
+                        $newsBoxCount = 0;
+
+                        foreach ($model as $key => $value): ?>
 
 
                             <?php if ($value->lm_publicate == 1): ?>
@@ -37,7 +41,7 @@ use yii\helpers\Html;
                                 <li class="mt-35 top-news">
 
 
-                                    <div class="news-box__img"></div>
+                                    <div class="news-box__img" data-title="<?= $value->lm_title; ?>" data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
 
@@ -80,7 +84,7 @@ use yii\helpers\Html;
                                             <div class="flex-box">
                                                 <div class="news-box__content_date"><?= $value->lm_date; ?></div>
                                                 <div>
-                                                    <a href="#!" class="link link__a">
+                                                    <a href="#!" class="link link__a" data-title="<?= $value->lm_title; ?>" data-link-count="<?= $newsBoxCount; ?>">
                                                         Записаться
 
                                                         <div class="news-box__content_hidden">
@@ -99,7 +103,11 @@ use yii\helpers\Html;
 
                                 </li>
 
-                            <?php endif; ?>
+                            <?php
+
+                                $newsBoxCount++;
+                            
+                            endif; ?>
 
                         <?php endforeach; ?>
 
@@ -222,23 +230,37 @@ use yii\helpers\Html;
             </div>
 
             <div class="modal-body-wrapp">
+
+                <div class="mb-35">
+                    <h3 class="modal-header__title title title__h3" style="color: #8F5541"></h3>
+                </div>
+
                 <div class="modal-body">
 
                 </div>
                 
                 <?php $form = ActiveForm::begin([
-                    'options' => ['class' => 'master-class-form mt-60']
+                    'options' => ['class' => 'master-class-form mt-35']
                 ]); ?>
 
-                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input']) ?>
+                <div class="mt-15">
+                    <p>Записаться на <br> Мастер-класс</p>
+                </div>
 
-                <?= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input']) ?>
+                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('') ?>
 
-                <?= $form->field($masterClassForm, 'comment')->textarea(['class' => 'global-form__input']) ?>
+                <?= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+7 000 000 0000'])->label('') ?>
 
-                <?= Html::submitButton('Оправить', ['class' => 'button button__rectangle']) ?>
+                <?= $form->field($masterClassForm, 'comment')->textarea(['class' => 'global-form__input', 'placeholder' => 'Введите комментарий'])->label('') ?>
+
+                <div class="mt-35 flex-justify-center">
+                    <?= Html::submitButton('Оправить', ['class' => 'button button__rectangle']) ?>
+                </div>
+
+                <?= $form->field($masterClassForm, 'title_master')->hiddenInput()->label(''); ?>
 
                 <?php $form = ActiveForm::end(); ?>
+
             </div>
 
         </div>

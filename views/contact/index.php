@@ -37,17 +37,17 @@ use app\widgets\sidebar\Sidebar;
                         </div>
 
                         <div class="mt-35">
-                            Юридические данные:
-                            ООО ”Лемони”
-                            ИНН 3123359885
+                            Юридические данные: <br>
+                            ООО ”Лемони” <br>
+                            ИНН 3123359885 <br>
                             ОГРН 1153123001789
                         </div>
 
                         <div class="mt-35">
-                            <a href="#!">
+                            <a href="https://www.instagram.com/bakery_lemoni/">
                                 <img src="./img/contact/ico_inst.svg" alt="ico_inst">
                             </a>
-                            <a href="#!">
+                            <a href="https://www.facebook.com/konditerskayalemoni/">
                                 <img src="./img/contact/ico_facebook.svg" alt="ico_facebook">
                             </a>
                         </div>

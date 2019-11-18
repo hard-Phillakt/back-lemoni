@@ -16,7 +16,7 @@ use yii\helpers\Url;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Candie-bar</span>
+                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Candie</span>
             </div>
         </div>
     </div>
@@ -157,8 +157,10 @@ use yii\helpers\Url;
                         <div class="global-form__select mt-35">
 
                             <div class="form-group field-filtercake-count_level">
-                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество уровней</label>
-                                <select id="filtercake-count_level" class="global-form__input" name="FilterCake[count_level]">
+                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество
+                                    уровней</label>
+                                <select id="filtercake-count_level" class="global-form__input"
+                                        name="FilterCake[count_level]">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -170,7 +172,7 @@ use yii\helpers\Url;
                                 <div class="help-block"></div>
                             </div>
 
-                            <!--                            --><?//= $form->field($filter, 'count_level')
+                            <!--                            --><? //= $form->field($filter, 'count_level')
                             //                                ->dropDownList($filter['count_level'], ['class' => 'global-form__input'])
                             //                                ->label('Колличество уровней', ['class' => 'title title__h5 pb-15']) ?>
 
@@ -189,12 +191,13 @@ use yii\helpers\Url;
 
                         <div class="global-form__select mt-35">
 
-                            <!--                            --><?//= $form->field($filter, 'subjects')
+                            <!--                            --><? //= $form->field($filter, 'subjects')
                             //                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
                             //                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
 
                             <div class="form-group field-filtercake-subjects">
-                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое оформление</label>
+                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое
+                                    оформление</label>
                                 <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">
                                     <option value="Свадебный торт">Свадебный торт</option>
                                     <option value="День рождения">День рождения</option>
