@@ -45,7 +45,7 @@ ActiveItem.prototype = {
                 item.classList.add('active-link-a');
             }
 
-            if(item.classList[1] == 'link__a_w' && item.pathname == window.location.pathname){
+            if (item.classList[1] == 'link__a_w' && item.pathname == window.location.pathname) {
                 item.classList.add('active-link-a_w');
             }
         });
@@ -57,9 +57,6 @@ var sidebar = new ActiveItem(menuSideBarA);
 var footer = new ActiveItem(menuFooterA);
 
 // active menu, sidebar, footer end
-
-
-
 
 
 // Filter Cake-category-type-product
@@ -75,9 +72,12 @@ filterSidebarCatalog__box_ul.forEach(function (item, i) {
             item.children[0].classList.remove('chek-true');
             item.children.checked = false;
 
+            console.log(item.children.checked);
+
         } else {
             item.children[0].classList.add('chek-true');
             item.children[1].checked = true;
+            console.log(item.children[1].checked);
         }
 
     }
@@ -85,9 +85,6 @@ filterSidebarCatalog__box_ul.forEach(function (item, i) {
 });
 
 // Filter Cake-category-type-product end
-
-
-// 
 
 var filterSidebarCatalogBoxCompilation_ul = document.querySelectorAll('.filter-sidebar-catalog__box-compilation_ul span');
 
@@ -140,27 +137,45 @@ $(document).on('pjax:success', function () {
 });
 
 
-// Ajax delivery data
+// Ajax sidebar-filter data
 $(document).ready(function () {
 
-    // console.log($('#delivery-form')[0]);
+    var sidebarFilter = document.querySelector('#sidebar-filter');
+    var button__rectangle = document.querySelector('.button__rectangle');
+    var boxCakeGoods = document.querySelector('#box-cake-goods');
+    var shadowCheckbox = document.querySelectorAll('.shadow-checkbox');
 
-    // $('#delivery-form').on('submit', function (e) {
-    //     e.preventDefault();
+    if (sidebarFilter) {
 
-    //     $.ajax({
-    //         type: 'post',
-    //         url: '/delivery',
-    //         data: $(this).serialize(),
-    //         success: function (res) {
-    //             console.log(res);
-    //         },
-    //         error: function (err) {
-    //             console.log(err);
-    //         }
-    //     });
-    //
-    // })
+        button__rectangle.onclick = function (e) {
+            e.preventDefault();
+
+            // $('#sidebar-filter')[0].reset();
+
+            console.log($('#sidebar-filter').serialize());
+
+            $.ajax({
+                type: 'post',
+                url: '/cake-goods/ajax-goods',
+                data: $('#sidebar-filter').serialize(),
+                success: function (res) {
+
+                    boxCakeGoods.innerHTML = res;
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            // Сброс checkbox-img инпута
+            // for(var i = 0; i < shadowCheckbox.length; i++){
+            //     shadowCheckbox[i].className = 'shadow-checkbox mr-15'
+            // }
+
+        };
+    }
+
 
 });
 

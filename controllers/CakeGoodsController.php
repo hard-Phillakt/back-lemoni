@@ -27,10 +27,9 @@ use app\models\Tag;
 class CakeGoodsController extends Controller
 {
 
-    public $layout = 'base';
-
     public function actionIndex()
     {
+        $this->layout = 'base';
 
         $query_cake_goods = new CakeGoods();
 
@@ -38,18 +37,7 @@ class CakeGoodsController extends Controller
 
         $filter = new FilterCake();
 
-        if ($data_filter = Yii::$app->request->post('FilterCake')) {
-
-//            debug($data_filter);
-//            die;
-
-//            if($data_filter){
-//                echo 'есть контакт';
-//
-//                debug($data_filter);die;
-//            }
-
-//            $query_cake_goods = new CakeGoods();
+        if (!Yii::$app->request->isAjax && $data_filter = Yii::$app->request->post('FilterCake')) {
 
             $cake = $query_cake_goods::find();
 
@@ -79,28 +67,28 @@ class CakeGoodsController extends Controller
             $data_cake = $cake->asArray()->all();
 
 
-//          5.фильт по "Тегам" пока делаю страницами в место фильтра
-            if ($data_filter['tag']) {
-
-//              если в запросе есть id тега делаем выборку данных в классе Tag ( в классе объявдляются связи и условия выборки)
-                $chosenTag = Tag::find()->where(['id' => $data_filter['tag']])->one();
-
-
-//              если в параметрах есть цена то
-                if ($data_filter['price_for_kg']) {
-
-                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
-                } else {
-
-                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
-
-//                    $richCakes = $chosenTag->getCake()->asArray()->all();
-                }
-
-
-//              делаю рендер по тегам и фильтрам
-                return $this->render('index', ['richCakes' => $richCakes, 'model' => $model, 'filter' => $filter]);
-            }
+//          5.фильт по "Тегам" пока делаю страницами в место фильтра ПОКА ###НЕ ПАШЕТ###
+//            if ($data_filter['tag']) {
+//
+////              если в запросе есть id тега делаем выборку данных в классе Tag ( в классе объявдляются связи и условия выборки)
+//                $chosenTag = Tag::find()->where(['id' => $data_filter['tag']])->one();
+//
+//
+////              если в параметрах есть цена то
+//                if ($data_filter['price_for_kg']) {
+//
+//                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
+//                } else {
+//
+//                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
+//
+////                    $richCakes = $chosenTag->getCake()->asArray()->all();
+//                }
+//
+//
+////              делаю рендер по тегам и фильтрам
+//                return $this->render('index', ['richCakes' => $richCakes, 'model' => $model, 'filter' => $filter]);
+//            }
 
 
 //          делаю рендер по фильтрам без тегов
@@ -123,89 +111,53 @@ class CakeGoodsController extends Controller
     }
 
 
-    public function actionCandie()
+
+
+
+
+
+
+
+    public function actionAjaxGoods()
     {
+        $this->layout = false;
 
         $query_cake_goods = new CakeGoods();
 
-        $model = $query_cake_goods::find()->with(['tag'])->asArray()->all();
-
         $filter = new FilterCake();
 
-        if ($data_filter = Yii::$app->request->post('FilterCake')) {
+        if (Yii::$app->request->isAjax && $data_filter = Yii::$app->request->post('FilterCake')) {
 
-
-//            if($data_filter){
-//                echo 'есть контакт';
-//
-//                debug($data_filter);die;
-//            }
-
-
-            $cake = $query_cake_goods::find()->with(['tag']);
+            $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
-            $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
+            $cake->andFilterWhere(['>=', 'lm_price_for_kg', $data_filter['price_for_kg_min']]);
+
+            $cake->andFilterWhere(['<=', 'lm_price_for_kg', $data_filter['price_for_kg_max']]);
 
             if ($data_filter['type']) {
+
                 foreach ($data_filter['type'] as $key => $value) {
 
 //                  2.фильтр по "Тип продукта"
                     $cake->andFilterWhere(['like', 'lm_type', $value]);
 
                 }
+
             }
 
 //          3.фильтр по "Колличество уровней"
-            $cake->andFilterWhere(['like', 'lm_count_level', $data_filter['lm_count_level']]);
+            $cake->andFilterWhere(['like', 'lm_count_level', $data_filter['count_level']]);
 
 //          4.фильтр по "Тематическое оформление"
-            $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['lm_subjects']]);
+            $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['subjects']]);
 
             $data_cake = $cake->asArray()->all();
 
-
-//          5.фильт по "Тегам" пока делаю страницами в место фильтра
-//            if ($data_filter['tag']) {
-//
-////              если в запросе есть id тега делаем выборку данных в классе Tag ( в классе объявдляются связи и условия выборки)
-//                $chosenTag = Tag::find()->where(['id' => $data_filter['tag']])->one();
-//
-//
-////              если в параметрах есть цена то
-//                if($data_filter['price_for_kg']){
-//
-//                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
-//                } else {
-//
-//                    $richCakes = $chosenTag->getRichCake($data_filter['price_for_kg'])->asArray()->all();
-//
-////                    $richCakes = $chosenTag->getCake()->asArray()->all();
-//                }
-//
-//
-////              делаю рендер по тегам и фильтрам
-//                return $this->render('index', ['richCakes' => $richCakes, 'model' => $model, 'filter' => $filter]);
-//            }
-
-
-//          делаю рендер по фильтрам без тегов
-            return $this->render('candie', ['data_cake' => $data_cake, 'model' => $model, 'filter' => $filter]);
-
+//          делаю рендер по фильтрам без тегов на ajax
+            return $this->render('ajax-goods', ['data_cake' => $data_cake]);
         }
 
-
-        if ($data_filter_id = Yii::$app->request->get('compilation')) {
-
-            $model = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
-
-
-//          фильт по готовым подборкам
-            return $this->render('candie', ['model' => $model, 'filter' => $filter]);
-        }
-
-
-//      делаю рендер без фильтров и тегов
-        return $this->render('candie', ['model' => $model, 'filter' => $filter]);
     }
+
 }

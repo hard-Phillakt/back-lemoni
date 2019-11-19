@@ -43,11 +43,22 @@ use yii\helpers\Url;
                     <!-- filter kg -->
                     <div class="filter-sidebar-catalog__box">
 
-                        <h5 class="title title__h5 mt-35">
-                            Цена за килограм
-                        </h5>
+<!--                        <h5 class="title title__h5 mt-35">-->
+<!--                            Цена за килограм-->
+<!--                        </h5>-->
 
-                        <?= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
+                        <?//= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
+
+
+<!--                        <div class="flter-min-max mt-35">-->
+<!---->
+<!--                            --><?//= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум') ?>
+<!---->
+<!--                            --><?//= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум') ?>
+<!---->
+<!--                        </div>-->
+
+
 
                         <!--                        <input type="text" class="global-form__input mt-35" placeholder="Максимум 6000 руб/кг">-->
 
@@ -150,38 +161,30 @@ use yii\helpers\Url;
 
 
                     <!-- filter leavel -->
-                    <div class="filter-sidebar-catalog__box mt-35">
-
-                        <!--                        <h5 class="title title__h5">Колличество уровней</h5>-->
-
-                        <div class="global-form__select mt-35">
-
-                            <div class="form-group field-filtercake-count_level">
-                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество
-                                    уровней</label>
-                                <select id="filtercake-count_level" class="global-form__input"
-                                        name="FilterCake[count_level]">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="" selected>...</option>
-                                </select>
-
-                                <div class="help-block"></div>
-                            </div>
-
-                            <!--                            --><? //= $form->field($filter, 'count_level')
-                            //                                ->dropDownList($filter['count_level'], ['class' => 'global-form__input'])
-                            //                                ->label('Колличество уровней', ['class' => 'title title__h5 pb-15']) ?>
-
-                            <!--                            <select name="" id="">-->
-                            <!--                                <option value="1">test</option>-->
-                            <!--                            </select>-->
-                        </div>
-
-                    </div>
+<!--                    <div class="filter-sidebar-catalog__box mt-35">-->
+<!---->
+<!--                        <h5 class="title title__h5">Колличество уровней</h5>-->
+<!---->
+<!--                        <div class="global-form__select mt-35">-->
+<!---->
+<!--                            <div class="form-group field-filtercake-count_level">-->
+<!--                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество-->
+<!--                                    уровней</label>-->
+<!--                                <select id="filtercake-count_level" class="global-form__input"-->
+<!--                                        name="FilterCake[count_level]">-->
+<!--                                    <option value="1">1</option>-->
+<!--                                    <option value="2">2</option>-->
+<!--                                    <option value="3">3</option>-->
+<!--                                    <option value="4">4</option>-->
+<!--                                    <option value="5">5</option>-->
+<!--                                    <option value="" selected>...</option>-->
+<!--                                </select>-->
+<!---->
+<!--                                <div class="help-block"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
 
 
                     <!-- filter subjects -->
@@ -282,8 +285,8 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="#!" class="card-img card-img__bg"
-                                       style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
+                                       style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
                                         <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>"
@@ -312,8 +315,8 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="#!" class="card-img card-img__bg"
-                                       style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
+                                       style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
                                         <a href="/card/<?php $value['lm_alter_card']; ?>?id=<?php $value['id']; ?>"

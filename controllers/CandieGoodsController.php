@@ -45,7 +45,12 @@ class CandieGoodsController extends Controller
             $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
-            $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
+//            $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
+
+//            $cake->andFilterWhere(['>=', 'lm_price_for_kg', $data_filter['price_for_kg_min']]);
+//
+//            $cake->andFilterWhere(['<=', 'lm_price_for_kg', $data_filter['price_for_kg_max']]);
+
 
             if ($data_filter['type']) {
                 foreach ($data_filter['type'] as $key => $value) {

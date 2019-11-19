@@ -4,8 +4,10 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
+//use yii\widgets\Pjax;
 
-//    debug($data_cake);
+
+//debug($data_cake);
 
 //    debug($filter);
 Url::remember();
@@ -34,7 +36,11 @@ Url::remember();
             <div class="col-lg-3 mt-35">
 
                 <?php $form = ActiveForm::begin([
-                    'options' => ['class' => 'cake-goods'],
+                    'options' => [
+                        'id' => 'sidebar-filter',
+                        'class' => 'cake-goods',
+//                        'data-pjax' => '0'
+                    ],
                 ]); ?>
 
 
@@ -49,7 +55,7 @@ Url::remember();
                         <!--                            Цена за килограм-->
                         <!--                        </h5>-->
 
-<!--                        --><?//= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
+                        <!--                        --><? //= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
 
                         <div class="flter-min-max">
 
@@ -226,7 +232,7 @@ Url::remember();
                 </div>
 
 
-                <div class="row mt-60">
+                <div class="row mt-60" id="box-cake-goods">
 
                     <!-- card-filter -->
 
@@ -243,7 +249,7 @@ Url::remember();
 
                                     <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                        class="card-img card-img__bg"
-                                       style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
+                                       style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
                                         <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
@@ -274,7 +280,7 @@ Url::remember();
 
                                     <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>"
                                        class="card-img card-img__bg"
-                                       style="background: url(../<?= $value['lm_img_one']; ?>)"></a>
+                                       style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
                                         <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>"
