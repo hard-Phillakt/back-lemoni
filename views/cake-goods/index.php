@@ -38,8 +38,7 @@ Url::remember();
                 <?php $form = ActiveForm::begin([
                     'options' => [
                         'id' => 'sidebar-filter',
-                        'class' => 'cake-goods',
-//                        'data-pjax' => '0'
+                        'class' => 'cake-goods'
                     ],
                 ]); ?>
 
@@ -179,7 +178,7 @@ Url::remember();
                         </div>
                     </div>
 
-                    <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-60']) ?>
+                    <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>
 
                 <?php $form = ActiveForm::end(); ?>
@@ -211,7 +210,9 @@ Url::remember();
 
                                 <?php foreach ($filter['tag'] as $key => $value): ?>
 
-                                    <a href="/cake-goods?compilation=<?= $key; ?>" class="link link__a mr-15 mb-15">
+<!--                                <a href="/cake-goods?compilation=--><?//= $key; ?><!--" class="link link__a mr-15 mb-15">-->
+
+                                    <a href="#!" data-count="<?= $key; ?>" class="compilation-cake link link__a mr-15 mb-15">
                                         <!--<input type="radio"-->
                                         <!--       name="filter-compilation"-->
                                         <!--       class="global-form__checkbox mt-35">-->

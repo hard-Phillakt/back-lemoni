@@ -192,6 +192,7 @@ function GlogalOptionsCard() {
     this.optGlaze = function (box_count, classNameBox, count) {
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
+
         // задаём класс боксу
         dvizhOption.classList.add(classNameBox);
 
@@ -199,6 +200,24 @@ function GlogalOptionsCard() {
         var dvizhOption_label = document.querySelectorAll('.dvizh-option')[box_count].children[1].children;
 
         for (var i = 0; i < dvizhOption_label.length; i++) {
+
+            // item.classList.remove('optGlaze__circle_true');
+
+            dvizhOption_label[i].onclick = function () {
+
+                console.log(dvizhOption_label);
+
+                for (var i = 0; i < dvizhOption_label.length; i++) {
+                    dvizhOption_label[i].classList.remove('optGlaze__circle_true');
+                }
+
+                this.classList.add('optGlaze__circle_true');
+
+            };
+
+
+
+
 
             dvizhOption_label[i].children[0].setAttribute('type', 'radio');
 
@@ -331,7 +350,7 @@ function GlogalOptionsCard() {
 
         dvizhOption_label[0].children[0].setAttribute('type', 'text');
         dvizhOption_label[0].children[0].setAttribute('placeholder', 'Введите текст');
-        dvizhOption_label[0].children[0].setAttribute('value', '');
+        // dvizhOption_label[0].children[0].setAttribute('value', '');
         dvizhOption_label[0].children[0].classList.add('optString__input');
     }
 // optString(3, 'optString', [0]);

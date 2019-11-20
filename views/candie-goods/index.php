@@ -32,7 +32,10 @@ use yii\helpers\Url;
             <div class="col-lg-3 mt-35">
 
                 <?php $form = ActiveForm::begin([
-                    'options' => ['class' => 'cake-goods'],
+                    'options' => [
+                        'class' => 'cake-goods',
+                        'id' => 'sidebar-filter'
+                    ],
                 ]); ?>
 
 
@@ -50,13 +53,13 @@ use yii\helpers\Url;
                         <?//= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
 
 
-<!--                        <div class="flter-min-max mt-35">-->
-<!---->
-<!--                            --><?//= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум') ?>
-<!---->
-<!--                            --><?//= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум') ?>
-<!---->
-<!--                        </div>-->
+                        <div class="flter-min-max mt-35">
+
+                            <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
+
+                            <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум', ['class' => 'mb-15']) ?>
+
+                        </div>
 
 
 
@@ -72,7 +75,7 @@ use yii\helpers\Url;
                             Тип продукта
                         </h5>
 
-                        <div class="filter-sidebar-catalog__box_ul global-form mt-35">
+                        <div class="filter-sidebar-catalog__box_ul global-form mt-15">
 
                             <? //= $form->field($filter, 'type[]')->checkboxList($filter['type'], ['class' => 'filter-sidebar-catalog__box_ul global-form'])->label('Тип продукта'); ?>
 
@@ -217,7 +220,7 @@ use yii\helpers\Url;
                         </div>
                     </div>
 
-                    <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-60']) ?>
+                    <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>
 
                 <?php $form = ActiveForm::end(); ?>
@@ -248,7 +251,7 @@ use yii\helpers\Url;
 
                                 <?php foreach ($filter['tag'] as $key => $value): ?>
 
-                                    <a href="/candie-goods?compilation=<?= $key; ?>" class="link link__a mr-15 mb-15">
+                                    <a href="#!" data-count="<?= $key; ?>" class="compilation-candie link link__a mr-15 mb-15">
                                         <!--<input type="radio"-->
                                         <!--       name="filter-compilation"-->
                                         <!--       class="global-form__checkbox mt-35">-->
@@ -269,7 +272,7 @@ use yii\helpers\Url;
                 </div>
 
 
-                <div class="row mt-60">
+                <div class="row mt-60" id="box-candie-goods">
 
 
                     <!-- card-filter -->

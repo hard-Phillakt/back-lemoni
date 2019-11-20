@@ -97,13 +97,13 @@ class CakeGoodsController extends Controller
         }
 
 
-        if ($data_filter_id = Yii::$app->request->get('compilation')) {
-
-            $model = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
-
-//          фильтр по готовым подборкам
-            return $this->render('index', ['model' => $model, 'filter' => $filter]);
-        }
+//        if ($data_filter_id = Yii::$app->request->get('compilation')) {
+//
+//            $model = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+//
+////          фильтр по готовым подборкам
+//            return $this->render('index', ['model' => $model, 'filter' => $filter]);
+//        }
 
 
 //      делаю рендер без фильтров и тегов
@@ -140,7 +140,7 @@ class CakeGoodsController extends Controller
                 foreach ($data_filter['type'] as $key => $value) {
 
 //                  2.фильтр по "Тип продукта"
-                    $cake->andFilterWhere(['like', 'lm_type', $value]);
+                    $cake->orFilterWhere(['like', 'lm_type', $value]);
 
                 }
 
@@ -156,6 +156,17 @@ class CakeGoodsController extends Controller
 
 //          делаю рендер по фильтрам без тегов на ajax
             return $this->render('ajax-goods', ['data_cake' => $data_cake]);
+        }
+
+
+
+//      Compilation
+        if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
+
+            $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+
+//          фильтр по готовым подборкам
+            return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
 
     }

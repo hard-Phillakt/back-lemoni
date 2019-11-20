@@ -119,11 +119,11 @@ window.onload = function () {
                 // custom_class.dataset.comment = 'img-test.png';
 
                 // Костыль для корректного отображения
-                setTimeout(function () {
-                    if(custom_class.dataset.options = JSON.stringify(arr_options)){
-                        window.location.reload(true);
-                    }
-                }, 100);
+                // setTimeout(function () {
+                //     if(custom_class.dataset.options = JSON.stringify(arr_options)){
+                //         window.location.reload(true);
+                //     }
+                // }, 100);
 
             } else {
 
@@ -132,11 +132,11 @@ window.onload = function () {
                 custom_class.dataset.options = JSON.stringify(arr_options);
 
                 // Костыль для корректного отображения
-                setTimeout(function () {
-                    if(custom_class.dataset.options = JSON.stringify(arr_options)){
-                        window.location.reload(true);
-                    }
-                }, 100);
+                // setTimeout(function () {
+                //     if(custom_class.dataset.options = JSON.stringify(arr_options)){
+                //         window.location.reload(true);
+                //     }
+                // }, 100);
             }
 
             // custom_class.dataset.price = priceElement;

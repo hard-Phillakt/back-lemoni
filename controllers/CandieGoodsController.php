@@ -101,4 +101,59 @@ class CandieGoodsController extends Controller
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
     }
+
+
+
+
+    public function actionAjaxGoods()
+    {
+        $this->layout = false;
+
+        $query_cake_goods = new CandieGoods();
+
+        $filter = new FilterCake();
+
+        if (Yii::$app->request->isAjax && $data_filter = Yii::$app->request->post('FilterCake')) {
+
+            $cake = $query_cake_goods::find();
+
+//          1.фильтр по "Цена за килограм"
+            $cake->andFilterWhere(['>=', 'lm_price_for_kg', $data_filter['price_for_kg_min']]);
+
+            $cake->andFilterWhere(['<=', 'lm_price_for_kg', $data_filter['price_for_kg_max']]);
+
+            if ($data_filter['type']) {
+
+                foreach ($data_filter['type'] as $key => $value) {
+
+//                  2.фильтр по "Тип продукта"
+                    $cake->orFilterWhere(['like', 'lm_type', $value]);
+
+                }
+
+            }
+
+//          3.фильтр по "Колличество уровней"
+            $cake->andFilterWhere(['like', 'lm_count_level', $data_filter['count_level']]);
+
+//          4.фильтр по "Тематическое оформление"
+            $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['subjects']]);
+
+            $data_cake = $cake->asArray()->all();
+
+//          делаю рендер по фильтрам без тегов на ajax
+            return $this->render('ajax-goods', ['data_cake' => $data_cake]);
+        }
+
+
+
+        //      Compilation
+        if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
+
+            $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+
+//          фильтр по готовым подборкам
+            return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
+        }
+    }
 }

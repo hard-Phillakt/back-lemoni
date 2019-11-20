@@ -6505,6 +6505,7 @@ textarea {
   border-radius: 5em;
   width: 30px;
   height: 30px;
+  transition: all .3s;
   margin: 0 5px; }
 
 .optGlaze__circle input {

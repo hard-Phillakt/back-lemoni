@@ -97,19 +97,19 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/" class="link link__a">Главная</a>
+                                    <a href="/" class="link black-menu-link__a">Главная</a>
                                 </li>
                                 <li>
-                                    <a href="/cake-goods" class="link link__a">Каталог тортов</a>
+                                    <a href="/cake-goods" class="link black-menu-link__a">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candie-goods" class="link link__a">Candy bar</a>
+                                    <a href="/candie-goods" class="link black-menu-link__a">Candy bar</a>
                                 </li>
                                 <!--                                <li>-->
                                 <!--                                    <a href="#!" class="link link__a">Конструктор тортов</a>-->
                                 <!--                                </li>-->
                                 <li>
-                                    <a href="/contact" class="link link__a">Контакты</a>
+                                    <a href="/contact" class="link black-menu-link__a">Контакты</a>
                                 </li>
                             </ul>
                         </div>
@@ -117,13 +117,13 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/news" class="link link__a">Новости</a>
+                                    <a href="/news" class="link black-menu-link__a">Новости</a>
                                 </li>
                                 <li>
-                                    <a href="/master-class" class="link link__a">Мастер-классы</a>
+                                    <a href="/master-class" class="link black-menu-link__a">Мастер-классы</a>
                                 </li>
                                 <li>
-                                    <a href="/review" class="link link__a">Отзывы</a>
+                                    <a href="/review" class="link black-menu-link__a">Отзывы</a>
                                 </li>
                             </ul>
                         </div>
@@ -131,13 +131,13 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/about" class="link link__a">О нас</a>
+                                    <a href="/about" class="link black-menu-link__a">О нас</a>
                                 </li>
                                 <li>
-                                    <a href="/order" class="link link__a">Заказ и оплата</a>
+                                    <a href="/order" class="link black-menu-link__a">Заказ и оплата</a>
                                 </li>
                                 <li>
-                                    <a href="/deliv-cake" class="link link__a">Доставка и прием товара</a>
+                                    <a href="/deliv-cake" class="link black-menu-link__a">Доставка и прием товара</a>
                                 </li>
                             </ul>
                         </div>

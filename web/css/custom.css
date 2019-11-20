@@ -28,8 +28,13 @@ input[disabled] {
     background: transparent !important;
 }
 
+.category-cake-box {
+    transition: all .3s ease-in-out;
+}
+
 .category-cake-box:hover {
     cursor: inherit;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
 }
 
 .CartInformerBox {
@@ -219,14 +224,114 @@ input[disabled] {
 }
 
 
+.optGlaze__circle_true {
+    border-radius: 0.25em;
+    position: relative;
+}
+
+.optGlaze__circle_true::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #F6D8CB;
+    border-radius: 0.25em;
+}
+
+.optGlaze__circle {
+    transition: all .3s;
+}
+
+.link__a {
+    font-family: "Open Sans", sans-serif;
+}
+
+
+
+.black-menu-link__a {
+    display: inline-flex;
+    font-family: "Lora", serif;
+    color: #000;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.black-menu-link__a:hover {
+    color: #000;
+    text-decoration: none;
+    transform: translateX(10px);
+}
+
+.black-menu-link__a:hover::before {
+    content: '';
+    top: 10px;
+    left: -25px;
+    width: 20px;
+    height: 1px;
+    background: #8F5541;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.black-menu-link__a::before {
+    content: '';
+    top: 10px;
+    left: -25px;
+    width: 0;
+    height: 1px;
+    background: #8F5541;
+    opacity: 0.7;
+    position: absolute;
+    transition: all .3s ease-in-out;
+}
 
 
 
 
 
+.black-link__a {
+    display: inline-flex;
+    font-family: "Lora", serif;
+    color: #000;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.black-link__a:hover {
+    color: #000;
+    text-decoration: none;
+    /*transform: translateX(10px);*/
+}
+
+.black-link__a:hover::before {
+    content: '';
+    top: 100%;
+    left: 0;
+    width: 70%;
+    height: 1px;
+    background: #8F5541;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.black-link__a::before {
+    content: '';
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #8F5541;
+    opacity: 0.7;
+    position: absolute;
+    transition: all .3s ease-in-out;
+}
 
 
-
+.category-cake-box__img_1, .category-cake-box__img_2, .category-cake-box__img_3, .category-cake-box__img_4 {
+    transition: .3s;
+}
 
 
 

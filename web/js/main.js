@@ -70,14 +70,13 @@ filterSidebarCatalog__box_ul.forEach(function (item, i) {
         if (item.children[0].classList[2] == 'chek-true') {
 
             item.children[0].classList.remove('chek-true');
-            item.children.checked = false;
-
-            console.log(item.children.checked);
+            item.children[1].checked = false;
+            console.log(this.children[1].checked);
 
         } else {
             item.children[0].classList.add('chek-true');
             item.children[1].checked = true;
-            console.log(item.children[1].checked);
+            console.log(this.children[1].checked);
         }
 
     }
@@ -143,6 +142,7 @@ $(document).ready(function () {
     var sidebarFilter = document.querySelector('#sidebar-filter');
     var button__rectangle = document.querySelector('.button__rectangle');
     var boxCakeGoods = document.querySelector('#box-cake-goods');
+    var boxCandieGoods = document.querySelector('#box-candie-goods');
     var shadowCheckbox = document.querySelectorAll('.shadow-checkbox');
 
     if (sidebarFilter) {
@@ -150,9 +150,7 @@ $(document).ready(function () {
         button__rectangle.onclick = function (e) {
             e.preventDefault();
 
-            // $('#sidebar-filter')[0].reset();
-
-            console.log($('#sidebar-filter').serialize());
+            // console.log($('#sidebar-filter').serialize());
 
             $.ajax({
                 type: 'post',
@@ -161,6 +159,8 @@ $(document).ready(function () {
                 success: function (res) {
 
                     boxCakeGoods.innerHTML = res;
+
+                    // $('#sidebar-filter')[0].reset();
 
                 },
                 error: function (err) {
@@ -176,6 +176,105 @@ $(document).ready(function () {
         };
     }
 
+    if (boxCandieGoods) {
+
+        button__rectangle.onclick = function (e) {
+            e.preventDefault();
+
+            // $('#sidebar-filter')[0].reset();
+
+            console.log($('#sidebar-filter').serialize());
+
+            $.ajax({
+                type: 'post',
+                url: '/candie-goods/ajax-goods',
+                data: $('#sidebar-filter').serialize(),
+                success: function (res) {
+
+                    boxCandieGoods.innerHTML = res;
+
+                    // $('#sidebar-filter')[0].reset();
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            // Сброс checkbox-img инпута
+            // for(var i = 0; i < shadowCheckbox.length; i++){
+            //     shadowCheckbox[i].className = 'shadow-checkbox mr-15'
+            // }
+
+        };
+
+    }
+
 
 });
+
+
+// Compilation cake & candie goods
+
+var compilationCake = document.querySelectorAll('.compilation-cake');
+var boxCakeGoods = document.querySelector('#box-cake-goods');
+
+if (compilationCake) {
+    compilationCake.forEach(function (item, i) {
+
+        item.onclick = function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: 'post',
+                url: '/cake-goods/ajax-goods',
+                data: {
+                    compilation: this.dataset.count
+                },
+                success: function (res) {
+
+                    boxCakeGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+        }
+
+    });
+}
+
+
+var compilationCadie = document.querySelectorAll('.compilation-candie');
+var boxCandieGoods = document.querySelector('#box-candie-goods');
+
+if(boxCandieGoods){
+
+    compilationCadie.forEach(function (item, i) {
+
+        item.onclick = function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: 'post',
+                url: '/candie-goods/ajax-goods',
+                data: {
+                    compilation: this.dataset.count
+                },
+                success: function (res) {
+
+                    boxCandieGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+        }
+
+    });
+
+}
+
+
 
