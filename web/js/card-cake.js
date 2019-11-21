@@ -205,7 +205,7 @@ function GlogalOptionsCard() {
 
             dvizhOption_label[i].onclick = function () {
 
-                console.log(dvizhOption_label);
+                // console.log(dvizhOption_label);
 
                 for (var i = 0; i < dvizhOption_label.length; i++) {
                     dvizhOption_label[i].classList.remove('optGlaze__circle_true');
@@ -214,9 +214,6 @@ function GlogalOptionsCard() {
                 this.classList.add('optGlaze__circle_true');
 
             };
-
-
-
 
 
             dvizhOption_label[i].children[0].setAttribute('type', 'radio');
@@ -246,7 +243,6 @@ function GlogalOptionsCard() {
 
         for (var i = 0; i < dvizhOption_label.length; i++) {
 
-
             // через параметр подставляем checkbox || radio
             dvizhOption_label[i].children[0].setAttribute('type', type);
 
@@ -255,7 +251,6 @@ function GlogalOptionsCard() {
             dvizhOption_label[i].style.background = 'url("/img/card-opt/' + arr[i][0] + '.png")';
 
             dvizhOption_label[i].setAttribute('data-img', i);
-
 
             //  обрабатываем click
             dvizhOption_label[i].children[0].onclick = function () {
@@ -350,8 +345,14 @@ function GlogalOptionsCard() {
 
         dvizhOption_label[0].children[0].setAttribute('type', 'text');
         dvizhOption_label[0].children[0].setAttribute('placeholder', 'Введите текст');
-        // dvizhOption_label[0].children[0].setAttribute('value', '');
+        dvizhOption_label[0].children[0].id = 'optString__input';
+
+        dvizhOption_label[0].children[0].setAttribute('value', '');
+
         dvizhOption_label[0].children[0].classList.add('optString__input');
+
+        var text = dvizhOption_label[0].children[0].value;
+
     }
 // optString(3, 'optString', [0]);
 

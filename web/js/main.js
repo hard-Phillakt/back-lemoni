@@ -29,7 +29,7 @@ if (navMenuIconlink[1] || navMenuIconlink[0]) {
 
 // active menu, sidebar, footer start
 
-var menuNavA = document.querySelectorAll('.header-box-full__ul .link__a');
+var menuNavA = document.querySelectorAll('.header-box-full__ul a');
 var menuSideBarA = document.querySelectorAll('.news-sidebar .link__a');
 var menuFooterA = document.querySelectorAll('.footer__ul .link__a_w');
 
@@ -119,15 +119,20 @@ if (wpper) {
 }
 
 
+
+
 // pjax call-back
 $(document).on('pjax:success', function () {
 
     var count = $('#delivery-form')[0].length;
 
+    // Callback Уведомление об успешном отправлки сообщения
+    $('#modal-delivery').modal('show');
+
     for (var i = 0; i < count; i++) {
 
         // очищаем поля формы кроме кнопки
-        if ($('#delivery-form')[0][i].nodeName != 'BUTTON') {
+        if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT') {
             $('#delivery-form')[0][i].value = '';
         }
 

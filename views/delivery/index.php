@@ -66,14 +66,14 @@ use kartik\date\DatePicker;
         <div class="row mt-35">
             <div class="col-lg-12">
 
-<!--                --><?php //if( Yii::$app->session->hasFlash('success') ): ?>
-<!---->
-<!--                    <div class="alert alert-success alert-dismissible" role="alert">-->
-<!--                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-<!--                        --><?php //echo Yii::$app->session->getFlash('success'); ?>
-<!--                    </div>-->
-<!---->
-<!--                --><?php //endif;?>
+                <!--                --><?php //if( Yii::$app->session->hasFlash('success') ): ?>
+                <!---->
+                <!--                    <div class="alert alert-success alert-dismissible" role="alert">-->
+                <!--                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <!--                        --><?php //echo Yii::$app->session->getFlash('success'); ?>
+                <!--                    </div>-->
+                <!---->
+                <!--                --><?php //endif;?>
 
             </div>
         </div>
@@ -208,6 +208,7 @@ use kartik\date\DatePicker;
 
 
             <div class="col-lg-4">
+
                 <div class="total-delivery">
 
                     <div class="total-delivery__box">
@@ -222,7 +223,14 @@ use kartik\date\DatePicker;
                             </div>
 
                             <div class="col-lg-6">
-                                <span class="total-delivery__box_value">Доставка</span>
+                                
+                                <div class="global-form__select">
+
+                                    <?= $form->field($modelDeliveryContact, 'delivery')->dropDownList(['Доставка' => 'Доставка', 'Самовывоз' => 'Самовывоз'])->label(false) ?>
+
+                                </div>
+
+                                <!--                                <span class="total-delivery__box_value">Доставка</span>-->
                             </div>
                         </div>
 
@@ -291,3 +299,33 @@ use kartik\date\DatePicker;
 
     </div>
 </section>
+
+
+<div id="modal-delivery" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close opac__07" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-35">
+                    <h2 class="title title__h3">
+                        <p style="color: #8F5541">Спасибо</p>
+                        <p>за остановленную заявку!</p>
+                    </h2>
+                </div>
+
+                <div class="flex-justify-center pb-35">
+                    <p class="desc desc__md opac__07">
+                        Наш менеджер позвонит вам в ближайшее время!
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

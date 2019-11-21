@@ -21,6 +21,7 @@ class DeliveryContact extends Model {
     public $room;
     public $dateCreate;
     public $comment;
+    public $delivery;
 
 
     public function rules(){
@@ -36,6 +37,7 @@ class DeliveryContact extends Model {
             ['dateCreate', 'required', 'message' => 'Введите дату приготовления'],
             [['dateCreate', 'required'], 'integer', 'message' => 'В поле должны быть только цифры'],
             ['comment', 'safe'],
+            ['delivery', 'safe']
         ];
 
     }
@@ -52,6 +54,7 @@ class DeliveryContact extends Model {
             'room' => 'Квартира',
             'dateCreate' => 'Желаемая дата приготовления',
             'comment' => 'Комментарий',
+            'delivery' => 'Способ доставки',
         ];
     }
 

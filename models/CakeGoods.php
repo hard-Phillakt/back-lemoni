@@ -73,7 +73,8 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
             ],
             '3' => [
                 'name' => 'Добавьте поздравительную надпись:',
-                'variants' => ['inscription-10-nadpis' => '',]
+//                'variants' => ['descriptions-10-nadpis' => '',]
+                'variants' => [' ' => '',]
             ],
             'four-4' => [
                 'name' => 'Формат поздравительной надписи:',

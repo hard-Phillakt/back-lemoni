@@ -72,7 +72,8 @@ class CandieGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces
             ],
             '3' => [
                 'name' => 'Добавьте поздравительную надпись:',
-                'variants' => ['inscription-10-nadpis' => '',]
+//                'variants' => ['inscription-10-nadpis' => '',]
+                'variants' => [' ' => '',]
             ],
             'four-4' => [
                 'name' => 'Формат поздравительной надписи:',

@@ -1,4 +1,8 @@
 
+a:focus {
+    color: #fff;
+}
+
 .optDesabled {
     display: none;
 }
@@ -332,6 +336,52 @@ input[disabled] {
 .category-cake-box__img_1, .category-cake-box__img_2, .category-cake-box__img_3, .category-cake-box__img_4 {
     transition: .3s;
 }
+
+.shadow-card {
+    transition: all .3s ease-in-out;
+}
+
+.shadow-card:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body h2 {
+    text-align: center;
+}
+
+
+.modal-body .flex-justify-center {
+    text-align: center;
+}
+
+.global-form__select::before {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.total-delivery__box .global-form__select::before {
+    top: 12px;
+}
+
+
+.total-delivery__box .global-form__select select {
+    color: #8f5541;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

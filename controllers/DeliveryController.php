@@ -39,13 +39,15 @@ class DeliveryController extends Controller
         $dataUser .= '<p><strong style="color:#8F5541;">Квартира: </strong>' . $dataForm['DeliveryContact']['room'];
         $dataUser .= '<p><strong style="color:#8F5541;">Комментарий: </strong>' . $dataForm['DeliveryContact']['comment'];
         $dataUser .= '<p><strong style="color:#8F5541;">Дата приготовления: </strong>' . $dataForm['check_issue_date'];
+        $dataUser .= '<p><strong style="color:#8F5541;">Способ получения: </strong>' . $dataForm['DeliveryContact']['delivery'];
         $dataUser .= '</div>';
         $dataUser .= '<hr>';
 
 //      debug($dataUser);
 
-
         $data = '';
+        $i = 1;
+
 
         foreach ($elements as $key => $value) {
 
@@ -102,7 +104,8 @@ class DeliveryController extends Controller
                     $explode_str = explode('-', $value);
 
                     if (!(int)$explode_str[0]) {
-                        $data .= '<td style="padding: 5px;"><strong style="color:#8F5541;">Опция: </strong><br>' . '<span>' . $explode_str[2] . ' - ' . $explode_str[1] . ' руб';
+                        $data .= '<td style="padding: 5px;"><strong style="color:#8F5541;">Опция-' . $i . ': </strong><br>' . '<span>' . $explode_str[2] . ' - ' . $explode_str[1] . ' руб';
+                        $i++;
                     }
 
                 }
@@ -111,7 +114,10 @@ class DeliveryController extends Controller
             $data .= '</table>';
             $data .= '</div>';
             $data .= '<hr>';
+
+
         }
+
 
 
         if (!empty($data) && $modelDeliveryContact->load(Yii::$app->request->post()) && Yii::$app->request->isAjax && !empty($dataUser)) {
@@ -130,6 +136,8 @@ class DeliveryController extends Controller
                 ->send();
 
 //            echo 'успешно отправленно!';
+
+//                return 'ok';
 
 //            $this->redirect('/delivery');
 
