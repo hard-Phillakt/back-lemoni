@@ -14,23 +14,18 @@ use app\widgets\sidebar\Sidebar;
                 <!-- Sidebar -->
                 <?=  Sidebar::widget(); ?>
 
-
             </div>
 
             <div class="col-lg-9 col-lg-offset-1">
 
                 <h1 class="title title__h1 opac__07">Заказ и оплата</h1>
 
-                <div class="row mt-60">
+                <div class="row">
 
                     <div class="col-lg-8">
 
-                        <h3 class="title title__h3">
-                            <strong>Заказ</strong>
-                        </h3>
-
                         <div class="font-family">
-                            <div class="mt-35">
+                            <div class="mt-60">
                                 <p>
                                     Оформляйте заказ по правилу «чем раньше, тем лучше» —
                                     так будет удобнее и вам, и нам.
@@ -65,10 +60,10 @@ use app\widgets\sidebar\Sidebar;
                                 </div>
 
                                 <div class="mt-35">
-                                    <p>- непосредственно в кондитерской по адресу Щорса, 57</p>
-                                    <p>- по телефону <a href="tel:+79155764500">+7 (915) 576-45-00</a></p>
+                                    <p>—  непосредственно в кондитерской по адресу Щорса, 57</p>
+                                    <p>—  по телефону <a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a></p>
                                     <p>
-                                        - оставив заявку на сайте. Менеджер свяжется с вами
+                                        —  оставив заявку на сайте. Менеджер свяжется с вами
                                         и уточнит все детали: желаемый внешний вид изделия,
                                         вес, состав и цену за 1 кг или 1 шт.
                                     </p>
@@ -82,7 +77,7 @@ use app\widgets\sidebar\Sidebar;
                                 <div class="mt-35">
                                     <h3 class="title title__h3">
                                         <strong>
-                                            Оплата
+                                            Оплата:
                                         </strong>
                                     </h3>
                                 </div>

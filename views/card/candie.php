@@ -1,9 +1,13 @@
 <?php
+
 // для настройки корзины
 $this->registerJsFile('/js/cart.js');
 
+// Класс для опций
+$this->registerJsFile('/js/card-class.js');
+
 // для настройки опций товара
-$this->registerJsFile('/js/card-cake.js');
+$this->registerJsFile('/js/card/card-candie.js');
 
 
 //use dvizh\cart\widgets\BuyButton;
@@ -90,7 +94,7 @@ Url::remember();
 
             <div class="col-lg-5 col-lg-offset-1 mt-35">
 
-                <h1 class="title title__h3">Торт «Лотос»</h1>
+                <h1 class="title title__h3"><?= $model->lm_title;?></h1>
 
 
                 <div class="mt-60">

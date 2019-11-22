@@ -10,6 +10,7 @@ use app\widgets\customcart\CartInformer;
 use yii\bootstrap\NavBar;
 
 BaseAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -66,7 +67,7 @@ BaseAsset::register($this);
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                         <!-- additional-modules -->
                         <div class="additional-modules__phone">
-                            <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
+                            <a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a>
                         </div>
                     </div>
 
@@ -183,7 +184,7 @@ BaseAsset::register($this);
 
                     <!-- additional-modules__phone -->
                     <div class="additional-modules__phone">
-                        <a href="tel:+79155764500" class="link link__a">+7 (915) 576 4500</a>
+                        <a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a>
                     </div>
 
                 </div>
@@ -244,6 +245,7 @@ BaseAsset::register($this);
                     <ul class="footer__ul">
                         <li><a href="/cake-goods" class="link link__a_w">Торты</a></li>
                         <li><a href="/candie-goods" class="link link__a_w">Candy bar</a></li>
+                        <li><a href="/order" class="link link__a_w">Заказ и оплата</a></li>
                         <!--                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>-->
                     </ul>
                 </div>
@@ -261,7 +263,6 @@ BaseAsset::register($this);
                     <ul class="footer__ul">
                         <li>Контакты:</li>
                         <li><a href="tel:+74722505154" class="link link__a_w">+7 (4722) 50-51-54</a></li>
-                        <li><a href="tel:+7915)5764500" class="link link__a_w">+7 (915) 576 4500</a></li>
                         <li><a href="mailto:info@cafelemoni.ru" class="link link__a_w">info@cafelemoni.ru</a></li>
                     </ul>
                 </div>

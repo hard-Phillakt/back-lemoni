@@ -4,12 +4,13 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
-//use yii\widgets\Pjax;
 
+//use yii\widgets\Pjax;
 
 //debug($data_cake);
 
-//    debug($filter);
+//debug($filter);
+
 Url::remember();
 
 ?>
@@ -58,9 +59,9 @@ Url::remember();
 
                         <div class="flter-min-max">
 
-                            <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум') ?>
+                            <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
 
-                            <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум') ?>
+                            <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум', ['class' => 'mb-15']) ?>
 
                         </div>
 
@@ -83,31 +84,31 @@ Url::remember();
                             <span for="global-form__input_el2"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
                                            class="global-form__checkbox mt-35" value="Классический">
-                                    Классический
+                                    классические
                                 </span>
 
                                 <span for="global-form__input_el3"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
                                            class="global-form__checkbox mt-35" value="Мусовый">
-                                    Мусовый
+                                    муссовые
                                 </span>
 
                                 <span for="global-form__input_el4"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
                                            class="global-form__checkbox mt-35" value="Шадлав">
-                                    Шадлав
+                                    шадлавы
                                 </span>
 
                                 <span for="global-form__input_el5"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
                                            class="global-form__checkbox mt-35" value="Диетические">
-                                    Диетические
+                                    диетические
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Постные">
-                                    Постные
+                                    постные
                                 </span>
 
                         </div>
@@ -123,7 +124,7 @@ Url::remember();
                         <div class="global-form__select mt-35">
 
                             <div class="form-group field-filtercake-count_level">
-                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество
+                                <label class="title title__h5 pb-15" for="filtercake-count_level">Количество
                                     уровней</label>
                                 <select id="filtercake-count_level" class="global-form__input"
                                         name="FilterCake[count_level]">
@@ -210,9 +211,10 @@ Url::remember();
 
                                 <?php foreach ($filter['tag'] as $key => $value): ?>
 
-<!--                                <a href="/cake-goods?compilation=--><?//= $key; ?><!--" class="link link__a mr-15 mb-15">-->
+                                    <!--                                <a href="/cake-goods?compilation=--><? //= $key; ?><!--" class="link link__a mr-15 mb-15">-->
 
-                                    <a href="#!" data-count="<?= $key; ?>" class="compilation-cake link link__a mr-15 mb-15">
+                                    <a href="#!" data-count="<?= $key; ?>"
+                                       class="compilation-cake link link__a mr-15 mb-15">
                                         <!--<input type="radio"-->
                                         <!--       name="filter-compilation"-->
                                         <!--       class="global-form__checkbox mt-35">-->

@@ -41,7 +41,7 @@ $config = [
         'assetManager' => [
 //          зарезал scripts.js плагина корзины. переопредил на свой cart_custom_opt.js
             'assetMap' => [
-                'scripts.js' => '/web/js/cart_custom_opt.js',
+                'scripts.js' => '/js/cart_custom_opt.js',
             ],
             'appendTimestamp' => true,
         ],
@@ -89,6 +89,8 @@ $config = [
                 'master' => 'master/index',
                 'card/cake/<id:\d+>' => '/card/cake',
                 'card/candie/<id:\d+>' => '/card/candie',
+                'card/bouquet/<id:\d+>' => '/card/bouquet',
+                'card/shadlaw/<id:\d+>' => '/card/shadlaw',
             ],
         ],
         'cart' => [

@@ -101,7 +101,7 @@ class ElementsList extends \yii\base\Widget
         $elements = $this->cart->elements;
 
         if (empty($elements)) {
-            $cart = Html::tag('div', yii::t('cart', 'Ваша корзина пустая'), ['class' => 'dvizh-cart dvizh-empty-cart mt-35']);
+            $cart = Html::tag('div', yii::t('cart', 'В вашей корзине пока ничего нет'), ['class' => 'dvizh-cart dvizh-empty-cart mt-35']);
         } else {
         	$cart = Html::ul($elements, ['item' => function($item, $index) {
                 return $this->_row($item);

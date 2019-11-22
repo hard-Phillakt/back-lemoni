@@ -82,80 +82,80 @@ use yii\helpers\Url;
                             <span for="global-form__input_el2"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
                                            class="global-form__checkbox mt-35" value="Классические пирожные">
-                                    Классические пирожные
+                                    классические пирожные
                                 </span>
 
                                 <span for="global-form__input_el3"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
                                            class="global-form__checkbox mt-35" value="Мусовые пирожные">
-                                    Мусовые пирожные
+                                    мусовые пирожные
                                 </span>
 
                                 <span for="global-form__input_el4"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
                                            class="global-form__checkbox mt-35" value="Конфеты">
-                                    Конфеты
+                                    конфеты
                                 </span>
 
                                 <span for="global-form__input_el5"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
                                            class="global-form__checkbox mt-35" value="Пряники">
-                                    Пряники
+                                    пряники
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Щербет">
-                                    Щербет
+                                    щербет
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Зефир">
-                                    Зефир
+                                    зефир
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Фруктовый букет">
-                                    Фруктовый букет
+                                    фруктовый букет
                                 </span>
 
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Куличи">
-                                    Куличи
+                                    куличи
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Кейкпопсы">
-                                    Кейкпопсы
+                                    кейкпопсы
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Укусики">
-                                    Укусики
+                                    укусики
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Постное">
-                                    Постное
+                                    постное
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Штрудель">
-                                    Штрудель
+                                    штрудель
                                 </span>
 
                                 <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Кексы на фруктовом пюре">
-                                    Кексы на фруктовом пюре
+                                    кексы на фруктовом пюре
                                 </span>
 
                         </div>
@@ -288,11 +288,11 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>"
+                                        <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>
@@ -318,11 +318,11 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>?id=<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/card/<?php $value['lm_alter_card']; ?>?id=<?php $value['id']; ?>"
+                                        <a href="/card/<?php $value['lm_alter_card']; ?>/<?php $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>

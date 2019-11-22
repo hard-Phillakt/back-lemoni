@@ -21,18 +21,25 @@ class CardController extends Controller
 
 
 //    букет
-    public function actionBouquet(){
+    public function actionBouquet($id = null){
+
+        $candie_goods = new CandieGoods();
+
+        $model = $candie_goods::findOne($id);
 
 
-        return $this->render('bouquet');
+        return $this->render('bouquet', ['model' => $model]);
     }
 
 
 //    шадлав
-    public function actionShadlaw(){
+    public function actionShadlaw($id = null){
 
+        $cake_goods = new CakeGoods();
 
-        return $this->render('shadlaw');
+        $model = $cake_goods::findOne($id);
+
+        return $this->render('shadlaw', ['model' => $model]);
     }
 
 

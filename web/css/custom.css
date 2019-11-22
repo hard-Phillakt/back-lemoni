@@ -198,11 +198,14 @@ input[disabled] {
     transition: all .3s ease-in-out;
 }
 
-
-
 .contact-italic {
     font-style: italic;
     font-weight: 700;
+    font-size: 12px;
+}
+
+.contact-italic-r {
+    text-align: right;
 }
 
 .contact-title {
@@ -367,6 +370,43 @@ input[disabled] {
 .total-delivery__box .global-form__select select {
     color: #8f5541;
 }
+
+.button__rectangle:hover {
+    color: #8f5541;
+    text-decoration: none;
+    background: #FDEFE4;
+}
+
+.button__rectangle {
+    transition: all .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

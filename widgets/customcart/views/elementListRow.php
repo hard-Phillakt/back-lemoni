@@ -16,7 +16,6 @@ use app\widgets\customcart\ElementCost;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
 
-
 //debug($options);
 
 //debug($model);
@@ -28,7 +27,7 @@ use app\models\CandieGoods;
 //debug($model->model);
 
 
-switch ($model->model){
+switch ($model->model) {
 
     case 'app\models\CakeGoods':
         $cake_goods_item = new CakeGoods();
@@ -43,7 +42,6 @@ switch ($model->model){
         break;
 }
 
-
 ?>
 
 
@@ -55,11 +53,9 @@ switch ($model->model){
             <div class="dvizh-cart-row-wrapp">
 
                 <!--                <div class="dvizh-cart-row__img mr-30" style="background: url(./img/goods/cake/cake__1.png);">-->
-                <div class="dvizh-cart-row__img mr-30" style="background: url(./<?= $item->lm_img_one ?>);">
-
+                <div class="dvizh-cart-row__img mr-30" style="background: url(.<?= $item->lm_img_one ?>);">
 
                     <? //= $name ?>
-
 
                 </div>
 
@@ -72,6 +68,7 @@ switch ($model->model){
                             }
                         } ?>
                     </h4>
+
                 </div>
 
             </div>
@@ -81,14 +78,10 @@ switch ($model->model){
         <div class="col-lg-2">
 
             <!-- Options Kg start -->
-            <?php
 
-
-            if ($options):foreach ($options as $key => $value):?>
-
+            <?php if ($options):foreach ($options as $key => $value): ?>
 
                 <?= $key == 'optGuests_kg' ? '<span>' . $value . '</span> кг' : false; ?>
-
 
             <?php endforeach; ?>
 
@@ -102,7 +95,7 @@ switch ($model->model){
 
             <div class="dvizh-cart-row__wrapp-price">
 
-                <!--            <span class="dvizh-cart-element-price3">-->
+                <!-- <span class="dvizh-cart-element-price3" -->
                 <? //= $item->lm_price_for_kg; ?><!--.00</span> руб-->
 
                 <?= ElementPrice::widget(['model' => $model]); ?>
@@ -152,8 +145,7 @@ switch ($model->model){
 
     <!-- Options start -->
     <?php
-
-
+    
     //    debug($options);
 
     if ($options):
@@ -175,7 +167,7 @@ switch ($model->model){
 
                                 <?php
 
-                                //                      делаю проверку на глазурь
+                                // делаю проверку на глазурь
                                 if ($arr_options[0][0] == '#'): ?>
 
                                     <div class="dvizh-cart-show-options__circle mr-30"
@@ -202,7 +194,9 @@ switch ($model->model){
                     </div>
 
                     <div class="col-lg-2">
+
                         <div class="price-option"><span><?= $arr_options[1]; ?></span></div>
+
                     </div>
 
                     <div class="col-lg-1 col-lg-offset-2">

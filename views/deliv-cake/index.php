@@ -21,15 +21,12 @@ use app\widgets\sidebar\Sidebar;
 
                 <h1 class="title title__h1 opac__07">Доставка <br> и приём торта</h1>
 
-                <div class="row mt-60">
+                <div class="row">
 
                     <div class="col-lg-7">
-                        <h3 class="title title__h3">
-                            <strong>Заказ</strong>
-                        </h3>
 
                         <div class="font-family">
-                            <div class="mt-35">
+                            <div class="mt-60">
                                 <p>
                                     Мы осуществляем доставку всей продукции курьером.
                                 </p>

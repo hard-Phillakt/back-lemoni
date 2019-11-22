@@ -48,7 +48,7 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     {
         return [
             '0' => [
-                'name' => 'Колличество гостей:',
+                'name' => 'Количество гостей:',
                 'variants' => ['-', '5', '+', '-', '1', '+']
             ],
             '1' => [

@@ -56,9 +56,7 @@ use app\widgets\sidebar\Sidebar;
                         </div>
                     </div>
 
-
-
-
+                    
 
                     <div class="col-lg-12 mb-35">
 
@@ -67,13 +65,13 @@ use app\widgets\sidebar\Sidebar;
                         </div>
 
                         <div class="row mt-60">
-                            <div class="col-lg-6">
-                                <p class="desc desc__md contact-italic">
-                                    Готовим только из высококачественных
+                            <div class="col-lg-5">
+                                <p class="desc desc__md contact-italic contact-italic-r">
+                                    Готовим только из высококачественных <br>
                                     натуральных продуктов
                                 </p>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-5 col-lg-offset-2">
                                 <p class="desc desc__md contact-italic">
                                     Выбираем шоколад проверенных марок:
                                     Luker, Cacao Barry, Callebaut
@@ -86,12 +84,12 @@ use app\widgets\sidebar\Sidebar;
                                 </div>
                             </div>
 
-                            <div class="col-lg-6">
-                                <p class="desc desc__md contact-italic">
+                            <div class="col-lg-5">
+                                <p class="desc desc__md contact-italic contact-italic-r">
                                     Не используем консерванты и сухие смеси
                                 </p>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-5 col-lg-offset-2">
                                 <p class="desc desc__md contact-italic">
                                     Собственное производство и ручная работа
                                     делают десерты уникальными
