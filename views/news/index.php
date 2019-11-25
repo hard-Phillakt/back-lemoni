@@ -7,7 +7,7 @@ use app\widgets\sidebar\Sidebar;
 
 <section class="news mt-90">
     <div class="container">
-        <div class="row">
+        <div class="row flex-reverse">
 
             <div class="col-lg-2">
 
@@ -23,7 +23,6 @@ use app\widgets\sidebar\Sidebar;
                 <div class="news-box">
 
                     <ul class="news-box__wrapp">
-
 
                         <?php
                         $newsBoxCount = 0;

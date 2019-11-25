@@ -8,7 +8,7 @@ use app\widgets\sidebar\Sidebar;
 
 <section class="revievs mt-90">
     <div class="container">
-        <div class="row">
+        <div class="row flex-reverse">
             <div class="col-lg-2">
 
                 <!-- Sidebar -->

@@ -31,7 +31,7 @@ Url::remember();
 <!-- filter-sidebar-catalog start -->
 <section class="filter-sidebar-catalog">
     <div class="container">
-        <div class="row">
+        <div class="row flex-reverse">
 
             <!-- Sidebar Filter -->
             <div class="col-lg-3 mt-35">

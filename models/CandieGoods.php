@@ -46,6 +46,10 @@ class CandieGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces
     public function getCartOptions()
     {
         return [
+            '0' => [
+                'name' => 'Количество гостей:',
+                'variants' => ['-', '5', '+', '-', '1', '+']
+            ],
             '1' => [
                 'name' => 'Выберите цвет глазури:',
                 'variants' => [
@@ -68,7 +72,7 @@ class CandieGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces
             ],
             '3' => [
                 'name' => 'Добавьте поздравительную надпись:',
-//                'variants' => ['inscription-10-nadpis' => '',]
+//                'variants' => ['descriptions-10-nadpis' => '',]
                 'variants' => [' ' => '',]
             ],
             'four-4' => [

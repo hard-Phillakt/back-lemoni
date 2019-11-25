@@ -1,5 +1,4 @@
 
-
 <!-- section-cake start -->
 <section class="section-cake">
     <div class="container">
@@ -95,13 +94,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="section-cake-left__img">
                     <img src="../img/category/img_musecake.png" alt="musecake" class="img-responsive">
                 </div>
             </div>
 
-            <div class="col-lg-5 col-lg-offset-1">
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                 <h2 class="title title__h1 opac__07">Мусcовые торты</h2>
 
                 <div class="mt-35">
@@ -194,13 +193,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="section-cake-left__img">
                     <img src="../img/category/img_shadlaw.png" alt="shadlaw" class="img-responsive">
                 </div>
             </div>
 
-            <div class="col-lg-5 col-lg-offset-1">
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
                 <h2 class="title title__h1 opac__07">Шадлав</h2>
 
                 <div class="mt-35">
@@ -236,6 +235,7 @@
                     <img src="../img/category/oco.svg" alt="oco">
                 </div>
             </div>
+
             <div class="col-lg-5 col-lg-offset-1">
                 <h2 class="title title__h1 opac__07">И не только торты</h2>
                 <div class="mt-35">
@@ -246,7 +246,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -258,7 +258,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -270,8 +270,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -283,8 +282,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -296,8 +294,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -309,8 +306,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -322,8 +318,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -335,8 +330,7 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="#!">
@@ -362,7 +356,7 @@
         </div>
         <div class="row">
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="glob-module-card">
                     <div class="card-img">
 
@@ -382,7 +376,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="glob-module-card">
                     <div class="card-img">
 
@@ -402,7 +396,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="glob-module-card">
                     <div class="card-img">
 
@@ -424,7 +418,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="glob-module-card">
                     <div class="card-img">
 
@@ -455,12 +449,13 @@
 <section class="instagram title__line_r-67">
     <div class="container">
         <div class="row">
-            <div class="col-l-4">
+            <div class="col-lg-4">
                 <h2 class="title title__h1 opac__07">Instagram</h2>
             </div>
         </div>
     </div>
 </section>
 
+<!-- instagram -->
 <section class="insta-bg mt-90"></section>
 

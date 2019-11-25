@@ -11,7 +11,7 @@ use yii\helpers\Html;
 
 <section class="news mt-90">
     <div class="container">
-        <div class="row">
+        <div class="row flex-reverse">
 
             <div class="col-lg-3">
 
@@ -27,7 +27,6 @@ use yii\helpers\Html;
                 <div class="news-box">
 
                     <ul class="news-box__wrapp">
-
 
                         <?php
 

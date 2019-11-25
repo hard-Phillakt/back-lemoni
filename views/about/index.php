@@ -7,7 +7,7 @@ use app\widgets\sidebar\Sidebar;
 
 <section class="contact mt-90">
     <div class="container">
-        <div class="row">
+        <div class="row flex-reverse">
             <div class="col-lg-2">
 
                 <!-- Sidebar -->
@@ -52,12 +52,11 @@ use app\widgets\sidebar\Sidebar;
 
                     <div class="col-lg-6">
                         <div class="contact__customer">
-                            <img src="./img/about/customer.png" alt="">
+                            <img src="./img/about/customer.png" alt="" class="img-responsive">
                         </div>
                     </div>
 
                     
-
                     <div class="col-lg-12 mb-35">
 
                         <div class="flex-justify-center mt-35">

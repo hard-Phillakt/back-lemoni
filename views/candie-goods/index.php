@@ -26,7 +26,7 @@ use yii\helpers\Url;
 <!-- filter-sidebar-catalog start -->
 <section class="filter-sidebar-catalog">
     <div class="container">
-        <div class="row">
+        <div class="row flex-reverse">
 
             <!-- Sidebar Filter -->
             <div class="col-lg-3 mt-35">
@@ -226,7 +226,6 @@ use yii\helpers\Url;
                 <?php $form = ActiveForm::end(); ?>
 
             </div>
-
 
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
