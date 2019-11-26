@@ -43,14 +43,18 @@ function ActiveItem(data) {
 ActiveItem.prototype = {
     activeItem: function (el) {
         el.forEach(function (item, i) {
+
+            // sidebar
             if (item.pathname == window.location.pathname && item.classList[1] !== 'link__a_w') {
                 item.classList.add('active-link-a');
             }
 
+            // footer
             if (item.classList[1] == 'link__a_w' && item.pathname == window.location.pathname) {
                 item.classList.add('active-link-a_w');
             }
 
+            // menu
             if (item.classList[1] == 'black-menu-link__a' && item.pathname == window.location.pathname) {
                 item.classList.add('active-black-menu-link__a');
             }

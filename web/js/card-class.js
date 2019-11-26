@@ -57,7 +57,6 @@ function GlogalOptionsCard() {
         right_btn.setAttribute('value', '+');
 
 
-
         // делаем выборку цены товара
         var cardGoods__price = document.querySelector('.card-goods__price span');
         // началная сумма
@@ -161,7 +160,7 @@ function GlogalOptionsCard() {
         right_btnKg.setAttribute('value', '+');
 
 
-        if(dvizhOption_inputKg){
+        if (dvizhOption_inputKg) {
             // декремент по кг
             left_btnKg.onclick = function (e) {
                 e.preventDefault();
@@ -178,7 +177,6 @@ function GlogalOptionsCard() {
                 rightBtnIncrement();
             };
         }
-
 
 
     };
@@ -217,7 +215,7 @@ function GlogalOptionsCard() {
         }
 
         // optDesabled удаляем node из опций
-        if(dvizhOption.classList[2] == 'optDesabled'){
+        if (dvizhOption.classList[2] == 'optDesabled') {
             setTimeout(function () {
                 dvizhOption.remove();
             }, 100);
@@ -328,7 +326,7 @@ function GlogalOptionsCard() {
         }
 
         // optDesabled удаляем node из опций
-        if(dvizhOption.classList[2] == 'optDesabled'){
+        if (dvizhOption.classList[2] == 'optDesabled') {
             setTimeout(function () {
                 dvizhOption.remove();
             }, 100);
@@ -359,7 +357,7 @@ function GlogalOptionsCard() {
         var text = dvizhOption_label[0].children[0].value;
 
         // optDesabled удаляем node из опций
-        if(dvizhOption.classList[2] == 'optDesabled'){
+        if (dvizhOption.classList[2] == 'optDesabled') {
             setTimeout(function () {
                 dvizhOption.remove();
             }, 100);
@@ -367,6 +365,92 @@ function GlogalOptionsCard() {
 
     }
 // optString(3, 'optString', [0]);
+
+
+// 5. removeOpt (удаление опций) ##########################################################################################
+    this.optPieces = function (box_count, classNameBox, count) {
+
+    var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
+
+    // задаём класс боксу
+    dvizhOption.classList.add(classNameBox);
+
+    // колекции lable из боксов (выборка по боксу)
+    var dvizhOption_label = document.querySelectorAll('.dvizh-option')[box_count].children[1].children;
+
+    // декремент по гостям
+    var left_btn = dvizhOption_label[count[0]].children[0];
+    left_btn.setAttribute('type', 'button');
+    left_btn.setAttribute('value', '-');
+
+    var dvizhOption_inputPieces = dvizhOption_label[count[1]].children[0];
+    dvizhOption_inputPieces.setAttribute('type', 'text');
+    dvizhOption_inputPieces.classList.add('optGuests__input');
+    dvizhOption_inputPieces.value = 1;
+    dvizhOption_inputPieces.disabled = true;
+
+    // инкримент по гостям
+    var right_btn = dvizhOption_label[count[2]].children[0];
+    right_btn.setAttribute('type', 'button');
+    right_btn.setAttribute('value', '+');
+
+    // очищаем все инпуты с type 'checkbox'
+    for (var i = 0; i < dvizhOption_label.length; i++) {
+        if (dvizhOption_label[i].children[0].type == 'checkbox') {
+            dvizhOption_label[i].children[0].remove();
+        }
+    }
+
+    var cardGoods__price = document.querySelector('.card-goods__price span');
+
+    // началная сумма
+    var price = parseInt(cardGoods__price.innerText);
+
+    var total = parseInt(cardGoods__price.innerText);
+
+    var custom_class = document.querySelector('.custom_class');
+
+    var c = 1;
+
+    function increment() {
+
+        total += price;
+
+        c++;
+
+        dvizhOption_inputPieces.value = c;
+
+        custom_class.dataset.count = c;
+
+        cardGoods__price.innerHTML = total;
+    }
+
+    function decrement() {
+
+        if (price < total) {
+
+            total -= price;
+
+            c--;
+
+            custom_class.dataset.count = c;
+
+            dvizhOption_inputPieces.value = c;
+        }
+
+        cardGoods__price.innerHTML = total;
+    }
+
+    left_btn.onclick = function () {
+        decrement();
+    };
+
+    right_btn.onclick = function () {
+        increment();
+    };
+
+}
+
 
 }
 //  Глобальный класс карточки товара  end

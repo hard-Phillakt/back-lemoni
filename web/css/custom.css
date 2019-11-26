@@ -400,8 +400,17 @@ input[disabled] {
     position: relative;
 }
 
+.dvizh-cart-delete-button {
+    color: #ff0017;
+}
 
+.dvizh-cart-delete-button:hover {
+    color: #ff0017;
+}
 
+.dvizh-change-count {
+    width: 100%;
+}
 
 
 

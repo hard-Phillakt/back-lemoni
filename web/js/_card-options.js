@@ -200,8 +200,6 @@ this.optString = function (box_count, classNameBox, count) {
 }
 //  Глобальный класс карточки товара  end
 
-
-
 // var mainCard = new GlogalOptionsCard();
 
 // Колличество гостей:
@@ -217,8 +215,8 @@ var arrOptDecore = [
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
-    ['decore__1_clear', 'decore__1_check'],
-]
+    ['decore__1_clear', 'decore__1_check']
+];
 
 //  Заголовки опций
 var miniTitle = [
@@ -226,8 +224,8 @@ var miniTitle = [
     ['На прянике'],
     ['Топер '],
     ['Открытка'],
-    ['блюдо'],
-]
+    ['блюдо']
+];
 
 // декор 
 // mainCard.optDecore(2, 'optDecore', arrOptDecore, 'radio', false, miniTitle);

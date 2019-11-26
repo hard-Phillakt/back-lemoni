@@ -44,24 +44,23 @@ $this->registerJsFile('/js/checkout.js');
 
         <!-- под товары разметка -->
         <div class="row mt-35">
+
             <div class="col-lg-5">
                 <a class="button button__circle" href="<?= Url::previous(); ?>">
                     <img src="./img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                 </a>
             </div>
 
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-lg-12">
                 <h4 class="title title__h4">Вес</h4>
             </div>
 
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-lg-12">
                 <h4 class="title title__h4">Цена</h4>
             </div>
 
-            <div class="col-lg-2">
-                <div class="">
-                    <h4 class="title title__h4">Кол-во</h4>
-                </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-lg-12">
+                <h4 class="title title__h4">Кол-во</h4>
             </div>
 
         </div>

@@ -64,7 +64,7 @@ Url::remember();
 
                     <?//= Html::img('@web/' . $model->lm_img_one, ['alt' => '']) ?>
 
-                    <?= Html::img($model->lm_img_one, ['alt' => '']) ?>
+                    <?= Html::img($model->lm_img_one, ['alt' => '', 'class' => 'img-responsive']) ?>
 
                 </div>
 
