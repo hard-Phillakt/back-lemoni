@@ -1,5 +1,5 @@
 
-var mainCard = new GlogalOptionsCard();
+var mainCard = new GlobalOptionsCard();
 
 // удаление опций: class - optDesabled
 

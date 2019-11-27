@@ -190,12 +190,11 @@ use app\widgets\sidebar\Sidebar;
             </div>
 
             <div class="modal-body-wrapp">
-                <div class="modal-body">
 
-                </div>
+                <div class="modal-body"></div>
 
                 <div class="mt-35">
-                    <button type="submit" data-dismiss="modal" class="button button__rectangle mt-60">Закрыть</button>
+                    <button type="submit" data-dismiss="modal" class="button button__rectangle">Закрыть</button>
                 </div>
             </div>
 

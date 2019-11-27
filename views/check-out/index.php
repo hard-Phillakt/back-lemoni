@@ -45,21 +45,21 @@ $this->registerJsFile('/js/checkout.js');
         <!-- под товары разметка -->
         <div class="row mt-35">
 
-            <div class="col-lg-5">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4">
                 <a class="button button__circle" href="<?= Url::previous(); ?>">
                     <img src="./img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                 </a>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-2 col-lg-12">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs">
                 <h4 class="title title__h4">Вес</h4>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-2 col-lg-12">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs">
                 <h4 class="title title__h4">Цена</h4>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-2 col-lg-12">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 hidden-xs">
                 <h4 class="title title__h4">Кол-во</h4>
             </div>
 
@@ -79,7 +79,7 @@ $this->registerJsFile('/js/checkout.js');
 
         <!-- итог в рублях -->
         <div class="row">
-            <div class="col-lg-5 col-lg-offset-7">
+            <div class="col-lg-4 col-lg-offset-8">
                 <div class="mt-35">
                     <!--                    <h3 class="title title__h1">Итого: <span>1 800</span> руб</h3>-->
                     <div class="cart-goods__total">

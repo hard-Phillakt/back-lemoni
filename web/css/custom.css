@@ -8,20 +8,20 @@ a:focus {
 }
 
 .dvizh-cart-show-options__circle {
-    width: 84px;
-    height: 84px;
+    width: 48px;
+    height: 48px;
     border-radius: 0.5em;
 }
 
 .dvizh-cart-show-options__img {
-    width: 84px;
-    height: 84px;
+    width: 48px;
+    height: 48px;
     border-radius: 0.5em;
 }
 
 .dvizh-cart-row__img {
-    width: 185px;
-    height: 185px;
+    /*width: 185px;*/
+    /*height: 185px;*/
 }
 
 .dvizh-cart-row {
@@ -75,10 +75,8 @@ input[disabled] {
     border: 1px solid #8f5541;
 }
 
-.cart-goods__total {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 90px;
+.cart-goods__total .title__h1 {
+    font-size: 40px;
 }
 
 .global-form__select::before {
@@ -409,10 +407,18 @@ input[disabled] {
 }
 
 .dvizh-change-count {
-    width: 100%;
+    /*width: 100%;*/
+    /*justify-content: center;*/
 }
 
 
+.dvizh-cart-row .row {
+    display: block;
+}
+
+.cart-goods__total .title__h1 {
+    font-size: 36px;
+}
 
 
 
@@ -477,6 +483,13 @@ input[disabled] {
         flex-direction: column-reverse
     }
 
+    .total-delivery__box {
+        margin-top: 30px;
+    }
+
+    #delivery-form .title__h4 {
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -500,6 +513,10 @@ input[disabled] {
 
 
 @media (min-width: 300px) and (max-width: 991px) {
+
+    #delivery-form .title__h4 {
+        margin-bottom: 30px;
+    }
 
     .section-cake {
         padding: 30px 0 3px 0;
@@ -644,7 +661,9 @@ input[disabled] {
         margin-top: 0 !important;
     }
 
-
+    .total-delivery__box {
+        margin-top: 30px;
+    }
 
 }
 
@@ -671,6 +690,35 @@ input[disabled] {
 
 
 @media (min-width: 300px) and (max-width: 768px) {
+
+    .dvizh-cart-row__img {
+        margin-bottom: 30px;
+    }
+
+    .dvizh-cart-price {
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+
+    .dvizh-cart-row__wrapp-price {
+        margin-bottom: 30px;
+    }
+
+    .shop-cart-delete {
+        margin-bottom: 30px;
+    }
+
+    .dvizh-cart-row .row {
+        display: block;
+    }
+
+    .hidden-xs {
+        display: none;
+    }
+
+    .xs-mb-30 {
+        margin-bottom: 30px;
+    }
 
     .additional-modules__phone {
         display: none;
@@ -778,6 +826,19 @@ input[disabled] {
         margin: 0;
     }
 
+    .cart-goods__total .title__h1 {
+        font-size: 26px;
+    }
+
+    .total-delivery__box {
+        margin-top: 30px;
+    }
+
+    .dvizh-cart-delete-button {
+        position: absolute;
+        top: 4px;
+        right: 0;
+    }
 }
 
 

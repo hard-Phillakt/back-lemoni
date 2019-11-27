@@ -57,23 +57,23 @@ use kartik\date\DatePicker;
         </div>
 
 
-        <div class="row mt-35">
-            <div class="col-lg-12">
-                <h3 class="title title__h4">Выберите способ получения товара:</h3>
-            </div>
-        </div>
+<!--        <div class="row mt-35">-->
+<!--            <div class="col-lg-12">-->
+<!--                <h3 class="title title__h4">Выберите способ получения товара:</h3>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="row mt-35">
+        <div class="row">
             <div class="col-lg-12">
 
-                <!--                --><?php //if( Yii::$app->session->hasFlash('success') ): ?>
-                <!---->
-                <!--                    <div class="alert alert-success alert-dismissible" role="alert">-->
-                <!--                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                <!--                        --><?php //echo Yii::$app->session->getFlash('success'); ?>
-                <!--                    </div>-->
-                <!---->
-                <!--                --><?php //endif;?>
+<!--                --><?php //if( Yii::$app->session->hasFlash('success') ): ?>
+<!---->
+<!--                    <div class="alert alert-success alert-dismissible" role="alert">-->
+<!--                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--                        --><?php //echo Yii::$app->session->getFlash('success'); ?>
+<!--                    </div>-->
+<!---->
+<!--                --><?php //endif;?>
 
             </div>
         </div>
@@ -91,11 +91,11 @@ use kartik\date\DatePicker;
 
             <div class="col-lg-8">
 
-                <div class="col-lg-12">
-                    <div class="mt-15 ml-15">
-                        <h4 class="title title__h4">Доставка</h4>
-                    </div>
-                </div>
+<!--                <div class="col-lg-12">-->
+<!--                    <div class="mt-15 ml-15">-->
+<!--                        <h4 class="title title__h4">Доставка</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
 
                 <div class="delivery-box global-form">
 
@@ -169,7 +169,7 @@ use kartik\date\DatePicker;
                                 <? //= $form->field($modelDeliveryContact, 'dateCreate')->textInput(['class' => 'global-form__input', 'placeholder' => 'Пример: 01.01.2019']);?>
 
                             <div class="form-group field-deliverycontact-name required">
-                                <label class="control-label">Выберите дату приготовления</label>
+                                <label class="control-label">Выберите дату доставки</label>
 
                                 <?= DatePicker::widget([
                                     'language' => 'ru',
@@ -272,7 +272,7 @@ use kartik\date\DatePicker;
                         <div class="desc desc__sm">
                             Без учета доставки.Подробнее
                             об условиях доставки ознакомьтесь
-                            на странице <a href="#!" class="link link__a">“Доставка и прием”</a>
+                            на странице <a href="/deliv-cake" class="link link__a">“Доставка и прием”</a>
                             или у нашего менеджера
                         </div>
                     </div>

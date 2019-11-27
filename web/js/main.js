@@ -7,8 +7,16 @@ if (navMenuIconlink[1] || navMenuIconlink[0]) {
     navMenuIconlink[1].onclick = function (e) {
         e.preventDefault();
 
+        console.log(document.body);
+
         if (headerFullMenu.classList[2] == 'close-menu') {
             headerFullMenu.classList.remove('close-menu');
+
+            if(window.outerWidth < 768){
+                console.log('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
         }
 
     };
@@ -18,6 +26,10 @@ if (navMenuIconlink[1] || navMenuIconlink[0]) {
 
         if (headerFullMenu.classList[2] != 'close-menu') {
             headerFullMenu.classList.add('close-menu');
+
+            if(window.outerWidth < 768){
+                document.body.style.overflow = '';
+            }
         }
 
     }

@@ -149,7 +149,7 @@ Url::remember();
                 ?>
 
                 <div class="mt-35">
-                    <a class="button button__rectangle mr-15">Купить в один клик</a>
+<!--                    <a class="button button__rectangle mr-15">Купить в один клик</a>-->
 
                     <?= BuyButton::widget([
                         'model' => $model,

@@ -48,12 +48,13 @@ switch ($model->model) {
 <li class="dvizh-cart-row">
 
     <div class=" row">
-        <div class="col-xs-5">
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
             <div class="dvizh-cart-row-wrapp">
 
                 <!--                <div class="dvizh-cart-row__img mr-30" style="background: url(./img/goods/cake/cake__1.png);">-->
-                <div class="dvizh-cart-row__img mr-30" style="background: url(.<?= $item->lm_img_one ?>);">
+                <div class="dvizh-cart-row__img" style="background: url(.<?= $item->lm_img_one ?>);">
 
                     <? //= $name ?>
 
@@ -75,13 +76,13 @@ switch ($model->model) {
 
         </div>
 
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
 
             <!-- Options Kg start -->
 
             <?php if ($options):foreach ($options as $key => $value): ?>
 
-                <?= $key == 'optGuests_kg' ? '<span>' . $value . '</span> кг' : false; ?>
+                <?= $key == 'optGuests_kg' ? '<span class="dvizh-cart-price">' . $value . '</span> кг' : false; ?>
 
             <?php endforeach; ?>
 
@@ -91,7 +92,7 @@ switch ($model->model) {
 
         </div>
 
-        <div class="col-xs-2">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 
             <div class="dvizh-cart-row__wrapp-price">
 
@@ -104,8 +105,7 @@ switch ($model->model) {
 
         </div>
 
-
-        <div class="col-xs-2">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
 
             <div class="dvizh-cart-row__wrapp-price">
 
@@ -128,14 +128,14 @@ switch ($model->model) {
             </div>
         </div>
 
-        <div class="col-xs-1 shop-cart-delete">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-3">
 
             <?= Html::tag('div', DeleteButton::widget([
                 'model' => $model,
                 'deleteElementUrl' => $controllerActions['delete'],
                 'lineSelector' => 'dvizh-cart-row',
                 'cssClass' => 'delete']),
-                ['class' => 'shop-cart-delete col-xs-1']);
+                ['class' => 'shop-cart-delete']);
             ?>
             <!--            <a class="dvizh-cart-delete-button delete" href="/cart/element/delete" data-url="/cart/element/delete" data-role="cart-delete-button" data-line-selector="dvizh-cart-row" data-id="3">╳</a>-->
         </div>
@@ -159,8 +159,8 @@ switch ($model->model) {
 //          фильтрую опции по ключам
             if ($key != 'optGuests_kg'): ?>
 
-                <div class="row mt-15">
-                    <div class="col-lg-6 col-lg-offset-1">
+                <div class="row mt-15 xs-mb-30">
+                    <div class="col-lg-4 col-lg-offset-1">
                         <div class="dvizh-cart-show-options">
 
                             <div class="box-option">
@@ -200,7 +200,7 @@ switch ($model->model) {
                     </div>
 
                     <div class="col-lg-1 col-lg-offset-2">
-                        <!-- сделаю на потом (в беке методы уже сделаны для удаления опций) -->
+                        <!-- сделаю потом (в беке методы уже сделаны для удаления опций) -->
                         <!--            <span class="delete-option" data-option="title-50" data-id="3">╳</span>-->
                     </div>
 
@@ -220,7 +220,7 @@ switch ($model->model) {
 
 <!--    <div class="row">-->
 <!--        <div class="col-lg-8 col-lg-offset-1">-->
-<!--            --><?php
+<!--        --><?php
 //
 //            $canonical_url = Url::canonical();
 //

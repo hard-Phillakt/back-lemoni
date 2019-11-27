@@ -1,5 +1,5 @@
 //  Глобальный класс карточки товара start
-function GlogalOptionsCard() {
+function GlobalOptionsCard() {
 
 
 // 1. optGuests (гости)
@@ -367,7 +367,7 @@ function GlogalOptionsCard() {
 // optString(3, 'optString', [0]);
 
 
-// 5. removeOpt (удаление опций) ##########################################################################################
+// 5. optPieces (добавление конфет в шт.) ##########################################################################################
     this.optPieces = function (box_count, classNameBox, count) {
 
     var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
