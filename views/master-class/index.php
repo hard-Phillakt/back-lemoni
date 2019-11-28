@@ -4,6 +4,8 @@
 use app\widgets\sidebar\Sidebar;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use yii\widgets\MaskedInput;
+
 
 //debug($model);
 //debug($masterClassForm);
@@ -40,7 +42,8 @@ use yii\helpers\Html;
                                 <li class="mt-35 top-news">
 
 
-                                    <div class="news-box__img" data-title="<?= $value->lm_title; ?>" data-img-count="<?= $newsBoxCount; ?>"></div>
+                                    <div class="news-box__img" data-title="<?= $value->lm_title; ?>"
+                                         data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
 
@@ -83,7 +86,9 @@ use yii\helpers\Html;
                                             <div class="flex-box">
                                                 <div class="news-box__content_date"><?= $value->lm_date; ?></div>
                                                 <div>
-                                                    <a href="#!" class="link link__a" data-title="<?= $value->lm_title; ?>" data-link-count="<?= $newsBoxCount; ?>">
+                                                    <a href="#!" class="link link__a"
+                                                       data-title="<?= $value->lm_title; ?>"
+                                                       data-link-count="<?= $newsBoxCount; ?>">
                                                         Записаться
 
                                                         <div class="news-box__content_hidden">
@@ -102,10 +107,10 @@ use yii\helpers\Html;
 
                                 </li>
 
-                            <?php
+                                <?php
 
                                 $newsBoxCount++;
-                            
+
                             endif; ?>
 
                         <?php endforeach; ?>
@@ -237,26 +242,38 @@ use yii\helpers\Html;
                 <div class="modal-body">
 
                 </div>
-                
+
                 <?php $form = ActiveForm::begin([
                     'options' => ['class' => 'master-class-form mt-35']
                 ]); ?>
 
-                <div class="mt-15">
+                <?= $form->field($masterClassForm, 'title_master')->hiddenInput()->label(''); ?>
+
+                <div class="mb-35">
                     <p>Записаться на <br> Мастер-класс</p>
                 </div>
 
-                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('') ?>
+                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('Введите имя') ?>
 
-                <?= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+7 000 000 0000'])->label('') ?>
+                <!--                --><? //= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+7 000 000 0000'])->label('') ?>
 
-                <?= $form->field($masterClassForm, 'comment')->textarea(['class' => 'global-form__input', 'placeholder' => 'Введите комментарий'])->label('') ?>
+                <?= $form->field($masterClassForm, 'phone')->widget(MaskedInput::class, [
+                    'mask' => '+7 999 999 9999',
+                    'options' => [
+                        'class' => 'global-form__input',
+                        'placeholder' => '+7'
+                    ]
+                ]) ?>
+
+                <?= $form->field($masterClassForm, 'comment')->textarea([
+                    'rows' => '6',
+                    'class' => 'global-form__input',
+                    'placeholder' => 'Введите комментарий'
+                ])->label('Введите комментарий') ?>
 
                 <div class="mt-35 flex-justify-center">
                     <?= Html::submitButton('Оправить', ['class' => 'button button__rectangle']) ?>
                 </div>
-
-                <?= $form->field($masterClassForm, 'title_master')->hiddenInput()->label(''); ?>
 
                 <?php $form = ActiveForm::end(); ?>
 

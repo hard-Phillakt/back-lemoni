@@ -11,6 +11,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\ReviewForm;
+use yii\web\UploadedFile;
 
 //Страница "Отзывов"
 class ReviewController extends Controller
@@ -26,22 +27,26 @@ class ReviewController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && Yii::$app->request->isAjax) {
 
-//            debug($model);
+            $model->file = UploadedFile::getInstance($model, 'file');
 
-            $data = '';
-            $data .= '<p>' . 'Имя: ' . $model->name . '<p>';
-            $data .= '<p>' . 'Телефон: ' . $model->phone . '<p>';
-            $data .= '<p>' . 'Комментарий: ' . $model->comment . '<p>';
+            if($model->upload()){
 
-//            debug($data);
+                $data = null;
+                $data .= '<p>' . 'Имя: ' . $model->name . '<p>';
+                $data .= '<p>' . 'Телефон: ' . $model->phone . '<p>';
+                $data .= '<p>' . 'Комментарий: ' . $model->comment . '<p>';
+                $data .= '<p>' . 'Идентификатор видео: ' . $model->fileId = date('U') . '<p>';
 
-            Yii::$app->mailer->compose()
-                ->setFrom('hard-phillakt@mail.ru')
-                ->setTo('hard-phillakt@mail.ru')
-                ->setSubject('Тема сообщения')
-                ->setTextBody('Текст сообщения')
-                ->setHtmlBody('<div>' . $data . '</div>')
-                ->send();
+
+                Yii::$app->mailer->compose()
+                    ->setFrom('hard-phillakt@mail.ru')
+                    ->setTo('hard-phillakt@mail.ru')
+                    ->setSubject('Тема сообщения')
+                    ->setTextBody('Текст сообщения')
+                    ->setHtmlBody('<div>' . $data . '</div>')
+                    ->send();
+            }
+
         }
 
 

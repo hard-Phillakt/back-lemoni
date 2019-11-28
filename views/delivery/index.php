@@ -16,6 +16,7 @@ use app\widgets\customcart\ChangeOptions;
 //debug($modelDeliveryContact);
 use yii\widgets\Pjax;
 use kartik\date\DatePicker;
+use yii\widgets\MaskedInput;
 
 ?>
 
@@ -24,8 +25,7 @@ use kartik\date\DatePicker;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Доставка
-                    </span>
+                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Доставка </span>
             </div>
         </div>
     </div>
@@ -115,7 +115,15 @@ use kartik\date\DatePicker;
                                 <!--                                <label>Контактный телефон</label>-->
                                 <!--                                <input type="text" class="global-form__input" placeholder="+7">-->
 
-                                <?= $form->field($modelDeliveryContact, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+ 7']); ?>
+<!--                                --><?//= $form->field($modelDeliveryContact, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+ 7']); ?>
+
+                                <?= $form->field($modelDeliveryContact, 'phone')->widget(MaskedInput::class,[
+                                    'mask' => '+7 999 999 9999',
+                                    'options' => [
+                                        'class' => 'global-form__input',
+                                        'placeholder' => '+7'
+                                    ]
+                                ]); ?>
 
                             </p>
 
@@ -314,7 +322,7 @@ use kartik\date\DatePicker;
                 <div class="mb-35">
                     <h2 class="title title__h3">
                         <p style="color: #8F5541">Спасибо</p>
-                        <p>за остановленную заявку!</p>
+                        <p>за оставленную заявку!</p>
                     </h2>
                 </div>
 

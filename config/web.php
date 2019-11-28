@@ -27,7 +27,7 @@ $config = [
                     'baseUrl'=>'@web',
                     'basePath'=>'@webroot',
                     'path' => 'files/global',
-                    'name' => 'global'
+                    'name' => 'global' 
                 ]
             ]
         ]

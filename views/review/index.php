@@ -32,6 +32,7 @@ use yii\widgets\Pjax;
 
                     <?php $form = ActiveForm::begin([
                         'options' => [
+                            'id' => 'revievs-id',
                             "data-pjax" => "0"
                         ]
                     ]); ?>
@@ -90,8 +91,9 @@ use yii\widgets\Pjax;
 
                                 <div class="col-lg-8">
                                     <div class="filter-sidebar-catalog__box_ul global-form ">
+
                                             <span for="global-form__input_el1"><span
-                                                    class="shadow-checkbox mr-15 chek-true"></span>
+                                                    class="shadow-checkbox mr-15"></span>
                                                 <input type="checkbox" id="global-form__input_el1"
                                                        class="global-form__checkbox mt-35">
                                                 <div>
@@ -105,9 +107,13 @@ use yii\widgets\Pjax;
 
                                 <div class="col-lg-4">
                                     <div class="revievs__wrapp-btn">
+
                                         <div>
+                                            <?= $form->field($model, 'file')->fileInput(['class' => 'file-opacity'])->label('') ?>
+
                                             <a href="#!" class="link link__a">Добавить файлы</a>
                                         </div>
+
                                         <input type="submit" class="button button__rectangle mt-15"
                                                value="Отправить">
                                     </div>

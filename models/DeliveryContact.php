@@ -29,7 +29,7 @@ class DeliveryContact extends Model {
         return [
             ['name', 'required', 'message' => 'Введите имя'],
             ['phone', 'required', 'message' => 'Введите телефон'],
-            [['phone', 'required'], 'integer' , 'message' => 'В поле должны быть только цифры',],
+//            [['phone', 'required'], 'integer' , 'message' => 'В поле должны быть только цифры',],
             ['city', 'required', 'message' => 'Введите город'],
             ['street', 'required', 'message' => 'Введите улицу'],
             ['house', 'required', 'message' => 'Введите дом'],

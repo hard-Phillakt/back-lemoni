@@ -23,8 +23,8 @@ class MasterClassForm extends Model {
         return [
             ['name', 'required', 'message' => 'Введите корректное имя'],
             ['phone', 'required', 'message' => 'Введите корректный телефон'],
-            ['phone', 'integer', 'message' => 'Должны быть только цифры'],
-            ['comment', 'required', 'message' => 'Введите корректное комментарий'],
+//            ['phone', 'integer', 'message' => 'Должны быть только цифры'],
+            ['comment', 'required', 'message' => 'Введите комментарий'],
             ['comment', 'safe'],
         ];
 

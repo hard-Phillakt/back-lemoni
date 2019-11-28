@@ -420,6 +420,54 @@ input[disabled] {
     font-size: 36px;
 }
 
+.file-opacity {
+    display: block;
+    width: 120px;
+    margin: auto;
+    opacity: 0;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    cursor: pointer;
+}
+
+.field-reviewform-file .help-block {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+
+.revievs__wrapp-btn input[disabled] {
+    background: #8f5541 !important;
+    opacity: 0.3 !important;
+}
+
+.revievs__wrapp-btn input[disabled]:hover {
+    color: #fff !important;
+}
+
+input:focus {
+    box-shadow: 4px 3px 7px 0px #F6D8CB;
+}
+
+.has-error .help-block {
+    color: #a94442;
+    font-size: 11px;
+    text-transform: uppercase;
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -489,6 +537,10 @@ input[disabled] {
 
     #delivery-form .title__h4 {
         margin-bottom: 30px;
+    }
+
+    .revievs__textarea::before {
+        display: none;
     }
 }
 
@@ -663,6 +715,10 @@ input[disabled] {
 
     .total-delivery__box {
         margin-top: 30px;
+    }
+
+    .revievs__textarea::before {
+        display: none;
     }
 
 }

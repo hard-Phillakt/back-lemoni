@@ -87,25 +87,29 @@ var footer = new ActiveItem(menuFooterA);
 
 var filterSidebarCatalog__box_ul = document.querySelectorAll('.filter-sidebar-catalog__box_ul span');
 
-filterSidebarCatalog__box_ul.forEach(function (item, i) {
+if(filterSidebarCatalog__box_ul){
+    filterSidebarCatalog__box_ul.forEach(function (item, i) {
 
-    item.onclick = function () {
+        item.onclick = function () {
 
-        if (item.children[0].classList[2] == 'chek-true') {
+            if (item.children[0].classList[2] == 'chek-true') {
 
-            item.children[0].classList.remove('chek-true');
-            item.children[1].checked = false;
-            console.log(this.children[1].checked);
+                item.children[0].classList.remove('chek-true');
+                item.children[1].checked = false;
+                console.log(this.children[1].checked);
 
-        } else {
-            item.children[0].classList.add('chek-true');
-            item.children[1].checked = true;
-            console.log(this.children[1].checked);
+            } else {
+                item.children[0].classList.add('chek-true');
+                item.children[1].checked = true;
+                console.log(this.children[1].checked);
+            }
+
         }
 
-    }
+    });
+}
 
-});
+
 
 // Filter Cake-category-type-product end
 
@@ -148,20 +152,33 @@ if (wpper) {
 // pjax call-back
 $(document).on('pjax:success', function () {
 
-    var count = $('#delivery-form')[0].length;
 
-    // Callback Уведомление об успешном отправлки сообщения
-    $('#modal-delivery').modal('show');
+    if($('#delivery-form')[0]){
+        var count = $('#delivery-form')[0].length;
+        // Callback Уведомление об успешном отправки сообщения
+        $('#modal-delivery').modal('show');
 
-    for (var i = 0; i < count; i++) {
+        for (var i = 0; i < count; i++) {
 
-        // очищаем поля формы кроме кнопки
-        if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT') {
-            $('#delivery-form')[0][i].value = '';
+            // очищаем поля формы кроме кнопки
+            if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT') {
+                $('#delivery-form')[0][i].value = '';
+            }
+
         }
-
     }
 
+    if($('#revievs-id')[0]){
+        var count = $('#revievs-id')[0].length;
+
+        for (var i = 0; i < count; i++) {
+            // очищаем поля формы кроме кнопки
+            if ($('#revievs-id')[0][i].type != 'submit' && $('#revievs-id')[0][i].type != 'checkbox') {
+                $('#revievs-id')[0][i].value = '';
+            }
+
+        }
+    }
 });
 
 
@@ -306,3 +323,37 @@ if(boxCandieGoods){
 }
 
 
+
+// Review
+
+var revievsWrappBtn = document.querySelector('.revievs__wrapp-btn .button');
+var shadowCheckbox = document.querySelector('.shadow-checkbox');
+var filterSidebarCatalogBoxUl = document.querySelector('.filter-sidebar-catalog__box_ul');
+var reviewformFile = document.querySelector('#reviewform-file');
+
+
+
+if(revievsWrappBtn){
+    revievsWrappBtn.disabled = true;
+
+    filterSidebarCatalogBoxUl.onclick = function () {
+       if(shadowCheckbox.className == 'shadow-checkbox mr-15 chek-true') {
+           revievsWrappBtn.disabled = false
+
+       }else {
+           revievsWrappBtn.disabled = true;
+       }
+    };
+
+}
+
+var revievsWrappLink = document.querySelector('.revievs__wrapp-btn .link');
+
+if(reviewformFile){
+    reviewformFile.onchange = function () {
+
+        if(reviewformFile.files[0]){
+            revievsWrappLink.innerHTML = 'Загруженно файлов 1';
+        }
+    }
+}
