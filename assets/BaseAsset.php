@@ -28,7 +28,6 @@ class BaseAsset extends AssetBundle
         'js/main.js',
         'js/map.js',
         'js/news.js',
-//        'https://use.fontawesome.com/releases/v5.0.6/js/all.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

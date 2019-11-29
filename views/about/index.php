@@ -51,7 +51,7 @@ use app\widgets\sidebar\Sidebar;
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="contact__customer">
+                        <div class="contact__customer mt-35">
                             <img src="./img/about/customer.png" alt="" class="img-responsive">
                         </div>
                     </div>

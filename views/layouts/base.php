@@ -4,10 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
 use app\assets\BaseAsset;
 use app\widgets\customcart\CartInformer;
-use yii\bootstrap\NavBar;
 
 BaseAsset::register($this);
 ?>
@@ -19,12 +17,7 @@ BaseAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
-    <!--    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">-->
-    <!--    <link rel="icon" href="favicon.ico" type="image/x-icon">-->
-    <!--    <link rel="stylesheet" href="./style/main.css">-->
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>

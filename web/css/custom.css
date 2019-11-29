@@ -451,7 +451,7 @@ input[disabled] {
 }
 
 input:focus {
-    box-shadow: 4px 3px 7px 0px #F6D8CB;
+    box-shadow: 1px 3px 7px 0 #F6D8CB;
 }
 
 .has-error .help-block {
@@ -460,6 +460,47 @@ input:focus {
     text-transform: uppercase;
 
 }
+
+.popular-cake .card-img__img {
+    height: 200px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 5px 5px 0 0;
+}
+
+.popular-cake .card-img {
+    align-items: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -874,8 +915,8 @@ input:focus {
     }
 
     .optGuests .wrapper-options {
-        display: inline-flex;
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
     }
 
     .optGuests .wrapper-options label input {

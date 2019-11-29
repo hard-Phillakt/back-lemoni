@@ -150,7 +150,7 @@
                         Настоящий бисквитный торт должен быть высоким, <br>
                         пышным, ароматным и тающим во рту. <br>
                         <br>
-                        Способов его приготовления множество—каждый <br>
+                        Способов его приготовления множество — каждый <br>
                         сможет найти рецепт на свой вкус.
                     </p>
                 </div>
@@ -361,10 +361,7 @@
                     <div class="card-img">
 
                         <div class="popular-cake__elem-shadow pb-25">
-                            <div class="card-img__img">
-                                <img src="../img/cake/birthday.png" alt="birthday"
-                                     class="card-img__img_br-5 img-responsive">
-                            </div>
+                            <a href="#!" class="card-img__img" style="background: url(../img/cake/cake_1.png)"></a>
                             <div class="popular-cake__links mt-35">
                                 <a href="#!" class="link link__a">На день рождения</a>
                                 <a href="#!" class="button button__circle"><img src="../img/icons/arrow-right.svg"
@@ -381,10 +378,7 @@
                     <div class="card-img">
 
                         <div class="popular-cake__elem-shadow pb-25">
-                            <div class="card-img__img">
-                                <img src="../img/cake/wedding.png" alt="wedding"
-                                     class="card-img__img_br-5 img-responsive">
-                            </div>
+                            <a href="#!" class="card-img__img" style="background: url(../img/cake/cake_2.png)"></a>
                             <div class="popular-cake__links mt-35">
                                 <a href="#!" class="link link__a">Свадебные торты</a>
                                 <a href="#!" class="button button__circle"><img src="../img/icons/arrow-right.svg"
@@ -401,17 +395,17 @@
                     <div class="card-img">
 
                         <div class="popular-cake__elem-shadow pb-25">
-                            <div class="card-img__img">
-                                <img src="../img/cake/holiday.png" alt="holiday"
-                                     class="card-img__img_br-5 img-responsive">
-                            </div>
+
+                            <a href="#!" class="card-img__img" style="background: url(../img/cake/cake_3.png)"></a>
+
                             <div class="popular-cake__links mt-35">
                                 <a href="#!" class="link link__a">
-                                    Праздничные <br>
+                                    Праздничные
                                     торты</a>
                                 <a href="#!" class="button button__circle"><img src="../img/icons/arrow-right.svg"
                                                                                 alt="arrow-right"></a>
                             </div>
+
                         </div>
 
                     </div>
@@ -423,13 +417,10 @@
                     <div class="card-img">
 
                         <div class="popular-cake__elem-shadow pb-25">
-                            <div class="card-img__img">
-                                <img src="../img/cake/dietcake.png" alt="dietcake"
-                                     class="card-img__img_br-5 img-responsive">
-                            </div>
+                            <a href="#!" class="card-img__img" style="background: url(../img/cake/cake_4.png)"></a>
                             <div class="popular-cake__links mt-35">
                                 <a href="#!" class="link link__a">
-                                    Для людей <br>
+                                    Для людей
                                     с особым питанием
                                 </a>
                                 <a href="#!" class="button button__circle"><img src="../img/icons/arrow-right.svg"
@@ -445,17 +436,4 @@
     </div>
 </section>
 
-<!-- instagram start -->
-<section class="instagram title__line_r-67">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <h2 class="title title__h1 opac__07">Instagram</h2>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- instagram -->
-<section class="insta-bg mt-90"></section>
 

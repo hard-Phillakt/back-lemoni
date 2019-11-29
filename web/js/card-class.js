@@ -1,7 +1,6 @@
 //  Глобальный класс карточки товара start
 function GlobalOptionsCard() {
 
-
 // 1. optGuests (гости)
 // 2. optGlaze (глазурь)
 // 3. optDecore (декор)
@@ -9,19 +8,18 @@ function GlobalOptionsCard() {
 // 5. optString-format (формат надписи)
 // 6. optPackaging (упаковка)
 
-
 // боксы фильтров
     var dvizhOption = document.querySelectorAll('.dvizh-option');
     var dvizhOption_label_input = document.querySelectorAll('.dvizh-option label input');
 
 
-//  делаем из radio -> checkbox ##########################################################################################
+//  делаем из radio -> checkbox ###################################################################################
     for (var i = 0; i < dvizhOption_label_input.length; i++) {
         dvizhOption_label_input[i].setAttribute('type', 'checkbox');
     }
 
 
-//  задаём классы отступов всем обёрткам ##########################################################################################
+//  задаём классы отступов всем обёрткам ##########################################################################
     for (var i = 0; i < dvizhOption.length; i++) {
         dvizhOption[i].classList.add('mt-45');
         // в пустой div mt-35
@@ -30,10 +28,11 @@ function GlobalOptionsCard() {
     }
 
 
-// 1. optGuests (гости) ##########################################################################################
+// 1. optGuests (гости) ###########################################################################################
     this.optGuests = function (box_count, classNameBox, count) {
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
+
         // задаём класс боксу
         dvizhOption.classList.add(classNameBox);
 
@@ -225,7 +224,7 @@ function GlobalOptionsCard() {
 // optGlaze(1, 'optGlaze', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB']);
 
 
-// 3. optDecore (декор) ##########################################################################################
+// 3. optDecore (декор) ###########################################################################################
     this.optDecore = function (box_count, classNameBox, arr, type, btnLR, miniTitle) {
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
@@ -336,7 +335,7 @@ function GlobalOptionsCard() {
 // optDecore(2, 'optDecore', arrOptDecore, 'radio', true, miniTitle);
 
 
-// 4. optString (надпись) ##########################################################################################
+// 4. optString (надпись) #########################################################################################
     this.optString = function (box_count, classNameBox, count) {
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
@@ -367,91 +366,95 @@ function GlobalOptionsCard() {
 // optString(3, 'optString', [0]);
 
 
-// 5. optPieces (добавление конфет в шт.) ##########################################################################################
+// 5. optPieces (добавление конфет в шт.) #########################################################################
     this.optPieces = function (box_count, classNameBox, count) {
 
-    var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
+        var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
 
-    // задаём класс боксу
-    dvizhOption.classList.add(classNameBox);
+        // задаём класс боксу
+        dvizhOption.classList.add(classNameBox);
 
-    // колекции lable из боксов (выборка по боксу)
-    var dvizhOption_label = document.querySelectorAll('.dvizh-option')[box_count].children[1].children;
+        var optPiecesStrong = document.querySelector('.optPieces .dvizh-option-heading strong');
 
-    // декремент по гостям
-    var left_btn = dvizhOption_label[count[0]].children[0];
-    left_btn.setAttribute('type', 'button');
-    left_btn.setAttribute('value', '-');
+        // количество шт
+        optPiecesStrong ? optPiecesStrong.innerHTML = 'Количество шт:' : false;
 
-    var dvizhOption_inputPieces = dvizhOption_label[count[1]].children[0];
-    dvizhOption_inputPieces.setAttribute('type', 'text');
-    dvizhOption_inputPieces.classList.add('optGuests__input');
-    dvizhOption_inputPieces.value = 1;
-    dvizhOption_inputPieces.disabled = true;
+        // колекции lable из боксов (выборка по боксу)
+        var dvizhOption_label = document.querySelectorAll('.dvizh-option')[box_count].children[1].children;
 
-    // инкримент по гостям
-    var right_btn = dvizhOption_label[count[2]].children[0];
-    right_btn.setAttribute('type', 'button');
-    right_btn.setAttribute('value', '+');
+        // декремент по гостям
+        var left_btn = dvizhOption_label[count[0]].children[0];
+        left_btn.setAttribute('type', 'button');
+        left_btn.setAttribute('value', '-');
 
-    // очищаем все инпуты с type 'checkbox'
-    for (var i = 0; i < dvizhOption_label.length; i++) {
-        if (dvizhOption_label[i].children[0].type == 'checkbox') {
-            dvizhOption_label[i].children[0].remove();
+        var dvizhOption_inputPieces = dvizhOption_label[count[1]].children[0];
+        dvizhOption_inputPieces.setAttribute('type', 'text');
+        dvizhOption_inputPieces.classList.add('optGuests__input');
+        dvizhOption_inputPieces.value = 1;
+        dvizhOption_inputPieces.disabled = true;
+
+        // инкримент по гостям
+        var right_btn = dvizhOption_label[count[2]].children[0];
+        right_btn.setAttribute('type', 'button');
+        right_btn.setAttribute('value', '+');
+
+        // очищаем все инпуты с type 'checkbox'
+        for (var i = 0; i < dvizhOption_label.length; i++) {
+            if (dvizhOption_label[i].children[0].type == 'checkbox') {
+                dvizhOption_label[i].children[0].remove();
+            }
         }
-    }
 
-    var cardGoods__price = document.querySelector('.card-goods__price span');
+        var cardGoods__price = document.querySelector('.card-goods__price span');
 
-    // началная сумма
-    var price = parseInt(cardGoods__price.innerText);
+        // началная сумма
+        var price = parseInt(cardGoods__price.innerText);
 
-    var total = parseInt(cardGoods__price.innerText);
+        var total = parseInt(cardGoods__price.innerText);
 
-    var custom_class = document.querySelector('.custom_class');
+        var custom_class = document.querySelector('.custom_class');
 
-    var c = 1;
+        var c = 1;
 
-    function increment() {
+        function increment() {
 
-        total += price;
+            total += price;
 
-        c++;
+            c++;
 
-        dvizhOption_inputPieces.value = c;
-
-        custom_class.dataset.count = c;
-
-        cardGoods__price.innerHTML = total;
-    }
-
-    function decrement() {
-
-        if (price < total) {
-
-            total -= price;
-
-            c--;
+            dvizhOption_inputPieces.value = c;
 
             custom_class.dataset.count = c;
 
-            dvizhOption_inputPieces.value = c;
+            cardGoods__price.innerHTML = total;
         }
 
-        cardGoods__price.innerHTML = total;
+        function decrement() {
+
+            if (price < total) {
+
+                total -= price;
+
+                c--;
+
+                custom_class.dataset.count = c;
+
+                dvizhOption_inputPieces.value = c;
+            }
+
+            cardGoods__price.innerHTML = total;
+        }
+
+        left_btn.onclick = function () {
+            decrement();
+        };
+
+        right_btn.onclick = function () {
+            increment();
+        };
+
     }
-
-    left_btn.onclick = function () {
-        decrement();
-    };
-
-    right_btn.onclick = function () {
-        increment();
-    };
-
-}
-
-
+    
 }
 //  Глобальный класс карточки товара  end
 
