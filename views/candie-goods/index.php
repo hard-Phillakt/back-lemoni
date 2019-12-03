@@ -5,9 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 //    debug($model);
-
 //    debug($filter);die;
-
 ?>
 
 
@@ -16,7 +14,7 @@ use yii\helpers\Url;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Candie</span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span> - Candy</span>
             </div>
         </div>
     </div>
@@ -38,7 +36,6 @@ use yii\helpers\Url;
                     ],
                 ]); ?>
 
-
                 <h4 class="title title__h4">Фильтр</h4>
 
                 <div class="filter-sidebar-catalog__box mt-60">
@@ -46,12 +43,11 @@ use yii\helpers\Url;
                     <!-- filter kg -->
                     <div class="filter-sidebar-catalog__box">
 
-<!--                        <h5 class="title title__h5 mt-35">-->
-<!--                            Цена за килограм-->
-<!--                        </h5>-->
+                        <h5 class="title title__h5 mt-35">
+                            Цена за единицу товара
+                        </h5>
 
                         <?//= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
-
 
                         <div class="flter-min-max mt-35">
 
@@ -60,8 +56,6 @@ use yii\helpers\Url;
                             <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум', ['class' => 'mb-15']) ?>
 
                         </div>
-
-
 
                         <!--                        <input type="text" class="global-form__input mt-35" placeholder="Максимум 6000 руб/кг">-->
 
@@ -229,7 +223,7 @@ use yii\helpers\Url;
 
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
-                <h2 class="title title__h1 opac__07">Каталог продукции</h2>
+                <h2 class="title title__h1 opac__07">Каталог продукции Candy Bar</h2>
 
 
                 <!-- filter type-goods -->
@@ -287,11 +281,11 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>

@@ -41,7 +41,7 @@ Url::remember();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="/" class="breadcrumbs-line__active">Главная</a> <span> - <?= $model['lm_title']; ?></span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span>-</span> <a href="<?= Url::to('/candie'); ?>" class="breadcrumbs-line__active">Candie</a> <span> - <?= $model['lm_title']; ?></span>
             </div>
         </div>
     </div>

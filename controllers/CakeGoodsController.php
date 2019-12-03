@@ -26,6 +26,7 @@ use app\models\Tag;
 //  Создал контроллер тортов
 class CakeGoodsController extends Controller
 {
+    
 
     public function actionIndex()
     {

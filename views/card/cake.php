@@ -40,7 +40,7 @@ Url::remember();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="/" class="breadcrumbs-line__active">Главная</a> <span> - <?= $model['lm_title']; ?></span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span>-</span>  <a href="<?= Url::to('/'.$model['lm_essence']); ?>" class="breadcrumbs-line__active">Торты</a> <span> - <?= $model['lm_title']; ?></span>
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@ Url::remember();
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-35">
-                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>-goods">
+                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>">
                         <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
 
@@ -86,13 +86,13 @@ Url::remember();
 
             <div class="col-lg-5 col-lg-offset-1 mt-35">
 
-                <h1 class="title title__h3"><?= $model->lm_title;?></h1>
+                <h1 class="title title__h3"><?= $model->lm_title; ?></h1>
 
 
                 <div class="mt-60">
                     <div class="card-goods__price">
 <!--                        <span>1700</span>-->
-                        <span><?= $model->lm_price_for_kg;?></span> руб
+                        <span data-oldstate="<?= $model->lm_price_for_kg; ?>"><?= $model->lm_price_for_kg; ?></span> руб
                     </div>
                 </div>
 
@@ -105,7 +105,9 @@ Url::remember();
                 </div>
 
 
+
                 <!-- Начало опций товара -->
+
 
 
                 <?= ChangeOptions::widget([
@@ -113,11 +115,16 @@ Url::remember();
                     'type' => 'radio',
                 ]);?>
 
+
+
                 <div class="mt-35">
                     <div class="card-goods__total">
-                        Итого: <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{p}']); ?> руб
+<!--                        Итого: --><?//= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{p}']); ?><!-- руб-->
+                        Итого: <span class="dvizh-cart-price-total"><span><?= $model->lm_price_for_kg; ?></span></span> руб
                     </div>
                 </div>
+
+
 
 <!--                <div class="mt-35">-->
 <!--                    <div class="card-goods__total">-->

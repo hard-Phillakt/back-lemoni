@@ -86,11 +86,13 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'index',
+                'cake/' => 'cake-goods/index',
+                'candy/' => 'candie-goods/index',
                 'master' => 'master/index',
-                'card/cake/<id:\d+>' => '/card/cake',
-                'card/candie/<id:\d+>' => '/card/candie',
-                'card/bouquet/<id:\d+>' => '/card/bouquet',
-                'card/shadlaw/<id:\d+>' => '/card/shadlaw',
+                'cake/<id:\d+>' => 'card/cake',
+                'candy/<id:\d+>' => 'card/candie',
+                'bouquet/<id:\d+>' => 'card/bouquet',
+                'shadlaw/<id:\d+>' => 'card/shadlaw',
             ],
         ],
         'cart' => [

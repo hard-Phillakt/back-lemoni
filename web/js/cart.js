@@ -29,10 +29,11 @@ window.onload = function () {
             var dvizhOption_labelKg = dvizhOption_label.split(' ')[0];
         }
 
-        var cardGoods__price = document.querySelector('.card-goods__price span').innerText;
+        // var cardGoods__price = document.querySelector('.card-goods__price span').innerText;
+        var cardGoods__price = document.querySelector('.card-goods__price span');
 
         // началная сумма
-        var priceElement = parseInt(cardGoods__price);
+        var priceElement = parseInt(cardGoods__price.innerText);
 
         var arr_options = {};
 
@@ -47,6 +48,8 @@ window.onload = function () {
                     // у ключа опции title-50 разрезаю его на массив ["title", "50"]
                     var item_price = item.children[0].value.split('-')[1];
 
+                    console.log(item_price);
+
                     item_summ += parseInt(item_price);
 
                     arr_options[item.children[0].value.split('-')[2]] = item.children[0].value;
@@ -55,10 +58,15 @@ window.onload = function () {
                     custom_class.dataset.options = JSON.stringify(arr_options);
 
                     console.log('item_summ: ', item_summ);
+
                     console.log('priceElement: ', priceElement);
 
                     // У кнопки "заказать" есть data-price нужно положить сумму товара из всех опций.
-                    custom_class.dataset.price = priceElement + item_summ;
+                    // custom_class.dataset.price = priceElement + item_summ;
+
+                    // console.log(cardGoods__price);
+
+                    // custom_class.dataset.price = parseInt(cardGoods__price.dataset.oldstate) + item_summ;
 
                     // Костыль для корректного отображения
                     // setTimeout(function () {
@@ -89,7 +97,9 @@ window.onload = function () {
 
                     custom_class.dataset.options = JSON.stringify(arr_options);
 
-                    custom_class.dataset.price = priceElement + item_summ + parseInt(arr_options.description.split('-')[1]);
+                    // custom_class.dataset.price = parseInt(cardGoods__price.dataset.oldstate) + item_summ;
+
+                    // custom_class.dataset.price = priceElement + item_summ + parseInt(arr_options.description.split('-')[1]);
 
                 }
 

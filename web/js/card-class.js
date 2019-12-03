@@ -8,6 +8,58 @@ function GlobalOptionsCard() {
 // 5. optString-format (формат надписи)
 // 6. optPackaging (упаковка)
 
+
+// global price для отображения текущей суммы с опциями ##############################################################
+
+    var customClass = document.querySelector('.custom_class');
+
+    var cardGoodsPrice = document.querySelector('.card-goods__price span');
+
+    // Итог в карточке товара
+    var dvizhCartPrice = document.querySelector('.dvizh-cart-price-total span');
+
+    var glogalPrice = {};
+
+    function _setGlogalPrice(nameOpt, priceOpt) {
+
+        var cardGoodsPriceOldState = parseInt(cardGoodsPrice.dataset.oldstate);
+
+        console.log(cardGoodsPrice);
+
+        glogalPrice[nameOpt] = parseInt(priceOpt);
+
+        glogalPrice['card-price'] = cardGoodsPriceOldState;
+
+        console.log('glogalPrice obj: ', glogalPrice);
+
+        var glogalPriceTotal = 0;
+
+        if(glogalPrice){
+
+            for(var key in glogalPrice){
+
+                glogalPriceTotal += glogalPrice[key];
+            }
+
+            if(glogalPriceTotal){
+                customClass.dataset.price = glogalPriceTotal;
+                dvizhCartPrice.innerHTML = glogalPriceTotal;
+                console.log(glogalPriceTotal);
+            }
+
+        }
+    }
+
+
+// ###################################################################################################################
+
+
+
+
+
+
+
+
 // боксы фильтров
     var dvizhOption = document.querySelectorAll('.dvizh-option');
     var dvizhOption_label_input = document.querySelectorAll('.dvizh-option label input');
@@ -77,14 +129,17 @@ function GlobalOptionsCard() {
             var kgTotal = 1;
 
             // function декримент
-            function rightBtnDecriment() {
+            function leftBtnDecriment() {
                 if (dvizhOption_inputGuests.value > 5) {
                     summ -= price / 100 * 20;
                     total = price + summ;
                     guest--;
 
                     console.log(total);
-                    cardGoods__price.innerHTML = total;
+                    // cardGoods__price.innerHTML = total;
+                    cardGoods__price.dataset.oldstate = total;
+
+                    _setGlogalPrice('card-price', total);
 
                     // добавляю в дата атрибут сумму после декримента
                     custom_class.dataset.price = total;
@@ -104,8 +159,10 @@ function GlobalOptionsCard() {
             left_btn.onclick = function (e) {
                 e.preventDefault();
 
-                rightBtnDecriment();
+                leftBtnDecriment();
             };
+
+
 
             // function инкремент
             function rightBtnIncrement() {
@@ -114,7 +171,10 @@ function GlobalOptionsCard() {
                 guest++;
 
                 console.log(total);
-                cardGoods__price.innerHTML = total;
+                // cardGoods__price.innerHTML = total;
+                cardGoods__price.dataset.oldstate = total;
+
+                _setGlogalPrice('card-price', total);
 
                 // добавляю в дата атрибут сумму после инкремент
                 custom_class.dataset.price = total;
@@ -165,7 +225,7 @@ function GlobalOptionsCard() {
                 e.preventDefault();
 
                 // function декримент
-                rightBtnDecriment();
+                leftBtnDecriment();
             };
 
             // инкримент по кг
@@ -183,7 +243,14 @@ function GlobalOptionsCard() {
 
 
 // 2. optGlaze (глазурь) ##########################################################################################
-    this.optGlaze = function (box_count, classNameBox, count) {
+    this.optGlaze = function (box_count, classNameBox, count, optGlazePrice) {
+
+        // console.log(optGlazePrice);
+
+
+
+
+
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
 
@@ -195,7 +262,24 @@ function GlobalOptionsCard() {
 
         for (var i = 0; i < dvizhOption_label.length; i++) {
 
-            dvizhOption_label[i].onclick = function () {
+            // добавляем цены в data-price input-a
+
+            if(optGlazePrice){
+                dvizhOption_label[i].children[0].setAttribute('data-price', optGlazePrice[i]);
+            }
+
+
+            dvizhOption_label[i].onclick = function (e) {
+                // убираем дубль click с label
+                // e.preventDefault();
+
+
+                // добавляю price glaze и прайс из data-price
+                if(optGlazePrice){
+
+                    _setGlogalPrice('glaze', this.children[0].dataset.price);
+                }
+
 
                 for (var i = 0; i < dvizhOption_label.length; i++) {
                     dvizhOption_label[i].classList.remove('optGlaze__circle_true');
@@ -217,15 +301,15 @@ function GlobalOptionsCard() {
         if (dvizhOption.classList[2] == 'optDesabled') {
             setTimeout(function () {
                 dvizhOption.remove();
-            }, 100);
+            }, 10);
         }
 
-    }
+    };
 // optGlaze(1, 'optGlaze', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB']);
 
 
 // 3. optDecore (декор) ###########################################################################################
-    this.optDecore = function (box_count, classNameBox, arr, type, btnLR, miniTitle) {
+    this.optDecore = function (box_count, classNameBox, arr, type, btnLR, miniTitle, optDecorePrice, nameDataPrice) {
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
         // задаём класс боксу
@@ -239,6 +323,13 @@ function GlobalOptionsCard() {
 
         for (var i = 0; i < dvizhOption_label.length; i++) {
 
+            // проверяем наналичие данных
+            if(optDecorePrice && nameDataPrice){
+                // добавляем цены в data-price input-a
+                dvizhOption_label[i].children[0].setAttribute('data-price', optDecorePrice[i]);
+            }
+
+
             // через параметр подставляем checkbox || radio
             dvizhOption_label[i].children[0].setAttribute('type', type);
 
@@ -251,14 +342,22 @@ function GlobalOptionsCard() {
             //  обрабатываем click
             dvizhOption_label[i].children[0].onclick = function () {
 
-                // console.log(this.parentNode.parentNode);
+                // проверяем наналичие данных
+                if(optDecorePrice && nameDataPrice){
+                    // добавляю price glaze и прайс из data-price
+                    _setGlogalPrice(nameDataPrice, this.dataset.price);
+                }
 
+
+
+
+                // console.log(this.parentNode.parentNode);
                 var node = this.parentNode.parentNode;
 
                 var count_node = node.children.length;
 
 
-                // после события click очищаем слассы и фоны
+                // после события click очищаем классы и фоны
                 for (var i = 0; i < count_node; i++) {
                     node.children[i].className = 'optDecore__input';
                     node.children[i].style.background = 'url("/img/card-opt/' + arr[i][0] + '.png")';
@@ -328,7 +427,7 @@ function GlobalOptionsCard() {
         if (dvizhOption.classList[2] == 'optDesabled') {
             setTimeout(function () {
                 dvizhOption.remove();
-            }, 100);
+            }, 10);
         }
 
     }
@@ -336,30 +435,54 @@ function GlobalOptionsCard() {
 
 
 // 4. optString (надпись) #########################################################################################
-    this.optString = function (box_count, classNameBox, count) {
+    this.optString = function (box_count, classNameBox, count, nameDataPrice, optStringPrice) {
+
 
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
         // задаём класс боксу
         dvizhOption.classList.add(classNameBox);
 
-        // колекции lable из боксов (выборка по боксу)
-        var dvizhOption_label = document.querySelectorAll('.dvizh-option')[box_count].children[1].children;
+        // колекции label из боксов (выборка по боксу)
+        var dvizhOption_input = document.querySelector('.' + classNameBox + ' input');
 
-        dvizhOption_label[0].children[0].setAttribute('type', 'text');
-        dvizhOption_label[0].children[0].setAttribute('placeholder', 'Введите текст');
-        dvizhOption_label[0].children[0].id = 'optString__input';
+        // console.log(dvizhOption_input);
 
-        dvizhOption_label[0].children[0].setAttribute('value', '');
+        dvizhOption_input.setAttribute('type', 'text');
+        dvizhOption_input.setAttribute('placeholder', 'Введите текст');
+        dvizhOption_input.id = 'optString__input';
 
-        dvizhOption_label[0].children[0].classList.add('optString__input');
+        dvizhOption_input.setAttribute('value', '');
 
-        var text = dvizhOption_label[0].children[0].value;
+        dvizhOption_input.classList.add('optString__input');
+
+        var text = dvizhOption_input.value;
+
+
+        // проверяем наналичие данных
+        if(optStringPrice && nameDataPrice){
+
+            dvizhOption_input.onblur = function () {
+
+                if(dvizhOption_input.value != ''){
+                    // добавляю price glaze и прайс из data-price
+                    _setGlogalPrice(nameDataPrice, optStringPrice);
+                } else {
+                    // добавляю price glaze и прайс из data-price
+                    _setGlogalPrice(nameDataPrice, 0);
+                }
+            };
+
+        }
+
+
+
+        // dvizhOption_label
 
         // optDesabled удаляем node из опций
         if (dvizhOption.classList[2] == 'optDesabled') {
             setTimeout(function () {
                 dvizhOption.remove();
-            }, 100);
+            }, 10);
         }
 
     }
@@ -459,7 +582,7 @@ function GlobalOptionsCard() {
 //  Глобальный класс карточки товара  end
 
 
-// картинки для опций
+// картинки для опций Выберите декор:
 var arrOptDecore2 = [
     ['decore__1_clear', 'decore__1_check'],
     ['decore__1_clear', 'decore__1_check'],
@@ -467,21 +590,7 @@ var arrOptDecore2 = [
     ['decore__1_clear', 'decore__1_check']
 ];
 
-// картинки для опций
-var arrOptDecore4 = [
-    ['optString__0_clear', 'optString__0_check'],
-    ['optString__1_clear', 'optString__1_check'],
-    ['optString__2_clear', 'optString__2_check'],
-    ['optString__3_clear', 'optString__3_check']
-];
 
-// картинки для опций
-var arrOptDecore5 = [
-    ['optString__5_clear', 'optString__5_check'],
-    ['optString__5_clear', 'optString__5_check'],
-    ['optString__5_clear', 'optString__5_check'],
-    ['optString__5_clear', 'optString__5_check']
-];
 
 //  Заголовки опций
 var miniTitle = [
@@ -491,3 +600,20 @@ var miniTitle = [
     ['Открытка'],
     ['блюдо']
 ];
+
+// картинки для опций Формат поздравительной надписи:
+var arrOptDecore4 = [
+    ['optString__0_clear', 'optString__0_check'],
+    ['optString__1_clear', 'optString__1_check'],
+    ['optString__2_clear', 'optString__2_check'],
+    ['optString__3_clear', 'optString__3_check'],
+];
+
+// картинки для опций Выберите упаковку:
+var arrOptDecore5 = [
+    ['optString__5_clear', 'optString__5_check'],
+    ['optString__5_clear', 'optString__5_check'],
+    ['optString__5_clear', 'optString__5_check'],
+    ['optString__5_clear', 'optString__5_check']
+];
+

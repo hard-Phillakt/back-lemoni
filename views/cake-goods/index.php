@@ -21,7 +21,7 @@ Url::remember();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Торты</span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a><span> - Торты</span>
             </div>
         </div>
     </div>
@@ -51,13 +51,13 @@ Url::remember();
                     <!-- filter kg -->
                     <div class="filter-sidebar-catalog__box">
 
-                        <!--                        <h5 class="title title__h5 mt-35">-->
-                        <!--                            Цена за килограм-->
-                        <!--                        </h5>-->
+                        <h5 class="title title__h5 mt-35">
+                            Цена за килограм
+                        </h5>
 
                         <!--                        --><? //= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
 
-                        <div class="flter-min-max">
+                        <div class="flter-min-max mt-35">
 
                             <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
 
@@ -81,31 +81,31 @@ Url::remember();
 
                             <? //= $form->field($filter, 'type[]')->checkboxList($filter['type'], ['class' => 'filter-sidebar-catalog__box_ul global-form'])->label('Тип продукта'); ?>
 
-                            <span for="global-form__input_el2"><span class="shadow-checkbox mr-15"></span>
+                            <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
                                            class="global-form__checkbox mt-35" value="Классический">
                                     классические
                                 </span>
 
-                                <span for="global-form__input_el3"><span class="shadow-checkbox mr-15"></span>
+                                <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
                                            class="global-form__checkbox mt-35" value="Мусовый">
                                     муссовые
                                 </span>
 
-                                <span for="global-form__input_el4"><span class="shadow-checkbox mr-15"></span>
+                                <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
                                            class="global-form__checkbox mt-35" value="Шадлав">
                                     шадлавы
                                 </span>
 
-                                <span for="global-form__input_el5"><span class="shadow-checkbox mr-15"></span>
+                                <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
                                            class="global-form__checkbox mt-35" value="Диетические">
                                     диетические
                                 </span>
 
-                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Постные">
                                     постные
@@ -190,7 +190,7 @@ Url::remember();
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
 
-                <h2 class="title title__h1 opac__07">Каталог продукции</h2>
+                <h2 class="title title__h1 opac__07">Каталог продукции Cake</h2>
 
 
                 <!-- filter type-goods -->
@@ -250,12 +250,12 @@ Url::remember();
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                    <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                        class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>

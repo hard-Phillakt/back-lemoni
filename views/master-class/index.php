@@ -272,7 +272,7 @@ use yii\widgets\MaskedInput;
                 ])->label('Введите комментарий') ?>
 
                 <div class="mt-35 flex-justify-center">
-                    <?= Html::submitButton('Оправить', ['class' => 'button button__rectangle']) ?>
+                    <?= Html::submitButton('Записаться', ['class' => 'button button__rectangle']) ?>
                 </div>
 
                 <?php $form = ActiveForm::end(); ?>

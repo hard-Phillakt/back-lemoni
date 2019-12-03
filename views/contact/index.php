@@ -26,8 +26,7 @@ use app\widgets\sidebar\Sidebar;
 
                         <div>
                             <p>Наш адрес:</p>
-                            <p>г.Белгород, ул.Щорса, дом 57</p>
-
+                            <p>г. Белгород, ул. Щорса, дом 57</p>
                         </div>
 
                         <div class="mt-35">

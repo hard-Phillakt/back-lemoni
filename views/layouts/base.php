@@ -100,10 +100,10 @@ BaseAsset::register($this);
                                     <a href="/" class="link black-menu-link__a">Главная</a>
                                 </li>
                                 <li>
-                                    <a href="/cake-goods" class="link black-menu-link__a">Каталог тортов</a>
+                                    <a href="/cake" class="link black-menu-link__a">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candie-goods" class="link black-menu-link__a">Candy bar</a>
+                                    <a href="/candie" class="link black-menu-link__a">Candy bar</a>
                                 </li>
                                 <li>
                                     <a href="/contact" class="link black-menu-link__a">Контакты</a>

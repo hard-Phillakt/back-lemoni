@@ -42,7 +42,7 @@ Url::remember();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="/" class="breadcrumbs-line__active">Главная</a> <span> - <?= $model['lm_title']; ?></span>
+                <a href="<?=  Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span>-</span> <a href="<?= Url::to('/'.$model['lm_essence']); ?>" class="breadcrumbs-line__active">Candy</a> <span> - <?= $model['lm_title']; ?></span>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@ Url::remember();
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-35">
-                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>-goods">
+                    <a class="button button__circle" href="<?= Url::to('/'.$model['lm_essence']); ?>">
                         <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
 

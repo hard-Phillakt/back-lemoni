@@ -45,7 +45,7 @@ switch ($model->model) {
 ?>
 
 
-<li class="dvizh-cart-row">
+<li class="dvizh-cart-row" data-li="<?= $model->id; ?>">
 
     <div class=" row">
 
@@ -160,7 +160,7 @@ switch ($model->model) {
             if ($key != 'optGuests_kg'): ?>
 
                 <div class="row mt-15 xs-mb-30">
-                    <div class="col-lg-4 col-lg-offset-1">
+                    <div class="col-lg-5 col-lg-offset-1">
                         <div class="dvizh-cart-show-options">
 
                             <div class="box-option">
@@ -195,7 +195,7 @@ switch ($model->model) {
 
                     <div class="col-lg-2">
 
-                        <div class="price-option"><span><?= $arr_options[1]; ?></span></div>
+                        <div class="price-option"><span data-options-id="<?= $model->id; ?>"><?= $arr_options[1]; ?></span></div>
 
                     </div>
 

@@ -8,10 +8,11 @@
 
 namespace app\controllers;
 
-
 use yii\web\Controller;
 use app\models\CakeGoods;
 use app\models\CandieGoods;
+use yii\web\NotFoundHttpException;
+
 
 // Карточка товара под вопросом (как лучше сделать 4 карточки)
 class CardController extends Controller
@@ -20,6 +21,15 @@ class CardController extends Controller
     public $layout = 'base';
 
 
+    public static function error($model){
+
+        if($model == null){
+
+//          Выводим ошибку 404
+            throw new NotFoundHttpException();
+        }
+    }
+
 //    букет
     public function actionBouquet($id = null){
 
@@ -27,6 +37,7 @@ class CardController extends Controller
 
         $model = $candie_goods::findOne($id);
 
+        self::error($model);
 
         return $this->render('bouquet', ['model' => $model]);
     }
@@ -39,6 +50,8 @@ class CardController extends Controller
 
         $model = $cake_goods::findOne($id);
 
+        self::error($model);
+
         return $this->render('shadlaw', ['model' => $model]);
     }
 
@@ -50,6 +63,8 @@ class CardController extends Controller
 
         $model = $candie_goods::findOne($id);
 
+        self::error($model);
+
         return $this->render('candie', ['model' => $model]);
     }
 
@@ -60,6 +75,8 @@ class CardController extends Controller
         $cake_goods = new CakeGoods();
 
         $model = $cake_goods::findOne($id);
+
+        self::error($model);
 
         return $this->render('cake', ['model' => $model]);
     }

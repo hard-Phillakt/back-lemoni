@@ -34,7 +34,7 @@ use app\widgets\sidebar\Sidebar;
                                 <li class="mt-35 top-news">
 
 
-                                    <div class="news-box__img" data-img-count="<?= $newsBoxCount; ?>"></div>
+                                    <div class="news-box__img" data-title="<?= $value->lm_title; ?>" data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
 
@@ -50,7 +50,7 @@ use app\widgets\sidebar\Sidebar;
                                         <div class="mt-45">
                                             <h2 class="title title__h4">
 
-                                                <a href="#!" class="news-box__content_link" data-link-count="<?= $newsBoxCount; ?>">
+                                                <a href="#!" class="news-box__content_link" data-title="<?= $value->lm_title; ?>" data-link-count="<?= $newsBoxCount; ?>">
 
                                                     <?= $value->lm_title; ?>
 
@@ -190,6 +190,10 @@ use app\widgets\sidebar\Sidebar;
             </div>
 
             <div class="modal-body-wrapp">
+
+                <div class="mb-35">
+                    <h3 class="modal-header__title title title__h3" style="color: #8F5541"></h3>
+                </div>
 
                 <div class="modal-body"></div>
 
