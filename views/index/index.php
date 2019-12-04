@@ -18,10 +18,10 @@
                 <div class="section-cake__module-1 mt-60">
 
                     <p class="desc desc__sm">
-                        <a href="/cake-goods" class="link link__a">Перейти в каталог</a>
+                        <a href="/cake" class="link link__a">Перейти в каталог</a>
                     </p>
 
-                    <a href="/cake-goods" class="button button__circle">
+                    <a href="/cake" class="button button__circle">
                         <img src="../img/icons/arrow-right.svg" alt="arrow-right">
                     </a>
 
@@ -43,7 +43,7 @@
                         <div class="category-cake-box__img_1"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/cake-goods" class="link black-link__a">Торты</a>
+                        <a href="/cake" class="link black-link__a">Торты</a>
                     </h3>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                         <div class="category-cake-box__img_2"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candie-goods" class="link black-link__a">Пряники</a>
+                        <a href="/candy" class="link black-link__a">Пряники</a>
                     </h3>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                         <div class="category-cake-box__img_3"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/cake-goods" class="link black-link__a">Шадлавы</a>
+                        <a href="/cake" class="link black-link__a">Шадлавы</a>
                     </h3>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                         <div class="category-cake-box__img_4"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candie-goods" class="link black-link__a">Десерты</a>
+                        <a href="/candy" class="link black-link__a">Десерты</a>
                     </h3>
                 </div>
             </div>

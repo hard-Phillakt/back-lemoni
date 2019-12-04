@@ -25,7 +25,7 @@ use yii\widgets\MaskedInput;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="#!" class="breadcrumbs-line__active">Главная</a><span> - Доставка </span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a><span> - Доставка </span>
             </div>
         </div>
     </div>
