@@ -473,9 +473,13 @@ input:focus {
     align-items: inherit;
 }
 
+.button__rectangle {
+     transition: all .3s;
+}
 
-
-
+.button__rectangle:hover {
+    opacity: 1;
+}
 
 
 

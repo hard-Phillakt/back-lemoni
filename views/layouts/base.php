@@ -6,6 +6,7 @@
 use yii\helpers\Html;
 use app\assets\BaseAsset;
 use app\widgets\customcart\CartInformer;
+use yii\helpers\Url;
 
 BaseAsset::register($this);
 ?>
@@ -17,10 +18,25 @@ BaseAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['web/favicon.ico'])]); ?>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>
+    <!-- Yandex.Metrika counter -->
+<!--    <script type="text/javascript" >-->
+<!--        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
+<!--            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
+<!--        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
+<!---->
+<!--        ym(56515504, "init", {-->
+<!--            clickmap:true,-->
+<!--            trackLinks:true,-->
+<!--            accurateTrackBounce:true,-->
+<!--            webvisor:true-->
+<!--        });-->
+<!--    </script>-->
+<!--    <noscript><div><img src="https://mc.yandex.ru/watch/56515504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+    <!-- /Yandex.Metrika counter -->
     <?php $this->head() ?>
 </head>
 <body>
@@ -103,7 +119,7 @@ BaseAsset::register($this);
                                     <a href="/cake" class="link black-menu-link__a">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candie" class="link black-menu-link__a">Candy bar</a>
+                                    <a href="/candy" class="link black-menu-link__a">Candy bar</a>
                                 </li>
                                 <li>
                                     <a href="/contact" class="link black-menu-link__a">Контакты</a>
@@ -306,6 +322,37 @@ BaseAsset::register($this);
     </footer>
 
 </div>
+
+
+<div id="modal-delivery" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close opac__07" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-35">
+                    <h2 class="title title__h3">
+                        <p style="color: #8F5541">Спасибо</p>
+                        <p>за оставленную заявку!</p>
+                    </h2>
+                </div>
+
+                <div class="flex-justify-center pb-35">
+                    <p class="desc desc__md opac__07">
+                        Наш менеджер позвонит вам в ближайшее время!
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <?php $this->endBody() ?>
 </body>

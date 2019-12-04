@@ -44,7 +44,7 @@ function GlobalOptionsCard() {
             if(glogalPriceTotal){
                 customClass.dataset.price = glogalPriceTotal;
                 dvizhCartPrice.innerHTML = glogalPriceTotal;
-                console.log(glogalPriceTotal);
+                // console.log(glogalPriceTotal);
             }
 
         }
@@ -549,7 +549,11 @@ function GlobalOptionsCard() {
 
             custom_class.dataset.count = c;
 
-            cardGoods__price.innerHTML = total;
+            _setGlogalPrice('card-price', total);
+
+            // cardGoods__price.innerHTML = total;
+            dvizhCartPrice.innerHTML = total;
+
         }
 
         function decrement() {
@@ -565,7 +569,10 @@ function GlobalOptionsCard() {
                 dvizhOption_inputPieces.value = c;
             }
 
-            cardGoods__price.innerHTML = total;
+            _setGlogalPrice('card-price', total);
+
+            // cardGoods__price.innerHTML = total;
+            dvizhCartPrice.innerHTML = total;
         }
 
         left_btn.onclick = function () {

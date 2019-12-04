@@ -8,7 +8,7 @@
 
 namespace app\models;
 
-
+use Yii;
 use yii\base\Model;
 
 class MasterClassForm extends Model {
@@ -24,11 +24,11 @@ class MasterClassForm extends Model {
             ['name', 'required', 'message' => 'Введите корректное имя'],
             ['phone', 'required', 'message' => 'Введите корректный телефон'],
 //            ['phone', 'integer', 'message' => 'Должны быть только цифры'],
-            ['comment', 'required', 'message' => 'Введите комментарий'],
-            ['comment', 'safe'],
+            ['comment', 'safe', 'message' => 'Введите комментарий'],
         ];
 
     }
+
 
     public function attributeLabels()
     {

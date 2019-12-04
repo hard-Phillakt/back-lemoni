@@ -8,22 +8,25 @@
 
 namespace app\controllers;
 
+use Yii;
 use yii\web\Controller;
 use app\models\CakeGoods;
 use app\models\CandieGoods;
 use yii\web\NotFoundHttpException;
+use app\components\SendEmailClass;
 
 
-// Карточка товара под вопросом (как лучше сделать 4 карточки)
+
+// Карточка товара под вопросом (как лучше сделать 4 карточки) - а хер его знает ну бредор и бредор...
 class CardController extends Controller
 {
 
     public $layout = 'base';
 
 
-    public static function error($model){
+   public static function error($model){
 
-        if($model == null){
+        if ($model == null) {
 
 //          Выводим ошибку 404
             throw new NotFoundHttpException();
@@ -33,11 +36,15 @@ class CardController extends Controller
 //    букет
     public function actionBouquet($id = null){
 
+        $sendEmail = new SendEmailClass();
+
         $candie_goods = new CandieGoods();
 
         $model = $candie_goods::findOne($id);
 
         self::error($model);
+
+        $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
 
         return $this->render('bouquet', ['model' => $model]);
     }
@@ -46,9 +53,13 @@ class CardController extends Controller
 //    шадлав
     public function actionShadlaw($id = null){
 
+        $sendEmail = new SendEmailClass();
+
         $cake_goods = new CakeGoods();
 
         $model = $cake_goods::findOne($id);
+
+        $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
 
         self::error($model);
 
@@ -59,9 +70,13 @@ class CardController extends Controller
 //    конфеты
     public function actionCandie($id = null){
 
+        $sendEmail = new SendEmailClass();
+
         $candie_goods = new CandieGoods();
 
         $model = $candie_goods::findOne($id);
+
+        $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
 
         self::error($model);
 
@@ -72,14 +87,19 @@ class CardController extends Controller
 //    торты
     public function actionCake($id = null){
 
+        $sendEmail = new SendEmailClass();
+
         $cake_goods = new CakeGoods();
 
         $model = $cake_goods::findOne($id);
+
+        $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
 
         self::error($model);
 
         return $this->render('cake', ['model' => $model]);
     }
+
 }
 
 

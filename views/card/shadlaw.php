@@ -29,6 +29,11 @@ use app\widgets\customcart\ChangeOptions;
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\bootstrap\Modal;
+use yii\widgets\ActiveForm;
+use app\models\MasterClassForm;
+use yii\widgets\MaskedInput;
+use yii\widgets\Pjax;
 
 //debug($model);
 
@@ -53,7 +58,7 @@ Url::remember();
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-35">
-                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>-goods">
+                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>">
                         <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
 
@@ -117,7 +122,9 @@ Url::remember();
 
                 <div class="mt-35">
                     <div class="card-goods__total">
-                        Итого: <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{p}']); ?> руб
+<!--                        Итого: --><?//= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{p}']); ?><!-- руб-->
+
+                        Итого: <span class="dvizh-cart-price-total"><span><?= $model->lm_price_for_kg; ?></span></span> руб
                     </div>
                 </div>
 
@@ -128,7 +135,7 @@ Url::remember();
                 <!--                </div>-->
 
 
-                <div class="mt-35">
+                <div class="flter-min-max mt-35">
 <!--                    <a class="button button__rectangle mr-15">Купить в один клик</a>-->
 
                     <?= BuyButton::widget([
@@ -138,9 +145,59 @@ Url::remember();
                         'cssClass' => 'custom_class button button__rectangle',
                     ]) ?>
 
+                    <!-- Modal start -->
+                    <?php Modal::begin([
+                        'options' => [
+                            'id' => 'one-click'
+                        ],
+                        'toggleButton' => [
+                            'label' => 'Купить в один клик',
+                            'class' => 'button button__rectangle'
+                        ],
+                    ]); ?>
+
+                    <?php $masterClassForm = new MasterClassForm();?>
+
+                    <?php Pjax::begin()?>
+
+                    <?php $form = ActiveForm::begin([
+                        'options' => [
+                            'id' => 'one-click-form',
+                            'class' => 'master-class-form pl-30 pr-30',
+                            'data-pjax' => "0"
+                        ]
+                    ]); ?>
+
+                    <div class="flex-justify-center mb-35">
+                        <h1 class="title title__h1 opac__07">Заказать: <?= $model->lm_title; ?></h1>
+                    </div>
+
+                    <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('Введите имя') ?>
+
+                    <?= $form->field($masterClassForm, 'phone')->widget(MaskedInput::class, [
+                        'mask' => '+7 999 999 9999',
+                        'options' => [
+                            'class' => 'global-form__input',
+                            'placeholder' => '+7'
+                        ]
+                    ]) ?>
+
+                    <?= $form->field($masterClassForm, 'title_master')->hiddenInput(['value' => $model->lm_title])->label(''); ?>
+
+                    <div class="pb-35 flex-justify-center">
+                        <?= Html::submitButton('Заказать', ['class' => 'button button__rectangle']) ?>
+                    </div>
+
+                    <?php $form = ActiveForm::end(); ?>
+
+                    <?php Pjax::end(); ?>
+
+                    <?php Modal::end(); ?>
+                    <!-- Modal end -->
+
                     <div class="mt-35">
 
-                        <?= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
+                        <?//= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
 
                     </div>
                 </div>
@@ -155,3 +212,5 @@ Url::remember();
         </div>
     </div>
 </section>
+
+

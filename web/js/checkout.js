@@ -5,14 +5,6 @@ var dvizhUpArr = document.querySelectorAll('.dvizh-upArr');
 var buttonDelete = document.querySelectorAll('.dvizh-cart-delete-buttondelete');
 
 var CartWrappPrice = document.querySelectorAll('[data-li]');
-// var CartWrappPriceOption = document.querySelectorAll('.dvizh-cart-row .price-option span');
-var CartWrappPriceOption = document.querySelectorAll('[data-options-id]');
-
-// console.log('CartWrappPriceOption: ', CartWrappPriceOption);
-
-// var priceOption = document.querySelectorAll('.price-option span');
-
-
 
 // считаем сумму опций из блока по data
 // вычетаем из price сумму options
@@ -24,13 +16,15 @@ for(var i = 0; i < CartWrappPrice.length; i++){
     var options = document.querySelectorAll('[data-options-id="' + CartWrappPrice[i].dataset.li + '"]');
 
     for(var x = 0; x < options.length; x++){
-        summOptions += parseInt(options[0].innerText);
+
+        summOptions += parseInt(options[x].innerText);
+
+        console.log(parseInt(options[x].innerText));
     }
 
     price[0].innerHTML = parseInt(price[0].innerText) - summOptions + '.00';
 }
 
-// console.log(CartWrappPriceOption);
 
 
 // var summOption = parseInt(CartWrappPrice.innerText);

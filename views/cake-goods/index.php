@@ -52,7 +52,7 @@ Url::remember();
                     <div class="filter-sidebar-catalog__box">
 
                         <h5 class="title title__h5 mt-35">
-                            Цена за килограм
+                            Цена за килограмм
                         </h5>
 
                         <!--                        --><? //= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
