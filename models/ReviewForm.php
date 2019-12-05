@@ -26,9 +26,21 @@ class  ReviewForm extends Model {
             ['name', 'required', 'message' => 'Введите имя'],
             ['phone', 'required', 'message' => 'Введите телефон'],
             ['comment', 'required', 'message' => 'Введите комментарий'],
-            [['file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'mp4,', 'maxFiles' => 1, 'uploadRequired' => 'Загрузите файл', 'wrongExtension' => 'Требуемый формат mp4', 'wrongMimeType' => 'файл имеет недопустимый MIME-тип'],
+            [['file'],
+                'file',
+                'maxSize' => 100 . 'e+6', // 100 MB в Byte
+                'skipOnEmpty' => true,
+                'extensions' => 'mp4',
+                'maxFiles' => 1,
+                'uploadRequired' => 'Загрузите файл',
+                'wrongExtension' => 'Требуемый формат mp4',
+                'wrongMimeType' => 'Файл имеет недопустимый MIME-тип',
+                'tooBig' => 'Превышен размер файла! Не более 100 MB'
+            ],
         ];
+
     }
+
 
     public function upload()
     {
@@ -38,8 +50,9 @@ class  ReviewForm extends Model {
             return true;
         } else {
             return false;
-        }
+        } 
     }
+
 
     public function attributeLabels()
     {
@@ -49,5 +62,6 @@ class  ReviewForm extends Model {
             'comment' => '',
         ];
     }
+
 
 }

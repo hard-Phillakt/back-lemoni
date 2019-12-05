@@ -128,10 +128,10 @@ class DeliveryController extends Controller
 //            echo '<div>' . $dataUser . '<div><div>' . $data . '</div>';
 
             Yii::$app->mailer->compose()
-                ->setFrom('hard-phillakt@mail.ru')
-                ->setTo('hard-phillakt@mail.ru')
-                ->setSubject('Тема сообщения')
-                ->setTextBody('Текст сообщения')
+                ->setFrom('info@cafelemoni.ru')
+                ->setTo('info@cafelemoni.ru')
+                ->setSubject('Доставка с Cafelemoni')
+                ->setTextBody('Доставка с Cafelemoni')
                 ->setHtmlBody('<div>' . $dataUser . '<div><div>' . $data . '</div>')
                 ->send();
 

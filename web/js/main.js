@@ -222,11 +222,6 @@ $(document).ready(function () {
                 }
             });
 
-            // Сброс checkbox-img инпута
-            // for(var i = 0; i < shadowCheckbox.length; i++){
-            //     shadowCheckbox[i].className = 'shadow-checkbox mr-15'
-            // }
-
         };
     }
 
@@ -254,11 +249,6 @@ $(document).ready(function () {
                 }
             });
 
-            // Сброс checkbox-img инпута
-            // for(var i = 0; i < shadowCheckbox.length; i++){
-            //     shadowCheckbox[i].className = 'shadow-checkbox mr-15'
-            // }
-
         };
 
     }
@@ -267,7 +257,7 @@ $(document).ready(function () {
 });
 
 
-// Compilation cake & candie goods
+// Compilation cake goods
 
 var compilationCake = document.querySelectorAll('.compilation-cake');
 var boxCakeGoods = document.querySelector('#box-cake-goods');
@@ -299,6 +289,9 @@ if (compilationCake) {
 }
 
 
+
+
+// Compilation candie goods
 var compilationCadie = document.querySelectorAll('.compilation-candie');
 var boxCandieGoods = document.querySelector('#box-candie-goods');
 

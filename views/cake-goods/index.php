@@ -89,7 +89,7 @@ Url::remember();
 
                                 <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
-                                           class="global-form__checkbox mt-35" value="Мусовый">
+                                           class="global-form__checkbox mt-35" value="Мусcовый">
                                     муссовые
                                 </span>
 

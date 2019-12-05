@@ -22,7 +22,7 @@ use app\widgets\sidebar\Sidebar;
 
                 <div class="row mt-60">
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
 
                         <div>
                             <p>Наш адрес:</p>
@@ -31,8 +31,8 @@ use app\widgets\sidebar\Sidebar;
 
                         <div class="mt-35">
                             <p>Телефон для заказа:</p>
-                            <p><a href="#!" class="link link__a">+7 (4722) 50-51-54</a></p>
-                            <p><a href="#!" class="link link__a">+7 (915) 576 4500</a></p>
+                            <p><a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a></p>
+<!--                            <p><a href="#!" class="link link__a">+7 (915) 576 4500</a></p>-->
                         </div>
 
                         <div class="mt-35">
@@ -53,7 +53,7 @@ use app\widgets\sidebar\Sidebar;
 
                     </div>
 
-                    <div class="col-lg-9">
+                    <div class="col-lg-8">
                         <!-- <img src="./img/contact/contact-map.png" alt="contact" class="img-responsive"> -->
 
                         <div id="map"></div>

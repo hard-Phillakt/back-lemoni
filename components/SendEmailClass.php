@@ -28,11 +28,11 @@ class SendEmailClass extends Component {
             $swiftData .= '<p> Телефон: ' . $post['MasterClassForm']['phone'] .'</p>';
             $swiftData .= '<p> Товар: ' . $post['MasterClassForm']['title_master'] .'</p>';
 
-            $swift = Yii::$app->mailer->compose();
-            $swift->setFrom('hard-phillakt@mail.ru')
-                ->setTo('hard-phillakt@mail.ru')
-                ->setSubject('Заказ в один клик')
-                ->setTextBody('Заказ в один клик')
+            Yii::$app->mailer->compose()
+                ->setFrom('info@cafelemoni.ru')
+                ->setTo('info@cafelemoni.ru')
+                ->setSubject('Тема сообщения')
+                ->setTextBody('Текст сообщения')
                 ->setHtmlBody($swiftData)
                 ->send();
         }

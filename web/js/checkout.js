@@ -2,7 +2,7 @@
 
 var dvizhDownArr = document.querySelectorAll('.dvizh-downArr');
 var dvizhUpArr = document.querySelectorAll('.dvizh-upArr');
-var buttonDelete = document.querySelectorAll('.dvizh-cart-delete-buttondelete');
+var buttonDelete = document.querySelectorAll('.delete');
 
 var CartWrappPrice = document.querySelectorAll('[data-li]');
 
@@ -26,52 +26,36 @@ for(var i = 0; i < CartWrappPrice.length; i++){
 }
 
 
+// Костыль для корректного отображения =(
+for (var i = 0; i < dvizhDownArr.length; i++){
 
-// var summOption = parseInt(CartWrappPrice.innerText);
-//
-// priceOption.forEach(function (item, i) {
-//     summOption -= parseInt(item.innerText);
-// });
-//
-// CartWrappPrice.innerHTML = summOption + ' руб';
-//
-// console.log(summOption);
+    dvizhDownArr[i].onclick = function (e) {
+        // e.preventDefault();
 
+        setTimeout(function () {
+            window.location.reload(true);
+        },10);
 
+    };
 
+    dvizhUpArr[i].onclick = function (e) {
+        // e.preventDefault();
 
-// for (var i = 0; i < dvizhDownArr.length; i++){
-//
-//     dvizhDownArr[i].onclick = function (e) {
-//         // e.preventDefault();
-//
-//         setTimeout(function () {
-//             window.location.reload(true);
-//         },10);
-//
-//     };
-//
-//     dvizhUpArr[i].onclick = function (e) {
-//         // e.preventDefault();
-//
-//         setTimeout(function () {
-//             window.location.reload(true);
-//         },10);
-//     };
-//
-//     buttonDelete[i].onclick = function (e) {
-//         // e.preventDefault();
-//
-//         setTimeout(function () {
-//             window.location.reload(true);
-//         },10);
-//     };
-//
-// }
+        setTimeout(function () {
+            window.location.reload(true);
+        },10);
+    };
 
+    console.log(buttonDelete);
 
+    buttonDelete[i].onclick = function (e) {
+        // e.preventDefault();
 
-// dvizhUpArr
-// dvizhDownArr,
+        setTimeout(function () {
+            window.location.reload(true);
+        },10);
+    };
+
+}
 
 

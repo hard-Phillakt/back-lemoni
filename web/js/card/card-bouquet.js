@@ -24,8 +24,37 @@ mainCard.optDecore(4, 'optDecore', arrOptDecore4, 'radio', false, miniTitle, opt
 mainCard.optDecore(5, 'optDesabled', arrOptDecore5, 'radio', false, null);
 
 
-
-
-
 // дизейблид секцию по порядковому номеру
 // mainCard.optGuests(0, 'optDesabled', [0, 1, 2]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

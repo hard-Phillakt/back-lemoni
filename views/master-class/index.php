@@ -253,7 +253,7 @@ use yii\widgets\MaskedInput;
                     <p>Записаться на <br> Мастер-класс</p>
                 </div>
 
-                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('Введите имя') ?>
+                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('') ?>
 
                 <!--                --><? //= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+7 000 000 0000'])->label('') ?>
 
@@ -263,13 +263,13 @@ use yii\widgets\MaskedInput;
                         'class' => 'global-form__input',
                         'placeholder' => '+7'
                     ]
-                ]) ?>
+                ])->label('') ?>
 
                 <?= $form->field($masterClassForm, 'comment')->textarea([
                     'rows' => '6',
                     'class' => 'global-form__input',
                     'placeholder' => 'Введите комментарий'
-                ])->label('Введите комментарий') ?>
+                ])->label('') ?>
 
                 <div class="mt-35 flex-justify-center">
                     <?= Html::submitButton('Записаться', ['class' => 'button button__rectangle']) ?>

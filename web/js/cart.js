@@ -69,11 +69,11 @@ window.onload = function () {
                     // custom_class.dataset.price = parseInt(cardGoods__price.dataset.oldstate) + item_summ;
 
                     // Костыль для корректного отображения
-                    // setTimeout(function () {
-                    //     if(custom_class.dataset.options = JSON.stringify(arr_options)){
-                    //         window.location.reload(true);
-                    //     }
-                    // }, 100);
+                    setTimeout(function () {
+                        if(custom_class.dataset.options = JSON.stringify(arr_options)){
+                            window.location.reload(true);
+                        }
+                    }, 100);
 
                 } else {
 
@@ -84,11 +84,11 @@ window.onload = function () {
                     // custom_class.dataset.price = priceElement;
 
                     // Костыль для корректного отображения
-                    // setTimeout(function () {
-                    //     if(custom_class.dataset.options = JSON.stringify(arr_options)){
-                    //         window.location.reload(true);
-                    //     }
-                    // }, 100);
+                    setTimeout(function () {
+                        if(custom_class.dataset.options = JSON.stringify(arr_options)){
+                            window.location.reload(true);
+                        }
+                    }, 100);
                 }
 
                 if (textField && textField.value) {

@@ -20,7 +20,12 @@ use mihaildev\elfinder\ElFinder;
 
         <div class="col-lg-6">
 
-            <?= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_essence')->dropDownList([
+                'cake' => 'cake',
+                'shadlaw' => 'shadlaw',
+                'bouquet' => 'bouquet',
+                'candy' => 'candy',
+            ]) ?>
 
             <?= $form->field($model, 'lm_title')->textInput(['maxlength' => true]) ?>
 
@@ -28,43 +33,87 @@ use mihaildev\elfinder\ElFinder;
 
             <?= $form->field($model, 'lm_price_for_kg')->textInput() ?>
 
-            <?= $form->field($model, 'lm_type')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_type')->dropDownList([
+                'Классический' => 'Классический',
+                'Мусcовый' => 'Мусcовый',
+                'Шадлав' => 'Шадлав',
+                'Диетические' => 'Диетические',
+                'Постные' => 'Постные',
+            ]) ?>
 
-            <?= $form->field($model, 'lm_count_level')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_count_level')->dropDownList([
+                '1' => 1,
+                '2' => 2,
+                '3' => 3
+            ]) ?>
 
             <?= $form->field($model, 'lm_subjects')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'lm_compilation')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'lm_alter_card')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_alter_card')->dropDownList([
+                'cake' => 'cake',
+                'shadlaw' => 'shadlaw',
+                'bouquet' => 'bouquet',
+                'candy' => 'candy',
+            ]) ?>
         </div>
 
         <div class="col-lg-6">
 
-            <?= $form->field($model, 'lm_create_box')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_create_box')->dropDownList([
+                '1' => '23 февраля',
+                '2' => 'День влюбленных',
+                '3' => 'День рождения',
+                '4' => 'Новый год',
+                '5' => 'Свадьба',
+                '6' => 'Пасха',
+                '7' => '1 сентября',
+                '8' => 'День учителя',
+                '9' => 'День матери',
+                '10' => 'Диетические',
+                '11' => '8 марта',
+            ]) ?>
 
-            <?= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_publicate')->dropDownList([
+                '1' => 'Да',
+                '0' => 'Нет'
+            ]) ?>
 
             <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'lm_img_one')->textInput(['maxlength' => true])->widget(InputFile::class, [
-                'options'       => ['class' => 'form-control'],
-                'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
-                'buttonName' => 'Загрузить',
-            ]) ?>
+            <div class="admin-rev-img">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="admin-rev-img" style="background: url(<?= $model->lm_img_one; ?>);" ></div>
 
-            <?= $form->field($model, 'lm_img_two')->textInput(['maxlength' => true])->widget(InputFile::class, [
-                'options'       => ['class' => 'form-control'],
-                'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
-                'buttonName' => 'Загрузить',
-            ]) ?>
+                        <?= $form->field($model, 'lm_img_one')->textInput(['maxlength' => true])->widget(InputFile::class, [
+                            'options'       => ['class' => 'form-control'],
+                            'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
+                            'buttonName' => 'Загрузить',
+                        ]) ?>
+                    </div>
 
-            <?= $form->field($model, 'lm_img_three')->textInput(['maxlength' => true])->widget(InputFile::class, [
-                'options'       => ['class' => 'form-control'],
-                'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
-                'buttonName' => 'Загрузить',
-            ]) ?>
+                    <div class="col-lg-4">
+                        <div class="admin-rev-img" style="background: url(<?= $model->lm_img_two; ?>);"></div>
 
+                        <?= $form->field($model, 'lm_img_two')->textInput(['maxlength' => true])->widget(InputFile::class, [
+                            'options'       => ['class' => 'form-control'],
+                            'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
+                            'buttonName' => 'Загрузить',
+                        ]) ?>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="admin-rev-img" style="background: url(<?= $model->lm_img_three; ?>);"></div>
+                        <?= $form->field($model, 'lm_img_three')->textInput(['maxlength' => true])->widget(InputFile::class, [
+                            'options'       => ['class' => 'form-control'],
+                            'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
+                            'buttonName' => 'Загрузить',
+                        ]) ?>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

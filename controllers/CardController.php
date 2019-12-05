@@ -17,9 +17,8 @@ use app\components\SendEmailClass;
 
 
 
-// Карточка товара под вопросом (как лучше сделать 4 карточки) - а хер его знает ну бредор и бредор...
-class CardController extends Controller
-{
+// Карточка товара под вопросом (как лучше сделать 4 карточки)
+class CardController extends Controller {
 
     public $layout = 'base';
 

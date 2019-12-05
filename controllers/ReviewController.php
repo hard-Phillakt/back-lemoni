@@ -39,10 +39,10 @@ class ReviewController extends Controller
 
 
                 Yii::$app->mailer->compose()
-                    ->setFrom('hard-phillakt@mail.ru')
-                    ->setTo('hard-phillakt@mail.ru')
-                    ->setSubject('Тема сообщения')
-                    ->setTextBody('Текст сообщения')
+                    ->setFrom('info@cafelemoni.ru')
+                    ->setTo('info@cafelemoni.ru')
+                    ->setSubject('Отзыв с Cafelemoni') 
+                    ->setTextBody('Отзыв с Cafelemoni')
                     ->setHtmlBody('<div>' . $data . '</div>')
                     ->send();
             }

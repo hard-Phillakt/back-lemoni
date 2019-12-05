@@ -56,7 +56,7 @@ class CandieGoodsController extends Controller
                 foreach ($data_filter['type'] as $key => $value) {
 
 //                  2.фильтр по "Тип продукта"
-                    $cake->andFilterWhere(['like', 'lm_type', $value]);
+                    $cake->orFilterWhere(['like', 'lm_type', $value]);
 
                 }
             }
