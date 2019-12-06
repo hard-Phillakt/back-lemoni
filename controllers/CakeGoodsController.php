@@ -164,7 +164,17 @@ class CakeGoodsController extends Controller
 //      Compilation
         if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
 
-            $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+//          $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->asArray()->all();
+
+//          $data_compilation = $query_cake_goods::find()->with('tag')->all();
+
+            $data_compilation = $query_cake_goods::find()->with('tags')->asArray()->all();
+
+//          $tag = Tag::find()->with('cake')->asArray()->all();
+
+
+            debug($data_compilation);die;
+
 
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);

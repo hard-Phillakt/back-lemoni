@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\CakeGoods;
 
 /**
  * This is the model class for table "tag".
@@ -10,15 +11,49 @@ use Yii;
  * @property int $id
  * @property string $title
  */
-class Tag extends \yii\db\ActiveRecord
-{
+
+class Tag extends \yii\db\ActiveRecord {
+    
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    
+    public static function tableName(){
         return 'tag';
     }
+    
+    
+    public function getCake(){
+        return $this->hasMany(CakeGoods::class, ['id' => 'cake_id'])
+            ->viaTable('cake_tag', ['tag_id' => 'id']);
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  связь для выборки по тегам (заменил связь на getRichCake + фильтры по связям)
@@ -28,14 +63,14 @@ class Tag extends \yii\db\ActiveRecord
 //            ->viaTable('cake_tag', ['tag_id' => 'id']);
 //    }
 
-    public function getRichCake($price = null)
-    {
-        return $this->hasMany(CakeGoods::class, ['id' => 'cake_id'])
-//          ->where('lm_price_for_kg = :price', [':price' => $price])
-//          сюда нужно дописать дополнительные фильтры ("Тип продукта", "Колличество уровней", "Тематическое оформление")
-            ->andFilterWhere(['like', 'lm_price_for_kg', ':price', [':price' => $price]])
-            ->viaTable('cake_tag', ['tag_id' => 'id']);
-    }
+//    public function getRichCake($price = null)
+//    {
+//        return $this->hasMany(CakeGoods::class, ['id' => 'cake_id'])
+////          ->where('lm_price_for_kg = :price', [':price' => $price])
+////          сюда нужно дописать дополнительные фильтры ("Тип продукта", "Колличество уровней", "Тематическое оформление")
+//            ->andFilterWhere(['like', 'lm_price_for_kg', ':price', [':price' => $price]])
+//            ->viaTable('cake_tag', ['tag_id' => 'id']);
+//    }
 
 
 
@@ -47,6 +82,7 @@ class Tag extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title'], 'string'],
+            [['parent_id'], 'safe'],
         ];
     }
 

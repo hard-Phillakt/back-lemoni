@@ -484,7 +484,7 @@ input:focus {
 .admin-rev-img {
     width: 100%;
     height: 150px;
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
 }
 

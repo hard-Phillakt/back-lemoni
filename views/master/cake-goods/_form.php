@@ -10,6 +10,9 @@ use mihaildev\elfinder\ElFinder;
 /* @var $this yii\web\View */
 /* @var $model app\models\CandieGoods */
 /* @var $form yii\widgets\ActiveForm */
+
+
+//debug($model);
 ?>
 
 <div class="candie-goods-form">

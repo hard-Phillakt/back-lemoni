@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use app\models\Tag;
+
 
 /**
  * This is the model class for table "cake_goods".
@@ -27,6 +29,14 @@ use Yii;
  * @property string $lm_alter_card
  */
 class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartElement {
+
+
+    public $tags_cake = [
+        '1' => '23 февраля',
+        '2' => 'День влюбленных',
+        '3' => 'Свадьба',
+        '4' => '8 марта'
+    ];
 
     public function getCartId()
     {
@@ -98,6 +108,7 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     }
 
 
+
     /**
      * {@inheritdoc}
      */
@@ -105,7 +116,23 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     {
         return 'cake_goods';
     }
-
+    
+    
+    
+    public function getTags(){
+        return $this->hasMany(Tag::class, ['id' => 'tag_id'])
+            ->viaTable('cake_tag', ['cake_id' => 'id']);
+    }
+    
+    
+    
+//    public function getTags(){
+//        return $this->hasMany(Tag::class, ['parent_id' => 'id']);
+//    }
+    
+    
+    
+    
     /**
      * {@inheritdoc}
      */
@@ -116,7 +143,8 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
             [['lm_title', 'lm_description', 'lm_content', 'lm_img_one', 'lm_img_two', 'lm_img_three', 'lm_compilation', 'lm_alter_card'], 'string'],
             [['lm_price_for_kg'], 'integer'],
             [['lm_essence', 'lm_weight', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet'], 'string', 'max' => 255],
-            [['lm_img_two', 'lm_img_three'], 'safe']
+            [['lm_img_two', 'lm_img_three'], 'safe'],
+            [['tags_cake',], 'safe'],
         ];
     }
 
