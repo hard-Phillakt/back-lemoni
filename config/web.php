@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -88,6 +89,7 @@ $config = [
                 '/' => 'index',
                 'admin/' => 'master/login',
                 'cake/' => 'cake-goods/index',
+                'shadlaw/' => 'cake-goods/index',
                 'candy/' => 'candie-goods/index',
                 'cake/<id:\d+>' => 'card/cake',
                 'candy/<id:\d+>' => 'card/candie',

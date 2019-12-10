@@ -230,7 +230,7 @@ dvizh.cart = {
                 }
 
             }, "json");
-
+        
         return false;
     },
     renderCart: function (json) {

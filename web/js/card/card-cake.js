@@ -9,17 +9,17 @@ mainCard.optGuests(0, 'optGuests', [0, 1, 2, 3, 4, 5]);
 
 var optGlazePrice1 = [10, 20, 30, 40, 50, 60];
 // Выберите цвет глазури:
-mainCard.optGlaze(1, 'optGlaze', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB'], optGlazePrice1);
+mainCard.optGlaze(1, 'optDesabled', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB'], optGlazePrice1);
 
 
 var optDecorePrice2 = [10, 20, 30, 40];
 // декор
-mainCard.optDecore(2, 'optDecore', arrOptDecore2, 'radio', false, null, optDecorePrice2, 'decor');
+mainCard.optDecore(2, 'optDesabled', arrOptDecore2, 'radio', false, null, optDecorePrice2, 'decor');
 
 
 var optDecorePrice3 = [10];
 // Добавьте поздравительную надпись
-mainCard.optString(3, 'optString', [0], 'string' , optDecorePrice3);
+mainCard.optString(3, 'optDesabled', [0], 'string' , optDecorePrice3);
 
 
 var optDecorePrice4 = [10, 20, 30, 40];

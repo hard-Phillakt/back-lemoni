@@ -210,7 +210,9 @@ BaseAsset::register($this);
                         <div class="additional-modules__cart">
                             <a href="/check-out"><img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
                             <span class="CartInformerBox">
+                                
                                 <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
+                                
                             </span>
                             </a>
                         </div>

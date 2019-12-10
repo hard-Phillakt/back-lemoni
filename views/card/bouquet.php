@@ -51,6 +51,8 @@ Url::remember();
     </div>
 </section>
 
+
+
 <!-- card-goods start -->
 <section class="card-goods">
     <div class="container">
@@ -79,16 +81,9 @@ Url::remember();
 
                         <div class="mt-35">
                             <p class="desc desc__sm">
-                                Конфеты состоят из шоколада, песочного теста
-                                и глазури на основе сахара.
-                                Можно употреблять как во время, так и вне диеты
-                                <br>
-                                <br>
-                                На фото торт весом 2 кг.
-                                Зеркальная глазурь
-                                Украшение из крема
-                                Круглая форма
-                                1 ярус - высота 12 см
+
+                                <?= $model->lm_content; ?>
+                                
                             </p>
                         </div>
                     </div>
@@ -234,3 +229,4 @@ Url::remember();
         </div>
     </div>
 </section>
+

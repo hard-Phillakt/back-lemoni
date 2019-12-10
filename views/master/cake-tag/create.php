@@ -10,11 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Cake Tags', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-
-
 <div class="cake-tag-create">
-
-
 
     <div class="container">
         <div class="row">

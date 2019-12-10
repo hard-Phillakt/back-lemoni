@@ -4,6 +4,8 @@ namespace app\models;
 
 use Yii;
 use app\models\CakeGoods;
+use app\models\CandieGoods;
+
 
 /**
  * This is the model class for table "tag".
@@ -27,9 +29,12 @@ class Tag extends \yii\db\ActiveRecord {
         return $this->hasMany(CakeGoods::class, ['id' => 'cake_id'])
             ->viaTable('cake_tag', ['tag_id' => 'id']);
     }
-    
 
 
+    public function getCandy(){
+        return $this->hasMany(CandieGoods::class, ['id' => 'candy_id'])
+            ->viaTable('candy_tag', ['tag_id' => 'id']);
+    }
 
 
 

@@ -12,18 +12,6 @@ use yii\helpers\ArrayHelper;
 
 $cakeGoods = CakeGoods::find()->asArray()->all();
 
-
-
-//debug($cakeGoods[0]['id']);
-
-
-
-//foreach ($cakeGoods as $key){
-//
-//    echo $key['id'];
-//
-//}
-
 $arr_tag = ArrayHelper::map($cakeGoods, 'id', 'lm_title');
 
 //debug($result);
@@ -52,7 +40,7 @@ $arr_tag = ArrayHelper::map($cakeGoods, 'id', 'lm_title');
             ]) ?>
 
             <div class="form-group">
-                <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
             </div>
 
             <?php ActiveForm::end(); ?>

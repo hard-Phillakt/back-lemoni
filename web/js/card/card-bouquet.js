@@ -14,11 +14,11 @@ mainCard.optDecore(2, 'optDesabled', arrOptDecore2, 'radio', false, null);
 
 var optDecorePrice3 = [10];
 // Добавьте поздравительную надпись
-mainCard.optString(3, 'optString', [0], 'string' , optDecorePrice3);
+mainCard.optString(3, 'optDesabled', [0], 'string' , optDecorePrice3);
 
 var optDecorePrice4 = [10, 20, 30, 40];
 // Формат поздравительной надписи
-mainCard.optDecore(4, 'optDecore', arrOptDecore4, 'radio', false, miniTitle, optDecorePrice4, 'inscription');
+mainCard.optDecore(4, 'optDesabled', arrOptDecore4, 'radio', false, miniTitle, optDecorePrice4, 'inscription');
 
 // Выберите упаковку
 mainCard.optDecore(5, 'optDesabled', arrOptDecore5, 'radio', false, null);

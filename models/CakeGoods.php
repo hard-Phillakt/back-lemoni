@@ -126,12 +126,6 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     
     
     
-//    public function getTags(){
-//        return $this->hasMany(Tag::class, ['parent_id' => 'id']);
-//    }
-    
-    
-    
     
     /**
      * {@inheritdoc}

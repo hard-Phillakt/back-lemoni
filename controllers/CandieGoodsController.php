@@ -24,6 +24,9 @@ use app\models\FilterCake;
 
 use app\models\Tag;
 
+
+
+
 //  Создал контроллер тортов
 class CandieGoodsController extends Controller
 {
@@ -150,7 +153,15 @@ class CandieGoodsController extends Controller
         //      Compilation
         if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
 
-            $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+            $candy = new Tag();
+
+//            $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+
+            $data_compilation = $candy::find()->with('candy')->where(['id' => $data_filter_id])->asArray()->all();
+
+
+//          debug($data_compilation);die;
+
 
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);

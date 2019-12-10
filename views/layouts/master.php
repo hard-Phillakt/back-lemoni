@@ -7,6 +7,9 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\BaseAsset;
 use app\widgets\customcart\CartInformer;
+use yii\helpers\Url;
+
+
 
 BaseAsset::register($this);
 
@@ -25,8 +28,7 @@ BaseAsset::register($this);
     <!--    <link rel="icon" href="favicon.ico" type="image/x-icon">-->
     <!--    <link rel="stylesheet" href="./style/main.css">-->
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
-            type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU" type="text/javascript"></script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -44,24 +46,31 @@ BaseAsset::register($this);
 
                         <!-- section-logo -->
                         <div class="section-logo">
-                            <a href="/">
-                                <img src="/img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
-                            </a>
+                            <?= Html::a(Html::img(Url::to('/img/logo/logo-brown.svg')), Url::to('/')) ?>
                         </div>
 
-                        <a href="/master/news/index" class="link link__a">Новости</a>
-                        <a href="/master/master-class" class="link link__a">Мастер-классы</a>
-                        <a href="/master/cake-goods" class="link link__a">Торты</a>
-                        <a href="/master/candie-goods" class="link link__a">Кенди бар</a>
+
+                            <?= Html::a('Новости', Url::to('/master/news/index'), ['class' => 'link link__a'])?>
+
+                            <?= Html::a('Мастер-классы', Url::to('/master/master-class'), ['class' => 'link link__a'])?>
+
+                            <?= Html::a('Торты', Url::to('/master/cake-goods'), ['class' => 'link link__a'])?>
+
+                            <?= Html::a('Кенди бар', Url::to('/master/candie-goods'), ['class' => 'link link__a'])?>
+
+                            <?= Html::a('Теги-Cake', Url::to('/master/cake-tag'), ['class' => 'link link__a'])?>
+
+                            <?= Html::a('Теги-Candy', Url::to('/master/candy-tag'), ['class' => 'link link__a'])?>
+
 
                         <?php if(!Yii::$app->user->isGuest): ?>
 
                             <div class="additional-modules">
 
                                 <div class="log-out-link">
-                                    <strong>
-                                        <a href="/master/login/log-out" class="link link__a">ВЫХОД &nbsp; <i class="fas fa-sign-out-alt"></i></a>
-                                    </strong>
+
+                                    <?= Html::a('Выход', Url::to('/master/login/log-out'), ['class' => 'link link__a'])?>
+
                                 </div>
 
                             </div>
@@ -90,9 +99,7 @@ BaseAsset::register($this);
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-logo">
-                        <a href="/">
-                            <img src="/img/logo/logo-white.svg" alt="white">
-                        </a>
+                        <?= Html::a(Html::img(Url::to('/img/logo/logo-white.svg')), Url::to('/')) ?>
                     </div>
                 </div>
 

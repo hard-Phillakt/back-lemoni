@@ -3,61 +3,127 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
+//use app\models\CakeTag;
+
+// импортировал все торты
+use app\models\CakeGoods;
+
+// импортировал все candy
+use app\models\CandieGoods;
+
+use app\models\Tag;
+
+
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\controllers\master\CakeTagSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cake Tags';
+
+
+$this->title = 'Связи: торты с тегами';
 $this->params['breadcrumbs'][] = $this->title;
+
+
+$cakeArr = ArrayHelper::map(CakeGoods::find()->asArray()->all(), 'id', 'lm_title');
+
+$tagArr = ArrayHelper::map(Tag::find()->asArray()->all(), 'id', 'title');
+
+//debug($goods);die;
+
+//$qwe = ArrayHelper::map($goods, 'id', 'lm_title');
+
+
+//$goods = array_merge($tagArr, $candyArr);
+
+// debug($cakeArr);die;
+
 ?>
 
-<div class="cake-tag-index">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="cake-tag-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+                <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Cake Tag', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+                <p class="mt-35">
+                    <?= Html::a('Создать связь', ['create'], ['class' => 'btn btn-success']) ?>
+                </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+                <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+                <?= GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'cake_id',
-            'tag_id',
+                        'id',
 
-            [
-                'value' => function ($data) {
-//                    debug($data);
-//                    return $data->category->title;
-                    return '!!!!!';
-                },
-                'label' => 'Торт',
-                'filter' => Html::activeDropDownList(
-                    $searchModel,
-                    'cake_id', // поле в модели, для которого применяется сортировка
-                    ArrayHelper::map(\app\models\CakeGoods::find()->asArray()->all(), 'id', 'lm_title'),
-                    ['class' => 'form-control', 'prompt' => '- Все -']
-                )
-            ],
+                        'cake_id'  => [
+                            'label' => 'Cake - id',
+//                            'filter' => Html::input('text', 'CakeTagSearch[cake_id]', '', ['class' => 'form-control'] ),
+                            'filter' => Html::activeDropDownList(
+                                $searchModel,
+                                'cake_id', // поле в модели, для которого применяется сортировка
+                                $cakeArr,
+                                [
+                                    'prompt' => '- Все -',
+                                    'class' => 'form-control',
+                                ]
+                            ),
+                            'value' => function ($data) {
 
-            [
-                'value' => function ($data) {
-//                    return $data->category->title;
-                    return '!!!!!';
-                },
-                'label' => 'Тег',
+                                $cakeGoods = new CakeGoods();
 
-            ],
+                                $cakeGoods = $cakeGoods::findOne($data['cake_id']);
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                                return $cakeGoods['lm_title'];
+                            },
+                        ],
 
 
+                        'tag_id' =>  [
+                            'label' => 'Tag - id',
+//                            'filter' => Html::input('text', 'CakeTagSearch[tag_id]', '', ['class' => 'form-control']),
+                            'filter' => Html::activeDropDownList(
+                                $searchModel,
+                                'tag_id', // поле в модели, для которого применяется сортировка
+                                $tagArr,
+                                [
+                                    'prompt' => '- Все -',
+                                    'class' => 'form-control',
+                                ]
+                            ),
+                            'value' => function ($data) {
+
+                                $tags = new Tag();
+
+                                $tags = $tags::findOne($data['tag_id']);
+
+                                return $tags['title'];
+                            },
+                        ],
+
+                        ['class' => 'yii\grid\ActionColumn'],
+                    ],
+                ]); ?>
+
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+<!--
+
+
+
+
+
+
+-->
+

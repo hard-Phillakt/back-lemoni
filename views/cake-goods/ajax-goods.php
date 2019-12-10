@@ -1,6 +1,7 @@
 <?php
 
-// debug($data_cake);
+// debug($data_compilation);die;
+// debug($data_compilation[0]['cake']);die;
 
 // echo 'ajax';
 
@@ -10,7 +11,7 @@
 
 <?php foreach ($data_cake as $key => $value): ?>
 
-    <!-- cake-card -->
+    <!-- filter-cake-card -->
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 
         <div class="glob-module-card mb-35 shadow-card pb-35">
@@ -39,7 +40,11 @@
 
 <?php else: ?>
 
-    <?php foreach ($data_compilation as $key => $value): ?>
+<!--    --><?php //foreach ($data_compilation as $key => $value): ?>
+
+    <?php foreach ($data_compilation[0]['cake'] as $key => $value): ?>
+
+        <?//= debug($value); ?>
 
         <!-- compilation-cake-card -->
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -67,5 +72,5 @@
         </div>
 
     <?php endforeach; ?>
-    
+
 <?php endif; ?>

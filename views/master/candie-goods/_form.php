@@ -127,9 +127,10 @@ use mihaildev\elfinder\ElFinder;
 
         <div class="col-lg-12">
 
-            <?= $form->field($model, 'lm_description')->textarea(['rows' => 6])->widget(CKEditor::class, [
-                'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
-            ]) ?>
+<!--            Убрал lm_description -->
+<!--            --><?//= $form->field($model, 'lm_description')->textarea(['rows' => 6])->widget(CKEditor::class, [
+//                'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
+//            ]) ?>
 
             <?= $form->field($model, 'lm_content')->textarea(['rows' => 6])->widget(CKEditor::class, [
                 'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),

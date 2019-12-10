@@ -34,3 +34,6 @@ tests/_support/_generated
 
 #ignore assets
 /web/assets
+
+#files global
+/web/files/global

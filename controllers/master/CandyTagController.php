@@ -3,19 +3,18 @@
 namespace app\controllers\master;
 
 use Yii;
-use app\models\CakeTag;
-use app\models\CakeTagSearch;
+use app\models\CandyTag;
+use app\models\CandyTagSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-
 /**
- * CakeTagController implements the CRUD actions for CakeTag model.
+ * CandyTagController implements the CRUD actions for CandyTag model.
  */
-
-class CakeTagController extends Controller {
+class CandyTagController extends Controller
+{
 
     public $layout = 'master';
 
@@ -50,18 +49,13 @@ class CakeTagController extends Controller {
     }
 
     /**
-     * Lists all CakeTag models.
+     * Lists all CandyTag models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CakeTagSearch();
+        $searchModel = new CandyTagSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-
-//        Yii::$app->db->createCommand('CREATE TABLE `candy_tag` (`id` INT AUTO_INCREMENT PRIMARY KEY, `candy_id` INT, `tag_id` INT)')
-//        ->execute();
-
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -70,7 +64,7 @@ class CakeTagController extends Controller {
     }
 
     /**
-     * Displays a single CakeTag model.
+     * Displays a single CandyTag model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -83,13 +77,13 @@ class CakeTagController extends Controller {
     }
 
     /**
-     * Creates a new CakeTag model.
+     * Creates a new CandyTag model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new CakeTag();
+        $model = new CandyTag();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -101,7 +95,7 @@ class CakeTagController extends Controller {
     }
 
     /**
-     * Updates an existing CakeTag model.
+     * Updates an existing CandyTag model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -121,7 +115,7 @@ class CakeTagController extends Controller {
     }
 
     /**
-     * Deletes an existing CakeTag model.
+     * Deletes an existing CandyTag model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -135,15 +129,15 @@ class CakeTagController extends Controller {
     }
 
     /**
-     * Finds the CakeTag model based on its primary key value.
+     * Finds the CandyTag model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return CakeTag the loaded model
+     * @return CandyTag the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = CakeTag::findOne($id)) !== null) {
+        if (($model = CandyTag::findOne($id)) !== null) {
             return $model;
         }
 

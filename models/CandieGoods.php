@@ -98,6 +98,14 @@ class CandieGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces
 
 
 
+
+    public function getTags(){
+        return $this->hasMany(Tag::class, ['id' => 'tag_id'])
+            ->viaTable('candy_tag', ['id' => 'candy_id']);
+    }
+
+
+
     /**
      * {@inheritdoc}
      */
