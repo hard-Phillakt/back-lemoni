@@ -38,7 +38,7 @@ class CandieGoodsController extends Controller
 
         $query_cake_goods = new CandieGoods();
 
-        $model = $query_cake_goods::find()->asArray()->all();
+        $model = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
 
         $filter = new FilterCake();
 
@@ -70,7 +70,7 @@ class CandieGoodsController extends Controller
 //          4.фильтр по "Тематическое оформление"
             $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['lm_subjects']]);
 
-            $data_cake = $cake->asArray()->all();
+            $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
 //          5.фильт по "Тегам" пока делаю страницами в место фильтра
 //            if ($data_filter['tag']) {
@@ -130,7 +130,17 @@ class CandieGoodsController extends Controller
                 foreach ($data_filter['type'] as $key => $value) {
 
 //                  2.фильтр по "Тип продукта"
-                    $cake->orFilterWhere(['like', 'lm_type', $value]);
+//                  $cake->orFilterWhere(['like', 'lm_type', $value]);
+
+                    if($key == 0){
+
+                        // 2.фильтр по "Тип продукта" до первого ключа массива
+                        $cake->andFilterWhere(['like', 'lm_type', $value]);
+                    }else {
+
+                        // 2.фильтр по "Тип продукта" с массивом ключей
+                        $cake->orFilterWhere(['like', 'lm_type', $value]);
+                    }
 
                 }
 
@@ -142,7 +152,7 @@ class CandieGoodsController extends Controller
 //          4.фильтр по "Тематическое оформление"
             $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['subjects']]);
 
-            $data_cake = $cake->asArray()->all();
+            $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
 //          делаю рендер по фильтрам без тегов на ajax
             return $this->render('ajax-goods', ['data_cake' => $data_cake]);
@@ -155,13 +165,11 @@ class CandieGoodsController extends Controller
 
             $candy = new Tag();
 
-//            $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
+//          $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
 
-            $data_compilation = $candy::find()->with('candy')->where(['id' => $data_filter_id])->asArray()->all();
-
+            $data_compilation = $candy::find()->with('candy')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
 
 //          debug($data_compilation);die;
-
 
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);

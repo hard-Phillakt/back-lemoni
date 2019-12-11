@@ -47,7 +47,7 @@ use yii\helpers\Url;
                             Цена за единицу товара
                         </h5>
 
-                        <?//= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
+                        <? //= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
 
                         <div class="flter-min-max mt-35">
 
@@ -158,61 +158,52 @@ use yii\helpers\Url;
 
 
                     <!-- filter leavel -->
-<!--                    <div class="filter-sidebar-catalog__box mt-35">-->
-<!---->
-<!--                        <h5 class="title title__h5">Колличество уровней</h5>-->
-<!---->
-<!--                        <div class="global-form__select mt-35">-->
-<!---->
-<!--                            <div class="form-group field-filtercake-count_level">-->
-<!--                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество-->
-<!--                                    уровней</label>-->
-<!--                                <select id="filtercake-count_level" class="global-form__input"-->
-<!--                                        name="FilterCake[count_level]">-->
-<!--                                    <option value="1">1</option>-->
-<!--                                    <option value="2">2</option>-->
-<!--                                    <option value="3">3</option>-->
-<!--                                    <option value="4">4</option>-->
-<!--                                    <option value="5">5</option>-->
-<!--                                    <option value="" selected>...</option>-->
-<!--                                </select>-->
-<!---->
-<!--                                <div class="help-block"></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
+                    <!--                    <div class="filter-sidebar-catalog__box mt-35">-->
+                    <!---->
+                    <!--                        <h5 class="title title__h5">Колличество уровней</h5>-->
+                    <!---->
+                    <!--                        <div class="global-form__select mt-35">-->
+                    <!---->
+                    <!--                            <div class="form-group field-filtercake-count_level">-->
+                    <!--                                <label class="title title__h5 pb-15" for="filtercake-count_level">Колличество-->
+                    <!--                                    уровней</label>-->
+                    <!--                                <select id="filtercake-count_level" class="global-form__input"-->
+                    <!--                                        name="FilterCake[count_level]">-->
+                    <!--                                    <option value="1">1</option>-->
+                    <!--                                    <option value="2">2</option>-->
+                    <!--                                    <option value="3">3</option>-->
+                    <!--                                    <option value="4">4</option>-->
+                    <!--                                    <option value="5">5</option>-->
+                    <!--                                    <option value="" selected>...</option>-->
+                    <!--                                </select>-->
+                    <!---->
+                    <!--                                <div class="help-block"></div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!---->
+                    <!--                    </div>-->
 
 
-                    <!-- filter subjects -->
-                    <div class="filter-sidebar-catalog__box mt-35">
-
-                        <!--                        <h5 class="title title__h5">Тематическое оформление</h5>-->
-
-                        <div class="global-form__select mt-35">
-
-                            <!--                            --><? //= $form->field($filter, 'subjects')
-                            //                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
-                            //                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
-
-                            <div class="form-group field-filtercake-subjects">
-                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое
-                                    оформление</label>
-                                <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">
-                                    <option value="Свадебный торт">Свадебный торт</option>
-                                    <option value="День рождения">День рождения</option>
-                                    <option value="Юбилей">Юбилей</option>
-                                    <option value="" selected>...</option>
-                                </select>
-
-                                <div class="help-block"></div>
-                            </div>
-
-                            <!--                            <select name="" id="">-->
-                            <!--                                <option value="1">test</option>-->
-                            <!--                            </select>-->
-                        </div>
-                    </div>
+                    <!-- filter subjects  Тематическое оформление убрал на время -->
+                    <!--                    <div class="filter-sidebar-catalog__box mt-35">-->
+                    <!---->
+                    <!--                        <div class="global-form__select mt-35">-->
+                    <!--                            <div class="form-group field-filtercake-subjects">-->
+                    <!--                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое-->
+                    <!--                                    оформление</label>-->
+                    <!--                                <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">-->
+                    <!--                                    <option value="Свадебный торт">Свадебный торт</option>-->
+                    <!--                                    <option value="День рождения">День рождения</option>-->
+                    <!--                                    <option value="Юбилей">Юбилей</option>-->
+                    <!--                                    <option value="" selected>...</option>-->
+                    <!--                                </select>-->
+                    <!---->
+                    <!--                                <div class="help-block"></div>-->
+                    <!--                            </div>-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                        -->
+                    <!--                    </div>-->
 
                     <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>
@@ -244,7 +235,8 @@ use yii\helpers\Url;
 
                                 <?php foreach ($filter['tag'] as $key => $value): ?>
 
-                                    <a href="#!" data-count="<?= $key; ?>" class="compilation-candie link link__a mr-15 mb-15">
+                                    <a href="#!" data-count="<?= $key; ?>"
+                                       class="compilation-candie link link__a mr-15 mb-15">
                                         <!--<input type="radio"-->
                                         <!--       name="filter-compilation"-->
                                         <!--       class="global-form__checkbox mt-35">-->
@@ -281,7 +273,8 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                       class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
@@ -311,7 +304,8 @@ use yii\helpers\Url;
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="card-img card-img__bg"
+                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                       class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">

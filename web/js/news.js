@@ -34,6 +34,8 @@ $(document).ready(function () {
                     // находим ссылку по data атрибуту
                     var dataLink = document.querySelectorAll('.news-box__content_link')[this.dataset.imgCount];
 
+                    console.log(dataLink);
+
                     if (dataLink.children[0].innerHTML) {
 
                         // Выдергиваем данные из блока hidden и вставляем в модалку

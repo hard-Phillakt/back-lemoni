@@ -75,9 +75,10 @@ Url::remember();
 
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="mt-35">
-                            <h5 class="title title__h5">Описание:</h5>
-                        </div>
+
+<!--                        <div class="mt-35">-->
+<!--                            <h5 class="title title__h5">Описание:</h5>-->
+<!--                        </div>-->
 
                         <div class="mt-35">
                             <p class="desc desc__sm">

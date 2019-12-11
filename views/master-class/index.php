@@ -6,9 +6,9 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\MaskedInput;
 
-
 //debug($model);
 //debug($masterClassForm);
+
 ?>
 
 <section class="news mt-90">
@@ -86,7 +86,7 @@ use yii\widgets\MaskedInput;
                                             <div class="flex-box">
                                                 <div class="news-box__content_date"><?= $value->lm_date; ?></div>
                                                 <div>
-                                                    <a href="#!" class="link link__a"
+                                                    <div href="#!" class="link link__a"
                                                        data-title="<?= $value->lm_title; ?>"
                                                        data-link-count="<?= $newsBoxCount; ?>">
                                                         Записаться
@@ -97,7 +97,7 @@ use yii\widgets\MaskedInput;
 
                                                         </div>
 
-                                                    </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

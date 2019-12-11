@@ -128,9 +128,9 @@ Url::remember();
                                     уровней</label>
                                 <select id="filtercake-count_level" class="global-form__input"
                                         name="FilterCake[count_level]">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                    <option value="1">I</option>
+                                    <option value="2">II</option>
+                                    <option value="3">III</option>
                                     <option value="" selected>...</option>
                                 </select>
 
@@ -149,35 +149,26 @@ Url::remember();
                     </div>
 
 
-                    <!-- filter subjects -->
-                    <div class="filter-sidebar-catalog__box mt-35">
-
-                        <!--                        <h5 class="title title__h5">Тематическое оформление</h5>-->
-
-                        <div class="global-form__select mt-35">
-
-                            <!--                            --><? //= $form->field($filter, 'subjects')
-                            //                                ->dropDownList($filter['subjects'], ['class' => 'global-form__input'])
-                            //                                ->label('Тематическое оформление', ['class' => 'title title__h5 pb-15']) ?>
-
-                            <div class="form-group field-filtercake-subjects">
-                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое
-                                    оформление</label>
-                                <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">
-                                    <option value="Свадебный торт">Свадебный торт</option>
-                                    <option value="День рождения">День рождения</option>
-                                    <option value="Юбилей">Юбилей</option>
-                                    <option value="" selected>...</option>
-                                </select>
-
-                                <div class="help-block"></div>
-                            </div>
-
-                            <!--                            <select name="" id="">-->
-                            <!--                                <option value="1">test</option>-->
-                            <!--                            </select>-->
-                        </div>
-                    </div>
+                    <!-- filter subjects Тематическое оформление убрал на время -->
+                    <!--                    <div class="filter-sidebar-catalog__box mt-35">-->
+                    <!---->
+                    <!--                        <div class="global-form__select mt-35">-->
+                    <!---->
+                    <!--                            <div class="form-group field-filtercake-subjects">-->
+                    <!--                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое-->
+                    <!--                                    оформление</label>-->
+                    <!--                                <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">-->
+                    <!--                                    <option value="Свадебный торт">Свадебный торт</option>-->
+                    <!--                                    <option value="День рождения">День рождения</option>-->
+                    <!--                                    <option value="Юбилей">Юбилей</option>-->
+                    <!--                                    <option value="" selected>...</option>-->
+                    <!--                                </select>-->
+                    <!---->
+                    <!--                                <div class="help-block"></div>-->
+                    <!--                            </div>-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
                     <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>

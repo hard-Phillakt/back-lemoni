@@ -26,7 +26,6 @@ use app\models\Tag;
 //  Создал контроллер тортов
 class CakeGoodsController extends Controller
 {
-    
 
     public function actionIndex()
     {
@@ -34,7 +33,7 @@ class CakeGoodsController extends Controller
 
         $query_cake_goods = new CakeGoods();
 
-        $model = $query_cake_goods::find()->asArray()->all();
+        $model = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
 
         $filter = new FilterCake();
 
@@ -65,7 +64,7 @@ class CakeGoodsController extends Controller
             $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['subjects']]);
 
 
-            $data_cake = $cake->asArray()->all();
+            $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
 
 //          5.фильт по "Тегам" пока делаю страницами в место фильтра ПОКА ###НЕ ПАШЕТ###
@@ -129,10 +128,12 @@ class CakeGoodsController extends Controller
 
         if (Yii::$app->request->isAjax && $data_filter = Yii::$app->request->post('FilterCake')) {
 
+//          debug($data_filter);die;
+
             $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
-            $cake->andFilterWhere(['>=', 'lm_price_for_kg', $data_filter['price_for_kg_min']]);
+            $cake->filterWhere(['>=', 'lm_price_for_kg', $data_filter['price_for_kg_min']]);
 
             $cake->andFilterWhere(['<=', 'lm_price_for_kg', $data_filter['price_for_kg_max']]);
 
@@ -140,8 +141,15 @@ class CakeGoodsController extends Controller
 
                 foreach ($data_filter['type'] as $key => $value) {
 
-//                  2.фильтр по "Тип продукта"
-                    $cake->orFilterWhere(['like', 'lm_type', $value]);
+                    if($key == 0){
+                        
+                        // 2.фильтр по "Тип продукта" до первого ключа массива
+                        $cake->andFilterWhere(['like', 'lm_type', $value]);
+                    }else {
+
+                        // 2.фильтр по "Тип продукта" с массивом ключей
+                        $cake->orFilterWhere(['like', 'lm_type', $value]);
+                    }
 
                 }
 
@@ -153,7 +161,7 @@ class CakeGoodsController extends Controller
 //          4.фильтр по "Тематическое оформление"
             $cake->andFilterWhere(['like', 'lm_subjects', $data_filter['subjects']]);
 
-            $data_cake = $cake->asArray()->all();
+            $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
 //          делаю рендер по фильтрам без тегов на ajax
             return $this->render('ajax-goods', ['data_cake' => $data_cake]);
@@ -170,7 +178,7 @@ class CakeGoodsController extends Controller
 
 //          $data_compilation = $query_cake_goods::find()->with('tag')->all();
 
-            $data_compilation = $tag::find()->with('cake')->where(['id' => $data_filter_id])->asArray()->all();
+            $data_compilation = $tag::find()->with('cake')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
 
 //          $tag = Tag::find()->with('cake')->asArray()->all();
 

@@ -19,7 +19,16 @@ use mihaildev\elfinder\ElFinder;
     <div class="row">
 
         <div class="col-lg-6">
-            <?= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
+            <?//= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'lm_essence')->dropDownList([
+                'Взрослый' => 'Взрослый',
+                'Детский' => 'Детский',
+            ]) ?>
+
+
+            <?= $form->field($model, 'lm_title')->textInput(['maxlength' => true]) ?>
+
 
             <?= $form->field($model, 'lm_img')->textInput(['maxlength' => true])->widget(InputFile::class, [
                 'options'       => ['class' => 'form-control'],
@@ -27,7 +36,10 @@ use mihaildev\elfinder\ElFinder;
                 'buttonName' => 'Загрузить',
             ]) ?>
 
-            <?= $form->field($model, 'lm_title')->textInput(['maxlength' => true]) ?>
+            <div>
+                <?= Html::img($model->lm_img, ['class' => 'img-responsive']) ?>
+            </div>
+
         </div>
 
         <div class="col-lg-6">
@@ -38,7 +50,7 @@ use mihaildev\elfinder\ElFinder;
             <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 mt-35">
             <?= $form->field($model, 'lm_description')->textarea(['rows' => 6])->widget(CKEditor::class, [
                 'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
             ]) ?>

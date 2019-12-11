@@ -40,7 +40,7 @@ class CakeGoodsSearch extends CakeGoods
      */
     public function search($params)
     {
-        $query = CakeGoods::find();
+        $query = CakeGoods::find()->orderBy('id DESC');
 
         // add conditions that should always apply here
 

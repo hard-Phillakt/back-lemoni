@@ -26,13 +26,11 @@ use mihaildev\elfinder\ElFinder;
             <?= $form->field($model, 'lm_essence')->dropDownList([
                 'cake' => 'cake',
                 'shadlaw' => 'shadlaw',
-                'bouquet' => 'bouquet',
-                'candy' => 'candy',
             ]) ?>
 
             <?= $form->field($model, 'lm_title')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'lm_weight')->textInput(['maxlength' => true]) ?>
+            <?//= $form->field($model, 'lm_weight')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'lm_price_for_kg')->textInput() ?>
 
@@ -50,16 +48,15 @@ use mihaildev\elfinder\ElFinder;
                 '3' => 3
             ]) ?>
 
-            <?= $form->field($model, 'lm_subjects')->textInput(['maxlength' => true]) ?>
+            <?//= $form->field($model, 'lm_subjects')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'lm_compilation')->textInput(['maxlength' => true]) ?>
+            <?//= $form->field($model, 'lm_compilation')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'lm_alter_card')->dropDownList([
                 'cake' => 'cake',
                 'shadlaw' => 'shadlaw',
-                'bouquet' => 'bouquet',
-                'candy' => 'candy',
             ]) ?>
+
         </div>
 
         <div class="col-lg-6">
@@ -76,7 +73,12 @@ use mihaildev\elfinder\ElFinder;
                 '9' => 'День матери',
                 '10' => 'Диетические',
                 '11' => '8 марта',
-            ]) ?>
+            ], ['prompt' => [
+                'text' => 'Выберите сборку...',
+                'options' => [
+                    'value' => '0'
+                ]
+            ]]) ?>
 
             <?= $form->field($model, 'lm_publicate')->dropDownList([
                 '1' => 'Да',

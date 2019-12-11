@@ -21,7 +21,7 @@ class NewsController extends Controller
 
         $query = new News();
 
-        $model = $query::find()->all();
+        $model = $query::find()->orderBy('id DESC')->all();
 
         return $this->render('index', ['model' => $model]);
     }

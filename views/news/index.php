@@ -50,7 +50,7 @@ use app\widgets\sidebar\Sidebar;
                                         <div class="mt-45">
                                             <h2 class="title title__h4">
 
-                                                <a href="#!" class="news-box__content_link" data-title="<?= $value->lm_title; ?>" data-link-count="<?= $newsBoxCount; ?>">
+                                                <div class="news-box__content_link" data-title="<?= $value->lm_title; ?>" data-link-count="<?= $newsBoxCount; ?>">
 
                                                     <?= $value->lm_title; ?>
 
@@ -59,7 +59,7 @@ use app\widgets\sidebar\Sidebar;
                                                         <?= $value->lm_content; ?>
 
                                                     </div>
-                                                </a>
+                                                </div>
 
                                             </h2>
                                         </div>

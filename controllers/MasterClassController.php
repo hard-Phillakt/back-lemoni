@@ -25,7 +25,7 @@ class MasterClassController extends Controller
 
         $query = new MasterClass();
 
-        $model = $query::find()->all();
+        $model = $query::find()->orderBy('id DESC')->all();
 
         $masterClassForm = new MasterClassForm();
 

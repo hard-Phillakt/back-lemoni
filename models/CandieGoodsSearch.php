@@ -40,7 +40,7 @@ class CandieGoodsSearch extends CandieGoods
      */
     public function search($params)
     {
-        $query = CandieGoods::find();
+        $query = CandieGoods::find()->orderBy('id DESC');
 
         // add conditions that should always apply here
 
