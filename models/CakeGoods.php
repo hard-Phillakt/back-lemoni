@@ -133,12 +133,12 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     public function rules()
     {
         return [
-            [['lm_essence', 'lm_title', 'lm_description', 'lm_content', 'lm_weight', 'lm_price_for_kg', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet', 'lm_img_one', 'lm_compilation', 'lm_alter_card'], 'required'],
+            [['lm_essence', 'lm_title', 'lm_content', 'lm_weight', 'lm_price_for_kg', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet', 'lm_img_one', 'lm_compilation', 'lm_alter_card'], 'required'],
             [['lm_title', 'lm_description', 'lm_content', 'lm_img_one', 'lm_img_two', 'lm_img_three', 'lm_compilation', 'lm_alter_card'], 'string'],
             [['lm_price_for_kg'], 'integer'],
             [['lm_essence', 'lm_weight', 'lm_type', 'lm_count_level', 'lm_subjects', 'lm_create_box', 'lm_publicate', 'lm_prioritet'], 'string', 'max' => 255],
             [['lm_img_two', 'lm_img_three'], 'safe'],
-            [['tags_cake',], 'safe'],
+            [['tags_cake', 'lm_description',], 'safe'],
         ];
     }
 

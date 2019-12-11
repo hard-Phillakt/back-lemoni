@@ -15,6 +15,7 @@ a:focus {
     top: 0;
     background: #fff;
     z-index: 999;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.09);
 }
 
 .header-full-menu {

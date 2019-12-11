@@ -13,7 +13,10 @@ use app\models\CandieGoods;
 
 use app\models\Tag;
 
+use yii\helpers\Url;
 
+
+Url::remember();
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\controllers\master\CakeTagSearch */

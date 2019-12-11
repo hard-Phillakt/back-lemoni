@@ -5,7 +5,10 @@ use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use app\models\CandieGoods;
 use app\models\Tag;
+use yii\helpers\Url;
 
+
+Url::remember();
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CandyTagSearch */

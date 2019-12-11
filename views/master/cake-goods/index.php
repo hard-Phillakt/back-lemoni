@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'lm_essence',
             'lm_title:ntext',
-            'lm_description:ntext',
+//            'lm_description:ntext',
             'lm_content:ntext',
             //'lm_weight',
             //'lm_price_for_kg',
