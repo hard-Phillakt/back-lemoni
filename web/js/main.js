@@ -359,7 +359,34 @@ if (reviewformFile) {
 
 
 
+$(document).ready(function () {
 
+    if($('.owl-carousel')){
+
+        $('.owl-carousel').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            smartSpeed: 1000,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        })
+
+    }
+
+});
 
 
 

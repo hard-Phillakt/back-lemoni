@@ -35,10 +35,13 @@ use app\models\MasterClassForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
 
+use app\assets\OwlAsset;
+
 //debug($model);
 
 Url::remember();
 
+OwlAsset::register($this);
 ?>
 
 <!-- breadcrumbs-line -->
@@ -67,19 +70,42 @@ Url::remember();
             <div class="col-lg-5">
                 <div class="card-goods__img mt-35">
 
-                    <?//= Html::img('@web/' . $model->lm_img_one, ['alt' => '']) ?>
+                    <?php if($model->lm_img_one): ?>
 
-                    <?= Html::img($model->lm_img_one, ['alt' => '', 'class' => 'img-responsive']) ?>
+                    <div class="owl-carousel owl-theme">
+
+                        <?php if($model->lm_img_one): ?>
+
+                        <div class="item">
+                            <?= Html::img($model->lm_img_one, ['alt' => '', 'class' => 'img-responsive']) ?>
+                        </div>
+
+                        <?php endif; ?>
+
+                        <?php if($model->lm_img_two): ?>
+
+                        <div class="item">
+                            <?= Html::img($model->lm_img_two, ['alt' => '', 'class' => 'img-responsive']) ?>
+                        </div>
+
+                        <?php endif; ?>
+
+                        <?php if($model->lm_img_three): ?>
+
+                        <div class="item">
+                            <?= Html::img($model->lm_img_three, ['alt' => '', 'class' => 'img-responsive']) ?>
+                        </div>
+
+                        <?php endif; ?>
+                    </div>
+
+                    <?php endif; ?>
+
 
                 </div>
 
                 <div class="row">
                     <div class="col-lg-8">
-                        
-<!--                        <div class="mt-35">-->
-<!--                            <h5 class="title title__h5">Описание:</h5>-->
-<!--                        </div>-->
-
                         <div class="mt-35">
                             <p class="desc desc__sm">
 
@@ -95,14 +121,11 @@ Url::remember();
 
                 <h1 class="title title__h3"><?= $model->lm_title;?></h1>
 
-
                 <div class="mt-60">
                     <div class="card-goods__price">
-                        <!--                        <span>1700</span>-->
                         <span><?= $model->lm_price_for_kg;?></span> руб
                     </div>
                 </div>
-
 
                 <div class="mt-15">
                     <p class="desc desc__sm opac__05">
@@ -111,9 +134,7 @@ Url::remember();
                     </p>
                 </div>
 
-
                 <!-- Начало опций товара -->
-
 
                 <?= ChangeOptions::widget([
                     'model' => $model,
@@ -123,21 +144,11 @@ Url::remember();
 
                 <div class="mt-35">
                     <div class="card-goods__total">
-<!--                        Итого: --><?//= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{p}']); ?><!-- руб-->
-
                         Итого: <span class="dvizh-cart-price-total"><span><?= $model->lm_price_for_kg; ?></span></span> руб
                     </div>
                 </div>
 
-                <!--                <div class="mt-35">-->
-                <!--                    <div class="card-goods__total">-->
-                <!--                        Итого: <span>1 800</span> руб-->
-                <!--                    </div>-->
-                <!--                </div>-->
-
-
                 <div class="flter-min-max mt-35">
-<!--                    <a class="button button__rectangle mr-15">Купить в один клик</a>-->
 
                     <?= BuyButton::widget([
                         'model' => $model,
@@ -202,11 +213,6 @@ Url::remember();
 
                     </div>
                 </div>
-
-                <!--                <div class="mt-35">-->
-                <!--                    <a class="button button__rectangle mr-15">Купить в один клик</a>-->
-                <!--                    <a class="button button__rectangle">В корзину</a>-->
-                <!--                </div>-->
 
             </div>
 

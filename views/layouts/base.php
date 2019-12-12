@@ -276,51 +276,24 @@ BaseAsset::register($this);
                 </div>
             </div>
 
-<!--            <div class="row">-->
-<!--                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">-->
-<!--                    <div class="section-logo">-->
-<!--                        <a href="/">-->
-<!--                            <img src="/img/logo/logo-white.svg" alt="white">-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">-->
-<!--                    <ul class="footer__ul">-->
-<!--                        <li><a href="/" class="link link__a_w">Главная</a></li>-->
-<!--                        <li><a href="/contact" class="link link__a_w">Контакты</a></li>-->
-<!--                        <li><a href="/deliv-cake" class="link link__a_w">Доставка</a></li>-->
-<!--                        <li><a href="/about" class="link link__a_w">О нас</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">-->
-<!--                    <ul class="footer__ul">-->
-<!--                        <li><a href="/cake-goods" class="link link__a_w">Торты</a></li>-->
-<!--                        <li><a href="/candie-goods" class="link link__a_w">Candy bar</a></li>-->
-<!--                        <li><a href="/order" class="link link__a_w">Заказ и оплата</a></li>-->
-<!--                        <!--                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">-->
-<!--                    <ul class="footer__ul">-->
-<!--                        <!--                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>-->
-<!--                        <li><a href="/master-class" class="link link__a_w">Мастер-классы</a></li>-->
-<!--                        <li><a href="/news" class="link link__a_w">Новости</a></li>-->
-<!--                        <li><a href="/review" class="link link__a_w">Отзывы</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">-->
-<!--                    <ul class="footer__ul">-->
-<!--                        <li>Контакты:</li>-->
-<!--                        <li><a href="tel:+74722505154" class="link link__a_w">+7 (4722) 50-51-54</a></li>-->
-<!--                        <li><a href="mailto:info@cafelemoni.ru" class="link link__a_w">info@cafelemoni.ru</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
+        </div>
 
+        <div class="create-company">
+            <div class="container">
+                <div class="row flex-aling-center">
+                    <div class="col-lg-6">
+                        <div class="create-company__project">
+                            © Кафе Лемони, 2019
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="create-company__media">
+                            <?= Html::a('<p class="mr-15">Разработка сайта</p> ' . Html::img('/img/logo/logo_media.svg'), Url::to('https://webmedia31.ru/'), ['class' => 'link link__a_w']) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 

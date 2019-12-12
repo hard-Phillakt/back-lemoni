@@ -532,13 +532,54 @@ input:focus {
 }
 
 
+/* Owl card*/
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #8f5541 !important;
+}
+
+.owl-theme .owl-dots .owl-dot span:hover {
+    background: #FDEFE4 !important;
+}
+
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #8f5541 !important;
+}
+
+.owl-dots button {
+    outline: none;
+}
 
 
+.create-company__media {
+    text-align: right;
+}
 
+.create-company__media img {
+    width: 100px;
+}
 
+.create-company__media a {
+    align-items: center;
+}
 
+.create-company__media p {
+    font-size: 11px;
+    margin-bottom: 0;
+}
 
+.create-company__project {
+    color: #fff;
+    font-size: 12px;
+}
 
+.footer {
+    padding: 80px 0 0 0;
+}
+
+.create-company {
+    background: #85b1a4;
+    padding: 10px;
+}
 
 
 

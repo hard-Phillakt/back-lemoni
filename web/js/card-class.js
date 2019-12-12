@@ -44,7 +44,6 @@ function GlobalOptionsCard() {
             if(glogalPriceTotal){
                 customClass.dataset.price = glogalPriceTotal;
                 dvizhCartPrice.innerHTML = glogalPriceTotal;
-                // console.log(glogalPriceTotal);
             }
 
         }
