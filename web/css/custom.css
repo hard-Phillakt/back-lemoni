@@ -4,7 +4,7 @@ a:focus {
 }
 
 .wrap {
-    margin-top: 90px;
+    padding-top: 90px;
 }
 
 .header {
@@ -549,6 +549,14 @@ input:focus {
     outline: none;
 }
 
+.create-company {
+    transition: all .3s ease-in-out;
+}
+
+.create-company:hover {
+    background: #85b1a4bd;
+}
+
 
 .create-company__media {
     text-align: right;
@@ -581,6 +589,9 @@ input:focus {
     padding: 10px;
 }
 
+.card-img__bg {
+    background-position: center !important;
+}
 
 
 
@@ -857,7 +868,7 @@ input:focus {
     }
 
     .footer {
-        padding: 30px 0;
+        padding: 30px 0 0 0;
     }
 
     .modal-body-wrapp {
@@ -995,7 +1006,7 @@ input:focus {
     }
 
     .footer {
-        padding: 30px 0;
+        padding: 30px 0 0 0;
     }
 
     .header-full-menu {
@@ -1284,7 +1295,79 @@ input:focus {
 
 
 
+/* Preloader goods*/
 
+.wrapper {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: auto;
+    display: flex;
+    height: auto;
+    width: 100%;
+    background: #fff;
+    justify-content: center;
+}
+
+.cssload-loader {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin: 3em;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    background:rgb(204,106,20);
+}
+.cssload-loader,
+.cssload-loader:before,
+.cssload-loader:after {
+    animation: 1.15s infinite ease-in-out;
+    -o-animation: 1.15s infinite ease-in-out;
+    -ms-animation: 1.15s infinite ease-in-out;
+    -webkit-animation: 1.15s infinite ease-in-out;
+    -moz-animation: 1.15s infinite ease-in-out;
+}
+.cssload-loader:before,
+.cssload-loader:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cssload-loader { animation-name: cssload-loader;
+    -o-animation-name: cssload-loader;
+    -ms-animation-name: cssload-loader;
+    -webkit-animation-name: cssload-loader;
+    -moz-animation-name: cssload-loader; }
+
+
+@keyframes cssload-loader {
+    from { transform: scale(0); opacity: 1; }
+    to	 { transform: scale(1); opacity: 0; }
+}
+
+@-o-keyframes cssload-loader {
+    from { -o-transform: scale(0); opacity: 1; }
+    to	 { -o-transform: scale(1); opacity: 0; }
+}
+
+@-ms-keyframes cssload-loader {
+    from { -ms-transform: scale(0); opacity: 1; }
+    to	 { -ms-transform: scale(1); opacity: 0; }
+}
+
+@-webkit-keyframes cssload-loader {
+    from { -webkit-transform: scale(0); opacity: 1; }
+    to	 { -webkit-transform: scale(1); opacity: 0; }
+}
+
+@-moz-keyframes cssload-loader {
+    from { -moz-transform: scale(0); opacity: 1; }
+    to	 { -moz-transform: scale(1); opacity: 0; }
+}
 
 
 

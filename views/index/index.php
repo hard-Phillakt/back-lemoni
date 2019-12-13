@@ -43,7 +43,7 @@
                         <div class="category-cake-box__img_1"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/cake" class="link black-link__a">Торты</a>
+                        <a href="/classic" class="link black-link__a">Торты</a>
                     </h3>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                         <div class="category-cake-box__img_2"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candy" class="link black-link__a">Пряники</a>
+                        <a href="/cookie" class="link black-link__a">Пряники</a>
                     </h3>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                         <div class="category-cake-box__img_3"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/cake" class="link black-link__a">Шадлавы</a>
+                        <a href="/shadlaw" class="link black-link__a">Шадлавы</a>
                     </h3>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                         <div class="category-cake-box__img_4"></div>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candy" class="link black-link__a">Десерты</a>
+                        <a href="/dessert" class="link black-link__a">Десерты</a>
                     </h3>
                 </div>
             </div>

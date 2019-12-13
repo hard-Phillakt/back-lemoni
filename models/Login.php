@@ -13,7 +13,6 @@ use yii\base\Model;
 
 class Login extends Model {
 
-
     public $name;
     public $password;
     public $remember = true;
@@ -27,8 +26,7 @@ class Login extends Model {
         ];
     }
 
-    public function attributeLabels()
-    {
+    public function attributeLabels(){
         return [
             'name' => 'Введите имя',
             'password' => 'Введите пароль',

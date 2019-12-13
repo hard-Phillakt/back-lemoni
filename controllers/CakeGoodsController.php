@@ -24,8 +24,7 @@ use app\models\FilterCake;
 use app\models\Tag;
 
 //  Создал контроллер тортов
-class CakeGoodsController extends Controller
-{
+class CakeGoodsController extends Controller {
 
     public function actionIndex()
     {
@@ -128,8 +127,6 @@ class CakeGoodsController extends Controller
 
         if (Yii::$app->request->isAjax && $data_filter = Yii::$app->request->post('FilterCake')) {
 
-//          debug($data_filter);die;
-
             $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
@@ -186,6 +183,51 @@ class CakeGoodsController extends Controller
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
 
+
+        //      Goods category by home page
+        if(Yii::$app->request->isAjax && $urlPathName = Yii::$app->request->post('cake')){
+
+            switch ($urlPathName){
+
+                case 'classic':
+
+                    $classic = $query_cake_goods::find()->where(['lm_type' => ['Мусcовый', 'Классический'],])->asArray()->orderBy('id DESC')->all();
+
+//                    debug($classic);die;
+
+                    sleep(1);
+
+                    return $this->render('ajax-goods', ['data_cake' => $classic]);
+
+                    break;
+
+
+                case 'shadlaw':
+
+                    $shadlaw = $query_cake_goods::find()->where(['lm_type' => 'Шадлав'])->asArray()->orderBy('id DESC')->all();
+
+                    sleep(1);
+
+                    return $this->render('ajax-goods', ['data_cake' => $shadlaw]);
+
+                    break;
+
+            }
+
+        }
+
     }
+
+    
+    public function actionAjaxTemplate(){
+
+        $this->layout = 'base';
+
+        $filter = new FilterCake();
+
+        return $this->render('ajax-template', ['filter' => $filter]);
+
+    }
+
 
 }

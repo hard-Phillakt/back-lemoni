@@ -174,5 +174,33 @@ class CandieGoodsController extends Controller
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
+
+
+        // Candy category by home page
+        if(Yii::$app->request->isAjax && $urlPathName = Yii::$app->request->post('candy')){
+
+
+            switch ($urlPathName){
+
+                case 'dessert':
+
+                    $candy = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
+
+                    return $this->render('ajax-goods', ['data_cake' => $candy]);
+
+                    break;
+
+
+                case 'cookie':
+
+                    $cookie = $query_cake_goods::find()->where(['lm_type' => 'Пряники'])->asArray()->orderBy('id DESC')->all();
+
+                    return $this->render('ajax-goods', ['data_cake' => $cookie]);
+
+                    break;
+
+            }
+    }
+
     }
 }

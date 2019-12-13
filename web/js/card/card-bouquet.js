@@ -56,5 +56,3 @@ mainCard.optDecore(5, 'optDesabled', arrOptDecore5, 'radio', false, null);
 
 
 
-
-

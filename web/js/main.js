@@ -1,3 +1,111 @@
+
+// window location category
+
+// Preloader
+var preloader = '<div class="wrapper"><div class="cssload-loader"></div></div>';
+
+$(document).ready(function () {
+
+    var urlPathName = window.location.pathname;
+    var boxCakeGoods = document.querySelector('#box-cake-goods');
+    var boxCandieGoods = document.querySelector('#box-candie-goods');
+
+    if(boxCakeGoods || boxCandieGoods){
+        switch (urlPathName) {
+
+        // Cake
+        case '/shadlaw':
+
+            boxCakeGoods.innerHTML = preloader;
+
+            $.ajax({
+                type: 'post',
+                url: '/cake-goods/ajax-goods',
+                data: {
+                    cake: 'shadlaw'
+                },
+                success: function (res) {
+                    boxCakeGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            break;
+
+        // Cake
+        case '/classic':
+
+            boxCakeGoods.innerHTML = preloader;
+
+            $.ajax({
+                type: 'post',
+                url: '/cake-goods/ajax-goods',
+                data: {
+                    cake: 'classic'
+                },
+                success: function (res) {
+                    console.log(res);
+                    boxCakeGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            break;
+
+
+        // Candy
+        case '/cookie':
+
+            // boxCandieGoods.innerHTML = preloader;
+
+            $.ajax({
+                type: 'post',
+                url: '/candie-goods/ajax-goods',
+                data: {
+                    // пряники
+                    candy: 'cookie'
+                },
+                success: function (res) {
+                    boxCandieGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            break;
+
+
+        // Candy
+        case '/dessert':
+
+            // boxCandieGoods.innerHTML = preloader;
+
+            $.ajax({
+                type: 'post',
+                url: '/candie-goods/ajax-goods',
+                data: {
+                    // пряники
+                    candy: 'dessert'
+                },
+                success: function (res) {
+                    boxCandieGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            break;
+    }
+    }
+});
+
+
 // Menu start
 
 var navMenuIconlink = document.querySelectorAll('.nav-menu-icon__link');
@@ -152,7 +260,7 @@ $(document).on('pjax:success', function (e) {
     // колбек для заказа в один клик
     if (e.relatedTarget.classList[0] == 'master-class-form') {
 
-        if($('#one-click').modal('hide')){
+        if ($('#one-click').modal('hide')) {
 
             setTimeout(function () {
                 $('#modal-delivery').modal('show');
@@ -289,8 +397,6 @@ if (compilationCake) {
 }
 
 
-
-
 // Compilation candie goods
 var compilationCadie = document.querySelectorAll('.compilation-candie');
 var boxCandieGoods = document.querySelector('#box-candie-goods');
@@ -325,7 +431,6 @@ if (boxCandieGoods) {
 
 
 // Review
-
 var revievsWrappBtn = document.querySelector('.revievs__wrapp-btn .button');
 var shadowCheckbox = document.querySelector('.shadow-checkbox');
 var filterSidebarCatalogBoxUl = document.querySelector('.filter-sidebar-catalog__box_ul');
@@ -357,11 +462,12 @@ if (reviewformFile) {
     }
 }
 
-
-
+// By card goods slider
 $(document).ready(function () {
 
-    if($('.owl-carousel')){
+    var owl = document.querySelector('.owl-carousel');
+
+    if (owl) {
 
         $('.owl-carousel').owlCarousel({
             loop: false,
@@ -371,15 +477,15 @@ $(document).ready(function () {
             autoplayTimeout: 3000,
             autoplayHoverPause: true,
             smartSpeed: 1000,
-            responsive:{
-                0:{
-                    items:1
+            responsive: {
+                0: {
+                    items: 1
                 },
-                600:{
-                    items:1
+                600: {
+                    items: 1
                 },
-                1000:{
-                    items:1
+                1000: {
+                    items: 1
                 }
             }
         })
@@ -387,6 +493,13 @@ $(document).ready(function () {
     }
 
 });
+
+
+
+
+
+
+
 
 
 

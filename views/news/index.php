@@ -24,8 +24,7 @@ use app\widgets\sidebar\Sidebar;
 
                     <ul class="news-box__wrapp">
 
-                        <?php
-                        $newsBoxCount = 0;
+                        <?php $newsBoxCount = 0;
 
                         foreach ($model as $key => $value): ?>
 
@@ -34,7 +33,7 @@ use app\widgets\sidebar\Sidebar;
                                 <li class="mt-35 top-news">
 
 
-                                    <div class="news-box__img" data-title="<?= $value->lm_title; ?>" data-img-count="<?= $newsBoxCount; ?>"></div>
+                                    <div class="news-box__img" style="background: url(<?= $value->lm_img; ?>)" data-title="<?= $value->lm_title; ?>" data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
 

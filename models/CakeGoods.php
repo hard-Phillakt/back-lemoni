@@ -30,7 +30,6 @@ use app\models\Tag;
  */
 class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartElement {
 
-
     public $tags_cake = [
         '1' => '23 февраля',
         '2' => 'День влюбленных',
