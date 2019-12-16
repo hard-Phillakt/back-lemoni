@@ -27,7 +27,62 @@ use app\models\Tag;
 class CakeGoodsController extends Controller
 {
 
-    public function actionIndex()
+
+    public function getCakeCompilation()
+    {
+
+        $this->layout = 'base';
+
+//      Compilation
+        if ($data_filter_id = Yii::$app->request->get('compilation')) {
+
+            $filter = new FilterCake();
+
+            $tag = new Tag();
+
+            $data_compilation = $tag::find()->with('cake')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
+
+//          Если нету сборки - выводим все товары
+            if(!$data_compilation[0]['cake']){
+
+                $query_cake_goods = new CakeGoods();
+
+                $data = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
+
+                return $this->render('index', ['model' => $data, 'filter' => $filter]);
+            }
+
+            return $this->render('index', ['compilation' => $data_compilation, 'filter' => $filter]);
+        }
+
+    }
+
+
+
+//  Выборка по get параметрам
+    public function getCakeType($arg)
+    {
+
+        $filter = new FilterCake();
+
+        $query_cake_goods = new CakeGoods();
+
+        $goods = $query_cake_goods::find()->where(['lm_type' => $arg])->asArray()->orderBy('id DESC')->all();
+
+        if (!$goods) {
+            $data = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
+
+            return $this->render('index', ['data_cake' => $data, 'filter' => $filter]);
+        }
+
+        return $this->render('index', ['model' => $goods, 'filter' => $filter]);
+    }
+
+
+
+
+
+    public function actionIndex($param = null, $compilation = null)
     {
         $this->layout = 'base';
 
@@ -106,8 +161,73 @@ class CakeGoodsController extends Controller
 //        }
 
 
+//      Выборка с главной по параметрам
+        switch ($param) {
+
+            case 'muss':
+
+                return $this->getCakeType('Мусcовый');
+
+                break;
+
+            case 'diet':
+
+                return $this->getCakeType('Диетические');
+
+                break;
+
+
+            case 'classic':
+
+                return $this->getCakeType('Классический');
+
+                break;
+
+
+            case 'shadlaw':
+
+                return $this->getCakeType('Шадлав');
+
+                break;
+        }
+
+
+//      Подборки с главной
+        switch ($compilation) {
+
+//          День рождения
+            case '1':
+
+               return $this->getCakeCompilation();
+                break;
+
+
+//          Свадьба
+            case '5':
+
+                return $this->getCakeCompilation();
+                break;
+
+
+//          Праздничные торты
+            case '2':
+
+                return $this->getCakeCompilation();
+                break;
+
+
+//          Особым питанием
+            case '10':
+
+                return $this->getCakeCompilation();
+                break;
+
+        }
+
+
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
+
     }
 
 
@@ -164,46 +284,11 @@ class CakeGoodsController extends Controller
 
             $tag = new Tag();
 
-//          $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->asArray()->all();
-
-//          $data_compilation = $query_cake_goods::find()->with('tag')->all();
-
             $data_compilation = $tag::find()->with('cake')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
-
-//          $tag = Tag::find()->with('cake')->asArray()->all();
 
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
-
-    }
-
-
-    public function actionClassic()
-    {
-        $this->layout = 'base';
-
-        $filter = new FilterCake();
-
-        $query_cake_goods = new CakeGoods();
-
-        $classic = $query_cake_goods::find()->where(['lm_type' => ['Мусcовый', 'Классический'],])->asArray()->orderBy('id DESC')->all();
-
-        return $this->render('classic', ['data_cake' => $classic, 'filter' => $filter]);
-
-    }
-
-    public function actionShadlaw()
-    {
-        $this->layout = 'base';
-
-        $filter = new FilterCake();
-
-        $query_cake_goods = new CakeGoods();
-
-        $shadlaw = $query_cake_goods::find()->where(['lm_type' => 'Шадлав'])->asArray()->orderBy('id DESC')->all();
-
-        return $this->render('shadlaw', ['data_cake' => $shadlaw, 'filter' => $filter]);
 
     }
 

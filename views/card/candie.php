@@ -109,7 +109,7 @@ OwlAsset::register($this);
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="mt-35">
                             <p class="desc desc__sm">
 

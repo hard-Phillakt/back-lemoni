@@ -34,7 +34,7 @@ $this->registerJsFile('/js/checkout.js');
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="mt-60">
+                <div class="mt-90">
                     <h1 class="title title__h1">
                         Корзина
                     </h1>

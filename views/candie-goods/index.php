@@ -7,7 +7,6 @@ use yii\helpers\Url;
 //    debug($model);
 //    debug($filter);die;
 
-
 $this->title = 'Candy bar';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровождение любого мероприятия сладким столом. Выберете любимые десерты для своих гостей.']);
 ?>
@@ -156,6 +155,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                     кексы на фруктовом пюре
                                 </span>
 
+                                <span for="global-form__input_el6"><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                           class="global-form__checkbox mt-35" value="Трайфлы">
+                                    трайфлы
+                                </span>
+
                         </div>
 
                     </div>
@@ -218,7 +223,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
-                <h2 class="title title__h1 opac__07">Каталог продукции Candy Bar</h2>
+                <h2 class="title title__h1 opac__07">Каталог candy bar</h2>
 
 
                 <!-- filter type-goods -->

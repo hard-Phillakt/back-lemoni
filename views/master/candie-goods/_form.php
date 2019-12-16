@@ -10,6 +10,7 @@ use mihaildev\elfinder\ElFinder;
 /* @var $this yii\web\View */
 /* @var $model app\models\CandieGoods */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="candie-goods-form">
@@ -45,6 +46,7 @@ use mihaildev\elfinder\ElFinder;
                 'постное' => 'постное',
                 'штрудель' => 'штрудель',
                 'кексы на фруктовом пюре' => 'кексы на фруктовом пюре',
+                'трайфлы' => 'трайфлы',
             ]) ?>
 
             <?= $form->field($model, 'lm_count_level')->dropDownList([

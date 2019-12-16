@@ -14,6 +14,7 @@ use yii\helpers\Url;
 Url::remember();
 
 $this->title = 'Большой выбор тортов в нашем каталоге';
+
 $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас мы готовим торты, которые запомнятся внешним видом и своим   вкусом надолго. Для любого праздника и мероприятий']);
 
 ?>
@@ -183,7 +184,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
 
-                <h2 class="title title__h1 opac__07">Каталог продукции Cake</h2>
+                <h2 class="title title__h1 opac__07">Каталог тортов</h2>
 
 
                 <!-- filter type-goods -->
@@ -224,17 +225,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                         </div>
                     </div>
 
-
                 </div>
 
 
-                
                 <div class="row mt-60" id="box-cake-goods">
 
                     <!-- card-filter -->
-                    <?php
-
-                    if (empty($data_cake)): ?>
+                    <?php if ($model): ?>
 
                         <?php foreach ($model as $key => $value): ?>
 
@@ -265,7 +262,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
 
                         <?php endforeach; ?>
 
-                    <?php else: ?>
+                    <?php elseif($data_cake): ?>
 
                         <?php foreach ($data_cake as $key => $value): ?>
 
@@ -296,28 +293,41 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
 
                         <?php endforeach; ?>
 
+
+                    <?php elseif($compilation): ?>
+
+
+                        <?php foreach ($compilation[0]['cake'] as $key => $value): ?>
+
+                            <!-- cake-card compilation -->
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                                <div class="glob-module-card mb-35 shadow-card pb-35">
+
+                                    <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                       class="card-img card-img__bg"
+                                       style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
+
+                                    <div class="mt-15 pl-15">
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                           class="link link__a mt-15">
+                                            <?= $value['lm_title']; ?>
+                                        </a>
+                                    </div>
+
+                                    <div class="mt-15 mb-30">
+                                        <span class="card-price pl-15 opac__07"><?= $value['lm_price_for_kg']; ?>
+                                            руб/кг</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        <?php endforeach; ?>
+
+
                     <?php endif; ?>
-
-
-                    <!--                    <div class="col-lg-4">-->
-                    <!---->
-                    <!--                        <div class="glob-module-card mb-35 shadow-card pb-35">-->
-                    <!---->
-                    <!--                            <a href="#!" class="card-img card-img__bg"-->
-                    <!--                               style="background: url(../img/cake/catalog-cake/cake-goods__1.png);"></a>-->
-                    <!---->
-                    <!--                            <div class="mt-15 pl-15">-->
-                    <!--                                <a href="#!" class="link link__a mt-15">Трайфлы</a>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                            <div class="mt-15 mb-30">-->
-                    <!--                                <span class="card-price pl-15 opac__07">1300 руб/кг</span>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                    </div>-->
-
 
                 </div>
             </div>

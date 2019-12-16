@@ -291,6 +291,57 @@ if (compilationCake) {
         }
 
     });
+
+
+    // window.onload = function () {
+    //
+    //     $.ajax({
+    //         type: 'post',
+    //         url: '/cake-goods/ajax-goods',
+    //         data: {
+    //             compilation: 1
+    //         },
+    //         success: function (res) {
+    //
+    //             boxCakeGoods.innerHTML = res;
+    //         },
+    //         error: function (err) {
+    //             console.log(err);
+    //         }
+    //     });
+    //
+    // };
+
+
+
+
+    //     Подборки с главной
+    switch (window.location.search) {
+
+//          День рождения
+        case '?compilation=1':
+
+            break;
+
+
+//          Свадьба
+        case '5':
+
+            break;
+
+
+//          Праздничные торты
+        case '2':
+
+            break;
+
+
+//          Особым питанием
+        case '10':
+
+            break;
+
+    }
 }
 
 

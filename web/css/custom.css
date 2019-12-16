@@ -593,7 +593,10 @@ input:focus {
     background-position: center !important;
 }
 
-
+.desc__sm {
+    font-size: 14px;
+    line-height: inherit;
+}
 
 
 

@@ -29,10 +29,27 @@ use app\models\Tag;
 class CandieGoodsController extends Controller
 {
 
-    public $layout = 'base';
-
-    public function actionIndex()
+//  Выборка по get параметрам
+    public function getCandyType($arg)
     {
+        $filter = new FilterCake();
+
+        $query_cake_goods = new CandieGoods();
+
+        $goods = $query_cake_goods::find()->where(['lm_type' => $arg])->asArray()->orderBy('id DESC')->all();
+
+        if (!$goods) {
+            $data = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
+            return $this->render('index', ['data_cake' => $data, 'filter' => $filter]);
+        }
+
+        return $this->render('index', ['data_cake' => $goods, 'filter' => $filter]);
+    }
+
+
+    public function actionIndex($param = null)
+    {
+        $this->layout = 'base';
 
         $query_cake_goods = new CandieGoods();
 
@@ -99,6 +116,97 @@ class CandieGoodsController extends Controller
 
         }
 
+
+//      Выборка с главной по параметрам
+        switch ($param) {
+
+//          мусовые пирожные
+            case 'cake-muss':
+
+                return $this->getCandyType('Мусовые пирожные');
+
+                break;
+
+//          классические пирожные
+            case 'classic':
+
+                return $this->getCandyType('Классические пирожные');
+
+                break;
+
+//          Все
+            case 'dessert':
+
+                return $this->getCandyType('');
+
+                break;
+
+
+//          Пряники
+            case 'cookie':
+
+                return $this->getCandyType('Пряники');
+
+                break;
+
+
+//          Конфеты
+            case 'candy':
+
+                return $this->getCandyType('Конфеты');
+
+                break;
+
+
+//          Конфеты
+            case 'kulichi':
+
+                return $this->getCandyType('Куличи');
+
+                break;
+
+
+//          Постная продукция
+            case 'lean-products':
+
+                return $this->getCandyType('Постная продукция');
+
+                break;
+
+
+//          Щербет
+            case 'sherbet':
+
+                return $this->getCandyType('Щербет');
+
+                break;
+
+
+//          Фруктовый букет
+            case 'fruit-bouquets':
+
+                return $this->getCandyType('Фруктовый букет');
+
+                break;
+
+
+//          Зефир
+            case 'marshmallows':
+
+                return $this->getCandyType('Зефир');
+
+                break;
+
+
+//          Трайфлы
+            case 'trifles':
+
+                return $this->getCandyType('Трайфлы');
+
+                break;
+        }
+
+
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
     }
@@ -155,49 +263,19 @@ class CandieGoodsController extends Controller
         }
 
 
-        //      Compilation
+//      Compilation
         if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
 
             $candy = new Tag();
 
-//          $data_compilation = $query_cake_goods::find()->where(['lm_create_box' => $data_filter_id])->all();
-
             $data_compilation = $candy::find()->with('candy')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
-
-//          debug($data_compilation);die;
 
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
-        
-    }
 
-
-
-
-    public function actionCookie()
-    {
-
-        $filter = new FilterCake();
-
-        $query_candie_goods = new CandieGoods();
-
-        $cookie = $query_candie_goods::find()->where(['lm_type' => 'Пряники'])->asArray()->orderBy('id DESC')->all();
-
-        return $this->render('dessert', ['data_cake' => $cookie, 'filter' => $filter]);
 
     }
 
-    public function actionDessert()
-    {
-        $filter = new FilterCake();
-
-        $query_candie_goods = new CandieGoods();
-
-        $candy = $query_candie_goods::find()->asArray()->orderBy('id DESC')->all();
-
-        return $this->render('cookie', ['data_cake' => $candy, 'filter' => $filter]);
-
-    }
 
 }

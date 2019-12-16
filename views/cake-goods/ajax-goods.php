@@ -43,9 +43,7 @@
 <!--    --><?php //foreach ($data_compilation as $key => $value): ?>
 
     <?php foreach ($data_compilation[0]['cake'] as $key => $value): ?>
-
-        <?//= debug($value); ?>
-
+        
         <!-- compilation-cake-card -->
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 

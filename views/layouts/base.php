@@ -283,7 +283,7 @@ BaseAsset::register($this);
                 <div class="row flex-aling-center">
                     <div class="col-lg-5 col-lg-offset-1">
                         <div class="create-company__project">
-                            © Кафе Лемони, 2019
+                            © Кафе Лемони, <?= date('o'); ?>
                         </div>
                     </div>
 
