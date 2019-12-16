@@ -3,6 +3,10 @@
 
 use app\widgets\sidebar\Sidebar;
 
+
+$this->title = 'Контакты';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Показать на карте адрес кондитерской или позвонить по телефону']);
+
 ?>
 
 <section class="contact mt-90">

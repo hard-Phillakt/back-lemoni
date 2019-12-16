@@ -4,6 +4,9 @@
 
 use app\widgets\sidebar\Sidebar;
 
+$this->title = 'Заказ и оплата';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Сроки изготовления продукции и способы заказа и оплаты']);
+
 ?>
 
 <section class="contact mt-90">

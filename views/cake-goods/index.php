@@ -13,8 +13,10 @@ use yii\helpers\Url;
 
 Url::remember();
 
-?>
+$this->title = 'Большой выбор тортов в нашем каталоге';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Для вас мы готовим торты, которые запомнятся внешним видом и своим   вкусом надолго. Для любого праздника и мероприятий']);
 
+?>
 
 <!-- breadcrumbs-line -->
 <section class="breadcrumbs-line">

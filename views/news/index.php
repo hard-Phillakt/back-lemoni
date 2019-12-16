@@ -3,6 +3,10 @@
 use app\widgets\sidebar\Sidebar;
 
 //debug($model);
+
+$this->title = 'Новости';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Интересные события компании, статьи для вас из мира кондитеров.']);
+
 ?>
 
 <section class="news mt-90">

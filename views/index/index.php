@@ -1,3 +1,10 @@
+<?php
+
+$this->title = 'Кафе-кондитерская «Лемони»';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Большой выбор десертов, муссовых и классических тортов. А так же закуски   и выпечка на любой вкус']);
+
+?>
+
 
 <!-- section-cake start -->
 <section class="section-cake">

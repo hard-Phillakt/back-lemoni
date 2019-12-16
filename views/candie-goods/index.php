@@ -6,6 +6,10 @@ use yii\helpers\Url;
 
 //    debug($model);
 //    debug($filter);die;
+
+
+$this->title = 'Candy bar';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Сопровождение любого мероприятия сладким столом. Выберете любимые десерты для своих гостей.']);
 ?>
 
 

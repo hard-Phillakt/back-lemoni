@@ -3,6 +3,9 @@
 
 use app\widgets\sidebar\Sidebar;
 
+$this->title = 'Доставка и прием';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Подробные условия доставки наших тортов']);
+
 ?>
 
 <section class="contact mt-90">

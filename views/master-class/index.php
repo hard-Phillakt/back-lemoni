@@ -9,6 +9,9 @@ use yii\widgets\MaskedInput;
 //debug($model);
 //debug($masterClassForm);
 
+$this->title = 'Запишитесь на наш мастер-класс';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Список ближайших мастер-классов, которые вы можете посетить самостоятельно, с друзьями или с детьми.']);
+
 ?>
 
 <section class="news mt-90">

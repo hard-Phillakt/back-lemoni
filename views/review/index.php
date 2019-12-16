@@ -8,7 +8,8 @@ use yii\widgets\Pjax;
 
 
 //debug($model);
-
+$this->title = 'Добавить отзыв';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Мы благодарим вас за ваше мнение о нашей продукции.']);
 ?>
 
 

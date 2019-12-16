@@ -3,6 +3,8 @@
 
 use app\widgets\sidebar\Sidebar;
 
+$this->title = 'О кафе-кондитерской «Лемони»';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Семейный бизнес, который ориентирован на качестве продуктов и кондитерских   изделиях собственного производства по уникальным рецептам.']);
 ?>
 
 <section class="contact mt-90">
