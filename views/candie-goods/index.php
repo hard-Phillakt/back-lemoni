@@ -273,7 +273,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                     <?php
 
-                    if (empty($data_cake)): ?>
+                    if ($model): ?>
 
                         <?php foreach ($model as $key => $value): ?>
 
@@ -336,27 +336,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                         <?php endforeach; ?>
 
                     <?php endif; ?>
-
-
-                    <!--                    <div class="col-lg-4">-->
-                    <!---->
-                    <!--                        <div class="glob-module-card mb-35 shadow-card pb-35">-->
-                    <!---->
-                    <!--                            <a href="#!" class="card-img card-img__bg"-->
-                    <!--                               style="background: url(../img/cake/catalog-cake/cake-goods__1.png);"></a>-->
-                    <!---->
-                    <!--                            <div class="mt-15 pl-15">-->
-                    <!--                                <a href="#!" class="link link__a mt-15">Трайфлы</a>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                            <div class="mt-15 mb-30">-->
-                    <!--                                <span class="card-price pl-15 opac__07">1300 руб/кг</span>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!---->
-                    <!--                    </div>-->
-
 
                 </div>
             </div>

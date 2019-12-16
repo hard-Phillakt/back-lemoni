@@ -38,12 +38,14 @@ class CandieGoodsController extends Controller
 
         $goods = $query_cake_goods::find()->where(['lm_type' => $arg])->asArray()->orderBy('id DESC')->all();
 
+//        debug($goods);die;
+
         if (!$goods) {
             $data = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
             return $this->render('index', ['data_cake' => $data, 'filter' => $filter]);
         }
 
-        return $this->render('index', ['data_cake' => $goods, 'filter' => $filter]);
+        return $this->render('index', ['model' => $goods, 'filter' => $filter]);
     }
 
 
