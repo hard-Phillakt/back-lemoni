@@ -25,8 +25,6 @@ use app\models\FilterCake;
 use app\models\Tag;
 
 
-
-
 //  Создал контроллер тортов
 class CandieGoodsController extends Controller
 {
@@ -106,8 +104,6 @@ class CandieGoodsController extends Controller
     }
 
 
-
-
     public function actionAjaxGoods()
     {
         $this->layout = false;
@@ -132,11 +128,11 @@ class CandieGoodsController extends Controller
 //                  2.фильтр по "Тип продукта"
 //                  $cake->orFilterWhere(['like', 'lm_type', $value]);
 
-                    if($key == 0){
+                    if ($key == 0) {
 
                         // 2.фильтр по "Тип продукта" до первого ключа массива
                         $cake->andFilterWhere(['like', 'lm_type', $value]);
-                    }else {
+                    } else {
 
                         // 2.фильтр по "Тип продукта" с массивом ключей
                         $cake->orFilterWhere(['like', 'lm_type', $value]);
@@ -159,7 +155,6 @@ class CandieGoodsController extends Controller
         }
 
 
-
         //      Compilation
         if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
 
@@ -174,33 +169,35 @@ class CandieGoodsController extends Controller
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
-
-
-        // Candy category by home page
-        if(Yii::$app->request->isAjax && $urlPathName = Yii::$app->request->post('candy')){
-
-
-            switch ($urlPathName){
-
-                case 'dessert':
-
-                    $candy = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
-
-                    return $this->render('ajax-goods', ['data_cake' => $candy]);
-
-                    break;
-
-
-                case 'cookie':
-
-                    $cookie = $query_cake_goods::find()->where(['lm_type' => 'Пряники'])->asArray()->orderBy('id DESC')->all();
-
-                    return $this->render('ajax-goods', ['data_cake' => $cookie]);
-
-                    break;
-
-            }
+        
     }
 
+
+
+
+    public function actionCookie()
+    {
+
+        $filter = new FilterCake();
+
+        $query_candie_goods = new CandieGoods();
+
+        $cookie = $query_candie_goods::find()->where(['lm_type' => 'Пряники'])->asArray()->orderBy('id DESC')->all();
+
+        return $this->render('dessert', ['data_cake' => $cookie, 'filter' => $filter]);
+
     }
+
+    public function actionDessert()
+    {
+        $filter = new FilterCake();
+
+        $query_candie_goods = new CandieGoods();
+
+        $candy = $query_candie_goods::find()->asArray()->orderBy('id DESC')->all();
+
+        return $this->render('cookie', ['data_cake' => $candy, 'filter' => $filter]);
+
+    }
+
 }

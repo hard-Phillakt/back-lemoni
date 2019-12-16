@@ -3,7 +3,6 @@
 // debug($data_cake);
 
 // echo 'ajax';
-
 ?>
 
 <?php if($data_cake): ?>
@@ -58,8 +57,8 @@
                 </div>
 
                 <div class="mt-15 mb-30">
-                <span class="card-price pl-15 opac__07"><?= $value['lm_price_for_kg']; ?>
-                    руб/шт</span>
+                    <span class="card-price pl-15 opac__07"><?= $value['lm_price_for_kg']; ?>
+                        руб/шт</span>
                 </div>
 
             </div>

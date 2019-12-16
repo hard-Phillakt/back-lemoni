@@ -24,7 +24,8 @@ use app\models\FilterCake;
 use app\models\Tag;
 
 //  Создал контроллер тортов
-class CakeGoodsController extends Controller {
+class CakeGoodsController extends Controller
+{
 
     public function actionIndex()
     {
@@ -110,13 +111,6 @@ class CakeGoodsController extends Controller {
     }
 
 
-
-
-
-
-
-
-
     public function actionAjaxGoods()
     {
         $this->layout = false;
@@ -138,11 +132,11 @@ class CakeGoodsController extends Controller {
 
                 foreach ($data_filter['type'] as $key => $value) {
 
-                    if($key == 0){
-                        
+                    if ($key == 0) {
+
                         // 2.фильтр по "Тип продукта" до первого ключа массива
                         $cake->andFilterWhere(['like', 'lm_type', $value]);
-                    }else {
+                    } else {
 
                         // 2.фильтр по "Тип продукта" с массивом ключей
                         $cake->orFilterWhere(['like', 'lm_type', $value]);
@@ -165,7 +159,6 @@ class CakeGoodsController extends Controller {
         }
 
 
-
 //      Compilation
         if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {
 
@@ -183,51 +176,35 @@ class CakeGoodsController extends Controller {
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
 
-
-        //      Goods category by home page
-        if(Yii::$app->request->isAjax && $urlPathName = Yii::$app->request->post('cake')){
-
-            switch ($urlPathName){
-
-                case 'classic':
-
-                    $classic = $query_cake_goods::find()->where(['lm_type' => ['Мусcовый', 'Классический'],])->asArray()->orderBy('id DESC')->all();
-
-//                    debug($classic);die;
-
-                    sleep(1);
-
-                    return $this->render('ajax-goods', ['data_cake' => $classic]);
-
-                    break;
-
-
-                case 'shadlaw':
-
-                    $shadlaw = $query_cake_goods::find()->where(['lm_type' => 'Шадлав'])->asArray()->orderBy('id DESC')->all();
-
-                    sleep(1);
-
-                    return $this->render('ajax-goods', ['data_cake' => $shadlaw]);
-
-                    break;
-
-            }
-
-        }
-
     }
 
-    
-    public function actionAjaxTemplate(){
 
+    public function actionClassic()
+    {
         $this->layout = 'base';
 
         $filter = new FilterCake();
 
-        return $this->render('ajax-template', ['filter' => $filter]);
+        $query_cake_goods = new CakeGoods();
+
+        $classic = $query_cake_goods::find()->where(['lm_type' => ['Мусcовый', 'Классический'],])->asArray()->orderBy('id DESC')->all();
+
+        return $this->render('classic', ['data_cake' => $classic, 'filter' => $filter]);
 
     }
 
+    public function actionShadlaw()
+    {
+        $this->layout = 'base';
+
+        $filter = new FilterCake();
+
+        $query_cake_goods = new CakeGoods();
+
+        $shadlaw = $query_cake_goods::find()->where(['lm_type' => 'Шадлав'])->asArray()->orderBy('id DESC')->all();
+
+        return $this->render('shadlaw', ['data_cake' => $shadlaw, 'filter' => $filter]);
+
+    }
 
 }
