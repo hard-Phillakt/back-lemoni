@@ -313,12 +313,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                                 <div class="glob-module-card mb-35 shadow-card pb-35">
 
-                                    <a href="/card/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                    <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                        class="card-img card-img__bg"
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/card/<?php $value['lm_alter_card']; ?>/<?php $value['id']; ?>"
+                                        <a href="/<?php $value['lm_alter_card']; ?>/<?php $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>

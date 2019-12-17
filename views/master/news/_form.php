@@ -22,8 +22,8 @@ use mihaildev\elfinder\ElFinder;
             <?//= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'lm_essence')->dropDownList([
-                'Взрослый' => 'Взрослый',
-                'Детский' => 'Детский',
+                'Новость' => 'Новость',
+                'Статья' => 'Статья',
             ]) ?>
 
 

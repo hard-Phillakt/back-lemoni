@@ -33,43 +33,120 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
 
                     <ul class="news-box__wrapp">
 
+                        <li class="mt-35 top-news">
+
+                            <div class="news-box__img"
+                                 style="background: url(<?= $model[0]->lm_img; ?>)"
+                                 data-title="<?= $model[0]->lm_title; ?>"
+                                 data-img-count="0"></div>
+
+                            <div class="news-box__content">
+
+                                <div class="flex-aling-center flex-justify-between mb-35">
+                                    <div class="news-box__content_tag">
+
+                                        <?php //Взрослый || Детский ?>
+
+                                        <?php $essence = $model[0]->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
+
+                                        <span class="tag__news" style="background: <?= $essence; ?>"></span>
+
+                                        <span><?= $model[0]->lm_essence; ?></span>
+
+                                    </div>
+
+                                    <div class="news-box__content_tag">
+
+                                        <span class="pl-30"><?= $model[0]->lm_price; ?> руб</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="mt-45">
+                                    <h2 class="title title__h4">
+                                        <span class="news-box__content_link">
+                                            <?= $model[0]->lm_title; ?>
+                                        </span>
+                                    </h2>
+                                </div>
+
+                                <div class="mt-35">
+                                    <div class="desc desc__sm">
+                                        <?= $model[0]->lm_description; ?>
+                                    </div>
+                                </div>
+
+                                <div class="mt-35">
+                                    <div class="flex-box">
+                                        <div class="news-box__content_date"><?= $model[0]->lm_date; ?></div>
+                                        <div>
+                                            <div href="#!" class="link link__a"
+                                                 data-title="<?= $model[0]->lm_title; ?>"
+                                                 data-link-count="0">
+                                                Записаться
+
+                                                <div class="news-box__content_hidden">
+                                                    <?= $model[0]->lm_content; ?>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
                         <?php
 
-                        $newsBoxCount = 0;
+                        $newsBoxCount = 1;
 
-                        foreach ($model as $key => $value): ?>
+                        $newsArticle = 1;
 
+                        $mCount = count($model) - 1; ?>
 
-                            <?php if ($value->lm_publicate == 1): ?>
+                        <?php while ($newsArticle <= $mCount): ?>
+
+                            <?php if ($model[$newsArticle]->lm_publicate == 1): ?>
 
                                 <li class="mt-35 top-news">
 
-                                    <div class="news-box__img" style="background: url(<?= $value->lm_img; ?>)" data-title="<?= $value->lm_title; ?>"
+                                    <div class="row mb-15">
+                                        <div class="col-lg-6">
+                                            <div class="news-box__content_tag">
+
+                                                <?php //Взрослый || Детский?>
+
+                                                <?php $essence = $model[$newsArticle]->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
+
+                                                <span class="tag__news" style="background: <?= $essence; ?>"></span>
+
+                                                <span><?= $model[$newsArticle]->lm_essence; ?></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="news-box__content_tag">
+
+                                                <span class="pl-30"><?= $model[$newsArticle]->lm_price; ?> руб</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="news-box__img"
+                                         style="background: url(<?= $model[$newsArticle]->lm_img; ?>)"
+                                         data-title="<?= $model[$newsArticle]->lm_title; ?>"
                                          data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
-
-                                        <div class="news-box__content_tag">
-
-                                            <?php
-
-                                            //                                            Взрослый || Детский
-
-                                            ?>
-
-                                            <?php $essence = $value->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
-
-                                            <span class="tag__news" style="background: <?= $essence; ?>"></span>
-
-                                            <span><?= $value->lm_essence; ?></span>
-                                        </div>
 
                                         <div class="mt-45">
                                             <h2 class="title title__h4">
 
                                                 <span class="news-box__content_link">
 
-                                                    <?= $value->lm_title; ?>
+                                                    <?= $model[$newsArticle]->lm_title; ?>
 
                                                 </span>
 
@@ -79,23 +156,24 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
                                         <div class="mt-35">
                                             <div class="desc desc__sm">
 
-                                                <?= $value->lm_description; ?>
+                                                <?= $model[$newsArticle]->lm_description; ?>
 
                                             </div>
                                         </div>
 
                                         <div class="mt-35">
                                             <div class="flex-box">
-                                                <div class="news-box__content_date"><?= $value->lm_date; ?></div>
+                                                <div
+                                                    class="news-box__content_date"><?= $model[$newsArticle]->lm_date; ?></div>
                                                 <div>
                                                     <div href="#!" class="link link__a"
-                                                       data-title="<?= $value->lm_title; ?>"
-                                                       data-link-count="<?= $newsBoxCount; ?>">
+                                                         data-title="<?= $model[$newsArticle]->lm_title; ?>"
+                                                         data-link-count="<?= $newsBoxCount; ?>">
                                                         Записаться
 
                                                         <div class="news-box__content_hidden">
 
-                                                            <?= $value->lm_content; ?>
+                                                            <?= $model[$newsArticle]->lm_content; ?>
 
                                                         </div>
 
@@ -112,106 +190,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
                                 <?php
 
                                 $newsBoxCount++;
+                                $newsArticle++;
 
                             endif; ?>
 
-                        <?php endforeach; ?>
-
-
-                        <!--                        <li class="mt-35 top-news">-->
-                        <!---->
-                        <!---->
-                        <!--                            <div class="news-box__img"></div>-->
-                        <!---->
-                        <!--                            <div class="news-box__content">-->
-                        <!---->
-                        <!--                                <div class="news-box__content_tag">-->
-                        <!---->
-                        <!--                                    <div class="flex-box">-->
-                        <!--                                        <div>-->
-                        <!--                                            <div class="tag__news" style="background: #E69F9C;"></div>-->
-                        <!--                                            <span>Новость</span>-->
-                        <!--                                        </div>-->
-                        <!--                                        <div>-->
-                        <!--                                            <span>2990</span>-->
-                        <!--                                            <span>руб</span>-->
-                        <!--                                        </div>-->
-                        <!--                                    </div>-->
-                        <!---->
-                        <!--                                </div>-->
-                        <!---->
-                        <!--                                <div class="mt-45">-->
-                        <!--                                    <h2 class="title title__h4">-->
-                        <!--                                            <span href="#!" class="news-box__content_link">-->
-                        <!--                                                Лучший рецепт месяца по мнению-->
-                        <!--                                                наших кондитеров-->
-                        <!--                                            </span>-->
-                        <!--                                    </h2>-->
-                        <!--                                </div>-->
-                        <!---->
-                        <!--                                <div class="mt-35">-->
-                        <!--                                    <div class="desc desc__sm">-->
-                        <!--                                        Приближающийся летний сезон — прекрасное время, чтобы-->
-                        <!--                                        попробовать самые вкусные и разнообразные сочетания-->
-                        <!--                                    </div>-->
-                        <!--                                </div>-->
-                        <!---->
-                        <!--                                <div class="mt-35">-->
-                        <!--                                    <div class="flex-box">-->
-                        <!--                                        <div class="news-box__content_date">14.09.2019</div>-->
-                        <!--                                        <div>-->
-                        <!--                                            <a href="#!" class="link link__a">-->
-                        <!--                                                Записаться-->
-                        <!---->
-                        <!---->
-                        <!--                                                <div class="news-box__content_hidden">-->
-                        <!--                                                    <div class="mt-30">-->
-                        <!--                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">-->
-                        <!--                                                    </div>-->
-                        <!---->
-                        <!--                                                    <div class="mt-35" style="color: #8F5541">-->
-                        <!--                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.-->
-                        <!--                                                        Illum-->
-                        <!--                                                        voluptatum-->
-                        <!--                                                        corrupti cumque voluptates, incidunt provident recusandae-->
-                        <!--                                                        officiis-->
-                        <!--                                                        nam mollitia-->
-                        <!--                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.-->
-                        <!--                                                        Facere,-->
-                        <!--                                                        magni dolores-->
-                        <!--                                                        harum distinctio eum nisi!-->
-                        <!--                                                    </div>-->
-                        <!---->
-                        <!--                                                    <div class="mt-35">-->
-                        <!--                                                        <img src="./img/news/test-news/test-news.png" alt="cake__1">-->
-                        <!--                                                    </div>-->
-                        <!---->
-                        <!--                                                    <div class="mt-35" style="color: #8F5541">-->
-                        <!--                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.-->
-                        <!--                                                        Illum-->
-                        <!--                                                        voluptatum-->
-                        <!--                                                        corrupti cumque voluptates, incidunt provident recusandae-->
-                        <!--                                                        officiis-->
-                        <!--                                                        nam mollitia-->
-                        <!--                                                        architecto odio ullam, maxime est cum? Eum, quis dicta.-->
-                        <!--                                                        Facere,-->
-                        <!--                                                        magni dolores-->
-                        <!--                                                        harum distinctio eum nisi!-->
-                        <!--                                                    </div>-->
-                        <!--                                                </div>-->
-                        <!---->
-                        <!--                                            </a>-->
-                        <!--                                        </div>-->
-                        <!--                                    </div>-->
-                        <!---->
-                        <!--                                </div>-->
-                        <!---->
-                        <!---->
-                        <!--                            </div>-->
-                        <!---->
-                        <!---->
-                        <!--                        </li>-->
-
+                        <?php endwhile; ?>
 
                     </ul>
 
@@ -237,7 +220,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
 
             <div class="modal-body-wrapp">
 
-                <div class="mb-35">
+                <div class="mb-15">
                     <h3 class="modal-header__title title title__h3" style="color: #8F5541"></h3>
                 </div>
 
@@ -246,16 +229,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
                 </div>
 
                 <?php $form = ActiveForm::begin([
-                    'options' => ['class' => 'master-class-form mt-35']
+                    'options' => ['class' => 'master-class-form']
                 ]); ?>
 
-                <?= $form->field($masterClassForm, 'title_master')->hiddenInput()->label(''); ?>
+                <?= $form->field($masterClassForm, 'title_master')->hiddenInput()->label(false); ?>
 
-                <div class="mb-35">
+                <div class="mb-25">
                     <p>Записаться на <br> Мастер-класс</p>
                 </div>
 
-                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('') ?>
+                <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label(false) ?>
 
                 <!--                --><? //= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+7 000 000 0000'])->label('') ?>
 
@@ -265,13 +248,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
                         'class' => 'global-form__input',
                         'placeholder' => '+7'
                     ]
-                ])->label('') ?>
+                ])->label(false) ?>
 
                 <?= $form->field($masterClassForm, 'comment')->textarea([
                     'rows' => '6',
                     'class' => 'global-form__input',
                     'placeholder' => 'Введите комментарий'
-                ])->label('') ?>
+                ])->label(false) ?>
 
                 <div class="mt-35 flex-justify-center">
                     <?= Html::submitButton('Записаться', ['class' => 'button button__rectangle']) ?>

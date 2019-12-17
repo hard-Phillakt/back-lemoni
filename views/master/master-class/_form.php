@@ -9,6 +9,9 @@ use mihaildev\elfinder\ElFinder;
 /* @var $this yii\web\View */
 /* @var $model app\models\MasterClass */
 /* @var $form yii\widgets\ActiveForm */
+
+
+//debug($model);die;
 ?>
 
 <div class="master-class-form">
@@ -47,6 +50,8 @@ use mihaildev\elfinder\ElFinder;
             <?= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'lm_price')->textInput(['maxlength' => true]) ?>
         </div>
 
         <div class="col-lg-12 mt-35">

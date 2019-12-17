@@ -34,7 +34,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             [['lm_essence', 'lm_img', 'lm_title', 'lm_description', 'lm_content', 'lm_date', 'lm_publicate', 'lm_prioritet'], 'required'],
-            [['lm_title', 'lm_description', 'lm_content'], 'string'],
+            [['lm_essence', 'lm_title', 'lm_description', 'lm_content'], 'string'],
             [['lm_essence', 'lm_img', 'lm_date', 'lm_publicate', 'lm_prioritet'], 'string', 'max' => 255],
         ];
     }
