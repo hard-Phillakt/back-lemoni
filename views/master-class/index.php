@@ -111,26 +111,24 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
 
                                 <li class="mt-35 top-news">
 
-                                    <div class="row mb-15">
-                                        <div class="col-lg-6">
-                                            <div class="news-box__content_tag">
 
-                                                <?php //Взрослый || Детский?>
+                                    <div class="flex-box mb-15   ">
+                                        <div class="news-box__content_tag">
 
-                                                <?php $essence = $model[$newsArticle]->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
+                                            <?php //Взрослый || Детский ?>
 
-                                                <span class="tag__news" style="background: <?= $essence; ?>"></span>
+                                            <?php $essence = $model[$newsArticle]->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
 
-                                                <span><?= $model[$newsArticle]->lm_essence; ?></span>
-                                            </div>
+                                            <span class="tag__news" style="background: <?= $essence; ?>"></span>
+
+                                            <span><?= $model[$newsArticle]->lm_essence; ?></span>
+
                                         </div>
 
-                                        <div class="col-lg-6">
-                                            <div class="news-box__content_tag">
+                                        <div class="news-box__content_tag">
 
-                                                <span class="pl-30"><?= $model[$newsArticle]->lm_price; ?> руб</span>
+                                            <span><?= $model[$newsArticle]->lm_price; ?> руб</span>
 
-                                            </div>
                                         </div>
                                     </div>
 

@@ -281,13 +281,13 @@ BaseAsset::register($this);
         <div class="create-company">
             <div class="container">
                 <div class="row flex-aling-center">
-                    <div class="col-lg-5 col-lg-offset-1">
+                    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-6">
                         <div class="create-company__project">
-                            © Кафе Лемони, <?= date('o'); ?>
+                            © Кафе Лемони, 2019 - <?= date('o'); ?>
                         </div>
                     </div>
 
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                         <div class="create-company__media">
                             <?= Html::a('<p class="mr-15">Разработка сайта</p> ' . Html::img('/img/logo/logo_media.svg'), Url::to('https://webmedia31.ru/'), ['class' => 'link link__a_w']) ?>
                         </div>

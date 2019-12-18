@@ -61,7 +61,7 @@ OwlAsset::register($this);
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-35">
-                    <a class="button button__circle" href="/<?= $model['lm_essence'] ?>">
+                    <a class="button button__circle" href="<?= Url::to('/cake'); ?>">
                         <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
 

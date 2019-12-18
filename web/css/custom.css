@@ -621,7 +621,7 @@ input:focus {
 .news-box__wrapp li {
     list-style: none;
     width: 29.3%;
-    margin-right: 30px;
+    margin-right: 29px;
 }
 
 .news-box__wrapp li:nth-child(1) .news-box__content {
@@ -630,7 +630,9 @@ input:focus {
     float: left;
 }
 
-
+.category-cake-box__img_1, .category-cake-box__img_2, .category-cake-box__img_3, .category-cake-box__img_4 {
+    display: flex;
+}
 
 
 
@@ -786,6 +788,11 @@ input:focus {
 
 
 @media (min-width: 300px) and (max-width: 991px) {
+
+    .news-box__wrapp li:nth-child(1) .news-box__content {
+        width: 100%;
+    }
+
 
     #delivery-form .title__h4 {
         margin-bottom: 30px;

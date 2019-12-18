@@ -14,6 +14,8 @@ use app\models\CakeGoods;
 use app\models\CandieGoods;
 use app\models\DeliveryContact;
 
+use dvizh\cart\widgets\CartInformer;
+
 
 //Страница "Доставка"
 class DeliveryController extends Controller
@@ -23,6 +25,9 @@ class DeliveryController extends Controller
 
         $elements = yii::$app->cart->elements;
 
+//       echo CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']);
+
+//        debug($elements);die;
 
         $modelDeliveryContact = new DeliveryContact();
 
@@ -43,6 +48,7 @@ class DeliveryController extends Controller
         $dataUser .= '<hr>';
 
         $data = '';
+        $totalSumm = '';
 
         $i = 1;
 
@@ -205,10 +211,10 @@ class DeliveryController extends Controller
 
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
-                ->setTo('info@cafelemoni.ru')
+                ->setTo('sale@cafelemoni.ru, info@webmedia31.ru, hard-phillakt@mail.ru')
                 ->setSubject('Доставка с Cafelemoni')
                 ->setTextBody('Доставка с Cafelemoni')
-                ->setHtmlBody('<div>' . $dataUser . '<div><div>' . $data . '</div>')
+                ->setHtmlBody("<div>{$dataUser}<div><div>{$data}</div><div>{$totalSumm}</div>")
                 ->send();
 
 //            echo 'успешно отправленно!';
