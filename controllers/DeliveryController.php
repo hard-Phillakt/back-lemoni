@@ -27,9 +27,12 @@ class DeliveryController extends Controller
 
 //       echo CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']);
 
-//        debug($elements);die;
+//       debug($elements);die;
 
         $modelDeliveryContact = new DeliveryContact();
+
+
+
 
         $dataForm = Yii::$app->request->post();
         $dataUser = '';
@@ -55,41 +58,39 @@ class DeliveryController extends Controller
         foreach ($elements as $key => $value) {
 
             if ($value->model == 'app\models\CakeGoods') {
-                $modelGoods = new CakeGoods();
 
+                $modelGoods = new CakeGoods();
 
 //          debug($value->item_id);
 
 //          Вытаскиваю доп данные для отправки по id из корзины
-                $query = $modelGoods::findOne($value->item_id);
-
-//            debug($query);
+            $query = $modelGoods::findOne($value->item_id);
 
                 $json_decode = json_decode($value['options']);
 
-                $data .= '<style>
+                $data .= "<style>
 
                         .table {
-                            font-weight: 600;  
+                            font-weight: 600;
                             width: 100%;
                         }
-                        
+
                         .table td {
                             margin-right: 15px;
                             display: inline-block;
                             padding: 5px 15px;
                         }
-                        
+
                         .table td strong {
                             color:#8F5541;
                          }
-                         
+
                         .table td span {
-                            margin-top: 10px; 
+                            margin-top: 10px;
                             display: block;
                          }
-                         
-                     </style>';
+
+                     </style>";
                 $data .= '<div style="margin-bottom: 30px; font-weight: 600;">';
                 $data .= '<p><strong><h3>Товар:</h3></strong><p>';
                 $data .= '<table class="table">';
@@ -101,6 +102,7 @@ class DeliveryController extends Controller
                 $data .= '<td><strong>Сумма: </strong><br>' . '<span>' . $value['price'] . ' руб';
                 $data .= '<td><strong>Вес в кг: </strong><br>' . '<span>' . $json_decode->optGuests_kg . ' кг';
                 $data .= '<td><strong>Тип: </strong><br>' . '<span>' . $query->lm_type;
+                $data .= '<td><strong>Сумма + количество: </strong><br>' . '<span>' . $value['price'] * $value['count'] . ' руб';
 //          $data .= '<td><strong style="color:#8F5541;">Описание товара: </strong><br>' . $query->lm_description . ' <td>';
                 $data .= '</tr>';
                 $data .= '</table>';
@@ -127,6 +129,7 @@ class DeliveryController extends Controller
                 $data .= '<hr>';
 
             } else {
+
                 $modelGoods = new CandieGoods();
 
 //          debug($value->item_id);
@@ -141,25 +144,25 @@ class DeliveryController extends Controller
                 $data .= '<style>
 
                         .table {
-                            font-weight: 600;  
+                            font-weight: 600;
                             width: 100%;
                         }
-                        
+
                         .table td {
                             margin-right: 15px;
                             display: inline-block;
                             padding: 5px 15px;
                         }
-                        
+
                         .table td strong {
                             color:#8F5541;
                          }
-                         
+
                         .table td span {
-                            margin-top: 10px; 
+                            margin-top: 10px;
                             display: block;
                          }
-                         
+
                      </style>';
                 $data .= '<div style="margin-bottom: 30px; font-weight: 600;">';
                 $data .= '<p><strong><h3>Товар:</h3></strong><p>';
@@ -170,8 +173,9 @@ class DeliveryController extends Controller
                 $data .= '<td><strong>Название товара: </strong><br>' . '<span>' . $query->lm_title;
                 $data .= '<td><strong>Количество: </strong><br>' . '<span>' . $value['count'] . ' шт';
                 $data .= '<td><strong>Сумма: </strong><br>' . '<span>' . $value['price'] . ' руб';
-                $data .= '<td><strong>Вес в кг: </strong><br>' . '<span>' . $json_decode->optGuests_kg . ' кг';
+                $data .=  $json_decode->optGuests_kg ? '<td><strong>Вес в кг: </strong><br>' . '<span>' . $json_decode->optGuests_kg . ' кг' : false;
                 $data .= '<td><strong>Тип: </strong><br>' . '<span>' . $query->lm_type;
+                $data .= '<td><strong>Сумма + количество: </strong><br>' . '<span>' . $value['price'] * $value['count'] . ' руб';
 //          $data .= '<td><strong style="color:#8F5541;">Описание товара: </strong><br>' . $query->lm_description . ' <td>';
                 $data .= '</tr>';
                 $data .= '</table>';
@@ -201,27 +205,25 @@ class DeliveryController extends Controller
 
         }
 
+        $price = CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']);
+
+        $data .= "<div><h3><strong>Итоговая сумма:</strong></h3>  <h3>{$price} <strong>руб</strong></h3></div>";
+
 
         if (!empty($data) && $modelDeliveryContact->load(Yii::$app->request->post()) && Yii::$app->request->isAjax && !empty($dataUser)) {
 
 
-//            Yii::$app->session->setFlash('success', "Спасибо, сообщение успешно отправленно!");
-
-//            echo '<div>' . $dataUser . '<div><div>' . $data . '</div>';
-
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
-                ->setTo('sale@cafelemoni.ru, info@webmedia31.ru, hard-phillakt@mail.ru')
+                ->setTo([
+                    'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru'
+                ])
                 ->setSubject('Доставка с Cafelemoni')
                 ->setTextBody('Доставка с Cafelemoni')
                 ->setHtmlBody("<div>{$dataUser}<div><div>{$data}</div><div>{$totalSumm}</div>")
                 ->send();
-
-//            echo 'успешно отправленно!';
-
-//                return 'ok';
-
-//            $this->redirect('/delivery');
 
         }
 

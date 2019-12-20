@@ -13,7 +13,7 @@ use yii\web\Controller;
 use app\models\ReviewForm;
 use yii\web\UploadedFile;
 
-//Страница "Отзывов"
+// Страница "Отзывов"
 class ReviewController extends Controller
 {
 
@@ -40,7 +40,11 @@ class ReviewController extends Controller
 
                 Yii::$app->mailer->compose()
                     ->setFrom('info@cafelemoni.ru')
-                    ->setTo('info@cafelemoni.ru')
+                    ->setTo([
+                        'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
+                        'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
+                        'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru'
+                    ])
                     ->setSubject('Отзыв с Cafelemoni') 
                     ->setTextBody('Отзыв с Cafelemoni')
                     ->setHtmlBody('<div>' . $data . '</div>')

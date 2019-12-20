@@ -44,7 +44,11 @@ class MasterClassController extends Controller
 
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
-                ->setTo('info@cafelemoni.ru')
+                ->setTo([
+                    'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru'
+                ])
                 ->setSubject('Заказ на мастер-класс Cafelemoni')
                 ->setTextBody('Заказ на мастер-класс Cafelemoni')
                 ->setHtmlBody('<div>'. $data .'</div>')

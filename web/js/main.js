@@ -312,36 +312,6 @@ if (compilationCake) {
     //
     // };
 
-
-
-
-    //     Подборки с главной
-    switch (window.location.search) {
-
-//          День рождения
-        case '?compilation=1':
-
-            break;
-
-
-//          Свадьба
-        case '5':
-
-            break;
-
-
-//          Праздничные торты
-        case '2':
-
-            break;
-
-
-//          Особым питанием
-        case '10':
-
-            break;
-
-    }
 }
 
 
@@ -441,6 +411,9 @@ $(document).ready(function () {
     }
 
 });
+
+
+
 
 
 

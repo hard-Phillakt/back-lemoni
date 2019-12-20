@@ -634,9 +634,42 @@ input:focus {
     display: flex;
 }
 
+.add-item-wrapper {
+    position: absolute;
+    padding: 15px 0 0 15px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: .25em;
+    bottom: -115px;
+    width: 200px;
+    height: 80px;
+    transition: all .3s ease-in-out;
+}
 
 
 
+/* animation add item cart */
+.add-item-visible {
+    opacity: 1;
+}
+
+.add-item-block {
+    display: block;
+}
+
+.add-item-hidden {
+    opacity: 0;
+}
+
+.add-item-none {
+    display: none;
+}
+
+/* animation add item cart end*/
+
+
+.add-item-wrapper h5, .add-item-wrapper p {
+    color: #fff;
+}
 
 
 

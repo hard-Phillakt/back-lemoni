@@ -11,7 +11,8 @@ namespace app\models;
 
 use yii\base\Model;
 
-class DeliveryContact extends Model {
+class DeliveryContact extends Model
+{
 
     public $name;
     public $phone;
@@ -24,12 +25,12 @@ class DeliveryContact extends Model {
     public $delivery;
 
 
-    public function rules(){
+    public function rules()
+    {
 
         return [
-            ['name', 'required', 'message' => 'Введите имя'],
             ['phone', 'required', 'message' => 'Введите телефон'],
-//            [['phone', 'required'], 'integer' , 'message' => 'В поле должны быть только цифры',],
+            ['name', 'required', 'message' => 'Введите имя'],
             ['city', 'required', 'message' => 'Введите город'],
             ['street', 'required', 'message' => 'Введите улицу'],
             ['house', 'required', 'message' => 'Введите дом'],

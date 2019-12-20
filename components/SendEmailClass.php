@@ -11,7 +11,7 @@ use yii\base\Component;
 class SendEmailClass extends Component {
 
     const PARAM_FORM = 'PARAM_FORM';
-
+    
     public static function request(){
 
         return Yii::$app->request;
@@ -30,7 +30,11 @@ class SendEmailClass extends Component {
 
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
-                ->setTo('info@cafelemoni.ru')
+                ->setTo([
+                    'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru'
+                ])
                 ->setSubject('Тема сообщения')
                 ->setTextBody('Текст сообщения')
                 ->setHtmlBody($swiftData)

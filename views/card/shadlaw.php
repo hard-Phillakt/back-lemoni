@@ -49,7 +49,9 @@ OwlAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span>-</span> <a href="<?= Url::to('/cake'); ?>" class="breadcrumbs-line__active">Торты</a> <span> - <?= $model['lm_title']; ?></span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span>-</span> <a
+                    href="<?= Url::to('/cake'); ?>" class="breadcrumbs-line__active">Торты</a>
+                <span> - <?= $model['lm_title']; ?></span>
             </div>
         </div>
     </div>
@@ -70,37 +72,36 @@ OwlAsset::register($this);
             <div class="col-lg-5">
                 <div class="card-goods__img mt-35">
 
-                    <?php if($model->lm_img_one): ?>
+                    <?php if ($model->lm_img_one): ?>
 
-                    <div class="owl-carousel owl-theme">
+                        <div class="owl-carousel owl-theme">
 
-                        <?php if($model->lm_img_one): ?>
+                            <?php if ($model->lm_img_one): ?>
 
-                        <div class="item">
-                            <?= Html::img($model->lm_img_one, ['alt' => '', 'class' => 'img-responsive']) ?>
+                                <div class="item">
+                                    <?= Html::img($model->lm_img_one, ['alt' => '', 'class' => 'img-responsive']) ?>
+                                </div>
+
+                            <?php endif; ?>
+
+                            <?php if ($model->lm_img_two): ?>
+
+                                <div class="item">
+                                    <?= Html::img($model->lm_img_two, ['alt' => '', 'class' => 'img-responsive']) ?>
+                                </div>
+
+                            <?php endif; ?>
+
+                            <?php if ($model->lm_img_three): ?>
+
+                                <div class="item">
+                                    <?= Html::img($model->lm_img_three, ['alt' => '', 'class' => 'img-responsive']) ?>
+                                </div>
+
+                            <?php endif; ?>
                         </div>
-
-                        <?php endif; ?>
-
-                        <?php if($model->lm_img_two): ?>
-
-                        <div class="item">
-                            <?= Html::img($model->lm_img_two, ['alt' => '', 'class' => 'img-responsive']) ?>
-                        </div>
-
-                        <?php endif; ?>
-
-                        <?php if($model->lm_img_three): ?>
-
-                        <div class="item">
-                            <?= Html::img($model->lm_img_three, ['alt' => '', 'class' => 'img-responsive']) ?>
-                        </div>
-
-                        <?php endif; ?>
-                    </div>
 
                     <?php endif; ?>
-
 
                 </div>
 
@@ -119,11 +120,11 @@ OwlAsset::register($this);
 
             <div class="col-lg-5 col-lg-offset-1 mt-35">
 
-                <h1 class="title title__h3"><?= $model->lm_title;?></h1>
+                <h1 class="title title__h3"><?= $model->lm_title; ?></h1>
 
                 <div class="mt-60">
                     <div class="card-goods__price">
-                        <span><?= $model->lm_price_for_kg;?></span> руб
+                        <span><?= $model->lm_price_for_kg; ?></span> руб
                     </div>
                 </div>
 
@@ -139,12 +140,13 @@ OwlAsset::register($this);
                 <?= ChangeOptions::widget([
                     'model' => $model,
                     'type' => 'radio',
-                ]);?>
+                ]); ?>
 
 
                 <div class="mt-35">
                     <div class="card-goods__total">
-                        Итого: <span class="dvizh-cart-price-total"><span><?= $model->lm_price_for_kg; ?></span></span> руб
+                        Итого: <span class="dvizh-cart-price-total"><span><?= $model->lm_price_for_kg; ?></span></span>
+                        руб
                     </div>
                 </div>
 
@@ -168,9 +170,9 @@ OwlAsset::register($this);
                         ],
                     ]); ?>
 
-                    <?php $masterClassForm = new MasterClassForm();?>
+                    <?php $masterClassForm = new MasterClassForm(); ?>
 
-                    <?php Pjax::begin()?>
+                    <?php Pjax::begin() ?>
 
                     <?php $form = ActiveForm::begin([
                         'options' => [
@@ -209,7 +211,7 @@ OwlAsset::register($this);
 
                     <div class="mt-35">
 
-                        <?//= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
+                        <? //= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
 
                     </div>
                 </div>

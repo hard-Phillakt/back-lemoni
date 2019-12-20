@@ -245,12 +245,7 @@ function GlobalOptionsCard() {
     this.optGlaze = function (box_count, classNameBox, count, optGlazePrice) {
 
         // console.log(optGlazePrice);
-
-
-
-
-
-
+        
         var dvizhOption = document.querySelectorAll('.dvizh-option')[box_count];
 
         // задаём класс боксу

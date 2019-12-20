@@ -212,9 +212,15 @@ BaseAsset::register($this);
                             <span class="CartInformerBox">
                                 
                                 <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
-                                
+
                             </span>
                             </a>
+
+
+                            <div class="add-item-wrapper add-item-hidden add-item-none">
+                                <h5 class="title title-h5 pb-15">Добавленно:</h5>
+                                <p class="add-item"></p>
+                            </div>
                         </div>
                     </div>
 

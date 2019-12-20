@@ -35,7 +35,6 @@ for (var i = 0; i < dvizhDownArr.length; i++){
         setTimeout(function () {
             window.location.reload(true);
         },10);
-
     };
 
     dvizhUpArr[i].onclick = function (e) {
@@ -45,9 +44,7 @@ for (var i = 0; i < dvizhDownArr.length; i++){
             window.location.reload(true);
         },10);
     };
-
-    console.log(buttonDelete);
-
+    
     buttonDelete[i].onclick = function (e) {
         // e.preventDefault();
 

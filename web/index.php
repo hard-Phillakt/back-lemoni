@@ -15,5 +15,4 @@ function debug($arg){
     echo '<pre>';
 }
 
-
 (new yii\web\Application($config))->run();

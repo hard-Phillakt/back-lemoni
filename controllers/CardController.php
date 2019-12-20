@@ -44,7 +44,7 @@ class CardController extends Controller {
         self::error($model);
 
         $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
-
+        
         return $this->render('bouquet', ['model' => $model]);
     }
 
