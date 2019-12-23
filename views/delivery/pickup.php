@@ -9,8 +9,8 @@ use app\widgets\customcart\CartInformer;
 use yii\widgets\Pjax;
 use kartik\date\DatePicker;
 use yii\widgets\MaskedInput;
-?>
 
+?>
 
 <!-- breadcrumbs-line -->
 <section class="breadcrumbs-line">
@@ -23,9 +23,9 @@ use yii\widgets\MaskedInput;
     </div>
 </section>
 
-
 <section class="delivery">
     <div class="container">
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="mt-60">
@@ -53,19 +53,13 @@ use yii\widgets\MaskedInput;
             <?php Pjax::begin(); ?>
 
             <?php $form = ActiveForm::begin([
-            'options' => [
-            'id' => 'delivery-form',
-            'data-pjax' => true
-            ]
+                'options' => [
+                    'id' => 'delivery-form',
+                    'data-pjax' => true
+                ]
             ]); ?>
 
             <div class="col-lg-8">
-
-                <!--                <div class="col-lg-12">-->
-                <!--                    <div class="mt-15 ml-15">-->
-                <!--                        <h4 class="title title__h4">Доставка</h4>-->
-                <!--                    </div>-->
-                <!--                </div>-->
 
                 <div class="delivery-box global-form">
 
@@ -77,12 +71,12 @@ use yii\widgets\MaskedInput;
 
                             <p class="mt-35">
 
-                                <?= $form->field($modelDeliveryContact, 'phone')->widget(MaskedInput::class,[
-                                'mask' => '+7 999 999 9999',
-                                'options' => [
-                                'class' => 'global-form__input',
-                                'placeholder' => '+7'
-                                ]
+                                <?= $form->field($modelDeliveryContact, 'phone')->widget(MaskedInput::class, [
+                                    'mask' => '+7 999 999 9999',
+                                    'options' => [
+                                        'class' => 'global-form__input',
+                                        'placeholder' => '+7'
+                                    ]
                                 ]); ?>
 
                             </p>
@@ -90,31 +84,10 @@ use yii\widgets\MaskedInput;
                             <div class="global-form__select mt-35">
 
                                 <label class="title title__h5 pb-15" for="deliverycontact-city">Город</label>
-                                <select name="DeliveryContact[city]" id="deliverycontact-city">
-                                    <option value="belgorod">Белгород</option>
+                                <select name="PickupDeliveryContact[city]" id="deliverycontact-city">
+                                    <option value="Белгород">Белгород</option>
                                 </select>
 
-                            </div>
-
-                            <p class="mt-35">
-
-                                <?= $form->field($modelDeliveryContact, 'street')->textInput(['class' => 'global-form__input', 'placeholder' => 'Укажите улицу']); ?>
-
-                            </p>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p class="mt-35">
-
-                                        <?= $form->field($modelDeliveryContact, 'house')->textInput(['class' => 'global-form__input', 'placeholder' => '№']); ?>
-
-                                    </p>
-                                </div>
-                                <div class="col-lg-6">
-                                    <p class="mt-35">
-                                        <?= $form->field($modelDeliveryContact, 'room')->textInput(['class' => 'global-form__input', 'placeholder' => '№']); ?>
-                                    </p>
-                                </div>
                             </div>
 
                         </div>
@@ -126,20 +99,21 @@ use yii\widgets\MaskedInput;
                                 <label class="control-label">Выберите дату доставки</label>
 
                                 <?= DatePicker::widget([
-                                'language' => 'ru',
-                                'name' => 'check_issue_date',
-                                'value' => date('d.m.Y', strtotime('+2 days')),
-                                'options' => [
-                                'placeholder' => 'Выберите дату приготовления',
-                                'class' => 'global-form__input',
+                                    'language' => 'ru',
+                                    'name' => 'check_issue_date',
+                                    'value' => date('d.m.Y', strtotime('+2 days')),
+                                    'options' => [
+                                        'placeholder' => 'Выберите дату приготовления',
+                                        'class' => 'global-form__input',
 
-                                ],
-                                'pluginOptions' => [
-                                //                                        'format' => 'dd-M-yyyy',
-                                'todayHighlight' => true,
-                                ]
+                                    ],
+                                    'pluginOptions' => [
+//                                        'format' => 'dd-M-yyyy',
+                                        'todayHighlight' => true,
+                                    ]
                                 ]); ?>
                             </div>
+                            
 
                             <p class="mt-35">
 
@@ -177,11 +151,11 @@ use yii\widgets\MaskedInput;
 
                                     <div role="presentation" class="dropdown">
                                             <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                Доставка
+                                                Самовывоз
                                                 <span class="caret"></span>
                                             </span>
                                         <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
-                                            <li><a href="/pickup">Самовывоз</a></li>
+                                            <li><a href="/delivery">Доставка</a></li>
                                         </ul>
                                     </div>
 

@@ -45,9 +45,9 @@ function animationAddCart() {
                             addItemWrapper.className = 'add-item-wrapper add-item-hidden add-item-none';
 
                             if(addItemWrapper.className == 'add-item-wrapper add-item-hidden add-item-none'){
-                                setTimeout(function () {
-                                    window.location.reload(true);
-                                }, 100);
+                                // setTimeout(function () {
+                                //     window.location.reload(true);
+                                // }, 100);
                             }
                         }, 1000);
                     }

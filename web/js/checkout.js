@@ -3,6 +3,7 @@
 var dvizhDownArr = document.querySelectorAll('.dvizh-downArr');
 var dvizhUpArr = document.querySelectorAll('.dvizh-upArr');
 var buttonDelete = document.querySelectorAll('.delete');
+var buttonTruncate = document.querySelector('.dvizh-cart-truncate-button');
 
 var CartWrappPrice = document.querySelectorAll('[data-li]');
 
@@ -55,4 +56,10 @@ for (var i = 0; i < dvizhDownArr.length; i++){
 
 }
 
+buttonTruncate.onclick = function (e) {
+    // e.preventDefault();
 
+    setTimeout(function () {
+        window.location.reload(true);
+    },10);
+};

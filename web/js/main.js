@@ -166,7 +166,8 @@ $(document).on('pjax:success', function (e) {
 
     }
 
-    if ($('#delivery-form')[0]) {
+    if ($('#delivery-form')[0][0].value !== '' && $('#delivery-form')[0][1].value !== '') {
+        console.log(1);
         var count = $('#delivery-form')[0].length;
         // Callback Уведомление об успешном отправки сообщения
         $('#modal-delivery').modal('show');
@@ -180,6 +181,7 @@ $(document).on('pjax:success', function (e) {
 
         }
     }
+
 
     if ($('#revievs-id')[0]) {
         var count = $('#revievs-id')[0].length;
@@ -410,10 +412,50 @@ $(document).ready(function () {
 
     }
 
+
+    // console.log($('#deliverycontact-delivery option'));
+    //
+    // $('#deliverycontact-delivery option').each(function (item, i) {
+    //     console.log(item);
+    //     item.onclick = function () {
+    //         console.log(this);
+    //     }
+    // });
+
+
+    // $( "#deliverycontact-delivery" ).change(function() {
+    //
+    //         if(this.value == 'Самовывоз'){
+    //             $.ajax({
+    //                 method: "POST",
+    //                 url: '/delivery',
+    //                 data: {
+    //                     deliv: 'pickup'
+    //                 },
+    //                 success: function (res) {
+    //
+    //                    var body = document.body;
+    //                     body.innerHTML = res;
+    //
+    //                 }
+    //             })
+    //         }else {
+    //             $.ajax({
+    //                 method: "POST",
+    //                 url: '/delivery',
+    //                 data: {
+    //                     deliv: 'delivery'
+    //                 },
+    //                 success: function (res) {
+    //                     console.log(res);
+    //                 }
+    //             })
+    //         }
+    //     });
 });
 
 
-
+// Delivery Pickup
 
 
 

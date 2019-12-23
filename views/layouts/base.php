@@ -318,14 +318,13 @@ BaseAsset::register($this);
 
                 <div class="mb-35">
                     <h2 class="title title__h3">
-                        <p style="color: #8F5541">Спасибо</p>
-                        <p>за оставленную заявку!</p>
+                        <p style="color: #8F5541">Спасибо за заказ!</p>
                     </h2>
                 </div>
 
                 <div class="flex-justify-center pb-35">
                     <p class="desc desc__md opac__07">
-                        Наш менеджер позвонит вам в ближайшее время!
+                        С вами свяжется наш менеджер по указанному телефону для обсуждения деталей.
                     </p>
                 </div>
 
