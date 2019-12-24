@@ -85,7 +85,7 @@ BaseAsset::register($this);
     </header>
 
     <!-- content -->
-    <section class="content">
+    <section class="content mt-60">
         <div class="container">
             <div class="row">
                 <?= $content ?>
@@ -98,11 +98,26 @@ BaseAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-logo">
+                    <div class="section-logo mb-35">
                         <?= Html::a(Html::img(Url::to('/img/logo/logo-white.svg')), Url::to('/')) ?>
                     </div>
                 </div>
 
+            </div>
+        </div>
+        <div class="create-company">
+            <div class="container">
+                <div class="row flex-aling-center">
+                    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-6">
+                        <div class="create-company__project">
+                            © Кафе Лемони, 2019 - 2019                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <div class="create-company__media">
+                            <a class="link link__a_w" href="https://webmedia31.ru/"><p class="mr-15">Разработка сайта</p> <img src="/img/logo/logo_media.svg" alt=""></a>                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

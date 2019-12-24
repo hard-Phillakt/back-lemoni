@@ -18,25 +18,32 @@ BaseAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="yandex-verification" content="da2913ff66454a5b" />
+    <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['web/favicon.ico'])]); ?>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(56515504, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/56515504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/56515504" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
     <?php $this->head() ?>
 </head>
@@ -72,9 +79,9 @@ BaseAsset::register($this);
                         </div>
                     </div>
 
-<!--                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
-<!--                        -->
-<!--                    </div>-->
+                    <!--                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
+                    <!--                        -->
+                    <!--                    </div>-->
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
 
@@ -287,13 +294,13 @@ BaseAsset::register($this);
         <div class="create-company">
             <div class="container">
                 <div class="row flex-aling-center">
-                    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-6">
+                    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-12">
                         <div class="create-company__project">
                             © Кафе Лемони, 2019 - <?= date('o'); ?>
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                         <div class="create-company__media">
                             <?= Html::a('<p class="mr-15">Разработка сайта</p> ' . Html::img('/img/logo/logo_media.svg'), Url::to('https://webmedia31.ru/'), ['class' => 'link link__a_w']) ?>
                         </div>
@@ -301,7 +308,14 @@ BaseAsset::register($this);
                 </div>
             </div>
         </div>
+
     </footer>
+
+    <!--  Scroll to topScroll to top  -->
+
+    <div class="scroll-to-top__wrapp">
+        <span class="scroll-to-top__wrapp_arrow"></span>
+    </div>
 
 </div>
 
@@ -333,7 +347,6 @@ BaseAsset::register($this);
         </div>
     </div>
 </div>
-
 
 
 <?php $this->endBody() ?>

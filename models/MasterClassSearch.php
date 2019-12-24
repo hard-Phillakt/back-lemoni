@@ -40,7 +40,7 @@ class MasterClassSearch extends MasterClass
      */
     public function search($params)
     {
-        $query = MasterClass::find();
+        $query = MasterClass::find()->orderBy('id DESC');
 
         // add conditions that should always apply here
 

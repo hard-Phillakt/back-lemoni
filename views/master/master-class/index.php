@@ -12,6 +12,7 @@ Url::remember();
 
 $this->title = 'Мастер-классы';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="master-class-index">
 
@@ -28,11 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
+            [
+                'format' => 'html',
+                'value' => function ($data) {
+                    return "<img src='{$data->lm_img}' style='width: 150px;'>";
+                },
+            ],
             'lm_essence',
             'lm_title:ntext',
-            'lm_img',
+//            'lm_img',
             'lm_description:ntext',
             //'lm_content:ntext',
             //'lm_price',

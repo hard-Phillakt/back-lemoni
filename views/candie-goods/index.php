@@ -227,7 +227,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
 
                 <!-- filter type-goods -->
-                <div class="filter-sidebar-catalog__box-compilation mt-60">
+                <div class="filter-sidebar-catalog__box-compilation mt-60 dsp-none">
 
                     <div class="row">
                         <div class="col-lg-3">
@@ -238,18 +238,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                         <div class="col-lg-9">
 
-                            <!-- filter-sidebar-catalog__box-compilation -->
-
                             <div class="filter-sidebar-catalog__box-compilation_ul global-form">
 
                                 <?php foreach ($filter['tag'] as $key => $value): ?>
 
                                     <a href="#!" data-count="<?= $key; ?>"
                                        class="compilation-candie link link__a mr-15 mb-15">
-                                        <!--<input type="radio"-->
-                                        <!--       name="filter-compilation"-->
-                                        <!--       class="global-form__checkbox mt-35">-->
-                                        <!--8 марта-->
                                         <?= $value; ?>
                                     </a>
 
@@ -257,11 +251,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                             </div>
 
-                            <!-- filter-sidebar-catalog__box-compilation end -->
-
                         </div>
                     </div>
-
 
                 </div>
 
@@ -318,7 +309,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="mt-15 pl-15">
-                                        <a href="/<?php $value['lm_alter_card']; ?>/<?php $value['id']; ?>"
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
                                            class="link link__a mt-15">
                                             <?= $value['lm_title']; ?>
                                         </a>

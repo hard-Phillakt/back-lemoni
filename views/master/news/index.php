@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
+use yii\widgets\ListView;
+
 Url::remember();
 
 
@@ -13,8 +15,8 @@ Url::remember();
 $this->title = 'Новости';
 $this->params['breadcrumbs'][] = $this->title;
 
-
 ?>
+
 <div class="news-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -25,23 +27,34 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <?php
+
+//    debug($dataProvider->getModels());die;
+
+    ?>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
+            [
+                'format' => 'html',
+                'value' => function ($data) {
+                    return "<img src='{$data->lm_img}' style='width: 150px;'>";
+                },
+            ],
             'lm_essence',
-            'lm_img',
             'lm_title:ntext',
             'lm_description:ntext',
             //'lm_content:ntext',
             //'lm_date',
             //'lm_publicate',
             //'lm_prioritet',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+            ],
         ],
     ]); ?>
 

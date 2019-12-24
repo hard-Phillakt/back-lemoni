@@ -22,6 +22,7 @@ $tagArr = ArrayHelper::map(Tag::find()->asArray()->all(),'id', 'title');
 
 $this->title = 'Связи: candy с тегами';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="candy-tag-index">
 
@@ -40,7 +41,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-
+            [
+                'format' => 'html',
+                'value' => function ($data) {
+                    $model = new CandieGoods();
+                    $query = $model::findOne($data['candy_id']);
+                    return "<div class='td-prev' style='background: url({$query->lm_img_one});'></div>";
+                },
+            ],
             'candy_id' => [
                 'label' => 'Candy - id',
 //              'filter' => Html::input('text', 'CakeTagSearch[cake_id]', '', ['class' => 'form-control'] ),

@@ -6,7 +6,6 @@ use yii\helpers\Url;
 
 Url::remember();
 
-
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CandieGoodsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -31,10 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            [
+                'format' => 'html',
+                'value' => function ($data) {
+                    return "<img src='{$data->lm_img_one}' style='width: 150px;'>";
+                },
+            ],
             'lm_essence',
             'lm_title:ntext',
-//            'lm_description:ntext',
-            'lm_content:ntext',
+            'lm_description:ntext',
+//            'lm_content:ntext',
             //'lm_weight',
             //'lm_price_for_kg',
             //'lm_type',
@@ -48,7 +53,6 @@ $this->params['breadcrumbs'][] = $this->title;
             //'lm_img_three:ntext',
             //'lm_compilation:ntext',
             //'lm_alter_card:ntext',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

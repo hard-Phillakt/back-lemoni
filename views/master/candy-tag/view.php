@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\CandyTag */
@@ -9,12 +11,20 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Candy Tags', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$previous = Url::previous();
+
 \yii\web\YiiAsset::register($this);
+
 ?>
 <div class="candy-tag-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <div class="mt-35">
+        <?= Html::a('Назад', $previous, ['class' => 'link link__a mb-35']); ?>
+    </div>
+    
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [

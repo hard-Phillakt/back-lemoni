@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
-
 Url::remember();
 
 /* @var $this yii\web\View */
@@ -31,17 +30,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            [
+                'format' => 'html',
+                'value' => function ($data) {
+                    return "<img src='{$data->lm_img_one}' style='width: 150px;'>";
+                },
+            ],
             'lm_essence',
             'lm_title:ntext',
-//            'lm_description:ntext',
-            'lm_content:ntext',
+            'lm_description:ntext',
+//            'lm_content:ntext',
             //'lm_weight',
             //'lm_price_for_kg',
             //'lm_type',
             //'lm_count_level',
             //'lm_subjects',
             //'lm_create_box',
-            //'lm_publicate',
+//            'lm_publicate',
             //'lm_prioritet',
             //'lm_img_one:ntext',
             //'lm_img_two:ntext',

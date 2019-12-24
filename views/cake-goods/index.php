@@ -140,38 +140,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                                 <div class="help-block"></div>
                             </div>
 
-                            <!--                            --><? //= $form->field($filter, 'count_level')
-                            //                                ->dropDownList($filter['count_level'], ['class' => 'global-form__input'])
-                            //                                ->label('Колличество уровней', ['class' => 'title title__h5 pb-15']) ?>
-
-                            <!--                            <select name="" id="">-->
-                            <!--                                <option value="1">test</option>-->
-                            <!--                            </select>-->
                         </div>
 
                     </div>
-
-
-                    <!-- filter subjects Тематическое оформление убрал на время -->
-                    <!--                    <div class="filter-sidebar-catalog__box mt-35">-->
-                    <!---->
-                    <!--                        <div class="global-form__select mt-35">-->
-                    <!---->
-                    <!--                            <div class="form-group field-filtercake-subjects">-->
-                    <!--                                <label class="title title__h5 pb-15" for="filtercake-subjects">Тематическое-->
-                    <!--                                    оформление</label>-->
-                    <!--                                <select id="filtercake-subjects" class="global-form__input" name="FilterCake[subjects]">-->
-                    <!--                                    <option value="Свадебный торт">Свадебный торт</option>-->
-                    <!--                                    <option value="День рождения">День рождения</option>-->
-                    <!--                                    <option value="Юбилей">Юбилей</option>-->
-                    <!--                                    <option value="" selected>...</option>-->
-                    <!--                                </select>-->
-                    <!---->
-                    <!--                                <div class="help-block"></div>-->
-                    <!--                            </div>-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
 
                     <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>
@@ -187,8 +158,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                 <h2 class="title title__h1 opac__07">Каталог тортов</h2>
 
 
-                <!-- filter type-goods -->
-                <div class="filter-sidebar-catalog__box-compilation mt-60">
+                <!-- filter type-goods dsp-none -->
+                <div class="filter-sidebar-catalog__box-compilation mt-60 dsp-none">
 
                     <div class="row">
                         <div class="col-lg-3">
@@ -201,18 +172,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
 
                             <!-- filter-sidebar-catalog__box-compilation -->
 
-                            <div class="filter-sidebar-catalog__box-compilation_ul global-form">
+                            <div class="filter-sidebar-catalog__box-compilation_ul global-form ">
 
                                 <?php foreach ($filter['tag'] as $key => $value): ?>
 
-                                    <!--                                <a href="/cake-goods?compilation=--><? //= $key; ?><!--" class="link link__a mr-15 mb-15">-->
-
                                     <a href="#!" data-count="<?= $key; ?>"
                                        class="compilation-cake link link__a mr-15 mb-15">
-                                        <!--<input type="radio"-->
-                                        <!--       name="filter-compilation"-->
-                                        <!--       class="global-form__checkbox mt-35">-->
-                                        <!--8 марта-->
                                         <?= $value; ?>
                                     </a>
 

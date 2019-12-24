@@ -32,15 +32,6 @@ $cakeArr = ArrayHelper::map(CakeGoods::find()->asArray()->all(), 'id', 'lm_title
 
 $tagArr = ArrayHelper::map(Tag::find()->asArray()->all(), 'id', 'title');
 
-//debug($goods);die;
-
-//$qwe = ArrayHelper::map($goods, 'id', 'lm_title');
-
-
-//$goods = array_merge($tagArr, $candyArr);
-
-// debug($cakeArr);die;
-
 ?>
 
 <div class="container">
@@ -63,7 +54,14 @@ $tagArr = ArrayHelper::map(Tag::find()->asArray()->all(), 'id', 'title');
                         ['class' => 'yii\grid\SerialColumn'],
 
                         'id',
-
+                        [
+                            'format' => 'html',
+                            'value' => function ($data) {
+                                $model = new CakeGoods();
+                                $query = $model::findOne($data['cake_id']);
+                                return "<div class='td-prev' style='background: url({$query->lm_img_one});'></div>";
+                            },
+                        ],
                         'cake_id'  => [
                             'label' => 'Cake - id',
 //                            'filter' => Html::input('text', 'CakeTagSearch[cake_id]', '', ['class' => 'form-control'] ),

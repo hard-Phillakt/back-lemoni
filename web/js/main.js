@@ -388,9 +388,8 @@ $(document).ready(function () {
     var owl = document.querySelector('.owl-carousel');
 
     if (owl) {
-
         $('.owl-carousel').owlCarousel({
-            loop: false,
+            loop: true,
             margin: 0,
             nav: false,
             autoplay: true,
@@ -411,6 +410,35 @@ $(document).ready(function () {
         })
 
     }
+
+
+
+
+
+    // Scroll-to-top
+    $(".scroll-to-top__wrapp").on('click', function () {
+        document.body.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    var hDocument = document.body.scrollHeight;
+
+    var percent = Math.round(parseInt(hDocument) * 30 / 100);
+
+    document.body.onscroll = function () {
+        var pageYOffset = window.pageYOffset;
+
+        if(parseInt(pageYOffset) >= (parseInt(hDocument) - percent)){
+            
+            console.log(true);
+
+        }
+    };
+
+
+
+
+
+
 
 
     // console.log($('#deliverycontact-delivery option'));
@@ -452,6 +480,7 @@ $(document).ready(function () {
     //             })
     //         }
     //     });
+
 });
 
 

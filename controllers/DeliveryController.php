@@ -262,7 +262,6 @@ class DeliveryController extends Controller
 //  Метод для доставки
     public function actionIndex()
     {
-
         $model = new DeliveryContact();
 
         self::getOrder($model);
@@ -274,7 +273,6 @@ class DeliveryController extends Controller
 //  Метод для самовывоза
     public function actionPickup()
     {
-
         $model = new PickupDeliveryContact();
 
         self::getOrder($model);

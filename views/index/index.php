@@ -363,7 +363,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Большой в
 </section>
 
 <!-- popular-cake start -->
-<section class="popular-cake title__line_l-53">
+<section class="popular-cake title__line_l-53 dsp-none">
     <div class="container">
         <div class="row mb-90">
             <div class="col-lg-5 col-lg-offset-7">
