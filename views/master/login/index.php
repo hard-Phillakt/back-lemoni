@@ -1,11 +1,9 @@
 <?php
 
-
 $this->registerCssFile('/css/login.css');
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-
 
 //debug($model);
 

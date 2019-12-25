@@ -430,8 +430,6 @@ $(document).ready(function () {
 
         var pageYOffset = window.pageYOffset;
 
-        console.log(pageYOffset);
-
         if(parseInt(pageYOffset) >= (parseInt(percent))){
             scrollTo.classList.remove('set-bottom');
         }else {

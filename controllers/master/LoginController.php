@@ -8,9 +8,7 @@
 
 namespace app\controllers\master;
 
-
 //cNCq37s3: $2y$13$cEJSSahKowcUzKct8lBLOOuhvb805Epqrduz7VdHa.zwKXzPOaPjC
-
 
 use yii\web\Controller;
 
@@ -22,8 +20,7 @@ use app\models\User;
 class LoginController extends Controller
 {
 
-    public $layout = 'master';
-
+    public $layout = 'base';
 
 //  вторизовываем пользователя
     public function actionIndex()
@@ -37,10 +34,6 @@ class LoginController extends Controller
             if ($data = $model->load(Yii::$app->request->post()) && $login = Yii::$app->request->post()) {
 
                 $remember = Yii::$app->request->post();
-//
-//                $remember['Login']['rememberMe'];
-
-//                debug(Yii::$app->request->post());
 
                 $query = new User();
 
@@ -62,8 +55,6 @@ class LoginController extends Controller
 
             return $this->redirect('/master/news');
         }
-
-
 
 
 
