@@ -416,22 +416,28 @@ $(document).ready(function () {
 
 
     // Scroll-to-top
-    $(".scroll-to-top__wrapp").on('click', function () {
+    var scrollTo = document.querySelector('.scroll-to-top__wrapp');
+
+    scrollTo.onclick = function () {
         document.body.scrollIntoView({ behavior: 'smooth' });
-    });
+    };
 
     var hDocument = document.body.scrollHeight;
 
-    var percent = Math.round(parseInt(hDocument) * 30 / 100);
+    var percent = Math.round(parseInt(hDocument) * 20 / 100);
 
     document.body.onscroll = function () {
+
         var pageYOffset = window.pageYOffset;
 
-        if(parseInt(pageYOffset) >= (parseInt(hDocument) - percent)){
-            
-            console.log(true);
+        console.log(pageYOffset);
 
+        if(parseInt(pageYOffset) >= (parseInt(percent))){
+            scrollTo.classList.remove('set-bottom');
+        }else {
+            scrollTo.classList.add('set-bottom');
         }
+
     };
 
 

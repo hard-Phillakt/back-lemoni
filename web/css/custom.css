@@ -710,6 +710,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .5s ease-in-out;
 }
 
 .scroll-to-top__wrapp_arrow {
@@ -721,6 +722,61 @@ input:focus {
     transform: rotate(-45deg);
     margin-top: 5px;
 }
+
+.set-bottom {
+    transform: translateY(999px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

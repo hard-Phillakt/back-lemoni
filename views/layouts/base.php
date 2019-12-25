@@ -313,7 +313,7 @@ BaseAsset::register($this);
 
     <!--  Scroll to topScroll to top  -->
 
-    <div class="scroll-to-top__wrapp">
+    <div class="scroll-to-top__wrapp set-bottom">
         <span class="scroll-to-top__wrapp_arrow"></span>
     </div>
 
