@@ -124,8 +124,7 @@ class CakeGoods extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\C
     }
     
     
-    
-    
+
     /**
      * {@inheritdoc}
      */

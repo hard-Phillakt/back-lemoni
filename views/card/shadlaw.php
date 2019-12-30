@@ -1,5 +1,7 @@
 <?php
 
+
+
 // для настройки корзины
 $this->registerJsFile('/js/cart.js');
 

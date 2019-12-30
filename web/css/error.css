@@ -9,3 +9,12 @@
 .error-center {
     text-align: center;
 }
+
+
+.error-center .title {
+    margin: 0;
+    color: #8f5541;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 46px;
+}

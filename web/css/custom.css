@@ -4,6 +4,7 @@ a:focus {
 }
 
 .wrap {
+    height: 100vh;
     padding-top: 90px;
     position: relative;
 }

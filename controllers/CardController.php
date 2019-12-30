@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\helpers\Html;
 use yii\web\Controller;
 use app\models\CakeGoods;
 use app\models\CandieGoods;
@@ -41,9 +42,13 @@ class CardController extends Controller {
 
         $model = $candie_goods::findOne($id);
 
-        self::error($model);
-
         $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
+
+        $this->view->title = 'Купить ' . $model['lm_title'] . ' от кафе-кондитерской "Лемони"';
+
+        $this->view->registerMetaTag(['name' => 'description', 'content' => 'Закажите ' . $model['lm_title'] . ' с доставкой по Белгороду. Уникальные торты и пирожные для любого праздника.']);
+
+        self::error($model);
         
         return $this->render('bouquet', ['model' => $model]);
     }
@@ -59,6 +64,10 @@ class CardController extends Controller {
         $model = $cake_goods::findOne($id);
 
         $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
+
+        $this->view->title = 'Купить ' . $model['lm_title'] . ' от кафе-кондитерской "Лемони"';
+
+        $this->view->registerMetaTag(['name' => 'description', 'content' => 'Закажите ' . $model['lm_title'] . ' с доставкой по Белгороду. Уникальные торты и пирожные для любого праздника.']);
 
         self::error($model);
 
@@ -77,6 +86,10 @@ class CardController extends Controller {
 
         $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
 
+        $this->view->title = 'Купить ' . $model['lm_title'] . ' от кафе-кондитерской "Лемони"';
+
+        $this->view->registerMetaTag(['name' => 'description', 'content' => 'Закажите ' . $model['lm_title'] . ' с доставкой по Белгороду. Уникальные торты и пирожные для любого праздника.']);
+
         self::error($model);
 
         return $this->render('candie', ['model' => $model]);
@@ -93,6 +106,10 @@ class CardController extends Controller {
         $model = $cake_goods::findOne($id);
 
         $sendEmail->on($sendEmail::PARAM_FORM, $sendEmail::sendMail());
+
+        $this->view->title = 'Купить ' . $model['lm_title'] . ' от кафе-кондитерской "Лемони"';
+
+        $this->view->registerMetaTag(['name' => 'description', 'content' => 'Закажите ' . $model['lm_title'] . ' с доставкой по Белгороду. Уникальные торты и пирожные для любого праздника.']);
 
         self::error($model);
 

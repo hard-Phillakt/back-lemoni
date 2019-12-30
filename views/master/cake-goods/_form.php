@@ -129,7 +129,7 @@ use mihaildev\elfinder\ElFinder;
 <!--            --><?//= $form->field($model, 'lm_description')->textarea(['rows' => 6])->widget(CKEditor::class, [
 //                'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
 //            ]) ?>
-
+            
             <?= $form->field($model, 'lm_content')->textarea(['rows' => 6])->widget(CKEditor::class, [
                 'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
             ]) ?>
