@@ -169,8 +169,6 @@ class DeliveryController extends Controller
 
                 $modelGoods = new CandieGoods();
 
-//          debug($value->item_id);
-
 //          Вытаскиваю доп данные для отправки по id из корзины
                 $query = $modelGoods::findOne($value->item_id);
 
@@ -247,9 +245,8 @@ class DeliveryController extends Controller
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
                     'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
-                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
-                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru',
-//                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru'
+//                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
+//                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru',
                 ])
                 ->setSubject('Доставка с Cafelemoni')
                 ->setTextBody('Доставка с Cafelemoni')

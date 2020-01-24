@@ -168,7 +168,11 @@ $(document).on('pjax:success', function (e) {
 
     if ($('#delivery-form')[0][0].value !== '' && $('#delivery-form')[0][1].value !== '') {
         console.log(1);
+
+        $('.button__rectangle').prop('disabled', false);
+
         var count = $('#delivery-form')[0].length;
+
         // Callback Уведомление об успешном отправки сообщения
         $('#modal-delivery').modal('show');
 
@@ -195,6 +199,14 @@ $(document).on('pjax:success', function (e) {
         }
     }
 });
+
+
+$(document).on('pjax:send', function (e) {
+    $('.button__rectangle').prop('disabled', true);
+});
+
+
+
 
 
 // Ajax sidebar-filter data
@@ -487,9 +499,7 @@ $(document).ready(function () {
 
 });
 
-
 // Delivery Pickup
-
 
 
 
