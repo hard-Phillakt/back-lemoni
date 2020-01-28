@@ -4,15 +4,12 @@
 // var preloader = '<div class="wrapper"><div class="cssload-loader"></div></div>';
 
 // Menu start
-
 var navMenuIconlink = document.querySelectorAll('.nav-menu-icon__link');
 var headerFullMenu = document.querySelector('.header-full-menu');
 
 if (navMenuIconlink[1] || navMenuIconlink[0]) {
     navMenuIconlink[1].onclick = function (e) {
         e.preventDefault();
-
-        console.log(document.body);
 
         if (headerFullMenu.classList[2] == 'close-menu') {
             headerFullMenu.classList.remove('close-menu');
@@ -40,7 +37,6 @@ if (navMenuIconlink[1] || navMenuIconlink[0]) {
     }
 
 }
-
 // Menu end
 
 
@@ -51,10 +47,8 @@ var menuNavA = document.querySelectorAll('.header-box-full__ul a');
 var menuSideBarA = document.querySelectorAll('.news-sidebar .link__a');
 var menuFooterA = document.querySelectorAll('.footer__ul .link__a_w');
 
-
 function ActiveItem(data) {
-    var element = data;
-    this.activeItem(element);
+    this.activeItem(data);
 }
 
 ActiveItem.prototype = {
@@ -167,7 +161,6 @@ $(document).on('pjax:success', function (e) {
     }
 
     if ($('#delivery-form')[0][0].value !== '' && $('#delivery-form')[0][1].value !== '') {
-        console.log(1);
 
         $('.button__rectangle').prop('disabled', false);
 
@@ -223,18 +216,13 @@ $(document).ready(function () {
         button__rectangle.onclick = function (e) {
             e.preventDefault();
 
-            // console.log($('#sidebar-filter').serialize());
-
             $.ajax({
                 type: 'post',
                 url: '/cake-goods/ajax-goods',
                 data: $('#sidebar-filter').serialize(),
                 success: function (res) {
-
                     boxCakeGoods.innerHTML = res;
-
                     // $('#sidebar-filter')[0].reset();
-
                 },
                 error: function (err) {
                     console.log(err);
@@ -248,19 +236,12 @@ $(document).ready(function () {
 
         button__rectangle.onclick = function (e) {
             e.preventDefault();
-
-            // $('#sidebar-filter')[0].reset();
-
-            console.log($('#sidebar-filter').serialize());
-
             $.ajax({
                 type: 'post',
                 url: '/candie-goods/ajax-goods',
                 data: $('#sidebar-filter').serialize(),
                 success: function (res) {
-
                     boxCandieGoods.innerHTML = res;
-
                     // $('#sidebar-filter')[0].reset();
                 },
                 error: function (err) {
@@ -305,26 +286,6 @@ if (compilationCake) {
         }
 
     });
-
-
-    // window.onload = function () {
-    //
-    //     $.ajax({
-    //         type: 'post',
-    //         url: '/cake-goods/ajax-goods',
-    //         data: {
-    //             compilation: 1
-    //         },
-    //         success: function (res) {
-    //
-    //             boxCakeGoods.innerHTML = res;
-    //         },
-    //         error: function (err) {
-    //             console.log(err);
-    //         }
-    //     });
-    //
-    // };
 
 }
 
@@ -449,6 +410,34 @@ $(document).ready(function () {
         }
 
     };
+
+
+    // Скрипт режет длину карточки товара. Но решил резать длину css в custom.css
+
+    // $('.link__item .title').each(function (index, item) {
+    //
+    //     $('.link__item .title').eq(index).html().trim();
+    //
+    //     var string = $('.link__item .title').eq(index).html().trim().split('');
+    //
+    //     if(string.length > 20){
+    //
+    //         var newText = [];
+    //
+    //         for(var i = 0; i < string.length; i++){
+    //
+    //             if(i <= 18){
+    //                 newText.push(string[i]);
+    //             }
+    //         }
+    //
+    //         $('.link__item .title').eq(index).html(newText.join('') + ' ...');
+    //     }
+    // });
+
+
+
+
 
 
 

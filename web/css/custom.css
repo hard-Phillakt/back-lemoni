@@ -1543,6 +1543,39 @@ input:focus {
 }
 
 
+.wrapp-full-description .link__item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 80%;
+}
+
+.wrapp-full-description {
+    position: relative;
+}
+
+.link-full-description {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0 15px 0;
+    z-index: 1;
+    top: -15px;
+    left: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.wrapp-full-description:hover .link-full-description {
+    opacity: 1;
+}
+
+
+
+
+
 
 
 

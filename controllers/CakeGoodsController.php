@@ -27,7 +27,6 @@ use app\models\Tag;
 class CakeGoodsController extends Controller
 {
 
-
     public function getCakeCompilation()
     {
 
@@ -57,8 +56,6 @@ class CakeGoodsController extends Controller
 
     }
 
-
-
 //  Выборка по get параметрам
     public function getCakeType($arg)
     {
@@ -77,9 +74,6 @@ class CakeGoodsController extends Controller
 
         return $this->render('index', ['model' => $goods, 'filter' => $filter]);
     }
-
-
-
 
 
     public function actionIndex($param = null, $compilation = null)
@@ -163,71 +157,43 @@ class CakeGoodsController extends Controller
 
 //      Выборка с главной по параметрам
         switch ($param) {
-
             case 'muss':
-
                 return $this->getCakeType('Мусcовый');
-
                 break;
 
             case 'diet':
-
                 return $this->getCakeType('Диетические');
-
                 break;
-
 
             case 'classic':
-
                 return $this->getCakeType('Классический');
-
                 break;
-
-
             case 'shadlaw':
-
                 return $this->getCakeType('Шадлав');
-
                 break;
         }
-
 
 //      Подборки с главной
         switch ($compilation) {
-
 //          День рождения
             case '1':
-
                return $this->getCakeCompilation();
                 break;
-
-
 //          Свадьба
             case '5':
-
                 return $this->getCakeCompilation();
                 break;
-
-
 //          Праздничные торты
             case '2':
-
                 return $this->getCakeCompilation();
                 break;
-
-
 //          Особым питанием
             case '10':
-
                 return $this->getCakeCompilation();
                 break;
-
         }
-
-
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
-
     }
 
 

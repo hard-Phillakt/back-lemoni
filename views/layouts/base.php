@@ -79,10 +79,6 @@ BaseAsset::register($this);
                         </div>
                     </div>
 
-                    <!--                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
-                    <!--                        -->
-                    <!--                    </div>-->
-
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
 
                         <div class="additional-modules">
