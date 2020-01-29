@@ -5,7 +5,7 @@ var map = document.querySelector('#map');
 if (map) {
     ymaps.ready(function () {
         var myMap = new ymaps.Map('map', {
-            center: [50.555687, 36.575526],
+            center: [50.555487, 36.57420],
             zoom: 16,
             // controls: []
         }, {

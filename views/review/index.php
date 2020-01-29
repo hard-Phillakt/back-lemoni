@@ -1,17 +1,14 @@
 <?php
 
-
 use app\widgets\sidebar\Sidebar;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
 
+$this->title = 'Отзывы о кондитерской «Лемони»';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Торты и другие десерты на любые мероприятия: Дни Рождения, юбилеи, свадьбы, корпоративы в Белгороде.']);
 
-//debug($model);
-$this->title = 'Добавить отзыв';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Мы благодарим вас за ваше мнение о нашей продукции.']);
 ?>
-
 
 <section class="revievs mt-90">
     <div class="container">
@@ -33,8 +30,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Мы благод
 
                     <?php $form = ActiveForm::begin([
                         'options' => [
-                            'id' => 'revievs-id',
-                            "data-pjax" => "0"
+                            'id' => 'reviews-id',
+                            "data-pjax" => "0",
                         ]
                     ]); ?>
 
@@ -46,15 +43,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Мы благод
                                 <div class="col-lg-5">
 
                                     <p class="mt-35">
-                                        <!-- <label>Ваше имя</label> -->
-<!--                                        <input type="text" class="global-form__input" placeholder="Ваше имя">-->
-
                                         <?= $form->field($model, 'name')->input('', ['class' => 'global-form__input', 'placeholder' => 'Введите имя'])?>
                                     </p>
 
                                     <p class="mt-35">
-                                        <!-- <label>Контактный телефон</label> -->
-<!--                                        <input type="text" class="global-form__input" placeholder="Ваш Телефон">-->
 
                                         <?= $form->field($model, 'phone')->widget(MaskedInput::class, [
                                             'mask' => '+7 999 999 9999',
@@ -69,20 +61,18 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Мы благод
 
                                 <div class="col-lg-6 col-lg-offset-1">
 
-                                    <p class="mt-35">
-                                        <!-- <label>Комментарий</label> -->
-                                    <div class="revievs__textarea">
-<!--                                                <textarea type="textarea" rows="7" class="global-form__input"-->
-<!--                                                          placeholder="Оставьте свой комментарий"></textarea>-->
+                                    <div class="mt-35">
 
-                                        <?= $form->field($model, 'comment')->textarea([
-                                            'rows' => '6',
-                                            'class' => 'global-form__input', 'placeholder' => 'Введите комментарий',
-                                        ]) ?>
+                                        <div class="revievs__textarea">
+
+                                            <?= $form->field($model, 'comment')->textarea([
+                                                'rows' => '6',
+                                                'class' => 'global-form__input', 'placeholder' => 'Введите комментарий',
+                                            ]) ?>
+
+                                        </div>
 
                                     </div>
-
-                                    </p>
 
                                 </div>
 
@@ -91,7 +81,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Мы благод
                             <div class="row mt-35">
 
                                 <div class="col-lg-8">
-                                    <div class="filter-sidebar-catalog__box_ul global-form ">
+                                    <div class="filter-sidebar-catalog__box_ul global-form">
 
                                             <span for="global-form__input_el1"><span
                                                     class="shadow-checkbox mr-15"></span>
@@ -99,7 +89,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Мы благод
                                                        class="global-form__checkbox mt-35">
                                                 <div>
                                                     Я соглашаюсь на передачу персональных данных согласно
-                                                    <a href="#!" class="">политике конфиденциальности</a>
+                                                    <a href="#!">политике конфиденциальности</a>
 <!--                                                    и <a href="#!" class="">пользовательском у соглашению</a>-->
                                                 </div>
                                             </span>
@@ -110,6 +100,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Мы благод
                                     <div class="revievs__wrapp-btn">
 
                                         <div>
+
                                             <?= $form->field($model, 'file')->fileInput(['class' => 'file-opacity'])->label('') ?>
 
                                             <a href="#!" class="link link__a">Добавить файлы</a>

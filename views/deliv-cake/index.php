@@ -1,10 +1,9 @@
 <?php
 
-
 use app\widgets\sidebar\Sidebar;
 
-$this->title = 'Доставка и прием';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Подробные условия доставки наших тортов']);
+$this->title = 'Доставка тортов и десертов в Белгороде';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Бесплатная доставка продукции «Лемони» при заказе на сумму от 3000 рублей по городу. Возможен самовывоз и доставка по области.']);
 
 ?>
 
@@ -16,8 +15,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Подробны�
 
                 <!-- Sidebar -->
                 <?=  Sidebar::widget(); ?>
-
-
             </div>
 
             <div class="col-lg-9 col-lg-offset-1">
@@ -57,7 +54,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Подробны�
                             </div>
                         </div>
 
-
                     </div>
 
                     <div class="col-lg-5">
@@ -65,7 +61,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Подробны�
                             <img src="./img/deliv-cake/deliv-cake.png" alt="deliv-cake" class="img-responsive">
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

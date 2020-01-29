@@ -2,10 +2,8 @@
 
 use app\widgets\sidebar\Sidebar;
 
-//debug($model);
-
-$this->title = 'Новости';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Интересные события компании, статьи для вас из мира кондитеров.']);
+$this->title = 'Кафе-кондитерская «Лемони» | Новости';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с мастер-классов, новости из мира кулинарии, интересные события в Белгороде.']);
 
 ?>
 
@@ -36,8 +34,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Интересн�
 
                                 <li class="mt-35 top-news">
 
-
-                                    <div class="news-box__img" style="background: url(<?= $value->lm_img; ?>)" data-title="<?= $value->lm_title; ?>" data-img-count="<?= $newsBoxCount; ?>"></div>
+                                    <div class="news-box__img" style="background: url(<?= $value->lm_img; ?>)"
+                                         data-title="<?= $value->lm_title; ?>"
+                                         data-img-count="<?= $newsBoxCount; ?>"></div>
 
                                     <div class="news-box__content">
 
@@ -53,7 +52,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Интересн�
                                         <div class="mt-45">
                                             <h2 class="title title__h4">
 
-                                                <div class="news-box__content_link" data-title="<?= $value->lm_title; ?>" data-link-count="<?= $newsBoxCount; ?>">
+                                                <div class="news-box__content_link news-box__content_link-pointer"
+                                                     data-title="<?= $value->lm_title; ?>"
+                                                     data-link-count="<?= $newsBoxCount; ?>">
 
                                                     <?= $value->lm_title; ?>
 
@@ -78,105 +79,18 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Интересн�
                                         <div class="mt-35">
                                             <div class="news-box__content_date"><?= $value->lm_date; ?></div>
                                         </div>
-
-
                                     </div>
-
-
                                 </li>
-
-                            <?php
+                                <?php
 
                                 $newsBoxCount++;
 
                             endif; ?>
 
                         <?php endforeach; ?>
-
-                        <!-- list news -->
-                        <!--                        <li class="mt-35">-->
-                        <!---->
-                        <!--                            <div class="news-box__img"></div>-->
-                        <!---->
-                        <!--                            <div class="news-box__content">-->
-                        <!---->
-                        <!--                                <div class="news-box__content_tag">-->
-                        <!--                                    <span class="tag__news" style="background: #E69F9C;"></span>-->
-                        <!--                                    <span>Новость</span>-->
-                        <!--                                </div>-->
-                        <!---->
-                        <!--                                <div class="mt-45">-->
-                        <!--                                    <h2 class="title title__h4">-->
-                        <!---->
-                        <!---->
-                        <!--                                        <a href="#!" class="news-box__content_link">-->
-                        <!---->
-                        <!--                                            Лучший рецепт месяца по мнению-->
-                        <!--                                            наших кондитеров-->
-                        <!---->
-                        <!--                                            <div class="news-box__content_hidden">-->
-                        <!---->
-                        <!--                                                <div class="mt-30">-->
-                        <!--                                                    <img src="./img/news/test-news/test-news.png" alt="cake__1">-->
-                        <!--                                                </div>-->
-                        <!---->
-                        <!--                                                <div class="mt-35" style="color: #8F5541">-->
-                        <!--                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum-->
-                        <!--                                                    voluptatum-->
-                        <!--                                                    corrupti cumque voluptates, incidunt provident recusandae-->
-                        <!--                                                    officiis-->
-                        <!--                                                    nam mollitia-->
-                        <!--                                                    architecto odio ullam, maxime est cum? Eum, quis dicta. Facere,-->
-                        <!--                                                    magni dolores-->
-                        <!--                                                    harum distinctio eum nisi!-->
-                        <!--                                                </div>-->
-                        <!---->
-                        <!--                                                <div class="mt-35">-->
-                        <!--                                                    <img src="./img/news/test-news/test-news.png" alt="cake__1">-->
-                        <!--                                                </div>-->
-                        <!---->
-                        <!--                                                <div class="mt-35" style="color: #8F5541">-->
-                        <!--                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum-->
-                        <!--                                                    voluptatum-->
-                        <!--                                                    corrupti cumque voluptates, incidunt provident recusandae-->
-                        <!--                                                    officiis-->
-                        <!--                                                    nam mollitia-->
-                        <!--                                                    architecto odio ullam, maxime est cum? Eum, quis dicta. Facere,-->
-                        <!--                                                    magni dolores-->
-                        <!--                                                    harum distinctio eum nisi!-->
-                        <!--                                                </div>-->
-                        <!---->
-                        <!--                                            </div>-->
-                        <!---->
-                        <!--                                        </a>-->
-                        <!---->
-                        <!--                                    </h2>-->
-                        <!--                                </div>-->
-                        <!---->
-                        <!--                                <div class="mt-35">-->
-                        <!--                                    <div class="desc desc__sm">-->
-                        <!--                                        Приближающийся летний сезон — прекрасное время, чтобы-->
-                        <!--                                        попробовать самые вкусные и разнообразные сочетания-->
-                        <!--                                    </div>-->
-                        <!--                                </div>-->
-                        <!---->
-                        <!--                                <div class="mt-35">-->
-                        <!--                                    <div class="news-box__content_date">14.09.2019</div>-->
-                        <!--                                </div>-->
-                        <!---->
-                        <!---->
-                        <!--                            </div>-->
-                        <!---->
-                        <!---->
-                        <!--                        </li>-->
-
-
                     </ul>
-
                 </div>
-
             </div>
-
         </div>
     </div>
 </section>

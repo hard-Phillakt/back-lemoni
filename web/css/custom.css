@@ -534,8 +534,11 @@ input:focus {
 }
 
 .news-box__content_link {
-    cursor: pointer;
     display: inline-flex;
+}
+
+.news-box__content_link-pointer {
+    cursor: pointer;
 }
 
 
@@ -1561,7 +1564,7 @@ input:focus {
     opacity: 0;
     width: 100%;
     background: #fff;
-    padding: 15px 0 15px 0;
+    padding: 15px 15px 15px 0;
     z-index: 1;
     top: -15px;
     left: 0;
@@ -1572,8 +1575,12 @@ input:focus {
     opacity: 1;
 }
 
-
-
+@media (max-width: 991px) and (min-width: 300px){
+    .link-full-description {
+        padding: 0 15px 0 0;
+        top: 0;
+    }
+}
 
 
 

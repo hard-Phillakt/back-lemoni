@@ -4,13 +4,9 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-//    debug($model);
-//    debug($filter);die;
-
-$this->title = 'Candy bar';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Сопровождение любого мероприятия сладким столом. Выберете любимые десерты для своих гостей.']);
+$this->title = 'Кэнди бары для любых мероприятий в Белгороде';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Сопровождение любого мероприятия сладким праздничным столом. Выберете любимые десерты для своих гостей.']);
 ?>
-
 
 <!-- breadcrumbs-line -->
 <section class="breadcrumbs-line">
@@ -50,8 +46,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                             Цена за единицу товара
                         </h5>
 
-                        <? //= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input mt-35'])->label(false) ?>
-
                         <div class="flter-min-max mt-35">
 
                             <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
@@ -59,8 +53,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                             <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум', ['class' => 'mb-15']) ?>
 
                         </div>
-
-                        <!--                        <input type="text" class="global-form__input mt-35" placeholder="Максимум 6000 руб/кг">-->
 
                     </div>
 
@@ -73,8 +65,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                         </h5>
 
                         <div class="filter-sidebar-catalog__box_ul global-form mt-15">
-
-                            <? //= $form->field($filter, 'type[]')->checkboxList($filter['type'], ['class' => 'filter-sidebar-catalog__box_ul global-form'])->label('Тип продукта'); ?>
 
                             <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
@@ -176,7 +166,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
                 <h2 class="title title__h1 opac__07">Каталог candy bar</h2>
 
-
                 <!-- filter type-goods -->
                 <div class="filter-sidebar-catalog__box-compilation mt-60 dsp-none">
 
@@ -206,13 +195,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                     </div>
 
                 </div>
-
-
+                
                 <div class="row mt-60" id="box-candie-goods">
 
-
                     <!-- card-filter -->
-
                     <?php
 
                     if ($model): ?>
@@ -293,7 +279,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                 </div>
             </div>
-
         </div>
     </div>
 </section>

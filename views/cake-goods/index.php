@@ -1,21 +1,14 @@
 <?php
 
-
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-//use yii\widgets\Pjax;
-
-//debug($data_cake);
-
-//debug($filter);
-
 Url::remember();
 
-$this->title = 'Большой выбор тортов в нашем каталоге';
+$this->title = 'Торты на заказ в Белгороде | Каталог продукции';
 
-$this->registerMetaTag(['name' => 'description', 'content' => 'Для вас мы готовим торты, которые запомнятся внешним видом и своим   вкусом надолго. Для любого праздника и мероприятий']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Авторские муссовые и классические торты «Лемони»: красный бархат, бри груша, наполеон, медовик и другие десерты для любого праздника.']);
 
 ?>
 
@@ -46,7 +39,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                     ],
                 ]); ?>
 
-
                 <h4 class="title title__h4">Фильтр</h4>
 
                 <div class="filter-sidebar-catalog__box mt-60">
@@ -58,8 +50,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                             Цена за килограмм
                         </h5>
 
-                        <!--                        --><? //= $form->field($filter, 'price_for_kg')->textInput(['placeholder' => 'Максимум 6000 руб/кг', 'class' => 'global-form__input'])->label('Цена за килограм', ['class' => 'title title__h5 pb-15']) ?>
-
                         <div class="flter-min-max mt-35">
 
                             <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
@@ -67,8 +57,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                             <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум', ['class' => 'mb-15']) ?>
 
                         </div>
-
-                        <!--                        <input type="text" class="global-form__input mt-35" placeholder="Максимум 6000 руб/кг">-->
 
                     </div>
 
@@ -81,8 +69,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                         </h5>
 
                         <div class="filter-sidebar-catalog__box_ul global-form mt-15">
-
-                            <? //= $form->field($filter, 'type[]')->checkboxList($filter['type'], ['class' => 'filter-sidebar-catalog__box_ul global-form'])->label('Тип продукта'); ?>
 
                             <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
@@ -122,8 +108,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                     <!-- filter leavel -->
                     <div class="filter-sidebar-catalog__box mt-35">
 
-                        <!--                        <h5 class="title title__h5">Колличество уровней</h5>-->
-
                         <div class="global-form__select mt-35">
 
                             <div class="form-group field-filtercake-count_level">
@@ -151,12 +135,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
 
             </div>
 
-
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
 
                 <h2 class="title title__h1 opac__07">Каталог тортов</h2>
-
 
                 <!-- filter type-goods dsp-none -->
                 <div class="filter-sidebar-catalog__box-compilation mt-60 dsp-none">
@@ -191,7 +173,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Для вас м�
                     </div>
 
                 </div>
-
 
                 <div class="row mt-60" id="box-cake-goods">
 

@@ -84,29 +84,32 @@ var footer = new ActiveItem(menuFooterA);
 
 // Filter Cake-category-type-product
 
-var filterSidebarCatalog__box_ul = document.querySelectorAll('.filter-sidebar-catalog__box_ul span');
+function filterSidebarCatalog() {
+    var filterSidebarCatalog__box_ul = document.querySelectorAll('.filter-sidebar-catalog__box_ul span');
 
-if (filterSidebarCatalog__box_ul) {
-    filterSidebarCatalog__box_ul.forEach(function (item, i) {
+    if (filterSidebarCatalog__box_ul) {
+        filterSidebarCatalog__box_ul.forEach(function (item, i) {
 
-        item.onclick = function () {
+            item.onclick = function () {
 
-            if (item.children[0].classList[2] == 'chek-true') {
+                if (item.children[0].classList[2] == 'check-true') {
 
-                item.children[0].classList.remove('chek-true');
-                item.children[1].checked = false;
-                console.log(this.children[1].checked);
+                    item.children[0].classList.remove('check-true');
+                    item.children[1].checked = false;
 
-            } else {
-                item.children[0].classList.add('chek-true');
-                item.children[1].checked = true;
-                console.log(this.children[1].checked);
+                } else {
+                    item.children[0].classList.add('check-true');
+                    item.children[1].checked = true;
+                }
+
             }
 
-        }
-
-    });
+        });
+    }
 }
+
+filterSidebarCatalog();
+
 
 
 // Filter Cake-category-type-product end
@@ -146,7 +149,7 @@ if (wpper) {
 
 
 // pjax call-back
-$(document).on('pjax:success', function (e) {
+$(document).on('pjax:success', function (e)  {
 
     // колбек для заказа в один клик
     if (e.relatedTarget.classList[0] == 'master-class-form') {
@@ -160,42 +163,56 @@ $(document).on('pjax:success', function (e) {
 
     }
 
-    if ($('#delivery-form')[0][0].value !== '' && $('#delivery-form')[0][1].value !== '') {
 
-        $('.button__rectangle').prop('disabled', false);
+    //  колбек для заказа из корзины
+    if(document.querySelector('#delivery-form')){
 
-        var count = $('#delivery-form')[0].length;
+        console.log('delivery-form');
 
-        // Callback Уведомление об успешном отправки сообщения
-        $('#modal-delivery').modal('show');
+        if ($('#delivery-form')[0][0].value !== '' && $('#delivery-form')[0][1].value !== '') {
 
-        for (var i = 0; i < count; i++) {
+            $('.button__rectangle').prop('disabled', false);
 
-            // очищаем поля формы кроме кнопки
-            if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT') {
-                $('#delivery-form')[0][i].value = '';
+            var count = $('#delivery-form')[0].length;
+
+            // Callback Уведомление об успешном отправки сообщения
+            $('#modal-delivery').modal('show');
+
+            for (var i = 0; i < count; i++) {
+
+                // очищаем поля формы кроме кнопки
+                if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT') {
+                    $('#delivery-form')[0][i].value = '';
+                }
+
             }
-
         }
     }
 
 
-    if ($('#revievs-id')[0]) {
-        var count = $('#revievs-id')[0].length;
+    //  колбек для отзывов
+    if (document.querySelector('#reviews-id')) {
+
+        var count = $('#reviews-id')[0].length;
 
         for (var i = 0; i < count; i++) {
             // очищаем поля формы кроме кнопки
-            if ($('#revievs-id')[0][i].type != 'submit' && $('#revievs-id')[0][i].type != 'checkbox') {
-                $('#revievs-id')[0][i].value = '';
+            if ($('#reviews-id')[0][i].type != 'submit' && $('#reviews-id')[0][i].type != 'checkbox') {
+                $('#reviews-id')[0][i].value = '';
             }
-
         }
+
+        $('#reviews-id .button__rectangle').prop('disabled', true);
+
+        // В колбеке инициализирую checkbox после pjax
+        filterSidebarCatalog();
     }
+
 });
 
 
 $(document).on('pjax:send', function (e) {
-    $('.button__rectangle').prop('disabled', true);
+    $('#delivery-form .button__rectangle').prop('disabled', true);
 });
 
 
@@ -204,6 +221,22 @@ $(document).on('pjax:send', function (e) {
 
 // Ajax sidebar-filter data
 $(document).ready(function () {
+
+    if (document.querySelector('#reviews-id')) {
+
+        var count = $('#reviews-id')[0].length;
+
+        for (var i = 0; i < count; i++) {
+            // очищаем поля формы кроме кнопки
+            if ($('#reviews-id')[0][i].type != 'submit' && $('#reviews-id')[0][i].type != 'checkbox') {
+
+                console.log($('#reviews-id')[0][i].value);
+                // $('#reviews-id')[0][i].value = '';
+            }
+
+        }
+    }
+
 
     var sidebarFilter = document.querySelector('#sidebar-filter');
     var button__rectangle = document.querySelector('.button__rectangle');
@@ -334,7 +367,7 @@ if (revievsWrappBtn) {
     revievsWrappBtn.disabled = true;
 
     filterSidebarCatalogBoxUl.onclick = function () {
-        if (shadowCheckbox.className == 'shadow-checkbox mr-15 chek-true') {
+        if (shadowCheckbox.className == 'shadow-checkbox mr-15 check-true') {
             revievsWrappBtn.disabled = false
 
         } else {
@@ -351,6 +384,8 @@ if (reviewformFile) {
 
         if (reviewformFile.files[0]) {
             revievsWrappLink.innerHTML = 'Загруженно файлов 1';
+        }else {
+            revievsWrappLink.innerHTML = 'Добавить файлы';
         }
     }
 }
@@ -383,10 +418,6 @@ $(document).ready(function () {
         })
 
     }
-
-
-
-
 
     // Scroll-to-top
     var scrollTo = document.querySelector('.scroll-to-top__wrapp');
@@ -489,22 +520,6 @@ $(document).ready(function () {
 });
 
 // Delivery Pickup
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

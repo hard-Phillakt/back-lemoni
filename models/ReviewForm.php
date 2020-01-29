@@ -9,7 +9,6 @@
 namespace app\models;
 
 use \yii\base\Model;
-use  yii\web\UploadedFile;
 
 class  ReviewForm extends Model {
 
@@ -33,7 +32,7 @@ class  ReviewForm extends Model {
                 'extensions' => 'mp4',
                 'maxFiles' => 1,
                 'uploadRequired' => 'Загрузите файл',
-                'wrongExtension' => 'Требуемый формат mp4',
+                'wrongExtension' => 'Неверный формат! Допустимый - mp4',
                 'wrongMimeType' => 'Файл имеет недопустимый MIME-тип',
                 'tooBig' => 'Превышен размер файла! Не более 100 MB'
             ],
@@ -46,7 +45,7 @@ class  ReviewForm extends Model {
     {
         if ($this->validate()) {
 
-            $this->file->saveAs('xenos/uploads/video/' . 'reviews' . '_id-' . date('U') . '.' . $this->file->extension);
+            $this->file->saveAs('xenos/uploads/video/' . 'video__' . date('U') . '.' . $this->file->extension);
             return true;
         } else {
             return false;

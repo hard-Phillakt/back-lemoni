@@ -1,23 +1,18 @@
 <?php
 
-
 use app\widgets\sidebar\Sidebar;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\MaskedInput;
 
-//debug($model);
-//debug($masterClassForm);
-
-$this->title = 'Запишитесь на наш мастер-класс';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Список ближайших мастер-классов, которые вы можете посетить самостоятельно, с друзьями или с детьми.']);
+$this->title = 'Детские мастер-классы от «Лемони» в Белгороде';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Выходные с детьми в кафе-кондитерской. Роспись имбирных пряников. Список ближайших мастер-классов.']);
 
 ?>
 
 <section class="news mt-90">
     <div class="container">
         <div class="row flex-reverse">
-
             <div class="col-lg-3">
 
                 <!-- Sidebar -->
@@ -238,8 +233,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
 
                 <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label(false) ?>
 
-                <!--                --><? //= $form->field($masterClassForm, 'phone')->textInput(['class' => 'global-form__input', 'placeholder' => '+7 000 000 0000'])->label('') ?>
-
                 <?= $form->field($masterClassForm, 'phone')->widget(MaskedInput::class, [
                     'mask' => '+7 999 999 9999',
                     'options' => [
@@ -261,7 +254,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Список бл
                 <?php $form = ActiveForm::end(); ?>
 
             </div>
-
         </div>
     </div>
 </div>

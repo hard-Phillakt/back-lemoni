@@ -1,18 +1,15 @@
 <?php
 
-
 use app\widgets\sidebar\Sidebar;
 
-
-$this->title = 'Контакты';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Показать на карте адрес кондитерской или позвонить по телефону']);
+$this->title = 'Кафе-кондитерская «Лемони» | Контакты';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Мы находимся по адресу: г. Белгород улица Щорса 57. Телефон для связи 8(920)200-51-54.']);
 
 ?>
 
 <section class="contact mt-90">
     <div class="container">
         <div class="row flex-reverse">
-
             <div class="col-lg-2">
 
                 <!-- Sidebar -->
@@ -36,7 +33,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Показать 
                         <div class="mt-35">
                             <p>Телефон для заказа:</p>
                             <p><a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a></p>
-<!--                            <p><a href="#!" class="link link__a">+7 (915) 576 4500</a></p>-->
                         </div>
 
                         <div class="mt-35">
@@ -58,15 +54,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Показать 
                     </div>
 
                     <div class="col-lg-8">
-                        <!-- <img src="./img/contact/contact-map.png" alt="contact" class="img-responsive"> -->
 
                         <div id="map"></div>
 
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </section>
