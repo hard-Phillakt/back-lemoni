@@ -27,31 +27,28 @@ class  ReviewForm extends Model {
             ['comment', 'required', 'message' => 'Введите комментарий'],
             [['file'],
                 'file',
-                'maxSize' => 100 . 'e+6', // 100 MB в Byte
+                'maxSize' => 1 . 'e+7', // 10 MB в Byte
                 'skipOnEmpty' => true,
-                'extensions' => 'mp4',
+                'extensions' => 'jpg, png',
                 'maxFiles' => 1,
                 'uploadRequired' => 'Загрузите файл',
-                'wrongExtension' => 'Неверный формат! Допустимый - mp4',
+                'wrongExtension' => 'Неверный формат! Допустимый - jpg, png',
                 'wrongMimeType' => 'Файл имеет недопустимый MIME-тип',
-                'tooBig' => 'Превышен размер файла! Не более 100 MB'
+                'tooBig' => 'Превышен размер файла! Не более 10 MB'
             ],
         ];
-
     }
-
 
     public function upload()
     {
         if ($this->validate()) {
 
-            $this->file->saveAs('xenos/uploads/video/' . 'video__' . date('U') . '.' . $this->file->extension);
+            $this->file->saveAs('xenos/uploads/image/' . 'image__' . date('U') . '.' . $this->file->extension);
             return true;
         } else {
             return false;
         } 
     }
-
 
     public function attributeLabels()
     {
@@ -61,6 +58,4 @@ class  ReviewForm extends Model {
             'comment' => '',
         ];
     }
-
-
 }

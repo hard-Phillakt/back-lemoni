@@ -4,6 +4,7 @@ use app\widgets\sidebar\Sidebar;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
+use yii\helpers\Html;
 
 $this->title = 'Отзывы о кондитерской «Лемони»';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и другие десерты на любые мероприятия: Дни Рождения, юбилеи, свадьбы, корпоративы в Белгороде.']);
@@ -100,14 +101,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
                                     <div class="revievs__wrapp-btn">
 
                                         <div>
-
                                             <?= $form->field($model, 'file')->fileInput(['class' => 'file-opacity'])->label('') ?>
-
                                             <a href="#!" class="link link__a">Добавить файлы</a>
                                         </div>
 
-                                        <input type="submit" class="button button__rectangle mt-15"
+                                        <input type="submit" class="button button__rectangle button__rectangle_submit mt-15"
                                                value="Отправить">
+
                                     </div>
                                 </div>
 
@@ -198,3 +198,31 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
         </div>
     </div>
 </section>
+
+
+<div id="modal-review" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close opac__07" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-35">
+                    <h2 class="title title__h3">
+                        <p style="color: #8F5541">Спасибо за ваш отзыв!</p>
+                    </h2>
+                </div>
+
+                <div class="flex-justify-center pb-35">
+                    <p class="desc desc__md opac__07">
+                        Он будет опубликован на сайте в ближайшее время.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

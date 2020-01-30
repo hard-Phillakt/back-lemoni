@@ -160,11 +160,9 @@ class CakeGoodsController extends Controller
             case 'muss':
                 return $this->getCakeType('Мусcовый');
                 break;
-
             case 'diet':
                 return $this->getCakeType('Диетические');
                 break;
-
             case 'classic':
                 return $this->getCakeType('Классический');
                 break;
@@ -256,6 +254,9 @@ class CakeGoodsController extends Controller
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
 
+        $data_cake = $query_cake_goods->find()->all();
+
+        return $this->render('ajax-goods', ['data_cake' => $data_cake]);
     }
 
 }

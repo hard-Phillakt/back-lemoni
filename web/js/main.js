@@ -1,4 +1,3 @@
-
 // Preloader
 
 // var preloader = '<div class="wrapper"><div class="cssload-loader"></div></div>';
@@ -97,9 +96,15 @@ function filterSidebarCatalog() {
                     item.children[0].classList.remove('check-true');
                     item.children[1].checked = false;
 
+                    // After Pjax init script
+                    document.querySelector('#reviews-id .button__rectangle') ? document.querySelector('#reviews-id .button__rectangle').disabled = true : false;
+
                 } else {
                     item.children[0].classList.add('check-true');
                     item.children[1].checked = true;
+
+                    // After Pjax init script
+                    document.querySelector('#reviews-id .button__rectangle') ? document.querySelector('#reviews-id .button__rectangle').disabled = false : false;
                 }
 
             }
@@ -107,9 +112,7 @@ function filterSidebarCatalog() {
         });
     }
 }
-
 filterSidebarCatalog();
-
 
 
 // Filter Cake-category-type-product end
@@ -149,7 +152,9 @@ if (wpper) {
 
 
 // pjax call-back
-$(document).on('pjax:success', function (e)  {
+$(document).on('pjax:success', function (e) {
+
+
 
     // колбек для заказа в один клик
     if (e.relatedTarget.classList[0] == 'master-class-form') {
@@ -165,9 +170,7 @@ $(document).on('pjax:success', function (e)  {
 
 
     //  колбек для заказа из корзины
-    if(document.querySelector('#delivery-form')){
-
-        console.log('delivery-form');
+    if (document.querySelector('#delivery-form')) {
 
         if ($('#delivery-form')[0][0].value !== '' && $('#delivery-form')[0][1].value !== '') {
 
@@ -202,7 +205,10 @@ $(document).on('pjax:success', function (e)  {
             }
         }
 
-        $('#reviews-id .button__rectangle').prop('disabled', true);
+        $('#modal-review').modal('show');
+
+        //Callback for review
+        document.querySelector('#reviews-id .button__rectangle').disabled = true;
 
         // В колбеке инициализирую checkbox после pjax
         filterSidebarCatalog();
@@ -216,43 +222,26 @@ $(document).on('pjax:send', function (e) {
 });
 
 
-
-
-
 // Ajax sidebar-filter data
 $(document).ready(function () {
 
-    if (document.querySelector('#reviews-id')) {
-
-        var count = $('#reviews-id')[0].length;
-
-        for (var i = 0; i < count; i++) {
-            // очищаем поля формы кроме кнопки
-            if ($('#reviews-id')[0][i].type != 'submit' && $('#reviews-id')[0][i].type != 'checkbox') {
-
-                console.log($('#reviews-id')[0][i].value);
-                // $('#reviews-id')[0][i].value = '';
-            }
-
-        }
-    }
-
-
+    var filterSidebarCatalog = document.querySelector('.filter-sidebar-catalog');
     var sidebarFilter = document.querySelector('#sidebar-filter');
     var button__rectangle = document.querySelector('.button__rectangle');
     var boxCakeGoods = document.querySelector('#box-cake-goods');
     var boxCandieGoods = document.querySelector('#box-candie-goods');
     var shadowCheckbox = document.querySelectorAll('.shadow-checkbox');
 
-    if (sidebarFilter) {
+    if (filterSidebarCatalog) {
 
-        button__rectangle.onclick = function (e) {
-            e.preventDefault();
+        $('#sidebar-filter-price').on('change', function (e) {
+
+            // console.log($(this).serialize());
 
             $.ajax({
                 type: 'post',
                 url: '/cake-goods/ajax-goods',
-                data: $('#sidebar-filter').serialize(),
+                data: $('#sidebar-filter-price').serialize(),
                 success: function (res) {
                     boxCakeGoods.innerHTML = res;
                     // $('#sidebar-filter')[0].reset();
@@ -262,8 +251,44 @@ $(document).ready(function () {
                 }
             });
 
-        };
+        });
+
+
+        $('#sidebar-filter-checkbox').on('click', function (e) {
+
+            console.log($(this).serialize());
+
+            $.ajax({
+                type: 'post',
+                url: '/cake-goods/ajax-goods',
+                data: $('#sidebar-filter-checkbox').serialize(),
+                success: function (res) {
+                    boxCakeGoods.innerHTML = res;
+                }
+            });
+        });
+
+
+        $('#sidebar-filter-level').on('change', function (e) {
+
+            // console.log($(this).serialize());
+
+            $.ajax({
+                type: 'post',
+                url: '/cake-goods/ajax-goods',
+                data: $('#sidebar-filter-level').serialize(),
+                success: function (res) {
+                    boxCakeGoods.innerHTML = res;
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+        });
+
     }
+
 
     if (boxCandieGoods) {
 
@@ -285,8 +310,6 @@ $(document).ready(function () {
         };
 
     }
-
-
 });
 
 
@@ -383,8 +406,8 @@ if (reviewformFile) {
     reviewformFile.onchange = function () {
 
         if (reviewformFile.files[0]) {
-            revievsWrappLink.innerHTML = 'Загруженно файлов 1';
-        }else {
+            revievsWrappLink.innerHTML = 'Загружено файлов 1';
+        } else {
             revievsWrappLink.innerHTML = 'Добавить файлы';
         }
     }
@@ -423,7 +446,7 @@ $(document).ready(function () {
     var scrollTo = document.querySelector('.scroll-to-top__wrapp');
 
     scrollTo.onclick = function () {
-        document.body.scrollIntoView({ behavior: 'smooth' });
+        document.body.scrollIntoView({behavior: 'smooth'});
     };
 
     var hDocument = document.body.scrollHeight;
@@ -434,9 +457,9 @@ $(document).ready(function () {
 
         var pageYOffset = window.pageYOffset;
 
-        if(parseInt(pageYOffset) >= (parseInt(percent))){
+        if (parseInt(pageYOffset) >= (parseInt(percent))) {
             scrollTo.classList.remove('set-bottom');
-        }else {
+        } else {
             scrollTo.classList.add('set-bottom');
         }
 
@@ -466,17 +489,6 @@ $(document).ready(function () {
     //     }
     // });
 
-
-
-
-
-
-
-
-
-
-
-
     // console.log($('#deliverycontact-delivery option'));
     //
     // $('#deliverycontact-delivery option').each(function (item, i) {
@@ -485,7 +497,6 @@ $(document).ready(function () {
     //         console.log(this);
     //     }
     // });
-
 
     // $( "#deliverycontact-delivery" ).change(function() {
     //

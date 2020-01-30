@@ -32,16 +32,17 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
             <!-- Sidebar Filter -->
             <div class="col-lg-3 mt-35">
 
-                <?php $form = ActiveForm::begin([
-                    'options' => [
-                        'id' => 'sidebar-filter',
-                        'class' => 'cake-goods'
-                    ],
-                ]); ?>
-
                 <h4 class="title title__h4">Фильтр</h4>
 
                 <div class="filter-sidebar-catalog__box mt-60">
+
+                    <?php $form = ActiveForm::begin([
+                        'options' => [
+                            'id' => 'sidebar-filter-price',
+                            'class' => 'cake-goods'
+                        ],
+                    ]); ?>
+
 
                     <!-- filter kg -->
                     <div class="filter-sidebar-catalog__box">
@@ -60,6 +61,15 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                     </div>
 
+                    <?php $form = ActiveForm::end(); ?>
+
+
+                    <?php $form = ActiveForm::begin([
+                        'options' => [
+                            'id' => 'sidebar-filter-checkbox',
+                            'class' => 'cake-goods'
+                        ],
+                    ]); ?>
 
                     <!-- filter type-goods -->
                     <div class="filter-sidebar-catalog__box mt-15">
@@ -68,7 +78,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                             Тип продукта
                         </h5>
 
-                        <div class="filter-sidebar-catalog__box_ul global-form mt-15">
+                        <div class="filter-sidebar-catalog__box_ul global-form global-form-checkbox mt-15">
 
                             <span><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
@@ -104,6 +114,15 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                     </div>
 
+                    <?php $form = ActiveForm::end(); ?>
+
+
+                    <?php $form = ActiveForm::begin([
+                        'options' => [
+                            'id' => 'sidebar-filter-level',
+                            'class' => 'cake-goods'
+                        ],
+                    ]); ?>
 
                     <!-- filter leavel -->
                     <div class="filter-sidebar-catalog__box mt-35">
@@ -128,10 +147,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                     </div>
 
-                    <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
-                </div>
+                    <?php $form = ActiveForm::end(); ?>
 
-                <?php $form = ActiveForm::end(); ?>
+                    <?//= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
+
+                </div>
 
             </div>
 

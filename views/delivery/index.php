@@ -49,7 +49,6 @@ use yii\widgets\MaskedInput;
 
         <div class="row mt-35">
 
-
             <?php Pjax::begin(); ?>
 
             <?php $form = ActiveForm::begin([
@@ -60,12 +59,6 @@ use yii\widgets\MaskedInput;
             ]); ?>
 
             <div class="col-lg-8">
-
-                <!--                <div class="col-lg-12">-->
-                <!--                    <div class="mt-15 ml-15">-->
-                <!--                        <h4 class="title title__h4">Доставка</h4>-->
-                <!--                    </div>-->
-                <!--                </div>-->
 
                 <div class="delivery-box global-form">
 
@@ -172,8 +165,6 @@ use yii\widgets\MaskedInput;
                             <div class="col-lg-5">
 
                                 <div>
-
-                                    <?//= $form->field($modelDeliveryContact, 'delivery')->dropDownList(['Самовывоз' => 'Самовывоз', 'Доставка' => 'Доставка'])->label(false) ?>
 
                                     <div role="presentation" class="dropdown">
                                             <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
