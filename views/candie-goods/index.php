@@ -30,8 +30,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                 <?php $form = ActiveForm::begin([
                     'options' => [
-                        'class' => 'cake-goods',
-                        'id' => 'sidebar-filter'
+                        'id' => 'sidebar-filter-candy',
+                        'class' => 'cake-goods'
                     ],
                 ]); ?>
 
@@ -66,96 +66,125 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                         <div class="filter-sidebar-catalog__box_ul global-form mt-15">
 
-                            <span><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
                                            class="global-form__checkbox mt-35" value="Классические пирожные">
                                     классические пирожные
-                                </span>
+                                </label>
+                            </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
                                            class="global-form__checkbox mt-35" value="Мусовые пирожные">
                                     мусовые пирожные
-                                </span>
+                                </label>
+                            </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
                                            class="global-form__checkbox mt-35" value="Конфеты">
                                     конфеты
-                                </span>
+                                </label>
+                            </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
                                            class="global-form__checkbox mt-35" value="Пряники">
                                     пряники
-                                </span>
+                                </label>
+                            </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
                                            class="global-form__checkbox mt-35" value="Щербет">
                                     щербет
-                                </span>
+                                </label>
+                            </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el7"
                                            class="global-form__checkbox mt-35" value="Зефир">
                                     зефир
-                                </span>
+                                </label>
+                            </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el8"
                                            class="global-form__checkbox mt-35" value="Фруктовый букет">
                                     фруктовый букет
-                                </span>
+                                </label>
+                                </div>
 
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el9"
                                            class="global-form__checkbox mt-35" value="Куличи">
                                     куличи
-                                </span>
+                                </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e20"
                                            class="global-form__checkbox mt-35" value="Кейкпопсы">
                                     кейкпопсы
-                                </span>
+                                </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e21"
                                            class="global-form__checkbox mt-35" value="Укусики">
                                     укусики
-                                </span>
+                                </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e22"
                                            class="global-form__checkbox mt-35" value="Постное">
                                     постное
-                                </span>
+                                </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e23"
                                            class="global-form__checkbox mt-35" value="Штрудель">
                                     штрудель
-                                </span>
+                                </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e24"
                                            class="global-form__checkbox mt-35" value="Кексы на фруктовом пюре">
                                     кексы на фруктовом пюре
-                                </span>
+                                </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e25"
                                            class="global-form__checkbox mt-35" value="Трайфлы">
                                     трайфлы
-                                </span>
+                                </label>
+                                </div>
 
                         </div>
 
                     </div>
 
-                    <?= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
+                    <?//= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>
 
                 <?php $form = ActiveForm::end(); ?>
@@ -195,7 +224,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                     </div>
 
                 </div>
-                
+
                 <div class="row mt-60" id="box-candie-goods">
 
                     <!-- card-filter -->
@@ -215,7 +244,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="wrapp-full-description">
-                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="link link__a link__item mt-15 ml-15">
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                           class="link link__a link__item mt-15 ml-15">
                                             <span class="title"><?= $value['lm_title']; ?></span>
                                         </a>
 
@@ -226,7 +256,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                         </div>
 
                                         <div class="link-full-description">
-                                            <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="link link__a ml-15">
+                                            <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                               class="link link__a ml-15">
                                                 <span class="title"><?= $value['lm_title']; ?></span>
                                             </a>
                                         </div>
@@ -252,7 +283,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="wrapp-full-description">
-                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="link link__a link__item mt-15 ml-15">
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                           class="link link__a link__item mt-15 ml-15">
                                             <span class="title"><?= $value['lm_title']; ?></span>
                                         </a>
 
@@ -263,7 +295,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                         </div>
 
                                         <div class="link-full-description">
-                                            <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="link link__a ml-15">
+                                            <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                               class="link link__a ml-15">
                                                 <span class="title"><?= $value['lm_title']; ?></span>
                                             </a>
                                         </div>

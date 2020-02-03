@@ -89,19 +89,19 @@ function filterSidebarCatalog() {
     if (filterSidebarCatalog__box_ul) {
         filterSidebarCatalog__box_ul.forEach(function (item, i) {
 
-            item.onclick = function () {
+            item.onclick = function (e) {
+
+                console.log(this);
 
                 if (item.children[0].classList[2] == 'check-true') {
 
                     item.children[0].classList.remove('check-true');
-                    item.children[1].checked = false;
 
                     // After Pjax init script
                     document.querySelector('#reviews-id .button__rectangle') ? document.querySelector('#reviews-id .button__rectangle').disabled = true : false;
 
                 } else {
                     item.children[0].classList.add('check-true');
-                    item.children[1].checked = true;
 
                     // After Pjax init script
                     document.querySelector('#reviews-id .button__rectangle') ? document.querySelector('#reviews-id .button__rectangle').disabled = false : false;
@@ -112,6 +112,7 @@ function filterSidebarCatalog() {
         });
     }
 }
+
 filterSidebarCatalog();
 
 
@@ -225,91 +226,98 @@ $(document).on('pjax:send', function (e) {
 // Ajax sidebar-filter data
 $(document).ready(function () {
 
-    var filterSidebarCatalog = document.querySelector('.filter-sidebar-catalog');
-    var sidebarFilter = document.querySelector('#sidebar-filter');
-    var button__rectangle = document.querySelector('.button__rectangle');
-    var boxCakeGoods = document.querySelector('#box-cake-goods');
-    var boxCandieGoods = document.querySelector('#box-candie-goods');
-    var shadowCheckbox = document.querySelectorAll('.shadow-checkbox');
+    function FilterAjaxForm(fs, bg) {
 
-    if (filterSidebarCatalog) {
+        var filterSidebar = document.querySelector(fs);
 
-        $('#sidebar-filter-price').on('change', function (e) {
+        var boxGoods = document.querySelector(bg);
 
-            // console.log($(this).serialize());
+        this.getData = function (url) {
 
-            $.ajax({
-                type: 'post',
-                url: '/cake-goods/ajax-goods',
-                data: $('#sidebar-filter-price').serialize(),
-                success: function (res) {
-                    boxCakeGoods.innerHTML = res;
-                    // $('#sidebar-filter')[0].reset();
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
+            $(filterSidebar).on('change', function (e) {
 
-        });
+                // add class for custom checkbox filter
+                var element = e.target.previousElementSibling;
+                element.classList[2] == 'check-true' ? element.classList.remove('check-true') : element.classList.add('check-true');
 
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        boxGoods.innerHTML = response;
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
 
-        $('#sidebar-filter-checkbox').on('click', function (e) {
-
-            console.log($(this).serialize());
-
-            $.ajax({
-                type: 'post',
-                url: '/cake-goods/ajax-goods',
-                data: $('#sidebar-filter-checkbox').serialize(),
-                success: function (res) {
-                    boxCakeGoods.innerHTML = res;
-                }
-            });
-        });
-
-
-        $('#sidebar-filter-level').on('change', function (e) {
-
-            // console.log($(this).serialize());
-
-            $.ajax({
-                type: 'post',
-                url: '/cake-goods/ajax-goods',
-                data: $('#sidebar-filter-level').serialize(),
-                success: function (res) {
-                    boxCakeGoods.innerHTML = res;
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-
-        });
-
-    }
-
-
-    if (boxCandieGoods) {
-
-        button__rectangle.onclick = function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'post',
-                url: '/candie-goods/ajax-goods',
-                data: $('#sidebar-filter').serialize(),
-                success: function (res) {
-                    boxCandieGoods.innerHTML = res;
-                    // $('#sidebar-filter')[0].reset();
-                },
-                error: function (err) {
-                    console.log(err);
-                }
             });
 
         };
-
     }
+
+    var filterCake = new FilterAjaxForm('#sidebar-filter-cake', '#box-cake-goods');
+    filterCake.getData('/cake-goods/ajax-goods');
+
+    var filterCandy = new FilterAjaxForm('#sidebar-filter-candy', '#box-candie-goods');
+    filterCandy.getData('/candie-goods/ajax-goods');
+
+
+    // if (filterSidebarCake) {
+    //
+    //     $('#sidebar-filter-cake').on('change', function (e) {
+    //
+    //         // add class for custom checkbox filter
+    //         if (e.target.previousElementSibling.classList[2] == 'check-true') {
+    //             e.target.previousElementSibling.classList.remove('check-true')
+    //         } else {
+    //             e.target.previousElementSibling.classList.add('check-true')
+    //         }
+    //
+    //         $.ajax({
+    //             type: 'post',
+    //             url: '/cake-goods/ajax-goods',
+    //             data: $(this).serialize(),
+    //             success: function (res) {
+    //                 boxCakeGoods.innerHTML = res;
+    //             },
+    //             error: function (err) {
+    //                 console.log(err);
+    //             }
+    //         });
+    //
+    //     });
+    //
+    // }
+    //
+    //
+    // if (filterSidebarCandy) {
+    //
+    //     $('#sidebar-filter-candy').on('change', function (e) {
+    //
+    //         // add class for custom checkbox filter
+    //         if (e.target.previousElementSibling.classList[2] == 'check-true') {
+    //             e.target.previousElementSibling.classList.remove('check-true')
+    //         } else {
+    //             e.target.previousElementSibling.classList.add('check-true')
+    //         }
+    //
+    //         $.ajax({
+    //             type: 'post',
+    //             url: '/candie-goods/ajax-goods',
+    //             data: $(this).serialize(),
+    //             success: function (res) {
+    //                 boxCandyGoods.innerHTML = res;
+    //             },
+    //             error: function (err) {
+    //                 console.log(err);
+    //             }
+    //         });
+    //
+    //     });
+    //
+    // }
 });
 
 
@@ -531,14 +539,6 @@ $(document).ready(function () {
 });
 
 // Delivery Pickup
-
-
-
-
-
-
-
-
 
 
 

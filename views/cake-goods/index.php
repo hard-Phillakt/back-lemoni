@@ -38,7 +38,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                     <?php $form = ActiveForm::begin([
                         'options' => [
-                            'id' => 'sidebar-filter-price',
+                            'id' => 'sidebar-filter-cake',
                             'class' => 'cake-goods'
                         ],
                     ]); ?>
@@ -61,15 +61,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                     </div>
 
-                    <?php $form = ActiveForm::end(); ?>
-
-
-                    <?php $form = ActiveForm::begin([
-                        'options' => [
-                            'id' => 'sidebar-filter-checkbox',
-                            'class' => 'cake-goods'
-                        ],
-                    ]); ?>
 
                     <!-- filter type-goods -->
                     <div class="filter-sidebar-catalog__box mt-15">
@@ -80,49 +71,51 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                         <div class="filter-sidebar-catalog__box_ul global-form global-form-checkbox mt-15">
 
-                            <span><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
-                                           class="global-form__checkbox mt-35" value="Классический">
-                                    классические
-                                </span>
+                                <div class="mt-15">
+                                    <label>
+                                        <span class="shadow-checkbox mr-15"></span>
+                                        <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el2"
+                                               class="global-form__checkbox mt-35" value="Классический">
+                                        классические
+                                    </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
-                                           class="global-form__checkbox mt-35" value="Мусcовый">
-                                    муссовые
-                                </span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
+                                        <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el3"
+                                               class="global-form__checkbox mt-35" value="Мусcовый">
+                                        муссовые
+                                    </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
-                                           class="global-form__checkbox mt-35" value="Шадлав">
-                                    шадлавы
-                                </span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
+                                        <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el4"
+                                               class="global-form__checkbox mt-35" value="Шадлав">
+                                        шадлавы
+                                    </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
-                                           class="global-form__checkbox mt-35" value="Диетические">
-                                    диетические
-                                </span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
+                                        <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el5"
+                                               class="global-form__checkbox mt-35" value="Диетические">
+                                        диетические
+                                    </label>
+                                </div>
 
-                                <span><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
-                                           class="global-form__checkbox mt-35" value="Постные">
-                                    постные
-                                </span>
+                                <div class="mt-15">
+                                    <label><span class="shadow-checkbox mr-15"></span>
+                                        <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
+                                               class="global-form__checkbox mt-35" value="Постные">
+                                        постные
+                                    </label>
+                                </div>
 
                         </div>
 
                     </div>
 
-                    <?php $form = ActiveForm::end(); ?>
-
-
-                    <?php $form = ActiveForm::begin([
-                        'options' => [
-                            'id' => 'sidebar-filter-level',
-                            'class' => 'cake-goods'
-                        ],
-                    ]); ?>
 
                     <!-- filter leavel -->
                     <div class="filter-sidebar-catalog__box mt-35">
