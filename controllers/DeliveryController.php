@@ -19,7 +19,7 @@ use app\models\PickupDeliveryContact;
 use dvizh\cart\widgets\CartInformer;
 
 
-//Страница "Доставка"
+//  Страница "Доставка"
 class DeliveryController extends Controller
 {
 
@@ -134,7 +134,7 @@ class DeliveryController extends Controller
                 $data .= '<p><strong><h3>Товар:</h3></strong><p>';
                 $data .= '<table class="table">';
                 $data .= '<tr>';
-                $data .= '<td style=""><strong>Id товара: </strong><br>' . '<span>' . $value['item_id'];
+                $data .= '<td><strong>Id товара: </strong><br>' . '<span>' . $value['item_id'];
                 $data .= '<td><strong>Название товара: </strong><br>' . '<span>' . $query->lm_title;
                 $data .= '<td><strong>Количество: </strong><br>' . '<span>' . $value['count'] . ' шт';
                 $data .= '<td><strong>Сумма: </strong><br>' . '<span>' . $value['price'] . ' руб';
@@ -169,7 +169,7 @@ class DeliveryController extends Controller
 
                 $modelGoods = new CandieGoods();
 
-//          Вытаскиваю доп данные для отправки по id из корзины
+//              Вытаскиваю доп данные для отправки по id из корзины
                 $query = $modelGoods::findOne($value->item_id);
 
                 $json_decode = json_decode($value['options']);
@@ -244,18 +244,17 @@ class DeliveryController extends Controller
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
-                    'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
-                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
-                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru',
+                    'hard-phillakt@mail.ru' => 'Заказ с сайта: cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Заказ с сайта: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Заказ с сайта: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Заказ с сайта: cafelemoni.ru',
                 ])
-                ->setSubject('Доставка с Cafelemoni')
-                ->setTextBody('Доставка с Cafelemoni')
+                ->setSubject('Заказ с сайта Cafelemoni')
+                ->setTextBody('Заказ с сайта Cafelemoni')
                 ->setHtmlBody("<div>{$dataUser}<div><div>{$data}</div><div>{$totalSumm}</div>")
                 ->send();
         }
     }
-
-
 
 //  Метод для доставки
     public function actionIndex()
@@ -266,7 +265,6 @@ class DeliveryController extends Controller
 
         return $this->render('index', ['modelDeliveryContact' => $model]);
     }
-
 
 //  Метод для самовывоза
     public function actionPickup()

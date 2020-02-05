@@ -75,7 +75,6 @@ class CakeGoodsController extends Controller
         return $this->render('index', ['model' => $goods, 'filter' => $filter]);
     }
 
-
     public function actionIndex($param = null, $compilation = null)
     {
         $this->layout = 'base';
@@ -190,10 +189,10 @@ class CakeGoodsController extends Controller
                 return $this->getCakeCompilation();
                 break;
         }
+
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
     }
-
 
     public function actionAjaxGoods()
     {
@@ -241,7 +240,6 @@ class CakeGoodsController extends Controller
 //          делаю рендер по фильтрам без тегов на ajax
             return $this->render('ajax-goods', ['data_cake' => $data_cake]);
         }
-
 
 //      Compilation
         if (Yii::$app->request->isAjax && $data_filter_id = Yii::$app->request->post('compilation')) {

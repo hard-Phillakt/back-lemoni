@@ -43,7 +43,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                         ],
                     ]); ?>
 
-
                     <!-- filter kg -->
                     <div class="filter-sidebar-catalog__box">
 

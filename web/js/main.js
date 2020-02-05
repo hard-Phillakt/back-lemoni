@@ -235,7 +235,7 @@ $(document).ready(function () {
         this.getData = function (url) {
 
             $(filterSidebar).on('change', function (e) {
-
+                
                 // add class for custom checkbox filter
                 var element = e.target.previousElementSibling;
                 element.classList[2] == 'check-true' ? element.classList.remove('check-true') : element.classList.add('check-true');
@@ -474,6 +474,130 @@ $(document).ready(function () {
     };
 
 
+
+    // Filter checked true from main page
+    function addClassCheckTrue(param) {
+        $('.global-form__checkbox').each(function (index, item) {
+            if ($(item).val() == param) {
+                $(item).prop('checked', true);
+                $(item).prev().addClass('check-true');
+            }
+        });
+    }
+
+    switch (window.location.search) {
+        case '?param=muss':
+            addClassCheckTrue('Мусcовый');
+            break;
+        case '?param=cake-muss':
+            addClassCheckTrue('Мусовые пирожные');
+            break;
+        case '?param=diet':
+            addClassCheckTrue('Диетические');
+            break;
+        case '?param=classic':
+            if (window.location.pathname == '/cake') {
+                addClassCheckTrue('Классический');
+            } else {
+                addClassCheckTrue('Классические пирожные');
+            }
+            break;
+        case '?param=shadlaw':
+            addClassCheckTrue('Шадлав');
+            break;
+
+        //   Candy bar all start
+
+        case '?param=cookie':
+            addClassCheckTrue('Пряники');
+            break;
+        case '?param=candy':
+            addClassCheckTrue('Конфеты');
+            break;
+        case '?param=kulichi':
+            addClassCheckTrue('Куличи');
+            break;
+        case '?param=lean-products':
+            addClassCheckTrue('Постное');
+            break;
+        case '?param=sherbet':
+            addClassCheckTrue('Щербет');
+            break;
+        case '?param=fruit-bouquets':
+            addClassCheckTrue('Фруктовый букет');
+            break;
+        case '?param=marshmallows':
+            addClassCheckTrue('Зефир');
+            break;
+        case '?param=trifles':
+            addClassCheckTrue('Трайфлы');
+            break;
+    }
+
+
+
+
+
+    // Search-button for page search
+
+    var searchCount = 9;
+
+    function balanceAjax() {
+        !$('#balance-ajax').data('balance') ? $('#search-button').remove() : true;
+    }
+    
+    $('#search-button').on('click', function () {
+
+        $.ajax({
+            type: 'get',
+            url: '/search/ajax',
+            data: {
+                q: $(this).data('request'),
+                count: searchCount = searchCount + 9
+            },
+            success: function (res) {
+
+                $('#search-goods').html(res);
+
+                $('#search-button-balance').html($('#balance-ajax').data('balance'));
+
+                return balanceAjax();
+
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+
+    });
+
+
+
+    // Search link in header
+
+    $('.additional-modules__search').on('click', function () {
+
+        if($('.box-search').hasClass('view')){
+            $('.box-search').removeClass('view');
+        }else {
+            $('.box-search').addClass('view');
+            $('body').css({
+                overflow: 'hidden'
+            });
+        }
+    });
+
+    $('.box-search').on('click', function (e) {
+        if(!$(e.target).hasClass('global-form__input')){
+            $('.box-search').removeClass('view');
+            $('body').css({
+                overflow: ''
+            });
+        }
+    });
+
+
+
     // Скрипт режет длину карточки товара. Но решил резать длину css в custom.css
 
     // $('.link__item .title').each(function (index, item) {
@@ -539,6 +663,8 @@ $(document).ready(function () {
 });
 
 // Delivery Pickup
+
+
 
 
 

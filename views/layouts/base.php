@@ -52,12 +52,30 @@ BaseAsset::register($this);
 
 <div class="wrap">
 
+    <div class="box-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <form action="/search/" id="form-box-search">
+                        <input type="text" name="q" class="global-form__input" placeholder="Введите название ...">
+                        <button class="box-search__btn" type="submit">
+                            <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
+                        </button>
+                        <span class="box-search__close">×</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Full menu -->
     <div class="box-reletive">
 
         <div class="header-full-menu pt-35 close-menu">
 
-            <div class="container mb-60">
+            <div class="container mb-50">
                 <div class="row">
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -90,7 +108,7 @@ BaseAsset::register($this);
 
                             <!-- additional-modules__search -->
                             <div class="additional-modules__search">
-                                <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
+                                <img src="/img/icons/black/icon-search.svg" alt="icon-search">
                             </div>
 
                             <!-- additional-modules__cart-->
@@ -206,19 +224,16 @@ BaseAsset::register($this);
 
                         <!-- additional-modules__search -->
                         <div class="additional-modules__search">
-                            <a href="#!"><img src="/img/icons/black/icon-search.svg" alt="icon-search"></a>
+                            <img src="/img/icons/black/icon-search.svg" alt="icon-search">
                         </div>
 
                         <!-- additional-modules__cart -->
                         <div class="additional-modules__cart">
                             <a href="/check-out"><img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
-                            <span class="CartInformerBox">
-                                
-                                <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
-
-                            </span>
+                                <span class="CartInformerBox">
+                                    <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
+                                </span>
                             </a>
-
 
                             <div class="add-item-wrapper add-item-hidden add-item-none">
                                 <h5 class="title title-h5 pb-15">Добавленно:</h5>

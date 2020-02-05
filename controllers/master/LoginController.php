@@ -43,7 +43,7 @@ class LoginController extends Controller
 
                 if ($successPass) {
 
-                    Yii::$app->user->login($user, $remember['Login']['rememberMe'] == 1 ? 3600*24*30 : 0);
+                    Yii::$app->user->login($user, $remember['Login']['rememberMe'] ? 3600*24*30 : 0);
 
                     return $this->redirect('/master/news');
 

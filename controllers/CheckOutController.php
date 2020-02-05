@@ -14,23 +14,9 @@ use yii\web\Controller;
 class CheckOutController extends Controller
 {
 
-//    public function behaviors()
-//    {
-//        return [
-//            [
-//                'class' => 'yii\filters\PageCache',
-//                'only' => ['index'],
-//                'duration' => 1440,
-//            ],
-//        ];
-//    }
-
     public $layout = 'base';
 
-
-    
     public  function actionIndex(){
-
         
         return $this->render('index');
     }

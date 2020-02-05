@@ -32,9 +32,8 @@ class MasterClassController extends Controller
         if ($masterClassForm->load(Yii::$app->request->post()) && !empty($masterClassForm)) {
 
             $userData = Yii::$app->request->post();
-            $data = '';
 
-            $data .= '<div>';
+            $data = '<div>';
             $data .= '<p><strong><h3>Запись на мастер-класс:</h3></strong>'. '</p>';
             $data .= '<p><strong style="color:#8F5541;">Имя: </strong>' . $userData['MasterClassForm']['name']. '</p>';
             $data .= '<p><strong style="color:#8F5541;">Телефон: </strong>' . $userData['MasterClassForm']['phone']. '</p>';
@@ -45,9 +44,9 @@ class MasterClassController extends Controller
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
-                    'hard-phillakt@mail.ru' => 'Заказ с сайта : cafelemoni.ru',
-                    'sale@cafelemoni.ru' => 'Заказ с сайта : cafelemoni.ru',
-                    'info@webmedia31.ru' => 'Заказ с сайта : cafelemoni.ru'
+                    'hard-phillakt@mail.ru' => 'Заказ на мастер-класс: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Заказ на мастер-класс: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Заказ на мастер-класс: cafelemoni.ru'
                 ])
                 ->setSubject('Заказ на мастер-класс Cafelemoni')
                 ->setTextBody('Заказ на мастер-класс Cafelemoni')
@@ -55,7 +54,6 @@ class MasterClassController extends Controller
                 ->send();
 
             return $this->redirect('/master-class');
-
         }
 
 

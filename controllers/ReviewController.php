@@ -28,13 +28,13 @@ class ReviewController extends Controller
         $data .= "<p>Телефон: {$model->phone} <p>";
         $data .= "<p>Комментарий: {$model->comment} <p>";
 
-        Yii::$app->mailer->compose('embed-email', ['imageFileName' => '/path/to/image.jpg'])
+        Yii::$app->mailer->compose()
             ->attach($fileIdName)
             ->setFrom('info@cafelemoni.ru')
             ->setTo([
-                'phillakt@gmail.com' => 'Отзыв с сайта: cafelemoni.ru',
-//                'info@cafelemoni.ru' => 'Отзыв с сайта: cafelemoni.ru',
-//                'info@webmedia31.ru' => 'Отзыв с сайта: cafelemoni.ru'
+                'hard-phillakt@gmail.com' => 'Отзыв с сайта: cafelemoni.ru',
+                'info@cafelemoni.ru' => 'Отзыв с сайта: cafelemoni.ru',
+                'info@webmedia31.ru' => 'Отзыв с сайта: cafelemoni.ru'
             ])
             ->setSubject('Отзыв с Cafelemoni')
             ->setHtmlBody('<div>' . $data . '</div>')
