@@ -32,7 +32,7 @@ class ReviewController extends Controller
             ->attach($fileIdName)
             ->setFrom('info@cafelemoni.ru')
             ->setTo([
-                'hard-phillakt@gmail.com' => 'Отзыв с сайта: cafelemoni.ru',
+                'hard-phillakt@mail.ru' => 'Отзыв с сайта: cafelemoni.ru',
                 'info@cafelemoni.ru' => 'Отзыв с сайта: cafelemoni.ru',
                 'info@webmedia31.ru' => 'Отзыв с сайта: cafelemoni.ru'
             ])

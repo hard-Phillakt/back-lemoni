@@ -18,7 +18,6 @@ class IndexController extends Controller
     public  $layout = 'base';
 
     public function actionIndex(){
-        
 
         return $this->render('index');
     }

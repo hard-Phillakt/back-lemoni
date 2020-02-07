@@ -27,7 +27,7 @@ use yii\widgets\LinkPager;
             <div class="mt-60">
                 <form id="form-search" action="/search">
                     <input type="text" id="filtercake-price_for_kg_max" class="global-form__input"
-                           name="q" placeholder="Введите название ...">
+                           name="q" placeholder="поиск по товарам">
 
                     <div class="mt-15" style="text-align: right">
                         <button type="submit" class="button button__rectangle" data-toggle="modal" data-target="#one-click">Найти</button>

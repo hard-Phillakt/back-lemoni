@@ -8,7 +8,6 @@
 
 namespace app\controllers;
 
-
 use Yii;
 
 use yii\helpers\ArrayHelper;
@@ -16,7 +15,6 @@ use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 
 //  Подключил модель "тортов"
-//use app\models\CakeGoods;
 use app\models\CandieGoods;
 
 //  Подключил модель "фильтров тортов"
@@ -24,31 +22,39 @@ use app\models\FilterCake;
 
 use app\models\Tag;
 
-
 //  Создал контроллер тортов
 class CandieGoodsController extends Controller
 {
 
+//  Выводим если нету товаров
+    public static function noProducts()
+    {
+
+        return $errorMessage = '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h3 class="desc desc__md opac__07">Товары для данной категории вскоре будут добавлены на сайт.</h3>
+                                    <div class="mt-15">
+                                        <p class="desc desc__md opac__07"> О наличии или заказе товаров вы можете уточнить по телефону: <a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a></p>
+                                    <div>
+                                </div>';
+    }
+
 //  Выборка по get параметрам
     public function getCandyType($arg)
     {
+
         $filter = new FilterCake();
 
         $query_cake_goods = new CandieGoods();
 
         $goods = $query_cake_goods::find()->where(['lm_type' => $arg])->asArray()->orderBy('id DESC')->all();
 
-//        debug($goods);die;
+        if (empty($goods)) {
 
-        if (!$goods) {
-            $data = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
-            
-            return $this->render('index', ['data_cake' => $data, 'filter' => $filter]);
+            return $this->render('index', ['model' => $goods, 'filter' => $filter, 'void' => self::noProducts()]);
         }
 
         return $this->render('index', ['model' => $goods, 'filter' => $filter]);
     }
-
 
     public function actionIndex($param = null)
     {
@@ -62,10 +68,12 @@ class CandieGoodsController extends Controller
 
         if ($data_filter = Yii::$app->request->post('FilterCake')) {
 
-//            $cake = $query_cake_goods::find()->with(['tag']);
+//          $cake = $query_cake_goods::find()->with(['tag']);
+
             $cake = $query_cake_goods::find();
 
 //          1.фильтр по "Цена за килограм"
+
 //            $cake->andFilterWhere(['like', 'lm_price_for_kg', $data_filter['price_for_kg']]);
 
 //            $cake->andFilterWhere(['>=', 'lm_price_for_kg', $data_filter['price_for_kg_min']]);
@@ -114,6 +122,10 @@ class CandieGoodsController extends Controller
 //            }
 
 
+            if (empty($data_cake)) {
+                return self::noProducts();
+            }
+
 //          делаю рендер по фильтрам без тегов
             return $this->render('index', ['data_cake' => $data_cake, 'model' => $model, 'filter' => $filter]);
 
@@ -122,90 +134,61 @@ class CandieGoodsController extends Controller
 
 //      Выборка с главной по параметрам
         switch ($param) {
-
 //          мусовые пирожные
             case 'cake-muss':
-
                 return $this->getCandyType('Мусовые пирожные');
-
                 break;
 
 //          классические пирожные
             case 'classic':
-
                 return $this->getCandyType('Классические пирожные');
-
                 break;
 
 //          Все
             case 'dessert':
-
                 return $this->getCandyType('');
-
                 break;
-
 
 //          Пряники
             case 'cookie':
-
                 return $this->getCandyType('Пряники');
-
                 break;
 
 
 //          Конфеты
             case 'candy':
-
                 return $this->getCandyType('Конфеты');
-
                 break;
 
 
 //          Конфеты
             case 'kulichi':
-
                 return $this->getCandyType('Куличи');
-
                 break;
-
 
 //          Постная продукция
             case 'lean-products':
-
                 return $this->getCandyType('Постная продукция');
-
                 break;
-
 
 //          Щербет
             case 'sherbet':
-
                 return $this->getCandyType('Щербет');
-
                 break;
-
 
 //          Фруктовый букет
             case 'fruit-bouquets':
-
                 return $this->getCandyType('Фруктовый букет');
-
                 break;
-
 
 //          Зефир
             case 'marshmallows':
-
                 return $this->getCandyType('Зефир');
-
                 break;
-
 
 //          Трайфлы
             case 'trifles':
-
                 return $this->getCandyType('Трайфлы');
-
                 break;
         }
 
@@ -213,7 +196,6 @@ class CandieGoodsController extends Controller
 //      делаю рендер без фильтров и тегов
         return $this->render('index', ['model' => $model, 'filter' => $filter]);
     }
-
 
     public function actionAjaxGoods()
     {
@@ -261,6 +243,10 @@ class CandieGoodsController extends Controller
 
             $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
+            if (empty($data_cake)) {
+                return self::noProducts();
+            }
+
 //          делаю рендер по фильтрам без тегов на ajax
             return $this->render('ajax-goods', ['data_cake' => $data_cake]);
         }
@@ -273,12 +259,14 @@ class CandieGoodsController extends Controller
 
             $data_compilation = $candy::find()->with('candy')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
 
+            if (empty($data_cake)) {
+                return self::noProducts();
+            }
+
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
 
 
     }
-
-
 }

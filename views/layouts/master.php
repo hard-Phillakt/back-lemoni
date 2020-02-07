@@ -8,8 +8,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\BaseAsset;
 use app\widgets\customcart\CartInformer;
 use yii\helpers\Url;
-
-
+use app\widgets\wtruncartt\WTruncateCartT;
 
 BaseAsset::register($this);
 
@@ -61,6 +60,8 @@ BaseAsset::register($this);
                             <?= Html::a('Теги-Cake', Url::to('/master/cake-tag'), ['class' => 'link link__a'])?>
 
                             <?= Html::a('Теги-Candy', Url::to('/master/candy-tag'), ['class' => 'link link__a'])?>
+
+                            <?= WTruncateCartT::widget();?>
 
 
                         <?php if(!Yii::$app->user->isGuest): ?>

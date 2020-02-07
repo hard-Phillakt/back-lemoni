@@ -27,6 +27,18 @@ use app\models\Tag;
 class CakeGoodsController extends Controller
 {
 
+    //  Выводим если нету товаров
+    public static function noProducts()
+    {
+
+        return $errorMessage = '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h3 class="desc desc__md opac__07">Товары для данной категории вскоре будут добавлены на сайт.</h3>
+                                    <div class="mt-15">
+                                        <p class="desc desc__md opac__07"> О наличии или заказе товаров вы можете уточнить по телефону: <a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a></p>
+                                    <div>
+                                </div>';
+    }
+
     public function getCakeCompilation()
     {
 
@@ -59,17 +71,15 @@ class CakeGoodsController extends Controller
 //  Выборка по get параметрам
     public function getCakeType($arg)
     {
-
         $filter = new FilterCake();
 
         $query_cake_goods = new CakeGoods();
 
         $goods = $query_cake_goods::find()->where(['lm_type' => $arg])->asArray()->orderBy('id DESC')->all();
 
-        if (!$goods) {
-            $data = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
+        if (empty($goods)) {
 
-            return $this->render('index', ['data_cake' => $data, 'filter' => $filter]);
+            return $this->render('index', ['data_cake' => $goods, 'filter' => $filter, 'void' => self::noProducts()]);
         }
 
         return $this->render('index', ['model' => $goods, 'filter' => $filter]);
@@ -237,6 +247,11 @@ class CakeGoodsController extends Controller
 
             $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
+            if(empty($data_cake)){
+
+               return self::noProducts();
+            }
+
 //          делаю рендер по фильтрам без тегов на ajax
             return $this->render('ajax-goods', ['data_cake' => $data_cake]);
         }
@@ -252,9 +267,6 @@ class CakeGoodsController extends Controller
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }
 
-        $data_cake = $query_cake_goods->find()->all();
-
-        return $this->render('ajax-goods', ['data_cake' => $data_cake]);
     }
 
 }

@@ -188,6 +188,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                 <div class="row mt-60" id="box-cake-goods">
 
+                    <?php if($void): ?>
+
+                        <?= $void; ?>
+                        
+                    <?php endif; ?>
+
                     <!-- card-filter -->
                     <?php if ($model): ?>
 
@@ -263,9 +269,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                         <?php endforeach; ?>
 
-
                     <?php elseif($compilation): ?>
-
 
                         <?php foreach ($compilation[0]['cake'] as $key => $value): ?>
 
@@ -302,12 +306,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                         <?php endforeach; ?>
 
-
                     <?php endif; ?>
 
                 </div>
             </div>
-
         </div>
     </div>
 </section>

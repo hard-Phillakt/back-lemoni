@@ -57,7 +57,7 @@ BaseAsset::register($this);
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3">
                     <form action="/search/" id="form-box-search">
-                        <input type="text" name="q" class="global-form__input" placeholder="Введите название ...">
+                        <input type="text" name="q" class="global-form__input" placeholder="поиск по товарам">
                         <button class="box-search__btn" type="submit">
                             <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                         </button>
@@ -67,9 +67,7 @@ BaseAsset::register($this);
             </div>
         </div>
     </div>
-
-
-
+    
     <!-- Full menu -->
     <div class="box-reletive">
 
