@@ -19,6 +19,10 @@ class TruncateCartT extends Component
     public static function truncateCartT($arg)
     {
 
+//      Очищаем от мусора таблицу cart
+//      (При заходе нового пользователя, плагином корзины делается запись по временной метке в качестве нового юзера
+//      Кнопка в админке для очистики таблицы cart по усмотрению админа.)
+
         if (self::_TRUNCATE_CART == $arg) {
             Yii::$app->db->createCommand('DELETE FROM `cart`')->execute();
         }

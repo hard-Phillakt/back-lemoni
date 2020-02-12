@@ -48,7 +48,6 @@ BaseAsset::register($this);
                             <?= Html::a(Html::img(Url::to('/img/logo/logo-brown.svg')), Url::to('/')) ?>
                         </div>
 
-
                             <?= Html::a('Новости', Url::to('/master/news/index'), ['class' => 'link link__a'])?>
 
                             <?= Html::a('Мастер-классы', Url::to('/master/master-class'), ['class' => 'link link__a'])?>
@@ -62,7 +61,6 @@ BaseAsset::register($this);
                             <?= Html::a('Теги-Candy', Url::to('/master/candy-tag'), ['class' => 'link link__a'])?>
 
                             <?= WTruncateCartT::widget();?>
-
 
                         <?php if(!Yii::$app->user->isGuest): ?>
 

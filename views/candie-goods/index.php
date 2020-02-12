@@ -47,7 +47,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                             Цена за единицу товара
                         </h5>
 
-                        <div class="flter-min-max mt-35">
+                        <div class="flter-min-max mt-15">
 
                             <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
 
@@ -101,14 +101,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                             <div class="mt-15">
                                 <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el6"
-                                           class="global-form__checkbox mt-35" value="Щербет">
-                                    щербет
-                                </label>
-                            </div>
-
-                            <div class="mt-15">
-                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el7"
                                            class="global-form__checkbox mt-35" value="Зефир">
                                     зефир
@@ -133,43 +125,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                 </label>
                                 </div>
 
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e20"
-                                           class="global-form__checkbox mt-35" value="Кейкпопсы">
-                                    кейкпопсы
-                                </label>
-                                </div>
-
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e21"
-                                           class="global-form__checkbox mt-35" value="Укусики">
-                                    укусики
-                                </label>
-                                </div>
 
                                 <div class="mt-15">
                                     <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e22"
                                            class="global-form__checkbox mt-35" value="Постное">
                                     постное
-                                </label>
-                                </div>
-
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e23"
-                                           class="global-form__checkbox mt-35" value="Штрудель">
-                                    штрудель
-                                </label>
-                                </div>
-
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e24"
-                                           class="global-form__checkbox mt-35" value="Кексы на фруктовом пюре">
-                                    кексы на фруктовом пюре
                                 </label>
                                 </div>
 
@@ -194,10 +155,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
-                <h2 class="title title__h1 opac__07">Каталог candy bar</h2>
+                <h2 class="title title__h1 opac__07">Каталог десертов</h2>
 
                 <!-- filter type-goods -->
-                <div class="filter-sidebar-catalog__box-compilation mt-60 dsp-none">
+                <div class="filter-sidebar-catalog__box-compilation mt-60">
 
                     <div class="row">
                         <div class="col-lg-3">
@@ -210,12 +171,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                             <div class="filter-sidebar-catalog__box-compilation_ul global-form">
 
-                                <?php foreach ($filter['tag'] as $key => $value): ?>
+                                <?php foreach ($tag as $key => $value): ?>
 
-                                    <a href="#!" data-count="<?= $key; ?>"
+                                    <span data-count="<?= $value['id']?>"
                                        class="compilation-candie link link__a mr-15 mb-15">
-                                        <?= $value; ?>
-                                    </a>
+                                        <?= $value['title']?>
+                                    </span>
 
                                 <?php endforeach; ?>
 
@@ -229,9 +190,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                 <div class="row mt-60" id="box-candie-goods">
 
                     <!-- card-filter -->
-                    <?php if($void): ?>
+                    <?php if($empty_goods): ?>
 
-                        <?= $void; ?>
+                        <?= $empty_goods; ?>
                         
                     <?php endif; ?>
 

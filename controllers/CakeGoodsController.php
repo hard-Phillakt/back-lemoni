@@ -8,7 +8,6 @@
 
 namespace app\controllers;
 
-
 use Yii;
 
 use yii\helpers\ArrayHelper;
@@ -68,7 +67,7 @@ class CakeGoodsController extends Controller
 
     }
 
-//  Выборка по get параметрам
+//  Выборка по get параметрам - объявляю в actionIndex (switch)
     public function getCakeType($arg)
     {
         $filter = new FilterCake();
@@ -200,8 +199,12 @@ class CakeGoodsController extends Controller
                 break;
         }
 
+        $tag = new Tag();
+
+        $queryTag = $tag::find()->where(['subjects' => 'cake'])->asArray()->all();
+
 //      делаю рендер без фильтров и тегов
-        return $this->render('index', ['model' => $model, 'filter' => $filter]);
+        return $this->render('index', ['model' => $model, 'filter' => $filter, 'tag' => $queryTag]);
     }
 
     public function actionAjaxGoods()
@@ -263,6 +266,9 @@ class CakeGoodsController extends Controller
 
             $data_compilation = $tag::find()->with('cake')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
 
+            if (empty($data_compilation[0]['cake'])) {
+                return self::noProducts();
+            }
 //          фильтр по готовым подборкам
             return $this->render('ajax-goods', ['data_compilation' => $data_compilation]);
         }

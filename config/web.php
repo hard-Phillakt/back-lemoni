@@ -17,6 +17,9 @@ $config = [
         'cart' => [
             'class' => 'dvizh\cart\Module',
         ],
+        'admin' => [
+            'class' => 'app\modules\admin\Admin'
+        ]
     ],
     'controllerMap' => [
         'elfinder' => [
@@ -94,7 +97,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'index',
-                'admin/' => 'master/login',
+                'admin/' => 'admin/login',
                 'cake/' => 'cake-goods/index',
                 'candy/' => 'candie-goods/index',
                 'bouquet/' => 'candie-goods/index',

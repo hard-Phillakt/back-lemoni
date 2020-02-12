@@ -50,7 +50,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                             Цена за килограмм
                         </h5>
 
-                        <div class="flter-min-max mt-35">
+                        <div class="flter-min-max mt-15">
 
                             <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
 
@@ -153,7 +153,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                 <h2 class="title title__h1 opac__07">Каталог тортов</h2>
 
                 <!-- filter type-goods dsp-none -->
-                <div class="filter-sidebar-catalog__box-compilation mt-60 dsp-none">
+                <div class="filter-sidebar-catalog__box-compilation mt-60">
 
                     <div class="row">
                         <div class="col-lg-3">
@@ -168,12 +168,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 
                             <div class="filter-sidebar-catalog__box-compilation_ul global-form ">
 
-                                <?php foreach ($filter['tag'] as $key => $value): ?>
+                                <?php foreach ($tag as $key => $value): ?>
 
-                                    <a href="#!" data-count="<?= $key; ?>"
+                                    <span data-count="<?= $value['id']?>"
                                        class="compilation-cake link link__a mr-15 mb-15">
-                                        <?= $value; ?>
-                                    </a>
+                                        <?= $value['title']?>
+                                    </span>
 
                                 <?php endforeach; ?>
 

@@ -38,7 +38,7 @@ class CandieGoodsController extends Controller
                                 </div>';
     }
 
-//  Выборка по get параметрам
+//  Выборка по get параметрам - объявляю в actionIndex (switch)
     public function getCandyType($arg)
     {
 
@@ -50,7 +50,7 @@ class CandieGoodsController extends Controller
 
         if (empty($goods)) {
 
-            return $this->render('index', ['model' => $goods, 'filter' => $filter, 'void' => self::noProducts()]);
+            return $this->render('index', ['model' => $goods, 'filter' => $filter, 'empty_goods' => self::noProducts()]);
         }
 
         return $this->render('index', ['model' => $goods, 'filter' => $filter]);
@@ -65,6 +65,7 @@ class CandieGoodsController extends Controller
         $model = $query_cake_goods::find()->asArray()->orderBy('id DESC')->all();
 
         $filter = new FilterCake();
+
 
         if ($data_filter = Yii::$app->request->post('FilterCake')) {
 
@@ -131,7 +132,6 @@ class CandieGoodsController extends Controller
 
         }
 
-
 //      Выборка с главной по параметрам
         switch ($param) {
 //          мусовые пирожные
@@ -154,13 +154,11 @@ class CandieGoodsController extends Controller
                 return $this->getCandyType('Пряники');
                 break;
 
-
 //          Конфеты
             case 'candy':
                 return $this->getCandyType('Конфеты');
                 break;
-
-
+            
 //          Конфеты
             case 'kulichi':
                 return $this->getCandyType('Куличи');
@@ -171,9 +169,9 @@ class CandieGoodsController extends Controller
                 return $this->getCandyType('Постная продукция');
                 break;
 
-//          Щербет
-            case 'sherbet':
-                return $this->getCandyType('Щербет');
+//          Классические пирожные, Мусовые пирожные
+            case 'muss-classic':
+                return $this->getCandyType(['Классические пирожные', 'Мусовые пирожные']);
                 break;
 
 //          Фруктовый букет
@@ -192,9 +190,12 @@ class CandieGoodsController extends Controller
                 break;
         }
 
+        $tag = new Tag();
+
+        $queryTag = $tag::find()->where(['subjects' => 'candy'])->asArray()->all();
 
 //      делаю рендер без фильтров и тегов
-        return $this->render('index', ['model' => $model, 'filter' => $filter]);
+        return $this->render('index', ['model' => $model, 'filter' => $filter, 'tag' => $queryTag]);
     }
 
     public function actionAjaxGoods()
@@ -259,7 +260,8 @@ class CandieGoodsController extends Controller
 
             $data_compilation = $candy::find()->with('candy')->where(['id' => $data_filter_id])->asArray()->orderBy('id DESC')->all();
 
-            if (empty($data_cake)) {
+
+            if (empty($data_compilation[0]['candy'])) {
                 return self::noProducts();
             }
 

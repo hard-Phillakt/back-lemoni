@@ -237,7 +237,7 @@ $(document).ready(function () {
             $(filterSidebar).on('change', function (e) {
                 
                 // add class for custom checkbox filter
-                var element = e.target.previousElementSibling;
+                var element = e.target.previousElementSibling || e.target.nextElementSibling;
                 element.classList[2] == 'check-true' ? element.classList.remove('check-true') : element.classList.add('check-true');
 
                 $.ajax({
@@ -258,10 +258,10 @@ $(document).ready(function () {
     }
 
     var filterCake = new FilterAjaxForm('#sidebar-filter-cake', '#box-cake-goods');
-    filterCake.getData('/cake-goods/ajax-goods');
+        filterCake.getData('/cake-goods/ajax-goods');
 
     var filterCandy = new FilterAjaxForm('#sidebar-filter-candy', '#box-candie-goods');
-    filterCandy.getData('/candie-goods/ajax-goods');
+        filterCandy.getData('/candie-goods/ajax-goods');
 
 
     // if (filterSidebarCake) {
@@ -364,6 +364,8 @@ if (boxCandieGoods) {
 
         item.onclick = function (e) {
             e.preventDefault();
+
+            console.log(this.dataset.count);
 
             $.ajax({
                 type: 'post',
@@ -520,8 +522,9 @@ $(document).ready(function () {
         case '?param=lean-products':
             addClassCheckTrue('Постное');
             break;
-        case '?param=sherbet':
-            addClassCheckTrue('Щербет');
+        case '?param=muss-classic':
+            addClassCheckTrue('Классические пирожные');
+            addClassCheckTrue('Мусовые пирожные');
             break;
         case '?param=fruit-bouquets':
             addClassCheckTrue('Фруктовый букет');
@@ -570,8 +573,6 @@ $(document).ready(function () {
         });
 
     });
-
-
 
     // Search link in header
 

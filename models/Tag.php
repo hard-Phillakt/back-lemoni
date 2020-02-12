@@ -23,42 +23,16 @@ class Tag extends \yii\db\ActiveRecord {
     public static function tableName(){
         return 'tag';
     }
-    
-    
+
     public function getCake(){
         return $this->hasMany(CakeGoods::class, ['id' => 'cake_id'])
             ->viaTable('cake_tag', ['tag_id' => 'id']);
     }
 
-
     public function getCandy(){
         return $this->hasMany(CandieGoods::class, ['id' => 'candy_id'])
             ->viaTable('candy_tag', ['tag_id' => 'id']);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //  связь для выборки по тегам (заменил связь на getRichCake + фильтры по связям)
@@ -78,7 +52,6 @@ class Tag extends \yii\db\ActiveRecord {
 //    }
 
 
-
     /**
      * {@inheritdoc}
      */
@@ -86,7 +59,8 @@ class Tag extends \yii\db\ActiveRecord {
     {
         return [
             [['title'], 'required'],
-            [['title'], 'string'],
+            [['subjects'], 'required'],
+            [['title', 'subjects'], 'string'],
             [['parent_id'], 'safe'],
         ];
     }
@@ -98,7 +72,8 @@ class Tag extends \yii\db\ActiveRecord {
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
+            'title' => 'Заголовок',
+            'subjects' => 'Тематика',
         ];
     }
 }

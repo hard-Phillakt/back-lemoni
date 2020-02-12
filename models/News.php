@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\validators\DateValidator;
+
 
 /**
  * This is the model class for table "news".
@@ -17,6 +19,8 @@ use Yii;
  * @property string $lm_publicate
  * @property string $lm_prioritet
  */
+
+
 class News extends \yii\db\ActiveRecord
 {
     /**

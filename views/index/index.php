@@ -121,8 +121,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 
                 <div class="mt-35">
                     <p class="desc desc__sm">
-                        Эти десерты не просто потрясающе вкусные, <br>
-                        но и выглядят, как нечто космическое.
+                        Муссовый торт – это невероятно нежный десерт, который украсит праздничный стол или станет
+                        идеальным подарком! Благодаря зеркальной глазури он имеет элегантный вид. По вашему желанию мы
+                        украсим торт различным декором. <br>
+                        <br>
+                        Уверены, вы не останетесь равнодушными!
                     </p>
                 </div>
 
@@ -137,7 +140,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                         <a href="/cake?param=diet" class="link link__a">Диета</a>
                     </div>
                     <div class="col-lg-6">
-<!--                        <a href="#!" class="link link__a">Собери сам!</a>-->
+                        <!--                        <a href="#!" class="link link__a">Собери сам!</a>-->
                     </div>
                 </div>
 
@@ -182,7 +185,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                         <a href="/cake?param=diet" class="link link__a">Диета</a>
                     </div>
                     <div class="col-lg-6">
-<!--                        <a href="#!" class="link link__a">Собери сам!</a>-->
+                        <!--                        <a href="#!" class="link link__a">Собери сам!</a>-->
                     </div>
                 </div>
 
@@ -233,7 +236,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                         <a href="/cake?param=shadlaw" class="link link__a">Заказать</a>
                     </div>
                     <div class="col-lg-6 mb-35">
-<!--                        <a href="#!" class="link link__a">Мини-шадлавы</a>-->
+                        <!--                        <a href="#!" class="link link__a">Мини-шадлавы</a>-->
                     </div>
                 </div>
             </div>
@@ -266,8 +269,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="/candy?param=cookie">
-                            <img src="../img/candy-bar/icons/Block_01_gingerbread.png" alt="Block_01_gingerbread"
-                                 class="card-img__img">
+                            <img src="../img/candy-bar/personal/candy-1.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
                         <a href="/candy?param=cookie" class="link link__a mt-15">Пряники</a>
                     </div>
@@ -278,8 +281,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="/candy?param=candy">
-                            <img src="../img/candy-bar/icons/Block_02_candy.png" alt="Block_02_candy"
-                                 class="card-img__img">
+                            <img src="../img/candy-bar/personal/candy-2.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
                         <a href="/candy?param=candy" class="link link__a mt-15">Конфеты</a>
                     </div>
@@ -290,8 +293,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="/candy?param=kulichi">
-                            <img src="../img/candy-bar/icons/Block_03_Kulich.png" alt="Block_03_Kulich"
-                                 class="card-img__img">
+                            <img src="../img/candy-bar/personal/candy-3.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
                         <a href="/candy?param=kulichi" class="link link__a mt-15">Куличи</a>
                     </div>
@@ -302,8 +305,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="/candy?param=lean-products">
-                            <img src="../img/candy-bar/icons/Block_04_diet.png" alt="Block_04_diet"
-                                 class="card-img__img">
+                            <img src="../img/candy-bar/personal/candy-4.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
                         <a href="/candy?param=lean-products" class="link link__a mt-15">Постная продукция</a>
                     </div>
@@ -313,11 +316,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
-                        <a href="/candy?param=sherbet">
-                            <img src="../img/candy-bar/icons/Block_05_sherbet.png" alt="Block_05_sherbet"
-                                 class="card-img__img">
+                        <a href="/candy?param=muss-classic">
+                            <img src="../img/candy-bar/personal/candy-5.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
-                        <a href="/candy?param=sherbet" class="link link__a mt-15">Щербет</a>
+                        <a href="/candy?param=muss-classic" class="link link__a mt-15">Пирожные</a>
                     </div>
                 </div>
             </div>
@@ -326,8 +329,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="/candy?param=fruit-bouquets">
-                            <img src="../img/candy-bar/icons/Block_06_fruit.png" alt="Block_06_fruit"
-                                 class="card-img__img">
+                            <img src="../img/candy-bar/personal/candy-6.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
                         <a href="/candy?param=fruit-bouquets" class="link link__a mt-15">Фруктовые букеты</a>
                     </div>
@@ -338,22 +341,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                 <div class="glob-module-card mb-35">
                     <div class="card-img">
                         <a href="/candy?param=marshmallows">
-                            <img src="../img/candy-bar/icons/Block_07_marshmallows.png" alt="Block_07_marshmallows"
-                                 class="card-img__img">
+                            <img src="../img/candy-bar/personal/candy-7.png" alt="img"
+                                 class="card-img__img card-img__br-5">
                         </a>
                         <a href="/candy?param=marshmallows" class="link link__a mt-15">Зефир</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <div class="glob-module-card mb-35">
-                    <div class="card-img">
-                        <a href="/candy?param=trifles">
-                            <img src="../img/candy-bar/icons/Block_08_trifle.png" alt="Block_08_trifle"
-                                 class="card-img__img">
-                        </a>
-                        <a href="/candy?param=trifles" class="link link__a mt-15">Трайфлы</a>
                     </div>
                 </div>
             </div>
@@ -378,11 +369,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 
                         <div class="popular-cake__elem-shadow pb-25">
 
-                            <a href="/cake?compilation=3" class="card-img__img" style="background: url(../img/cake/cake_1.png)"></a>
+                            <a href="/cake?compilation=3" class="card-img__img"
+                               style="background: url(../img/cake/cake_1.png)"></a>
                             <div class="popular-cake__links mt-35">
                                 <a href="/cake?compilation=3" class="link link__a">На день рождения</a>
-                                <a href="/cake?compilation=3" class="button button__circle"><img src="../img/icons/arrow-right.svg"
-                                                                                alt="arrow-right"></a>
+                                <a href="/cake?compilation=3" class="button button__circle"><img
+                                        src="../img/icons/arrow-right.svg"
+                                        alt="arrow-right"></a>
                             </div>
                         </div>
 
@@ -395,11 +388,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                     <div class="card-img">
 
                         <div class="popular-cake__elem-shadow pb-25">
-                            <a href="/cake?compilation=5" class="card-img__img" style="background: url(../img/cake/cake_2.png)"></a>
+                            <a href="/cake?compilation=5" class="card-img__img"
+                               style="background: url(../img/cake/cake_2.png)"></a>
                             <div class="popular-cake__links mt-35">
                                 <a href="/cake?compilation=5" class="link link__a">Свадебные торты</a>
-                                <a href="/cake?compilation=5" class="button button__circle"><img src="../img/icons/arrow-right.svg"
-                                                                                alt="arrow-right"></a>
+                                <a href="/cake?compilation=5" class="button button__circle"><img
+                                        src="../img/icons/arrow-right.svg"
+                                        alt="arrow-right"></a>
                             </div>
                         </div>
 
@@ -413,14 +408,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 
                         <div class="popular-cake__elem-shadow pb-25">
 
-                            <a href="/cake?compilation=2" class="card-img__img" style="background: url(../img/cake/cake_3.png)"></a>
+                            <a href="/cake?compilation=2" class="card-img__img"
+                               style="background: url(../img/cake/cake_3.png)"></a>
 
                             <div class="popular-cake__links mt-35">
                                 <a href="/cake?compilation=2" class="link link__a">
                                     Праздничные
                                     торты</a>
-                                <a href="/cake?compilation=2" class="button button__circle"><img src="../img/icons/arrow-right.svg"
-                                                                                alt="arrow-right"></a>
+                                <a href="/cake?compilation=2" class="button button__circle"><img
+                                        src="../img/icons/arrow-right.svg"
+                                        alt="arrow-right"></a>
                             </div>
 
                         </div>
@@ -434,14 +431,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
                     <div class="card-img">
 
                         <div class="popular-cake__elem-shadow pb-25">
-                            <a href="/cake?compilation=10" class="card-img__img" style="background: url(../img/cake/cake_4.png)"></a>
+                            <a href="/cake?compilation=10" class="card-img__img"
+                               style="background: url(../img/cake/cake_4.png)"></a>
                             <div class="popular-cake__links mt-35">
                                 <a href="/cake?compilation=10" class="link link__a">
                                     Для людей
                                     с особым питанием
                                 </a>
-                                <a href="/cake?compilation=10" class="button button__circle"><img src="../img/icons/arrow-right.svg"
-                                                                                alt="arrow-right"></a>
+                                <a href="/cake?compilation=10" class="button button__circle"><img
+                                        src="../img/icons/arrow-right.svg"
+                                        alt="arrow-right"></a>
                             </div>
                         </div>
 

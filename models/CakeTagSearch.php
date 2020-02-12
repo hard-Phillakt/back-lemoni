@@ -38,7 +38,7 @@ class CakeTagSearch extends CakeTag
      * @return ActiveDataProvider
      */
     public function search($params){
-        $query = CakeTag::find();
+        $query = CakeTag::find()->orderBy('id DESC');
 
         // add conditions that should always apply here
 

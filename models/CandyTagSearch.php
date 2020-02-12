@@ -39,7 +39,7 @@ class CandyTagSearch extends CandyTag
      */
     public function search($params)
     {
-        $query = CandyTag::find();
+        $query = CandyTag::find()->orderBy('id DESC');
 
         // add conditions that should always apply here
 

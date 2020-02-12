@@ -102,12 +102,16 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Выходные 
 
                         <?php while ($newsArticle <= $mCount): ?>
 
-                            <?php if ($model[$newsArticle]->lm_publicate == 1): ?>
+                            <?php
+
+                            // Дата публикации на сайте
+                            $datePublicate = strtotime($model[$newsArticle]->lm_date);
+
+                            if ($model[$newsArticle]->lm_publicate == 1 && $datePublicate < date('U')): ?>
 
                                 <li class="mt-35 top-news">
 
-
-                                    <div class="flex-box mb-15   ">
+                                    <div class="flex-box mb-15">
                                         <div class="news-box__content_tag">
 
                                             <?php //Взрослый || Детский ?>

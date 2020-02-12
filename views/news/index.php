@@ -30,7 +30,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с �
 
                         foreach ($model as $key => $value): ?>
 
-                            <?php if ($value->lm_publicate == 1): ?>
+                            <?php
+
+                            // Дата публикации на сайте
+                            $datePublicate = strtotime($value->lm_date);
+
+                            if ($value->lm_publicate == 1 && $datePublicate < date('U')): ?>
 
                                 <li class="mt-35 top-news">
 
@@ -77,7 +82,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с �
                                         </div>
 
                                         <div class="mt-35">
-                                            <div class="news-box__content_date"><?= $value->lm_date; ?></div>
+                                            <div class="news-box__content_date news-box__content_link"><?= $value->lm_date; ?></div>
                                         </div>
                                     </div>
                                 </li>
