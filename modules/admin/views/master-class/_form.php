@@ -10,8 +10,6 @@ use mihaildev\elfinder\ElFinder;
 /* @var $model app\models\MasterClass */
 /* @var $form yii\widgets\ActiveForm */
 
-
-//debug($model);die;
 ?>
 
 <div class="master-class-form">
@@ -31,15 +29,11 @@ use mihaildev\elfinder\ElFinder;
 
             <?= $form->field($model, 'lm_title')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'lm_img')->textInput(['maxlength' => true])->widget(InputFile::class, [
-                'options'       => ['class' => 'form-control'],
-                'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
-                'buttonName' => 'Загрузить',
-            ]) ?>
+            <?= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
 
-            <div>
-                <?= Html::img($model->lm_img, ['class' => 'img-responsive']) ?>
-            </div>
+            <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'lm_price')->textInput(['maxlength' => true]) ?>
 
         </div>
 
@@ -47,11 +41,20 @@ use mihaildev\elfinder\ElFinder;
 
             <?= $form->field($model, 'lm_date')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="width: 150px; height: 150px">
+                        <?= Html::img($model->lm_img, ['class' => 'img-responsive']) ?>
+                    </div>
+                </div>
+            </div>
 
-            <?= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_img')->textInput(['maxlength' => true])->widget(InputFile::class, [
+                'options'       => ['class' => 'form-control'],
+                'buttonOptions' => ['class' => 'btn btn-primary mt-15'],
+                'buttonName' => 'Загрузить',
+            ]) ?>
 
-            <?= $form->field($model, 'lm_price')->textInput(['maxlength' => true]) ?>
         </div>
 
         <div class="col-lg-12 mt-35">
@@ -71,31 +74,5 @@ use mihaildev\elfinder\ElFinder;
     </div>
 
     <?php ActiveForm::end(); ?>
-
-<!--    --><?php //$form = ActiveForm::begin(); ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_essence')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_title')->textarea(['rows' => 6]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_img')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_description')->textarea(['rows' => 6]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_content')->textarea(['rows' => 6]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_price')->textInput() ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_date')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_publicate')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    --><?//= $form->field($model, 'lm_prioritet')->textInput(['maxlength' => true]) ?>
-<!---->
-<!--    <div class="form-group">-->
-<!--        --><?//= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-<!--    </div>-->
-<!---->
-<!--    --><?php //ActiveForm::end(); ?>
 
 </div>

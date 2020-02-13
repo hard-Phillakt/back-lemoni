@@ -3,13 +3,14 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\helpers\Url;
+
 $previous = Url::previous();
 
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MasterClass */
 
-$this->title = $model->id;
+$this->title = $model->lm_title;
 $this->params['breadcrumbs'][] = ['label' => 'Master Classes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);

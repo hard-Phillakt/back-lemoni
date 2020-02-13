@@ -10,7 +10,7 @@ $previous = Url::previous();
 /* @var $model app\models\CandieGoods */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Candie Goods', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Товар - десерт', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

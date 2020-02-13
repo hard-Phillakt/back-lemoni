@@ -114,7 +114,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Выходные 
                                     <div class="flex-box mb-15">
                                         <div class="news-box__content_tag">
 
-                                            <?php //Взрослый || Детский ?>
+                                            <?php // Взрослый || Детский ?>
 
                                             <?php $essence = $model[$newsArticle]->lm_essence == 'Взрослый' ? '#E69F9C;' : '#A5D9C9;'; ?>
 
@@ -181,15 +181,17 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Выходные 
 
                                     </div>
 
-
                                 </li>
 
-                                <?php
 
-                                $newsBoxCount++;
-                                $newsArticle++;
+                            <?php endif; ?>
 
-                            endif; ?>
+                            <?php
+
+                            $newsBoxCount++;
+                            $newsArticle++;
+
+                            ?>
 
                         <?php endwhile; ?>
 
@@ -202,7 +204,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Выходные 
         </div>
     </div>
 </section>
-
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

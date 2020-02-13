@@ -8,10 +8,11 @@ $previous = Url::previous();
 /* @var $this yii\web\View */
 /* @var $model app\models\CandieGoods */
 
-$this->title = 'Create Candie Goods';
+$this->title = 'Создать товар - десерт';
 $this->params['breadcrumbs'][] = ['label' => 'Candie Goods', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="candie-goods-create">
 
     <h1><?= Html::encode($this->title) ?></h1>

@@ -1045,6 +1045,17 @@ table a:focus {
     border-radius: 5em;
 }
 
+.review-bg {
+    height: 135px !important;
+    width: 100% !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+
+
+
+
 
 /* Preloader goods*/
 

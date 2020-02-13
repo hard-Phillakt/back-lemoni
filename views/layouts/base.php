@@ -139,7 +139,7 @@ BaseAsset::register($this);
                                     <a href="/cake" class="link black-menu-link__a">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candy" class="link black-menu-link__a">Candy bar</a>
+                                    <a href="/candy" class="link black-menu-link__a">Каталог десертов</a>
                                 </li>
                                 <li>
                                     <a href="/contact" class="link black-menu-link__a">Контакты</a>

@@ -150,6 +150,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
 
+                <?php if(!empty($tag)): ?>
+
                 <h2 class="title title__h1 opac__07">Каталог тортов</h2>
 
                 <!-- filter type-goods dsp-none -->
@@ -185,6 +187,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                     </div>
 
                 </div>
+
+                <?php endif; ?>
 
                 <div class="row mt-60" id="box-cake-goods">
 

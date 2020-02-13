@@ -30,7 +30,7 @@ $config = [
                 [
                     'baseUrl'=>'@web',
                     'basePath'=>'@webroot',
-                    'path' => 'files/global',
+                    'path' => 'files/',
                     'name' => 'global' 
                 ]
             ]

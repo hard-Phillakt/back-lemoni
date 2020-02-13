@@ -3,16 +3,16 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+/* @var $this yii\web\View */
+/* @var $model app\models\Review */
+
 $previous = Url::previous();
 
-/* @var $this yii\web\View */
-/* @var $model app\models\MasterClass */
-
-$this->title = 'Создать мастер-класс';
-$this->params['breadcrumbs'][] = ['label' => 'Master Classes', 'url' => ['index']];
+$this->title = 'Создать отзыв';
+$this->params['breadcrumbs'][] = ['label' => 'Reviews', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="master-class-create">
+<div class="review-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

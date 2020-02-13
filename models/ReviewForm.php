@@ -43,7 +43,7 @@ class  ReviewForm extends Model {
     {
         if ($this->validate()) {
 
-            $this->file->saveAs('xenos/uploads/image/' . 'image__' . date('U') . '.' . $this->file->extension);
+            $this->file->saveAs('files/xenos/uploads/image/' . 'image__' . date('U') . '.' . $this->file->extension);
             return true;
         } else {
             return false;

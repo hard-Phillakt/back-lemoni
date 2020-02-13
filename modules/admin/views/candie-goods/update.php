@@ -9,7 +9,7 @@ $previous = Url::previous();
 /* @var $this yii\web\View */
 /* @var $model app\models\CandieGoods */
 
-$this->title = 'Update Candie Goods: ' . $model->id;
+$this->title = 'Обновить товар - десерт: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Candie Goods', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

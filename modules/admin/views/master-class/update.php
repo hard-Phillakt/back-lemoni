@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+
 $previous = Url::previous();
 
 /* @var $this yii\web\View */
 /* @var $model app\models\MasterClass */
 
-$this->title = 'Update Master Class: ' . $model->id;
+$this->title = 'Обновить мастер-класс: ' . $model->lm_title;
 $this->params['breadcrumbs'][] = ['label' => 'Master Classes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

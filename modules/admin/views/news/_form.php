@@ -42,8 +42,10 @@ use mihaildev\elfinder\ElFinder;
             ]) ?>
 
             <div class="row">
-                <div class="col-lg-4">
-                    <?= Html::img($model->lm_img, ['class' => 'img-responsive']) ?>
+                <div class="col-lg-6">
+                    <div style="width: 150px; height: 150px">
+                        <?= Html::img($model->lm_img, ['class' => 'img-responsive']) ?>
+                    </div>
                 </div>
             </div>
 

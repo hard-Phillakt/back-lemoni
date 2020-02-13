@@ -3,17 +3,18 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+
 $previous = Url::previous();
 
 /* @var $this yii\web\View */
-/* @var $model app\models\CakeGoods */
+/* @var $model app\models\Review */
 
-$this->title = 'Обновить товар - торт: ' . $model->lm_title;
-$this->params['breadcrumbs'][] = ['label' => 'Cake Goods', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->title = 'Обновить отзыв: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Reviews', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="cake-goods-update">
+<div class="review-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

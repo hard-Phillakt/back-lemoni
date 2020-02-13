@@ -91,8 +91,6 @@ function filterSidebarCatalog() {
 
             item.onclick = function (e) {
 
-                console.log(this);
-
                 if (item.children[0].classList[2] == 'check-true') {
 
                     item.children[0].classList.remove('check-true');
@@ -455,25 +453,27 @@ $(document).ready(function () {
     // Scroll-to-top
     var scrollTo = document.querySelector('.scroll-to-top__wrapp');
 
-    scrollTo.onclick = function () {
-        document.body.scrollIntoView({behavior: 'smooth'});
-    };
+    if(scrollTo){
+        scrollTo.onclick = function () {
+            document.body.scrollIntoView({behavior: 'smooth'});
+        };
 
-    var hDocument = document.body.scrollHeight;
+        var hDocument = document.body.scrollHeight;
 
-    var percent = Math.round(parseInt(hDocument) * 20 / 100);
+        var percent = Math.round(parseInt(hDocument) * 20 / 100);
 
-    document.body.onscroll = function () {
+        document.body.onscroll = function () {
 
-        var pageYOffset = window.pageYOffset;
+            var pageYOffset = window.pageYOffset;
 
-        if (parseInt(pageYOffset) >= (parseInt(percent))) {
-            scrollTo.classList.remove('set-bottom');
-        } else {
-            scrollTo.classList.add('set-bottom');
-        }
+            if (parseInt(pageYOffset) >= (parseInt(percent))) {
+                scrollTo.classList.remove('set-bottom');
+            } else {
+                scrollTo.classList.add('set-bottom');
+            }
 
-    };
+        };
+    }
 
 
 

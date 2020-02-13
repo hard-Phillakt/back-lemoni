@@ -96,27 +96,26 @@ BaseAsset::register($this);
                         <?= WTruncateCartT::widget(); ?>
                     </div>
 
-                    <?php if (!Yii::$app->user->isGuest): ?>
+                    <div class="mt-15">
+                        <?= Html::a('Отзывы', Url::to('/admin/review'), ['class' => 'link link__a']) ?>
+                    </div>
 
-                        <div class="additional-modules mt-15">
-
-                            <div class="log-out-link">
-
-                                <?= Html::a('Выход', Url::to('/admin/login/log-out'), ['class' => 'link link__a']) ?>
-
-                            </div>
-
-                        </div>
-
-                    <?php endif; ?>
                 </div>
 
                 <div class="col-lg-2">
                     <div class="main-admin-wrapp">
-                        <h4>Админо-кэт</h4>
+                        <h4>Главный админ</h4>
                         <div class="main-admin__img"></div>
+                        <?php if (!Yii::$app->user->isGuest): ?>
+                            <div class="additional-modules mt-15">
+                                <div class="log-out-link">
+                                    <?= Html::a('Выход', Url::to('/admin/login/log-out'), ['class' => 'link link__a']) ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
+
             </div>
         </div>
     </header>

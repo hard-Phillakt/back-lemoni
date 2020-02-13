@@ -74,15 +74,23 @@ class CakeGoodsController extends Controller
 
         $query_cake_goods = new CakeGoods();
 
+        $tag = new Tag();
+
+        $queryTag = $tag::find()->where(['subjects' => 'cake'])->asArray()->all();
+
         $goods = $query_cake_goods::find()->where(['lm_type' => $arg])->asArray()->orderBy('id DESC')->all();
 
         if (empty($goods)) {
 
-            return $this->render('index', ['data_cake' => $goods, 'filter' => $filter, 'void' => self::noProducts()]);
+            return $this->render('index', ['data_cake' => $goods, 'filter' => $filter, 'tag' => $queryTag, 'void' => self::noProducts()]);
         }
 
-        return $this->render('index', ['model' => $goods, 'filter' => $filter]);
+        return $this->render('index', ['model' => $goods, 'filter' => $filter, 'tag' => $queryTag]);
     }
+
+
+
+
 
     public function actionIndex($param = null, $compilation = null)
     {
