@@ -1052,6 +1052,14 @@ table a:focus {
     background-repeat: no-repeat !important;
 }
 
+.df {
+    display: flex;
+}
+
+.fai-c {
+    display: flex;
+    align-items: center;
+}
 
 
 
@@ -1188,6 +1196,18 @@ table a:focus {
 }
 
 @media (max-width: 991px) and (min-width: 300px) {
+
+    #sidebar-filter-candy, #sidebar-filter-cake {
+        margin-bottom: 30px;
+    }
+
+    .flter-min-max {
+        flex-direction: column;
+    }
+
+    .flter-min-max .dvizh-cart-buy-button{
+        margin-bottom: 15px;
+    }
 
     .news-box__wrapp li:nth-child(1) .news-box__content {
         width: 100%;
@@ -1337,10 +1357,6 @@ table a:focus {
         padding: 0;
     }
 
-    .contact {
-        margin-top: 0 !important;
-    }
-
     .total-delivery__box {
         margin-top: 30px;
     }
@@ -1356,6 +1372,15 @@ table a:focus {
 }
 
 @media (max-width: 768px) and (min-width: 300px) {
+
+    .flter-min-max {
+        flex-direction: column;
+        align-items: center;
+    }
+
+   .footer .fai-c {
+        justify-content: center;
+    }
 
     .dvizh-cart-row__img {
         margin-bottom: 30px;
@@ -1489,7 +1514,7 @@ table a:focus {
         width: 100% !important;
     }
 
-    .card-goods .button__rectangle {
+    .card-goods .dvizh-cart-buy-button {
         margin-bottom: 30px;
     }
 

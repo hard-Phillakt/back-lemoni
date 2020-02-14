@@ -97,7 +97,7 @@ BaseAsset::register($this);
                     </div>
 
                     <div class="mt-15">
-                        <?= Html::a('Отзывы', Url::to('/admin/review'), ['class' => 'link link__a']) ?>
+                        <?//= Html::a('Отзывы', Url::to('/admin/review'), ['class' => 'link link__a']) ?>
                     </div>
 
                 </div>

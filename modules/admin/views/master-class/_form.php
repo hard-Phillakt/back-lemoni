@@ -39,7 +39,7 @@ use mihaildev\elfinder\ElFinder;
 
         <div class="col-lg-6">
 
-            <?= $form->field($model, 'lm_date')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'lm_date')->textInput(['maxlength' => true, 'placeholder' => 'Обязательный формат 00.00.0000']) ?>
 
             <div class="row">
                 <div class="col-lg-6">

@@ -9,22 +9,7 @@ $this->registerJsFile('/js/card-class.js');
 // для настройки опций товара
 $this->registerJsFile('/js/card/card-candie.js');
 
-
-//use dvizh\cart\widgets\BuyButton;
-//use dvizh\cart\widgets\TruncateButton;
-//use dvizh\cart\widgets\CartInformer;
-//use dvizh\cart\widgets\ElementsList;
-//use dvizh\cart\widgets\DeleteButton;
-//use dvizh\cart\widgets\ChangeCount;
-//use dvizh\cart\widgets\ChangeOptions;
-
-
 use app\widgets\customcart\BuyButton;
-use app\widgets\customcart\TruncateButton;
-use app\widgets\customcart\CartInformer;
-use app\widgets\customcart\ElementsList;
-use app\widgets\customcart\DeleteButton;
-use app\widgets\customcart\ChangeCount;
 use app\widgets\customcart\ChangeOptions;
 
 use yii\helpers\Html;
@@ -67,10 +52,9 @@ OwlAsset::register($this);
                     <a class="button button__circle" href="<?= Url::to('/candy'); ?>">
                         <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                     </a>
-
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-10">
                 <div class="card-goods__img mt-35">
 
                     <?php if($model->lm_img_one): ?>
@@ -112,19 +96,16 @@ OwlAsset::register($this);
                     <div class="col-lg-12">
                         <div class="mt-35">
                             <p class="desc desc__sm">
-
                                 <?= $model->lm_content; ?>
-                                
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-5 col-lg-offset-1 mt-35">
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 mt-35">
 
                 <h1 class="title title__h3"><?= $model->lm_title;?></h1>
-
 
                 <div class="mt-60">
                     <div class="card-goods__price">
@@ -133,7 +114,6 @@ OwlAsset::register($this);
                     </div>
                 </div>
 
-
                 <div class="mt-15">
                     <p class="desc desc__sm opac__05">
                         *В стоимость входит оформление и фигурки как на фото, <br>
@@ -141,10 +121,9 @@ OwlAsset::register($this);
                     </p>
                 </div>
 
-
                 <!-- Начало опций товара -->
 
-                <?=ChangeOptions::widget([
+                <?= ChangeOptions::widget([
                     'model' => $model,
                     'type' => 'radio',
                 ]);?>

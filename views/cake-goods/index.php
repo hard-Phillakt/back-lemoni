@@ -27,7 +27,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
 <!-- filter-sidebar-catalog start -->
 <section class="filter-sidebar-catalog">
     <div class="container">
-        <div class="row flex-reverse">
+        
+        <!-- flex-reverse -->
+        <div class="row">
 
             <!-- Sidebar Filter -->
             <div class="col-lg-3 mt-35">
@@ -51,15 +53,11 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                         </h5>
 
                         <div class="flter-min-max mt-15">
-
                             <?= $form->field($filter, 'price_for_kg_min')->textInput(['placeholder' => '0', 'class' => 'global-form__input'])->label('Минимум', ['class' => 'mb-15']) ?>
 
                             <?= $form->field($filter, 'price_for_kg_max')->textInput(['placeholder' => '6000', 'class' => 'global-form__input'])->label('Максимум', ['class' => 'mb-15']) ?>
-
                         </div>
-
                     </div>
-
 
                     <!-- filter type-goods -->
                     <div class="filter-sidebar-catalog__box mt-15">
@@ -150,9 +148,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
 
-                <?php if(!empty($tag)): ?>
-
                 <h2 class="title title__h1 opac__07">Каталог тортов</h2>
+
+                <?php if(!empty($tag)): ?>
 
                 <!-- filter type-goods dsp-none -->
                 <div class="filter-sidebar-catalog__box-compilation mt-60">

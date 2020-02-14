@@ -24,7 +24,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 <!-- filter-sidebar-catalog start -->
 <section class="filter-sidebar-catalog">
     <div class="container">
-        <div class="row flex-reverse">
+
+        <!-- flex-reverse -->
+        <div class="row">
 
             <!-- Sidebar Filter -->
             <div class="col-lg-3 mt-35">
@@ -108,45 +110,61 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                             </div>
 
 
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el8"
                                            class="global-form__checkbox mt-35" value="Фруктовый букет">
                                     фруктовый букет
                                 </label>
-                                </div>
+                            </div>
 
 
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_el9"
                                            class="global-form__checkbox mt-35" value="Куличи">
                                     куличи
                                 </label>
-                                </div>
+                            </div>
 
 
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e22"
                                            class="global-form__checkbox mt-35" value="Постное">
                                     постное
                                 </label>
-                                </div>
+                            </div>
 
-                                <div class="mt-15">
-                                    <label><span class="shadow-checkbox mr-15"></span>
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
                                     <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e25"
                                            class="global-form__checkbox mt-35" value="Трайфлы">
                                     трайфлы
                                 </label>
-                                </div>
+                            </div>
+
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e25"
+                                           class="global-form__checkbox mt-35" value="Макарон">
+                                    макарон
+                                </label>
+                            </div>
+
+                            <div class="mt-15">
+                                <label><span class="shadow-checkbox mr-15"></span>
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e25"
+                                           class="global-form__checkbox mt-35" value="Выпечка">
+                                    выпечка
+                                </label>
+                            </div>
 
                         </div>
 
                     </div>
 
-                    <?//= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
+                    <? //= Html::submitButton('Применить', ['class' => 'button button__rectangle mt-35']) ?>
                 </div>
 
                 <?php $form = ActiveForm::end(); ?>
@@ -155,45 +173,49 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
             <!-- Goods-cards -->
             <div class="col-lg-8 col-lg-offset-1 title__line_r-53">
+
                 <h2 class="title title__h1 opac__07">Каталог десертов</h2>
 
-                <!-- filter type-goods -->
-                <div class="filter-sidebar-catalog__box-compilation mt-60">
+                <?php if (!empty($tag)): ?>
+                    <!-- filter type-goods -->
+                    <div class="filter-sidebar-catalog__box-compilation mt-60">
 
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <h5 class="title title__h5">
-                                Готовые подборки
-                            </h5>
-                        </div>
-
-                        <div class="col-lg-9">
-
-                            <div class="filter-sidebar-catalog__box-compilation_ul global-form">
-
-                                <?php foreach ($tag as $key => $value): ?>
-
-                                    <span data-count="<?= $value['id']?>"
-                                       class="compilation-candie link link__a mr-15 mb-15">
-                                        <?= $value['title']?>
-                                    </span>
-
-                                <?php endforeach; ?>
-
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h5 class="title title__h5">
+                                    Готовые подборки
+                                </h5>
                             </div>
 
+                            <div class="col-lg-9">
+
+                                <div class="filter-sidebar-catalog__box-compilation_ul global-form">
+
+                                    <?php foreach ($tag as $key => $value): ?>
+
+                                        <span data-count="<?= $value['id'] ?>"
+                                              class="compilation-candie link link__a mr-15 mb-15">
+                                        <?= $value['title'] ?>
+                                    </span>
+
+                                    <?php endforeach; ?>
+
+                                </div>
+
+                            </div>
                         </div>
+
                     </div>
 
-                </div>
+                <?php endif; ?>
 
                 <div class="row mt-60" id="box-candie-goods">
 
                     <!-- card-filter -->
-                    <?php if($empty_goods): ?>
+                    <?php if ($empty_goods): ?>
 
                         <?= $empty_goods; ?>
-                        
+
                     <?php endif; ?>
 
 
@@ -236,7 +258,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                         <?php endforeach; ?>
 
-                    <?php elseif($data_cake): ?>
+                    <?php elseif ($data_cake): ?>
 
                         <?php foreach ($data_cake as $key => $value): ?>
 
@@ -276,7 +298,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                         <?php endforeach; ?>
 
 
-                    <?php elseif($compilation): ?>
+                    <?php elseif ($compilation): ?>
 
 
                         <?php foreach ($compilation[0]['candie'] as $key => $value): ?>
@@ -291,7 +313,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                        style="background: url(..<?= $value['lm_img_one']; ?>)"></a>
 
                                     <div class="wrapp-full-description">
-                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="link link__a link__item mt-15 ml-15">
+                                        <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                           class="link link__a link__item mt-15 ml-15">
                                             <span class="title"><?= $value['lm_title']; ?></span>
                                         </a>
 
@@ -302,7 +325,8 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                         </div>
 
                                         <div class="link-full-description">
-                                            <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>" class="link link__a ml-15">
+                                            <a href="/<?= $value['lm_alter_card']; ?>/<?= $value['id']; ?>"
+                                               class="link link__a ml-15">
                                                 <span class="title"><?= $value['lm_title']; ?></span>
                                             </a>
                                         </div>

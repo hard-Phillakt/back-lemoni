@@ -41,7 +41,6 @@ class CandieGoodsController extends Controller
 //  Выборка по get параметрам - объявляю в actionIndex (switch)
     public function getCandyType($arg)
     {
-
         $filter = new FilterCake();
 
         $query_cake_goods = new CandieGoods();
@@ -53,7 +52,11 @@ class CandieGoodsController extends Controller
             return $this->render('index', ['model' => $goods, 'filter' => $filter, 'empty_goods' => self::noProducts()]);
         }
 
-        return $this->render('index', ['model' => $goods, 'filter' => $filter]);
+        $tag = new Tag();
+
+        $queryTag = $tag::find()->where(['subjects' => 'candy'])->asArray()->all();
+
+        return $this->render('index', ['model' => $goods, 'filter' => $filter, 'tag' => $queryTag]);
     }
 
     public function actionIndex($param = null)

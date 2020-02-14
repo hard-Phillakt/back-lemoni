@@ -8,22 +8,7 @@ $this->registerJsFile('/js/card-class.js');
 // для настройки опций товара в зависимости от карточки товара
 $this->registerJsFile('/js/card/card-cake.js');
 
-
-//use dvizh\cart\widgets\BuyButton;
-//use dvizh\cart\widgets\TruncateButton;
-//use dvizh\cart\widgets\CartInformer;
-//use dvizh\cart\widgets\ElementsList;
-//use dvizh\cart\widgets\DeleteButton;
-//use dvizh\cart\widgets\ChangeCount;
-//use dvizh\cart\widgets\ChangeOptions;
-
-
 use app\widgets\customcart\BuyButton;
-use app\widgets\customcart\TruncateButton;
-use app\widgets\customcart\CartInformer;
-use app\widgets\customcart\ElementsList;
-use app\widgets\customcart\DeleteButton;
-use app\widgets\customcart\ChangeCount;
 use app\widgets\customcart\ChangeOptions;
 
 use yii\helpers\Html;
@@ -35,9 +20,6 @@ use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
 
 use app\assets\OwlAsset;
-
-
-//debug($model);
 
 Url::remember();
 
@@ -67,7 +49,7 @@ OwlAsset::register($this);
 
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                 <div class="card-goods__img mt-35">
 
                     <?php if($model->lm_img_one): ?>
@@ -116,7 +98,7 @@ OwlAsset::register($this);
                 </div>
             </div>
 
-            <div class="col-lg-5 col-lg-offset-1 mt-35">
+            <div class="col-lg-5 col-lg-offset-1 col-md-6 col-sm-7 col-xs-12 mt-35">
 
                 <h1 class="title title__h3"><?= $model->lm_title; ?></h1>
 
