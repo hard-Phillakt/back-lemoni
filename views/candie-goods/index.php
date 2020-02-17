@@ -14,7 +14,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span> - Candy</span>
+                <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span> - Десерты</span>
             </div>
         </div>
     </div>
@@ -146,7 +146,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                             <div class="mt-15">
                                 <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e25"
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e26"
                                            class="global-form__checkbox mt-35" value="Макарон">
                                     макарон
                                 </label>
@@ -154,7 +154,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                             <div class="mt-15">
                                 <label><span class="shadow-checkbox mr-15"></span>
-                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e25"
+                                    <input type="checkbox" name="FilterCake[type][]" id="global-form__input_e27"
                                            class="global-form__checkbox mt-35" value="Выпечка">
                                     выпечка
                                 </label>
@@ -194,9 +194,18 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
                                     <?php foreach ($tag as $key => $value): ?>
 
                                         <span data-count="<?= $value['id'] ?>"
-                                              class="compilation-candie link link__a mr-15 mb-15">
-                                        <?= $value['title'] ?>
-                                    </span>
+                                              class="compilation-candie link mb-15 mr-15">
+                                            <?= $value['title'] ?>
+                                                <i class="tag-active__times">
+                                                    <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                         data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg"
+                                                         viewBox="-160 -85 700 700" class="svg-inline--fa fa-times fa-w-11">
+                                                        <path fill="#f1a584"
+                                                              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                                              class=""></path>
+                                                    </svg>
+                                                </i>
+                                        </span>
 
                                     <?php endforeach; ?>
 
