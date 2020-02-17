@@ -63,7 +63,7 @@ BaseAsset::register($this);
                     </div>
 
                     <div class="mt-15">
-                        <?= Html::a('Товары - Дерерты', Url::to('/admin/candie-goods'), ['class' => 'link link__a']) ?>
+                        <?= Html::a('Товары - Десерты', Url::to('/admin/candie-goods'), ['class' => 'link link__a']) ?>
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@ BaseAsset::register($this);
                     </div>
 
                     <div class="mt-15">
-                        <?= Html::a('Связь Тег + Дерерт', Url::to('/admin/candy-tag'), ['class' => 'link link__a']) ?>
+                        <?= Html::a('Связь Тег + Десерт', Url::to('/admin/candy-tag'), ['class' => 'link link__a']) ?>
                     </div>
 
                     <div class="mt-15">
