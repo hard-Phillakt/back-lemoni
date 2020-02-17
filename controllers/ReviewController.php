@@ -43,8 +43,8 @@ class ReviewController extends Controller
             ->setFrom('info@cafelemoni.ru')
             ->setTo([
                 'hard-phillakt@mail.ru' => 'Отзыв с сайта: cafelemoni.ru',
-//                'info@cafelemoni.ru' => 'Отзыв с сайта: cafelemoni.ru',
-//                'info@webmedia31.ru' => 'Отзыв с сайта: cafelemoni.ru'
+                'info@cafelemoni.ru' => 'Отзыв с сайта: cafelemoni.ru',
+                'info@webmedia31.ru' => 'Отзыв с сайта: cafelemoni.ru'
             ])
             ->setSubject('Отзыв с Cafelemoni')
             ->setHtmlBody('<div>' . $data . '</div>')
