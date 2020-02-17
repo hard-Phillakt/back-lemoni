@@ -27,7 +27,7 @@ class BaseAsset extends AssetBundle
     public $js = [
         'js/main.js',
         'js/map.js',
-        'js/news.js',
+        'js/news.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -304,7 +304,7 @@ var tagCake = new TagsAjaxLink();
 
 if (compilationCake) {
     compilationCake.forEach(function (item, i) {
-        
+
         item.onclick = function (e) {
             e.preventDefault();
 
@@ -528,7 +528,7 @@ $(document).ready(function () {
     function balanceAjax() {
         !$('#balance-ajax').data('balance') ? $('#search-button').remove() : true;
     }
-    
+
     $('#search-button').on('click', function () {
 
         $.ajax({
@@ -576,7 +576,7 @@ $(document).ready(function () {
             });
         }
     });
-
+    
 
 
     // Скрипт режет длину карточки товара. Но решил резать длину css в custom.css
