@@ -105,7 +105,7 @@ OwlAsset::register($this);
 
             <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 mt-35">
 
-                <h1 class="title title__h3"><?= $model->lm_title; ?></h1>
+                <h1 class="title title__h2"><?= $model->lm_title; ?></h1>
 
                 <div class="mt-60">
                     <div class="card-goods__price">

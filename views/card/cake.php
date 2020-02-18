@@ -100,7 +100,7 @@ OwlAsset::register($this);
 
             <div class="col-lg-5 col-lg-offset-1 col-md-6 col-sm-7 col-xs-12 mt-35">
 
-                <h1 class="title title__h3"><?= $model->lm_title; ?></h1>
+                <h1 class="title title__h2"><?= $model->lm_title; ?></h1>
 
 
                 <div class="mt-60">
@@ -123,7 +123,6 @@ OwlAsset::register($this);
                     'model' => $model,
                     'type' => 'radio',
                 ]);?>
-
 
 
                 <div class="mt-35">

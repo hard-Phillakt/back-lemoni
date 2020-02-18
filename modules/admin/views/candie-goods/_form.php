@@ -43,7 +43,7 @@ use mihaildev\elfinder\ElFinder;
                 'постное' => 'постное',
                 'трайфлы' => 'трайфлы',
                 'макарон' => 'макарон',
-                'выпечка' => 'выпечка',
+                'выпечка' => 'выпечка'
             ]) ?>
 
             <?= $form->field($model, 'lm_count_level')->dropDownList([

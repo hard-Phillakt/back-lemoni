@@ -6,13 +6,8 @@ use app\models\CakeGoods;
 use yii\helpers\ArrayHelper;
 use app\models\Tag;
 
-
-/* @var $this yii\web\View */
-/* @var $model app\models\CakeTag */
-/* @var $form yii\widgets\ActiveForm */
-
-$cakeGoods = CakeGoods::find()->asArray()->all();
-$cakeTag = Tag::find()->where(['subjects' => 'cake'])->asArray()->all();
+$cakeGoods = CakeGoods::find()->asArray()->orderBy('id DESC')->all();
+$cakeTag = Tag::find()->where(['subjects' => 'cake'])->orderBy('id DESC')->asArray()->all();
 
 $arr_goods = ArrayHelper::map($cakeGoods, 'id', 'lm_title');
 $arr_tag = ArrayHelper::map($cakeTag, 'id', 'title');

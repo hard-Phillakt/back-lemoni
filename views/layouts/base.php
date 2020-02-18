@@ -67,7 +67,7 @@ BaseAsset::register($this);
             </div>
         </div>
     </div>
-    
+
     <!-- Full menu -->
     <div class="box-reletive">
 
@@ -254,7 +254,7 @@ BaseAsset::register($this);
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="section-logo">
                         <a href="/">
                             <img src="/img/logo/logo-white.svg" alt="white">
@@ -264,44 +264,71 @@ BaseAsset::register($this);
 
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <ul class="footer__ul">
+                        <li><h3 class="title title__h2">Меню:</h3></li>
                         <li><a href="/" class="link link__a_w">Главная</a></li>
-                        <li><a href="/contact" class="link link__a_w">Контакты</a></li>
                         <li><a href="/deliv-cake" class="link link__a_w">Доставка</a></li>
+                        <li><a href="/order" class="link link__a_w">Заказ и оплата</a></li>
+                        <li><a href="/contact" class="link link__a_w">Контакты</a></li>
+                        <li><a href="/review" class="link link__a_w">Отзывы</a></li>
                         <li><a href="/about" class="link link__a_w">О нас</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <ul class="footer__ul">
+                        <li><h3 class="title title__h2">Продукция:</h3></li>
                         <li><a href="/cake" class="link link__a_w">Торты</a></li>
                         <li><a href="/candy" class="link link__a_w">Десерты</a></li>
-                        <li><a href="/order" class="link link__a_w">Заказ и оплата</a></li>
-                        <!--                        <li><a href="#!" class="link link__a_w">Дегустация</a></li>-->
+                        <li><a href="/master-class" class="link link__a_w">Мастер-классы</a></li>
+                        <li><a href="/news" class="link link__a_w">Новости</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <ul class="footer__ul">
-                        <!--                        <li><a href="#!" class="link link__a_w">Конструктор тортов</a></li>-->
-                        <li><a href="/master-class" class="link link__a_w">Мастер-классы</a></li>
-                        <li><a href="/news" class="link link__a_w">Новости</a></li>
-                        <li><a href="/review" class="link link__a_w">Отзывы</a></li>
+                        <li><h3 class="title title__h2">Акции:</h3></li>
+                        <li>
+                            В скором времени <br> будут добавлены на сайт.
+                        </li>
+<!--                        <li>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-lg-5">-->
+<!--                                    <img src="../img/candy-bar/personal/candy-7.png" alt="img" class="card-img__img card-img__br-5">-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-7">-->
+<!--                                    <div class="mb-15">-->
+<!--                                        <h4 class="title title__h2">Lorem ipsum dolor.</h4>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <div class="desc desc__sm">-->
+<!--                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                     <ul class="footer__ul">
-                        <li>Контакты:</li>
+                        <li><h3 class="title title__h2">Контакты:</h3></li>
                         <li><a href="tel:+74722505154" class="link link__a_w">+7 (4722) 50-51-54</a></li>
                         <li><a href="mailto:info@cafelemoni.ru" class="link link__a_w">info@cafelemoni.ru</a></li>
                         <li>
                             <div class="fai-c">
                                 <a href="https://www.instagram.com/bakery_lemoni/" class="df pr-5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="df" style="width: 25px; height: 25px; aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img" viewBox="0 0 448 512"><path fill="#fff" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="df"
+                                         style="width: 25px; height: 25px; aria-hidden=" true
+                                    " focusable="false" data-prefix="fab" data-icon="instagram" class="svg-inline--fa
+                                    fa-instagram fa-w-14" role="img" viewBox="0 0 448 512">
+                                    <path fill="#fff"
+                                          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                                    </svg>
                                 </a>
-<!--                                <a href="https://www.facebook.com/konditerskayalemoni/" class="df">-->
-<!--                                    <svg xmlns="http://www.w3.org/2000/svg" class="df" style="width: 25px; height: 21px; aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#fff" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>-->
-<!--                                </a>-->
+                                <!--                                <a href="https://www.facebook.com/konditerskayalemoni/" class="df">-->
+                                <!--                                    <svg xmlns="http://www.w3.org/2000/svg" class="df" style="width: 25px; height: 21px; aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" viewBox="0 0 320 512"><path fill="#fff" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>-->
+                                <!--                                </a>-->
                             </div>
                         </li>
                     </ul>

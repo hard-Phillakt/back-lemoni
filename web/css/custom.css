@@ -1,4 +1,3 @@
-
 /* grid media */
 
 @media (min-width: 300px) and (max-width: 991px) {
@@ -166,6 +165,67 @@
 }
 
 /* grid media end */
+
+
+/* Flex classes */
+
+.dai-c {
+    display: flex;
+    align-items: center;
+}
+
+.djc-s {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.djc-c {
+    display: flex;
+    justify-content: center;
+}
+
+.djc-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dai-end {
+    display: flex;
+    align-items: flex-end;
+}
+
+.djc-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.djc-sa {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dfd-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flex classes end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 a:focus {
     color: #fff;
@@ -343,7 +403,6 @@ input[disabled] {
     margin: 0;
     text-align: center;
 }
-
 
 .additional-modules__search_input {
 
@@ -614,7 +673,6 @@ input[disabled] {
     /*justify-content: center;*/
 }
 
-
 .dvizh-cart-row .row {
     display: block;
 }
@@ -642,7 +700,6 @@ input[disabled] {
     right: 0;
     top: 0;
 }
-
 
 .revievs__wrapp-btn input[disabled] {
     background: #8f5541 !important;
@@ -675,7 +732,7 @@ input:focus {
 }
 
 .button__rectangle {
-     transition: all .3s;
+    transition: all .3s;
 }
 
 .button__rectangle:hover {
@@ -696,7 +753,6 @@ input:focus {
 .news-box__content_link-pointer {
     cursor: pointer;
 }
-
 
 /* Owl card*/
 .owl-theme .owl-dots .owl-dot.active span {
@@ -722,7 +778,6 @@ input:focus {
 .create-company:hover {
     background: #85b1a4bd;
 }
-
 
 .create-company__media {
     text-align: right;
@@ -824,10 +879,6 @@ input:focus {
     margin: 0;
 }
 
-
-
-
-
 /* animation add item cart */
 
 .add-item-visible {
@@ -848,16 +899,13 @@ input:focus {
 
 /* animation add item cart end*/
 
-
 .add-item-wrapper h5, .add-item-wrapper p {
     color: #fff;
 }
 
-
 .dropdown-menu {
     border: 1px solid rgb(255, 255, 255);
 }
-
 
 .td-prev {
     width: 100px;
@@ -901,7 +949,6 @@ input:focus {
     transform: translateY(999px);
 }
 
-
 .box-search {
     position: fixed;
     width: 100%;
@@ -923,7 +970,6 @@ input:focus {
     visibility: visible;
     opacity: 1;
 }
-
 
 #form-box-search {
     position: relative;
@@ -967,7 +1013,6 @@ input:focus {
     padding: 10px;
     border-radius: 5em;
 }
-
 
 .box-search #form-box-search .global-form__input {
     border: 0;
@@ -1067,7 +1112,7 @@ table a:focus {
     border-radius: 5em;
     display: inline-flex;
     padding: 2px 10px 2px 10px;
-    transition: all .3s ease-in-out;
+    transition: all .3s;
 }
 
 .tag-active {
@@ -1076,31 +1121,58 @@ table a:focus {
     border-radius: 5em;
     display: inline-flex;
     padding: 2px 35px 2px 10px;
-    transition: all .3s ease-in-out;
 }
 
 .tag-active__times {
     position: absolute;
     top: 3px;
     right: 5px;
-    display: block;
+    display: flex;
     width: 18px;
     height: 18px;
+    align-items: center;
+    justify-content: center;
+    color: #e3742e;
+    font-size: 25px;
     visibility: hidden;
     opacity: 0;
-    transition: all .3s ease-in-out;
 }
 
 .tag-active__times:hover path {
     fill: #e3742e;
-    transition: all .3s ease-in-out;
 }
 
 .tag-active .tag-active__times {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    display: flex;
+    width: 18px;
+    height: 18px;
+    align-items: center;
+    justify-content: center;
+    color: #e3742e;
+    font-size: 25px;
     visibility: visible;
     opacity: 1;
-    transition: all .3s ease-in-out;
 }
+
+.lightbox .lb-image {
+    border: 0 !important;
+}
+
+
+.footer__ul {
+    padding: 0;
+}
+
+
+
+
+
+
+
+
 
 
 /* Preloader goods*/
@@ -1115,6 +1187,7 @@ table a:focus {
     background: #fff;
     justify-content: center;
 }
+
 .cssload-loader {
     width: 49px;
     height: 49px;
@@ -1123,8 +1196,9 @@ table a:focus {
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    background:rgb(204,106,20);
+    background: rgb(204, 106, 20);
 }
+
 .cssload-loader,
 .cssload-loader:before,
 .cssload-loader:after {
@@ -1134,6 +1208,7 @@ table a:focus {
     -webkit-animation: 1.15s infinite ease-in-out;
     -moz-animation: 1.15s infinite ease-in-out;
 }
+
 .cssload-loader:before,
 .cssload-loader:after {
     width: 100%;
@@ -1143,40 +1218,71 @@ table a:focus {
     top: 0;
     left: 0;
 }
-.cssload-loader { animation-name: cssload-loader;
+
+.cssload-loader {
+    animation-name: cssload-loader;
     -o-animation-name: cssload-loader;
     -ms-animation-name: cssload-loader;
     -webkit-animation-name: cssload-loader;
-    -moz-animation-name: cssload-loader; }
+    -moz-animation-name: cssload-loader;
+}
 
 @keyframes cssload-loader {
-    from { transform: scale(0); opacity: 1; }
-    to	 { transform: scale(1); opacity: 0; }
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 
 @-o-keyframes cssload-loader {
-    from { -o-transform: scale(0); opacity: 1; }
-    to	 { -o-transform: scale(1); opacity: 0; }
+    from {
+        -o-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -o-transform: scale(1);
+        opacity: 0;
+    }
 }
 
 @-ms-keyframes cssload-loader {
-    from { -ms-transform: scale(0); opacity: 1; }
-    to	 { -ms-transform: scale(1); opacity: 0; }
+    from {
+        -ms-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -ms-transform: scale(1);
+        opacity: 0;
+    }
 }
 
 @-webkit-keyframes cssload-loader {
-    from { -webkit-transform: scale(0); opacity: 1; }
-    to	 { -webkit-transform: scale(1); opacity: 0; }
+    from {
+        -webkit-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
 }
 
 @-moz-keyframes cssload-loader {
-    from { -moz-transform: scale(0); opacity: 1; }
-    to	 { -moz-transform: scale(1); opacity: 0; }
+    from {
+        -moz-transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        -moz-transform: scale(1);
+        opacity: 0;
+    }
 }
 
 /* Preloader goods end*/
-
-
 
 @media (max-width: 1200px ) and (min-width: 992px) {
 
@@ -1243,7 +1349,7 @@ table a:focus {
         flex-direction: column;
     }
 
-    .flter-min-max .dvizh-cart-buy-button{
+    .flter-min-max .dvizh-cart-buy-button {
         margin-bottom: 15px;
     }
 
@@ -1413,10 +1519,9 @@ table a:focus {
 
     .flter-min-max {
         flex-direction: column;
-        align-items: center;
     }
 
-   .footer .fai-c {
+    .footer .fai-c {
         justify-content: center;
     }
 
@@ -1467,7 +1572,6 @@ table a:focus {
         margin-top: -18px;
     }
 
-
     .header-full-menu .additional-modules__search {
         margin-top: -19px;
     }
@@ -1475,7 +1579,6 @@ table a:focus {
     .header-full-menu .header-box-full__ul {
         text-align: center;
     }
-
 
     .header-full-menu .additional-modules {
         justify-content: flex-end;

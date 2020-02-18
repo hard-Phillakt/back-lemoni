@@ -308,22 +308,15 @@ if (compilationCake) {
         item.onclick = function (e) {
             e.preventDefault();
 
-            $(compilationCake).each(function (i, item) {
-                $(item).removeClass('tag-active');
-            });
-
-            if($(this).hasClass('tag-active')){
-
-                $(this).removeClass('tag-active');
-            } else {
+            if(!$(this).hasClass('tag-active')){
+                $(compilationCake).removeClass('tag-active');
                 $(this).addClass('tag-active');
                 tagCake.productsAjax('/cake-goods/ajax-goods', {compilation: this.dataset.count}, boxCakeGoods);
             }
 
-            if(!$(e.target).hasClass('tag-active')){
-                $(compilationCake).each(function (i, item) {
-                    $(item).removeClass('tag-active');
-                });
+            // X
+            if($(e.target).hasClass('tag-active__times')){
+                $(this).removeClass('tag-active');
                 tagCake.productsAjax('/cake-goods/ajax-goods', $('#sidebar-filter-cake').serialize(), boxCakeGoods);
             }
         }
@@ -345,21 +338,15 @@ if (boxCandieGoods) {
         item.onclick = function (e) {
             e.preventDefault();
 
-            $(compilationCadie).each(function (i, item) {
-                $(item).removeClass('tag-active');
-            });
-
-            if($(this).hasClass('tag-active')){
-                $(this).removeClass('tag-active');
-            } else {
+            if(!$(this).hasClass('tag-active')){
+                $(compilationCadie).removeClass('tag-active');
                 $(this).addClass('tag-active');
                 tagCandy.productsAjax('/candie-goods/ajax-goods', {compilation: this.dataset.count}, boxCandieGoods);
             }
 
-            if(!$(e.target).hasClass('tag-active')){
-                $(compilationCadie).each(function (i, item) {
-                    $(item).removeClass('tag-active');
-                });
+            // X
+            if($(e.target).hasClass('tag-active__times')){
+                $(this).removeClass('tag-active');
                 tagCandy.productsAjax('/candie-goods/ajax-goods', $('#sidebar-filter-candy').serialize(), boxCandieGoods);
             }
         }
@@ -577,6 +564,24 @@ $(document).ready(function () {
         }
     });
     
+
+
+
+    // Gallery light-box
+
+    var light = document.querySelectorAll('.light-box');
+    if(light){
+        light.forEach(function (item, i) {
+            item.dataset.lightbox = 'gallery';
+        });
+    }
+
+    // Gallery light-box end
+
+
+
+
+
 
 
     // Скрипт режет длину карточки товара. Но решил резать длину css в custom.css

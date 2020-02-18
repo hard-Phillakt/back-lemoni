@@ -3,16 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\Tag;
-
-/* @var $this yii\web\View */
-/* @var $model app\models\CandyTag */
-/* @var $form yii\widgets\ActiveForm */
-
 use app\models\CandieGoods;
 use yii\helpers\ArrayHelper;
 
-$candyGoods = CandieGoods::find()->asArray()->all();
-$candyTag = Tag::find()->where(['subjects' => 'candy'])->asArray()->all();
+$candyGoods = CandieGoods::find()->orderBy('id DESC')->asArray()->all();
+$candyTag = Tag::find()->where(['subjects' => 'candy'])->orderBy('id DESC')->asArray()->all();
 
 $arr_goods = ArrayHelper::map($candyGoods, 'id', 'lm_title');
 $arr_tag = ArrayHelper::map($candyTag, 'id', 'title');

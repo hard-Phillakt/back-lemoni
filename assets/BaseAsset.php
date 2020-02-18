@@ -22,12 +22,14 @@ class BaseAsset extends AssetBundle
     public $css = [
         'css/main.css',
         'css/custom.css',
+        'css/lightbox/css/lightbox.min.css',
         'https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap',
     ];
     public $js = [
         'js/main.js',
         'js/map.js',
-        'js/news.js'
+        'js/news.js',
+        'js/lightbox/lightbox.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

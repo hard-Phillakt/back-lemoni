@@ -73,13 +73,6 @@ $config = [
                 'password' => 'UY1wWxBw',
                 'port' => '465', // Port 25 is a very common port too
                 'encryption' => 'ssl', // It is often used, check your provider or mail server specs
-
-//                'class' => 'Swift_SmtpTransport',
-//                'host' => 'smtp.timeweb.ru',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-//                'username' => 'info@cafelemoni.ru',
-//                'password' => 'UY1wWxBw',
-//                'port' => '465', // Port 25 is a very common port too
-//                'encryption' => 'ssl', // It is often used, check your provider or mail server specs
             ],
         ],
         'log' => [
@@ -103,10 +96,6 @@ $config = [
                 'bouquet/' => 'candie-goods/index',
                 'pickup/' => 'delivery/pickup',
                 'search/' => 'search/index',
-//                'shadlaw/' => 'cake-goods/shadlaw',
-//                'classic/' => 'cake-goods/classic',
-//                'cookie/' => 'candie-goods/cookie',
-//                'dessert/' => 'candie-goods/dessert',
                 'cake/<id:\d+>' => 'card/cake',
                 'shadlaw/<id:\d+>' => 'card/shadlaw',
                 'candy/<id:\d+>' => 'card/candie',
