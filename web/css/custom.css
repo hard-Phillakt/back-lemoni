@@ -1,6 +1,6 @@
 /* grid media */
 
-@media (min-width: 300px) and (max-width: 991px) {
+/*@media (min-width: 300px) and (max-width: 991px) {*/
 
     .mb-15 {
         margin-bottom: 5px;
@@ -31,7 +31,7 @@
     }
 
     .mt-15 {
-        margin-top: 5px;
+        margin-top: 15px;
     }
 
     .mt-25 {
@@ -162,7 +162,7 @@
         margin-right: 30px;
     }
 
-}
+/*}*/
 
 /* grid media end */
 
@@ -212,6 +212,26 @@
 /* Flex classes end*/
 
 
+/* Font-size */
+
+.font-size__20 {
+    font-size: 20px;
+}
+
+.font-size__18 {
+    font-size: 18px;
+}
+
+.font-size__16 {
+    font-size: 16px;
+}
+
+.font-size__14 {
+    font-size: 14px;
+}
+
+
+/* Font-size end */
 
 
 
@@ -338,7 +358,7 @@ input[disabled] {
 }
 
 .global-form__select::before {
-    top: 48px;
+    top: 38px;
 }
 
 .optGuests__input {
@@ -1166,11 +1186,61 @@ table a:focus {
     padding: 0;
 }
 
+.footer__ul li {
+    margin-bottom: 15px;
+}
+
+.stock__link {
+    position: relative;
+}
 
 
+.stock__link:hover {
+    text-decoration: none;
+}
+
+.stock__link::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.stock__link:hover::before {
+    content: '';
+    top: 100%;
+    left: 0;
+    width: 70%;
+    height: 1px;
+    background: #fff;
+    opacity: 0.7;
+}
+
+.stock-widget__content {
+    text-align: left;
+}
+
+.lightbox {
+    z-index: 1000000 !important;
+}
+
+.reviews__bg {
+    display: flex;
+    width: 100%;
+    height: 160px;
+    background-position: center !important;
+    background-size: cover !important;
+}
 
 
-
+.dai-lg-c {
+    display: flex;
+    align-items: center;
+}
 
 
 
@@ -1286,6 +1356,10 @@ table a:focus {
 
 @media (max-width: 1200px ) and (min-width: 992px) {
 
+    .dai-lg-c {
+        display: block;
+    }
+
     .category-cake-box {
         margin-top: 0;
         margin-bottom: 30px;
@@ -1340,6 +1414,14 @@ table a:focus {
 }
 
 @media (max-width: 991px) and (min-width: 300px) {
+
+    .dai-lg-c {
+        display: block;
+    }
+
+    .revievs__box {
+        flex-direction: column;
+    }
 
     #sidebar-filter-candy, #sidebar-filter-cake {
         margin-bottom: 30px;
@@ -1516,6 +1598,12 @@ table a:focus {
 }
 
 @media (max-width: 768px) and (min-width: 300px) {
+
+    .footer__logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
 
     .flter-min-max {
         flex-direction: column;

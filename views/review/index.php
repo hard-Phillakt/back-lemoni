@@ -5,10 +5,12 @@ use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\widgets\Pjax;
 use yii\helpers\Html;
+use app\assets\OwlAsset;
+
 
 $this->title = 'Отзывы о кондитерской «Лемони»';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и другие десерты на любые мероприятия: Дни Рождения, юбилеи, свадьбы, корпоративы в Белгороде.']);
-
+OwlAsset::register($this);
 ?>
 
 <section class="revievs mt-90">
@@ -17,7 +19,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
             <div class="col-lg-2">
 
                 <!-- Sidebar -->
-                <?=  Sidebar::widget(); ?>
+                <?= Sidebar::widget(); ?>
 
             </div>
 
@@ -37,14 +39,14 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
                     ]); ?>
 
                     <div class="col-lg-12">
-                        <div class="delivery-box global-form">
+                        <div class="delivery-box global-form mb-60">
 
                             <div class="row">
 
                                 <div class="col-lg-5">
 
                                     <p class="mt-35">
-                                        <?= $form->field($model, 'name')->input('', ['class' => 'global-form__input', 'placeholder' => 'Введите имя'])?>
+                                        <?= $form->field($model, 'name')->input('', ['class' => 'global-form__input', 'placeholder' => 'Введите имя']) ?>
                                     </p>
 
                                     <p class="mt-35">
@@ -91,7 +93,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
                                                 <div>
                                                     Я соглашаюсь на передачу персональных данных согласно
                                                     <a href="#!">политике конфиденциальности</a>
-<!--                                                    и <a href="#!" class="">пользовательском у соглашению</a>-->
+                                                    <!--                                                    и <a href="#!" class="">пользовательском у соглашению</a>-->
                                                 </div>
                                             </span>
                                     </div>
@@ -102,18 +104,15 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
 
                                         <div>
                                             <?= $form->field($model, 'file')->fileInput(['class' => 'file-opacity'])->label('') ?>
-                                            <a href="#!" class="link link__a">Добавить файлы</a>
+                                            <a href="#!" class="link link__a">Добавить картинку</a>
                                         </div>
 
-                                        <input type="submit" class="button button__rectangle button__rectangle_submit mt-15"
+                                        <input type="submit"
+                                               class="button button__rectangle button__rectangle_submit mt-15"
                                                value="Отправить">
-
                                     </div>
                                 </div>
-
                             </div>
-
-
                         </div>
                     </div>
 
@@ -123,62 +122,47 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Торты и д�
 
                 </div>
 
-                <!-- Доделать слайдер  и вывод отзывов-->
+                <!-- Вывод отзывов-->
                 <div class="row mt-45">
 
-                    <div class="col-lg-6">
-
-                        <?php if(!empty($review)): ?>
+                    <?php if (!empty($review)): ?>
 
                         <?php foreach ($review as $key => $value): ?>
 
-                        <div class="mt-45">
-                            <div class="revievs__box">
-                                <div class="revievs__box_img mr-15">
-<!--                                    <img src="./img/icons/Ava.svg" alt="ava">-->
-                                    <?= Html::img('./img/icons/Ava.svg', ['alt' => 'Avatar']); ?>
+                            <div class="col-lg-10 col-lg-offset-1 dai-lg-c">
+
+                                <div class="col-lg-8">
+                                    <div class="revievs__box">
+                                        <div class="revievs__box_img mr-30">
+                                            <?= Html::img('./img/icons/Ava.svg', ['alt' => 'Avatar']); ?>
+                                        </div>
+
+                                        <div class="revievs__box_desc">
+                                            <h4 class="title title__h4 mb-35">
+                                                <?= $value->name; ?>
+                                            </h4>
+
+                                            <div class="mt-15">
+                                                <p class="desc desc__sm">
+                                                    <?= $value->comment; ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="revievs__box_desc">
-                                    <h4 class="title title__h4">
-                                        <?= $value->name; ?>
-                                    </h4>
-
-                                    <div class="mt-15">
-                                        <p class="desc desc__sm">
-                                            <?= $value->comment; ?>
-                                        </p>
+                                <div class="col-lg-4">
+                                    <div class="mt-45 mb-45">
+                                        <a href="<?= $value->review_img; ?>" class="light-box reviews__bg"
+                                           style="background: url(<?= $value->review_img; ?>) no-repeat;"></a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
 
                         <?php endforeach; ?>
 
-                        <?php endif; ?>
-
-                    </div>
-
-<!--                    <div class="col-lg-6">-->
-<!--                        <div class="swiper-container">-->
-<!--                            <div class="swiper-wrapper">-->
-<!--                                <div class="swiper-slide">Slide 1</div>-->
-<!--                                <div class="swiper-slide">Slide 2</div>-->
-<!--                                <div class="swiper-slide">Slide 3</div>-->
-<!--                                <div class="swiper-slide">Slide 4</div>-->
-<!--                                <div class="swiper-slide">Slide 5</div>-->
-<!--                                <div class="swiper-slide">Slide 6</div>-->
-<!--                                <div class="swiper-slide">Slide 7</div>-->
-<!--                                <div class="swiper-slide">Slide 8</div>-->
-<!--                                <div class="swiper-slide">Slide 9</div>-->
-<!--                                <div class="swiper-slide">Slide 10</div>-->
-<!--                            </div>-->
-<!---->
-<!--                            <div class="swiper-button-next"></div>-->
-<!--                            <div class="swiper-button-prev"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
+                    <?php endif; ?>
                 </div>
 
             </div>

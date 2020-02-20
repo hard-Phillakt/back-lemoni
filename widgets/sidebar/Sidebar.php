@@ -8,20 +8,15 @@ namespace app\widgets\sidebar;
  * Date: 05.11.2019
  * Time: 10:25
  */
-class Sidebar extends \yii\base\Widget{
-
+class Sidebar extends \yii\base\Widget {
 
     public function init(){
 
         parent::init();
-//        return false;
     }
-
 
     public function run(){
 
-
         return $this->render('index');
-
     }
 }

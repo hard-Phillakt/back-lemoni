@@ -3,18 +3,19 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Review;
-use app\models\ReviewSearch;
+use app\models\Stock;
+use app\models\StockSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * ReviewController implements the CRUD actions for Review model.
+ * StockController implements the CRUD actions for Stock model.
  */
-class ReviewController extends Controller
+class StockController extends Controller
 {
+
     public $layout = 'master';
 
     /**
@@ -48,12 +49,12 @@ class ReviewController extends Controller
     }
 
     /**
-     * Lists all Review models.
+     * Lists all Stock models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ReviewSearch();
+        $searchModel = new StockSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -63,7 +64,7 @@ class ReviewController extends Controller
     }
 
     /**
-     * Displays a single Review model.
+     * Displays a single Stock model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -76,13 +77,13 @@ class ReviewController extends Controller
     }
 
     /**
-     * Creates a new Review model.
+     * Creates a new Stock model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Review();
+        $model = new Stock();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -94,7 +95,7 @@ class ReviewController extends Controller
     }
 
     /**
-     * Updates an existing Review model.
+     * Updates an existing Stock model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -114,7 +115,7 @@ class ReviewController extends Controller
     }
 
     /**
-     * Deletes an existing Review model.
+     * Deletes an existing Stock model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -128,15 +129,15 @@ class ReviewController extends Controller
     }
 
     /**
-     * Finds the Review model based on its primary key value.
+     * Finds the Stock model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Review the loaded model
+     * @return Stock the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Review::findOne($id)) !== null) {
+        if (($model = Stock::findOne($id)) !== null) {
             return $model;
         }
 

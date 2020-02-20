@@ -50,6 +50,13 @@ BaseAsset::register($this);
                         <?= Html::a('Мастер-классы', Url::to('/admin/master-class'), ['class' => 'link link__a']) ?>
                     </div>
 
+                    <div class="mt-15">
+                        <?= Html::a('Акции', Url::to('/admin/stock'), ['class' => 'link link__a']) ?>
+                    </div>
+
+                    <div class="mt-15">
+                        <?= Html::a('Отзывы', Url::to('/admin/review'), ['class' => 'link link__a']) ?>
+                    </div>
                 </div>
 
                 <div class="col-lg-2">
@@ -94,10 +101,6 @@ BaseAsset::register($this);
 
                     <div>
                         <?= WTruncateCartT::widget(); ?>
-                    </div>
-
-                    <div class="mt-15">
-                        <?//= Html::a('Отзывы', Url::to('/admin/review'), ['class' => 'link link__a']) ?>
                     </div>
 
                 </div>

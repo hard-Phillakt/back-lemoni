@@ -124,9 +124,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Авторски�
                                     уровней</label>
                                 <select id="filtercake-count_level" class="global-form__input"
                                         name="FilterCake[count_level]">
-                                    <option value="1">I</option>
-                                    <option value="2">II</option>
-                                    <option value="3">III</option>
+                                    <option value="1">1 уровень</option>
+                                    <option value="2">2 уровня</option>
+                                    <option value="3">3 уровня</option>
                                     <option value="" selected>...</option>
                                 </select>
 

@@ -133,21 +133,7 @@ filterSidebarCatalogBoxCompilation_ul.forEach(function (item, i) {
 
     }
 
-})
-
-
-// Slider  Revievs
-
-var wpper = document.querySelector('.swiper-container');
-
-if (wpper) {
-    var swiper = new Swiper('.swiper-container', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-}
+});
 
 
 // pjax call-back
@@ -580,10 +566,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
     // Скрипт режет длину карточки товара. Но решил резать длину css в custom.css
 
     // $('.link__item .title').each(function (index, item) {
@@ -606,46 +588,6 @@ $(document).ready(function () {
     //         $('.link__item .title').eq(index).html(newText.join('') + ' ...');
     //     }
     // });
-
-    // console.log($('#deliverycontact-delivery option'));
-    //
-    // $('#deliverycontact-delivery option').each(function (item, i) {
-    //     console.log(item);
-    //     item.onclick = function () {
-    //         console.log(this);
-    //     }
-    // });
-
-    // $( "#deliverycontact-delivery" ).change(function() {
-    //
-    //         if(this.value == 'Самовывоз'){
-    //             $.ajax({
-    //                 method: "POST",
-    //                 url: '/delivery',
-    //                 data: {
-    //                     deliv: 'pickup'
-    //                 },
-    //                 success: function (res) {
-    //
-    //                    var body = document.body;
-    //                     body.innerHTML = res;
-    //
-    //                 }
-    //             })
-    //         }else {
-    //             $.ajax({
-    //                 method: "POST",
-    //                 url: '/delivery',
-    //                 data: {
-    //                     deliv: 'delivery'
-    //                 },
-    //                 success: function (res) {
-    //                     console.log(res);
-    //                 }
-    //             })
-    //         }
-    //     });
-
 });
 
 // Delivery Pickup

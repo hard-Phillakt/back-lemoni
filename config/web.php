@@ -95,6 +95,7 @@ $config = [
                 'candy/' => 'candie-goods/index',
                 'bouquet/' => 'candie-goods/index',
                 'pickup/' => 'delivery/pickup',
+                'stock/' => 'stock/index',
                 'search/' => 'search/index',
                 'cake/<id:\d+>' => 'card/cake',
                 'shadlaw/<id:\d+>' => 'card/shadlaw',

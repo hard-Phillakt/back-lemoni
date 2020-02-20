@@ -11,14 +11,17 @@ namespace app\controllers;
 
 use yii\web\Controller;
 
+
+
 //Страница "Главная"
 class IndexController extends Controller
 {
 
     public  $layout = 'base';
 
-    public function actionIndex(){
 
+    public function actionIndex(){
+        
         return $this->render('index');
     }
 }

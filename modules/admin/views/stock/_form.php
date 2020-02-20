@@ -8,25 +8,33 @@ use mihaildev\elfinder\InputFile;
 
 ?>
 
-<div class="review-form">
-
+<div class="stock-form">
     <?php $form = ActiveForm::begin(); ?>
 
     <div class="row">
+        
         <div class="col-lg-6">
-            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'publicated')->dropDownList([
+            <?= $form->field($model, 'date')->textInput(['maxlength' => true, 'placeholder' => 'Обязательный формат 00.00.0000']) ?>
+
+            <?= $form->field($model, 'publication')->dropDownList([
                 '0' => 'Нет',
                 '1' => 'Да'
             ]) ?>
+
+            <?= $form->field($model, 'priority')->textInput(['maxlength' => true]) ?>
+
+            <?//= $form->field($model, 'essence')->textInput(['maxlength' => true]) ?>
+
+            <?//= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
+
         </div>
 
         <div class="col-lg-6">
 
-            <?= $form->field($model, 'review_img')->widget(InputFile::class, [
+            <?= $form->field($model, 'previmg')->widget(InputFile::class, [
                 'language'      => 'ru',
                 'controller'    => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
                 'filter'        => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
@@ -37,20 +45,25 @@ use mihaildev\elfinder\InputFile;
                 'multiple'      => false       // возможность выбора нескольких файлов
             ]) ?>
 
-            <div class="review-bg" style="background: url(<?= $model->review_img; ?>)"></div>
+            <div class="review-bg" style="background: url(<?= $model->previmg; ?>)"></div>
 
         </div>
 
+
         <div class="col-lg-12">
-
-            <?= $form->field($model, 'comment')->widget(CKEditor::class, [
-                'editorOptions' => [
-                    'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-                    'inline' => false, //по умолчанию false
-                ],
+            <?= $form->field($model, 'description')->textarea(['rows' => 6])->widget(CKEditor::class, [
+                'editorOptions' => ElFinder::ckeditorOptions('elfinder', []),
             ]) ?>
+        </div>
 
-            <div class="form-group mt-15">
+        <div class="col-lg-12">
+            <?= $form->field($model, 'content')->textarea(['rows' => 6])->widget(CKEditor::class, [
+                'editorOptions' => ElFinder::ckeditorOptions('elfinder', []),
+            ]) ?>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
                 <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
             </div>
         </div>

@@ -6,16 +6,15 @@ use yii\helpers\Url;
 
 Url::remember();
 
-$this->title = 'Отзывы';
+$this->title = 'Акции';
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
-<div class="review-index">
+<div class="stock-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Создать отзыв', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать акцию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,10 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
-            'phone',
-            'comment:ntext',
-            'publicated',
+            'title',
+            'previmg',
+            'description:ntext',
+            'content:ntext',
+            //'date',
+            //'publication',
+            //'priority',
+            //'essence',
+            //'type',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
