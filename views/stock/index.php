@@ -20,7 +20,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с �
 
             <div class="col-lg-9 col-lg-offset-1">
 
-                <h1 class="title title__h1 opac__07">Новости компании</h1>
+                <h1 class="title title__h1 opac__07">Акции компании</h1>
 
                 <div class="news-box">
 
