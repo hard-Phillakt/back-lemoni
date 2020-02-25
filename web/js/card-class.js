@@ -24,13 +24,13 @@ function GlobalOptionsCard() {
 
         var cardGoodsPriceOldState = parseInt(cardGoodsPrice.dataset.oldstate);
 
-        console.log(cardGoodsPrice);
+        // console.log(cardGoodsPrice);
 
         glogalPrice[nameOpt] = parseInt(priceOpt);
 
         glogalPrice['card-price'] = cardGoodsPriceOldState;
 
-        console.log('glogalPrice obj: ', glogalPrice);
+        // console.log('glogalPrice obj: ', glogalPrice);
 
         var glogalPriceTotal = 0;
 

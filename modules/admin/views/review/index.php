@@ -28,6 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
+            [
+                'format' => 'html',
+                'value' => function($data){
+                    return "<img src='{$data['review_img']}' style='width: 150px;'>";
+                }
+            ],
             'phone',
             'comment:ntext',
             'publicated',

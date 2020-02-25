@@ -309,7 +309,8 @@ BaseAsset::register($this);
                 <div class="col-lg-4 col-lg-offset-1 col-md-3 col-sm-4 col-xs-12">
                     <ul class="footer__ul">
                         <li><h3 class="title title__h2">Акции:</h3></li>
-                        
+
+                        <!-- Виджет акций -->
                         <?= WStock::widget() ?>
 
                     </ul>

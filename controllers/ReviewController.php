@@ -77,7 +77,7 @@ class ReviewController extends Controller
 
         $query = new Review();
 
-        $review = $query::find()->where(['publicated' => 1])->all();
+        $review = $query::find()->where(['publicated' => 1])->orderBy('id DESC')->all();
 
         return $this->render('index', ['model' => $model, 'review' => $review ? $review : false]);
     }

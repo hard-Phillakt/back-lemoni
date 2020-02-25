@@ -20,7 +20,7 @@ class StockController extends Controller
 
         $query = new Stock();
 
-        $model = $query::find()->orderBy('id DESC')->all();
+        $model = $query::find()->where(['publication' => 1])->orderBy('id DESC')->all();
 
         return $this->render('index', ['model' => $model]);
     }

@@ -105,7 +105,7 @@ OwlAsset::register($this);
 
             <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 mt-35">
 
-                <h1 class="title title__h2"><?= $model->lm_title; ?></h1>
+                <h2 class="title title__h2"><?= $model->lm_title; ?></h2>
 
                 <div class="mt-60">
                     <div class="card-goods__price">
@@ -168,7 +168,7 @@ OwlAsset::register($this);
                     ]); ?>
 
                     <div class="flex-justify-center mb-35">
-                        <h1 class="title title__h1 opac__07">Заказать: <?= $model->lm_title; ?></h1>
+                        <h2 class="title title__h2 opac__07">Заказать: <?= $model->lm_title; ?></h2>
                     </div>
 
                     <?= $form->field($masterClassForm, 'name')->textInput(['class' => 'global-form__input', 'placeholder' => 'Введите имя'])->label('Введите имя') ?>

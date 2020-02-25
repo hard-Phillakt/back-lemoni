@@ -2,10 +2,13 @@
 
 use app\widgets\sidebar\Sidebar;
 
-$this->title = 'Кафе-кондитерская «Лемони» | Новости';
-$this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с мастер-классов, новости из мира кулинарии, интересные события в Белгороде.']);
+$this->title = 'Кафе-кондитерская «Лемони» | Акции';
+$this->registerMetaTag(['name' => 'description', 'content' => 'Акции и интересные события.']);
+
+//debug($model);
 
 ?>
+
 
 <section class="news mt-90">
     <div class="container">
@@ -23,6 +26,18 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с �
                 <h1 class="title title__h1 opac__07">Акции компании</h1>
 
                 <div class="news-box">
+
+                    <?php if (empty($model)): ?>
+
+                        <div class="mt-35">
+                            <h3 class="desc desc__md opac__07">Акции вскоре будут добавлены на сайт.</h3>
+                            <div class="mt-15">
+                                <p class="desc desc__md opac__07"> О наличии или заказе товаров вы можете уточнить по
+                                    телефону: <a href="tel:+74722505154" class="link link__a">+7 (4722) 50-51-54</a></p>
+                            </div>
+                        </div>
+
+                    <?php endif; ?>
 
                     <ul class="news-box__wrapp">
 
@@ -54,9 +69,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с �
                                                     <?= $value->title; ?>
 
                                                     <div class="news-box__content_hidden">
-
                                                         <?= $value->content; ?>
-
                                                     </div>
                                                 </div>
 
@@ -65,14 +78,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Отчёты с �
 
                                         <div class="mt-35">
                                             <div class="desc desc__sm">
-
                                                 <?= $value->description; ?>
-
                                             </div>
                                         </div>
 
                                         <div class="mt-35">
-                                            <div class="news-box__content_date news-box__content_link"><?= $value->date; ?></div>
+                                            <div
+                                                class="news-box__content_date news-box__content_link"><?= $value->date; ?></div>
                                         </div>
                                     </div>
                                 </li>

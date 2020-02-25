@@ -1191,6 +1191,7 @@ table a:focus {
 }
 
 .stock__link {
+    display: flex;
     position: relative;
 }
 
@@ -1241,6 +1242,33 @@ table a:focus {
     display: flex;
     align-items: center;
 }
+
+.stock-widget__content p {
+    line-height: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

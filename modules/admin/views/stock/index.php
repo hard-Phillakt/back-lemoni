@@ -27,11 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'previmg',
+            [
+                'format' => 'html',
+                'value' => function($data){
+                    return "<img src='{$data['previmg']}' style='width: 150px;'>";
+                }
+            ],
             'description:ntext',
             'content:ntext',
             //'date',
-            //'publication',
+            'publication',
             //'priority',
             //'essence',
             //'type',
