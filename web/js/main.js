@@ -564,8 +564,6 @@ $(document).ready(function () {
 
     // Gallery light-box end
 
-
-
     // Скрипт режет длину карточки товара. Но решил резать длину css в custom.css
 
     // $('.link__item .title').each(function (index, item) {
@@ -588,6 +586,7 @@ $(document).ready(function () {
     //         $('.link__item .title').eq(index).html(newText.join('') + ' ...');
     //     }
     // });
+
 });
 
 // Delivery Pickup

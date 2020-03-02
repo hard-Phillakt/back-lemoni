@@ -1,5 +1,9 @@
 <?php
 
+use app\assets\RinstaAsset;
+
+RinstaAsset::register($this);
+
 $this->title = 'Кафе-кондитерская «Лемони» — торты на заказ в Белгороде';
 $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы можете заказать муссовые торты, классические торты, имбирные пряники, свежую выпечку и закуски на любой вкус. Находимся по адресу: ул. Щорса 57.']);
 
@@ -354,7 +358,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 </section>
 
 <!-- instafeed -->
-<section id="instafeed"></section>
+<section id="rinsta"></section>
 
 <!-- popular-cake start -->
 <section class="popular-cake title__line_l-53 dsp-none">
