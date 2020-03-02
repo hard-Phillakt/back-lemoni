@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Кэнди бары для любых мероприятий в Белгороде';
+$this->title = 'Десерты для любых мероприятий в Белгороде';
 $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровождение любого мероприятия сладким праздничным столом. Выберете любимые десерты для своих гостей.']);
 
 ?>
@@ -19,7 +19,6 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
         </div>
     </div>
 </section>
-
 
 <!-- filter-sidebar-catalog start -->
 <section class="filter-sidebar-catalog">

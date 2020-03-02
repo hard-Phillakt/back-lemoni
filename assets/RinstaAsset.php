@@ -17,7 +17,7 @@ class RinstaAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
-        'rinsta/static/css/main.88a83629.chunk.css',
+        'rinsta/static/css/main.adcfb7ca.chunk.css',
     ];
 
     public $js = [

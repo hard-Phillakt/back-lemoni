@@ -129,11 +129,11 @@ OwlAsset::register($this);
 
                         <?php foreach ($review as $key => $value): ?>
 
-                            <div class="col-lg-10 col-lg-offset-1 dai-lg-c">
+                            <div class="col-lg-10 col-lg-offset-1 dai-lg-c mt-60">
 
                                 <div class="col-lg-8">
                                     <div class="revievs__box">
-                                        <div class="revievs__box_img mr-30">
+                                        <div class="revievs__box_img pb-35 mr-30">
                                             <?= Html::img('./img/icons/Ava.svg', ['alt' => 'Avatar']); ?>
                                         </div>
 
@@ -151,20 +151,26 @@ OwlAsset::register($this);
                                     </div>
                                 </div>
 
-                                <div class="col-lg-4">
-                                    <div class="mt-45 mb-45">
-                                        <a href="<?= $value->review_img; ?>" class="light-box reviews__bg"
-                                           style="background: url(<?= $value->review_img; ?>) no-repeat;"></a>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php if($value->review_img): ?>
 
+                                    <div class="col-lg-4">
+                                        <div class="mt-45 mb-45">
+                                            <a href="<?= $value->review_img; ?>" class="light-box reviews__bg"
+                                               style="background: url(<?= $value->review_img; ?>) no-repeat;"></a>
+                                        </div>
+                                    </div>
+
+                                <?php else: ?>
+
+
+                                <?php endif; ?>
+
+                            </div>
 
                         <?php endforeach; ?>
 
                     <?php endif; ?>
                 </div>
-
             </div>
         </div>
     </div>

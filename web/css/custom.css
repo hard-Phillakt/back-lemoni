@@ -55,7 +55,7 @@
     }
 
     .mt-90 {
-        margin-top: 30px;
+        margin-top: 90px;
     }
 
     .pb-15 {
@@ -1252,6 +1252,9 @@ table a:focus {
     max-width: 100%;
 }
 
+.revievs__box {
+    align-items: flex-start;
+}
 
 
 

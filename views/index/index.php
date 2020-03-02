@@ -358,7 +358,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 </section>
 
 <!-- instafeed -->
-<section id="rinsta"></section>
+<section id="rinsta" class="mt-60"></section>
 
 <!-- popular-cake start -->
 <section class="popular-cake title__line_l-53 dsp-none">
