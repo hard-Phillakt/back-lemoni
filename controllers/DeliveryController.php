@@ -14,6 +14,7 @@ use app\models\CakeGoods;
 use app\models\CandieGoods;
 use app\models\DeliveryContact;
 use app\models\PickupDeliveryContact;
+use app\models\SbOrder;
 
 
 use dvizh\cart\widgets\CartInformer;
@@ -275,4 +276,112 @@ class DeliveryController extends Controller
 
         return $this->render('pickup', ['modelDeliveryContact' => $model]);
     }
+
+
+//  SB оплата
+    public function actionCart()
+    {
+
+        $SB_data = [];
+
+        $elements = Yii::$app->cart->elements;
+
+        foreach ($elements as $key) {
+
+            switch ($key->model) {
+
+                case 'app\models\CandieGoods':
+
+                    $query = CandieGoods::findOne(['id' => $key->item_id]);
+
+                    $SB_data[] = [
+                        'title' => $query->lm_title,
+                        'item_id' => $key->item_id,
+                        'count' => $key->count,
+                        'price' => $key->price,
+                        'type' => 'Десерт'
+                    ];
+
+                    break;
+
+                case 'app\models\CakeGoods':
+
+                    $query = CakeGoods::findOne(['id' => $key->item_id]);
+
+                    $SB_data[] = [
+                        'title' => $query->lm_title,
+                        'item_id' => $key->item_id,
+                        'count' => $key->count,
+                        'price' => $key->price,
+                        'type' => 'Торт'
+                    ];
+                    break;
+
+                default:
+                    return true;
+            }
+        }
+
+        return json_encode($SB_data);
+    }
+
+//  SB оплата
+    public function actionSbOrder()
+    {
+
+        $post = Yii::$app->request->post('order');
+
+        $data = json_decode($post);
+
+//        paymentSystem: "VISA",
+//        merchantShortName: "www.3dsec.sberbank.ru",
+//        merchantLogin: "www.3dsec.sberbank.ru",
+//        approvalCode: "123456",
+//        orderNumber: "1567037",
+//        backUrl: "https://3dsec.sberbank.ru/payment/docsite/finish_modal.html?orderId=5705b89c-5504-7431-8609-8cad00001bc1&lang=ru",
+//        failUrl: "https://3dsec.sberbank.ru/payment/docsite/finish_modal.html?orderId=5705b89c-5504-7431-8609-8cad00001bc1&lang=ru",
+//        terminalId: "20160630",
+//        orderDescription: "Пирог с яблоками (2 шт.), Сконы (1 шт.), Новый торт на модуле admin -12 (1 шт.),",
+//        merchantFullName: "www.3dsec.sberbank.ru",
+//        transDate: "11.03.2020 11:07:04",
+//        digest: "86A68720F1D5AF70567F5A83A5DC53F12E298633CB68F16901475E6B8D9161D1",
+//        currency: "643",
+//        expiry: "12/2024",
+//        formattedAmount: "1420.00",
+//        actionCodeDescription: "",
+//        formattedFeeAmount: "0.00",
+//        email: "phillakt@gmail.com",
+//        amount: "142000",
+//        merchantCode: "20160630",
+//        ip: "37.208.65.172",
+//        panMasked: "411111**1111",
+//        successUrl: "https://3dsec.sberbank.ru/payment/docsite/finish_modal.html?orderId=5705b89c-5504-7431-8609-8cad00001bc1&lang=ru",
+//        processingErrorType: {value: "NO_ERROR", messageCode: "payment.errors.no_error"},
+//        panMasked4digits: "**** **** **** 1111",
+//        errorTypeName: "SUCCESS",
+//        feeAmount: "0",
+//        orderParams: {},
+//        orderExpired: false,
+//        refNum: "328372200994",
+//        finishPageLogin: "rbs_new",
+//        cardholderName: "CARD HOLDER",
+//        paymentDate: "11.03.2020 11:07:14",
+//        merchantUrl: "http://www.3dsec.sberbank.ru",
+//        status: "DEPOSITED"
+
+
+        $model = new SbOrder();
+
+        $model->orderNumber = $data->orderNumber;
+        $model->orderDescription = $data->orderDescription;
+        $model->transDate = $data->transDate;
+        $model->formattedAmount = $data->formattedAmount;
+        $model->email = $data->email;
+        $model->ip = $data->ip;
+        $model->panMasked = $data->panMasked;
+        $model->paymentSystem = $data->paymentSystem;
+        $model->save();
+    }
+
+
 }

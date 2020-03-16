@@ -140,7 +140,6 @@ filterSidebarCatalogBoxCompilation_ul.forEach(function (item, i) {
 $(document).on('pjax:success', function (e) {
 
 
-
     // колбек для заказа в один клик
     if (e.relatedTarget.classList[0] == 'master-class-form') {
 
@@ -203,6 +202,7 @@ $(document).on('pjax:success', function (e) {
 
 
 $(document).on('pjax:send', function (e) {
+
     $('#delivery-form .button__rectangle').prop('disabled', true);
 });
 
@@ -252,10 +252,10 @@ $(document).ready(function () {
     }
 
     var filterCake = new FilterAjaxForm('#sidebar-filter-cake', '#box-cake-goods');
-        filterCake.getData('/cake-goods/ajax-goods', '.compilation-cake');
+    filterCake.getData('/cake-goods/ajax-goods', '.compilation-cake');
 
     var filterCandy = new FilterAjaxForm('#sidebar-filter-candy', '#box-candie-goods');
-        filterCandy.getData('/candie-goods/ajax-goods', '.compilation-candie');
+    filterCandy.getData('/candie-goods/ajax-goods', '.compilation-candie');
 
 
 });
@@ -294,14 +294,14 @@ if (compilationCake) {
         item.onclick = function (e) {
             e.preventDefault();
 
-            if(!$(this).hasClass('tag-active')){
+            if (!$(this).hasClass('tag-active')) {
                 $(compilationCake).removeClass('tag-active');
                 $(this).addClass('tag-active');
                 tagCake.productsAjax('/cake-goods/ajax-goods', {compilation: this.dataset.count}, boxCakeGoods);
             }
 
             // X
-            if($(e.target).hasClass('tag-active__times')){
+            if ($(e.target).hasClass('tag-active__times')) {
                 $(this).removeClass('tag-active');
                 tagCake.productsAjax('/cake-goods/ajax-goods', $('#sidebar-filter-cake').serialize(), boxCakeGoods);
             }
@@ -324,14 +324,14 @@ if (boxCandieGoods) {
         item.onclick = function (e) {
             e.preventDefault();
 
-            if(!$(this).hasClass('tag-active')){
+            if (!$(this).hasClass('tag-active')) {
                 $(compilationCadie).removeClass('tag-active');
                 $(this).addClass('tag-active');
                 tagCandy.productsAjax('/candie-goods/ajax-goods', {compilation: this.dataset.count}, boxCandieGoods);
             }
 
             // X
-            if($(e.target).hasClass('tag-active__times')){
+            if ($(e.target).hasClass('tag-active__times')) {
                 $(this).removeClass('tag-active');
                 tagCandy.productsAjax('/candie-goods/ajax-goods', $('#sidebar-filter-candy').serialize(), boxCandieGoods);
             }
@@ -406,7 +406,7 @@ $(document).ready(function () {
     // Scroll-to-top
     var scrollTo = document.querySelector('.scroll-to-top__wrapp');
 
-    if(scrollTo){
+    if (scrollTo) {
         scrollTo.onclick = function () {
             document.body.scrollIntoView({behavior: 'smooth'});
         };
@@ -427,7 +427,6 @@ $(document).ready(function () {
 
         };
     }
-
 
 
     // Filter checked true from main page
@@ -491,9 +490,6 @@ $(document).ready(function () {
     }
 
 
-
-
-
     // Search-button for page search
 
     var searchCount = 9;
@@ -531,9 +527,9 @@ $(document).ready(function () {
 
     $('.additional-modules__search').on('click', function () {
 
-        if($('.box-search').hasClass('view')){
+        if ($('.box-search').hasClass('view')) {
             $('.box-search').removeClass('view');
-        }else {
+        } else {
             $('.box-search').addClass('view');
             $('body').css({
                 overflow: 'hidden'
@@ -542,25 +538,113 @@ $(document).ready(function () {
     });
 
     $('.box-search').on('click', function (e) {
-        if(!$(e.target).hasClass('global-form__input')){
+        if (!$(e.target).hasClass('global-form__input')) {
             $('.box-search').removeClass('view');
             $('body').css({
                 overflow: ''
             });
         }
     });
-    
-
 
 
     // Gallery light-box
 
     var light = document.querySelectorAll('.light-box');
-    if(light){
+    if (light) {
         light.forEach(function (item, i) {
             item.dataset.lightbox = 'gallery';
         });
     }
+
+
+
+
+    // Delivery Sber bank
+
+    function sbPay() {
+
+        $.ajax({
+            type: 'get',
+            url: '/delivery/cart',
+            data: {},
+            success: function (res) {
+
+                var openModal = false;
+
+                var sbData = JSON.parse(res);
+
+                $('#SB__btn').on('click', function (e) {
+
+                    var form = $('#delivery-form').serializeArray();
+
+                    var inpVal = [];
+
+                    $(form).each(function (i, item) {
+                        $(item)[0].value ? inpVal.push($(item)[0].value) : false;
+                        (form.length - 1) === inpVal.length ? openModal = true : openModal = false;
+                    });
+
+                    var itemDesc = '';
+                    var amount = 0;
+
+                    for (var i = 0; i < sbData.length; i++) {
+                        itemDesc += sbData[i].title + ' (' + sbData[i].count + ' шт.); ';
+                        amount += parseInt(sbData[i].price) * parseInt(sbData[i].count);
+                    }
+
+                    if(openModal){
+                        ipayCheckout({
+                                amount: amount ? amount : '',
+                                currency: 'RUB',
+                                order_number: '',
+                                description: itemDesc
+                            },
+                            function (order) {
+
+                                $.ajax({
+                                    type: 'post',
+                                    data: {
+                                        order: JSON.stringify(order)
+                                    },
+                                    url: '/check-out/sb-order',
+                                    success: function (res) {
+                                        console.log('/check-out/sb-order: ', res);
+                                    },
+                                    error: function (err) {
+                                        console.log('/check-out/sb-order: ', err);
+                                    }
+                                });
+                            },
+                            function (order) {
+                                showFailurefulPurchase(order)
+                            }
+                        )
+                    }
+                });
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+    sbPay();
+
+    $(document).on('pjax:success', function (e) {
+        sbPay();
+    });
+
+    // Delivery Sber bank end
+
+
+
+
+
+
+
+
+
+    // SB pay end
+
 
     // Gallery light-box end
 
@@ -588,6 +672,9 @@ $(document).ready(function () {
     // });
 
 });
+
+
+
 
 // Delivery Pickup
 

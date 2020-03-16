@@ -34,4 +34,3 @@ class m200219_121031_create_stock_table extends Migration
         $this->dropTable('{{%stock}}');
     }
 }
-// --fields=title:string,previmg:string,description:text,content:text,date:string(10),publication:string(1),priority:string(10),essence:string(20),type:string(50)

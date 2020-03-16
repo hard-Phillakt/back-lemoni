@@ -13,7 +13,6 @@ use app\widgets\customcart\ChangeOptions;
 
 
 $this->registerJsFile('/js/checkout.js');
-
 ?>
 
 <!-- breadcrumbs-line -->
@@ -69,40 +68,36 @@ $this->registerJsFile('/js/checkout.js');
         <div class="row">
 
             <div class="col-lg-12">
-
-                <!--            выводим список товаров из корзины    -->
                 <?= ElementsList::widget(['type' => ElementsList::TYPE_FULL]); ?>
-
             </div>
-
         </div>
 
         <!-- итог в рублях -->
         <div class="row">
             <div class="col-lg-4 col-lg-offset-8">
-                <div class="mt-35">
-                    <!--                    <h3 class="title title__h1">Итого: <span>1 800</span> руб</h3>-->
+                <div class="mt-35 mb-35">
                     <div class="cart-goods__total">
                         <h3 class="title title__h1">
                             Итого: <?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']); ?> руб</h3>
                     </div>
-
                 </div>
             </div>
 
             <div class="col-lg-2 col-lg-offset-8">
                 <div class="mt-35">
-
-                    <?= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
-
+                    <div class="mt-35 djc-c">
+                        <?= TruncateButton::widget(['text' => 'Очистить корзину']); ?>
+                    </div>
                 </div>
             </div>
+
+
             <div class="col-lg-2">
                 <div class="mt-35">
-                    <?= Html::a('Оформить заказ', Url::to('/delivery'), ['class' => 'button button__rectangle']); ?>
-                    <!--                    <a href="#!" class="button button__rectangle">Оформить заказ</a>-->
+                    <?= Html::a('Оформить доставку', Url::to('/delivery'), ['class' => 'button button__rectangle']); ?>
                 </div>
             </div>
+
         </div>
 
     </div>

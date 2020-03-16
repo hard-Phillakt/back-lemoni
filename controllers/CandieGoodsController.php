@@ -160,7 +160,6 @@ class CandieGoodsController extends Controller
 
         $queryTag = $tag::find()->where(['subjects' => 'candy'])->asArray()->all();
 
-
 //      Получаем данные из кеша
         $сache = Yii::$app->cache->get('indexCandie');
 

@@ -1,23 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: NET-USER3
- * Date: 29.10.2019
- * Time: 9:20
- */
 
 namespace app\controllers;
 
-
+use Yii;
 use yii\web\Controller;
+use app\models\CandieGoods;
+use app\models\CakeGoods;
 
 class CheckOutController extends Controller
 {
 
     public $layout = 'base';
 
-    public  function actionIndex(){
-        
+    public function actionIndex()
+    {
         return $this->render('index');
     }
 }

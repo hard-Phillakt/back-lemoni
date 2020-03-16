@@ -33,7 +33,7 @@ OwlAsset::register($this);
         <div class="row">
             <div class="col-lg-12">
                 <a href="<?= Url::home(); ?>" class="breadcrumbs-line__active">Главная</a> <span>-</span> <a
-                    href="<?= Url::to('/candy'); ?>" class="breadcrumbs-line__active">Десерты</a>
+                        href="<?= Url::to('/candy'); ?>" class="breadcrumbs-line__active">Десерты</a>
                 <span> - <?= $model['lm_title']; ?></span>
             </div>
         </div>
@@ -117,14 +117,15 @@ OwlAsset::register($this);
 
                 <div class="mt-15">
                     <p class="desc desc__sm opac__05">
-                        *В стоимость входит оформление и фигурки как на фото, <br>
-                        начинка на выбор и стандартная упаковка
+                        *Стандартный срок изготовления нашей продукции от 2-х дней. Муссовые изделия вы сможете получить
+                        уже через 4 часа. Точные сроки изготовления, а так же наличие товаров и их аналогов, вы можете
+                        уточнить у нашего менеджера при оформлении заказа.
                     </p>
                 </div>
 
 
                 <!-- Начало опций товара -->
-                
+
                 <?= ChangeOptions::widget([
                     'model' => $model,
                     'type' => 'radio',

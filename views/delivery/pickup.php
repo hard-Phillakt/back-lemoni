@@ -182,13 +182,23 @@ use yii\widgets\MaskedInput;
                             </div>
 
                             <div class="col-lg-5">
-                                    <span class="total-delivery__box_value">
-                                        <span
-                                            class="total-delivery__summ"><?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']); ?></span>
-                                        руб
-                                    </span>
+                                <span class="total-delivery__box_value">
+                                    <span
+                                        class="total-delivery__summ"><?= CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']); ?></span>
+                                    руб
+                                </span>
                             </div>
                         </div>
+
+<!--                        <div class="row mt-35">-->
+<!--                            <div class="col-lg-12">-->
+<!---->
+<!--                                <div class="SB_box djc-c pt-25 pb-25">-->
+<!--                                    --><?//= Html::submitButton('<span class="bg-sb-logo"></span>Купить онлайн', ['id' => 'SB__btn']) ?>
+<!--                                </div>-->
+<!---->
+<!--                            </div>-->
+<!--                        </div>-->
 
                     </div>
 
@@ -197,25 +207,22 @@ use yii\widgets\MaskedInput;
 
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2  mt-35">
-                        <div class="desc desc__sm">
-                            Без учета доставки.Подробнее
-                            об условиях доставки ознакомьтесь
-                            на странице <a href="/deliv-cake" class="link link__a">“Доставка и прием”</a>
-                            или у нашего менеджера
-                        </div>
-                    </div>
 
-                    <div class="col-lg-6 col-lg-offset-3">
-                        <div class="mt-35">
+<!--                        <div class="desc desc__sm">-->
+<!--                            Без учета доставки.Подробнее-->
+<!--                            об условиях доставки ознакомьтесь-->
+<!--                            на странице <a href="/deliv-cake" class="link link__a">“Доставка и прием”</a>-->
+<!--                            или у нашего менеджера-->
+<!--                        </div>-->
 
+                        <div class="djc-c">
                             <?= Html::submitButton('Заказать', ['class' => 'button button__rectangle']) ?>
-
                         </div>
+
                     </div>
                 </div>
 
                 <?= $form->field($modelDeliveryContact, 'delivery')->hiddenInput(['value' => 'Самовывоз'])->label('') ?>
-
             </div>
 
             <?php $form = ActiveForm::end(); ?>

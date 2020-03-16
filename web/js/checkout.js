@@ -63,3 +63,4 @@ buttonTruncate.onclick = function (e) {
         window.location.reload(true);
     },10);
 };
+

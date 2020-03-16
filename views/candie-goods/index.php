@@ -242,7 +242,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                                         <div class="mt-15 mb-30">
                                             <span class="card-price pl-15 opac__07">
-                                                <?= $value['lm_price_for_kg']; ?> руб/кг
+                                                <?= $value['lm_price_for_kg']; ?> руб/шт
                                             </span>
                                         </div>
 
@@ -281,7 +281,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                                         <div class="mt-15 mb-30">
                                             <span class="card-price pl-15 opac__07">
-                                                <?= $value['lm_price_for_kg']; ?> руб/кг
+                                                <?= $value['lm_price_for_kg']; ?> руб/шт
                                             </span>
                                         </div>
 
@@ -322,7 +322,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Сопровож�
 
                                         <div class="mt-15 mb-30">
                                             <span class="card-price pl-15 opac__07">
-                                                <?= $value['lm_price_for_kg']; ?> руб/кг
+                                                <?= $value['lm_price_for_kg']; ?> руб/шт
                                             </span>
                                         </div>
 

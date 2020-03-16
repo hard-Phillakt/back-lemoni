@@ -1,16 +1,14 @@
 <?php
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use yii\helpers\Html;
 use app\assets\BaseAsset;
 use app\widgets\customcart\CartInformer;
 use yii\helpers\Url;
 use app\widgets\stock\WStock;
-
+use app\widgets\customcart\ElementsList;
 
 BaseAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -22,6 +20,11 @@ BaseAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['web/favicon.ico'])]); ?>
+<!--    <link rel="stylesheet" href="https://3dsec.sberbank.ru/demopayment/docsite/assets/css/modal.css">-->
+<!--    <script src="https://3dsec.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>-->
+<!--    <script>-->
+<!--        var ipay = new IPAY({api_token: 'YRF3C5RFICWISEWFR6GJ'});-->
+<!--    </script>-->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>
@@ -346,7 +349,6 @@ BaseAsset::register($this);
 
 </div>
 
-
 <div id="modal-delivery" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -372,7 +374,6 @@ BaseAsset::register($this);
         </div>
     </div>
 </div>
-
 
 <?php $this->endBody() ?>
 </body>
