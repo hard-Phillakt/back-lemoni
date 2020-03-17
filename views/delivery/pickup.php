@@ -105,50 +105,35 @@ use yii\widgets\MaskedInput;
                                     'options' => [
                                         'placeholder' => 'Выберите дату приготовления',
                                         'class' => 'global-form__input',
-
                                     ],
                                     'pluginOptions' => [
-//                                        'format' => 'dd-M-yyyy',
                                         'todayHighlight' => true,
                                     ]
                                 ]); ?>
                             </div>
-                            
 
                             <p class="mt-35">
-
                                 <?= $form->field($modelDeliveryContact, 'comment')->textarea(['rows' => 6, 'class' => 'global-form__input', 'placeholder' => 'Введите текст']); ?>
-
                             </p>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
 
             <div class="col-lg-4">
-
                 <div class="total-delivery">
-
                     <div class="total-delivery__box">
-
                         <div>
                             <h2 class="total-delivery__box_title">Ваш заказ:</h2>
                         </div>
-
                         <div class="row mt-35 line-white">
                             <div class="col-lg-7">
                                 <span class="total-delivery__box_key opac__07">Способ получения:</span>
                             </div>
-
                             <div class="col-lg-5">
-
                                 <div>
-
                                     <?//= $form->field($modelDeliveryContact, 'delivery')->dropDownList(['Самовывоз' => 'Самовывоз', 'Доставка' => 'Доставка'])->label(false) ?>
-
                                     <div role="presentation" class="dropdown">
                                             <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                 Самовывоз
@@ -158,9 +143,7 @@ use yii\widgets\MaskedInput;
                                             <li><a href="/delivery">Доставка</a></li>
                                         </ul>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
 
@@ -190,15 +173,16 @@ use yii\widgets\MaskedInput;
                             </div>
                         </div>
 
-<!--                        <div class="row mt-35">-->
-<!--                            <div class="col-lg-12">-->
-<!---->
-<!--                                <div class="SB_box djc-c pt-25 pb-25">-->
-<!--                                    --><?//= Html::submitButton('<span class="bg-sb-logo"></span>Купить онлайн', ['id' => 'SB__btn']) ?>
-<!--                                </div>-->
-<!---->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="row mt-35">
+                            <div class="col-lg-12">
+                                <div class="SB_box djc-c dai-c dfd-column pt-25 pb-25">
+                                    <?= Html::submitButton('<span class="bg-sb-logo"></span>Оплата заказа', ['id' => 'SB__btn']) ?>
+                                    <div class="mt-35" style="text-align: center; color: red;">
+                                        В данный момент онлайн оплата не принимается!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -215,7 +199,7 @@ use yii\widgets\MaskedInput;
 <!--                            или у нашего менеджера-->
 <!--                        </div>-->
 
-                        <div class="djc-c">
+                        <div class="djc-c" onclick="fbq('track', 'Lead');">
                             <?= Html::submitButton('Заказать', ['class' => 'button button__rectangle']) ?>
                         </div>
 

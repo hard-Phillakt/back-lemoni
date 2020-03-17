@@ -13,7 +13,6 @@ use yii\base\Model;
 
 class DeliveryContact extends Model
 {
-
     public $name;
     public $phone;
     public $city;
@@ -23,7 +22,6 @@ class DeliveryContact extends Model
     public $dateCreate;
     public $comment;
     public $delivery;
-
 
     public function rules()
     {

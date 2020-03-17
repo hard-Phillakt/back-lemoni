@@ -1256,11 +1256,6 @@ table a:focus {
     align-items: flex-start;
 }
 
-
-
-
-
-
 .SB_box {
     background: #fff;
     border-radius: 0.5em;
@@ -1280,6 +1275,7 @@ table a:focus {
     font-size: 15px;
     background: transparent;
     transition: all .3s;
+    outline: none;
 }
 
 #SB__btn:hover {
@@ -1299,7 +1295,14 @@ table a:focus {
     transform: translateX(5px);
 }
 
-
+.pay-cards__img p{
+    width: 300px !important;
+    height: 50px !important;
+    background-size: contain !important;
+    background-position: center !important;
+    margin: 0 !important;
+    opacity: 0.3;
+}
 
 
 

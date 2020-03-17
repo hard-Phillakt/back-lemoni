@@ -20,11 +20,11 @@ BaseAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['web/favicon.ico'])]); ?>
-<!--    <link rel="stylesheet" href="https://3dsec.sberbank.ru/demopayment/docsite/assets/css/modal.css">-->
-<!--    <script src="https://3dsec.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>-->
-<!--    <script>-->
-<!--        var ipay = new IPAY({api_token: 'YRF3C5RFICWISEWFR6GJ'});-->
-<!--    </script>-->
+    <!--    <link rel="stylesheet" href="https://3dsec.sberbank.ru/demopayment/docsite/assets/css/modal.css">-->
+    <!--    <script src="https://3dsec.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>-->
+    <!--    <script>-->
+    <!--        var ipay = new IPAY({api_token: 'cklqt85rcoakk4585eommqnpfb'});-->
+    <!--    </script>-->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>
@@ -50,6 +50,36 @@ BaseAsset::register($this);
         <div><img src="https://mc.yandex.ru/watch/56515504" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq)return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '611835906039047');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=611835906039047&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
     <?php $this->head() ?>
 </head>
 <body>
@@ -63,7 +93,7 @@ BaseAsset::register($this);
                 <div class="col-lg-6 col-lg-offset-3">
                     <form action="/search/" id="form-box-search">
                         <input type="text" name="q" class="global-form__input" placeholder="поиск по товарам">
-                        <button class="box-search__btn" type="submit">
+                        <button onclick="fbq('track', 'Search');" class="box-search__btn" type="submit">
                             <img src="/img/icons/arrow-right.svg" alt="arrow-right" class="rotate__180">
                         </button>
                         <span class="box-search__close">×</span>
@@ -118,7 +148,7 @@ BaseAsset::register($this);
                             <div class="additional-modules__cart">
                                 <a href="/check-out">
                                     <img src="/img/icons/black/icon-cart.svg" alt="icon-cart">
-                                        <span class="CartInformerBox">
+                                    <span class="CartInformerBox">
                                             <?= CartInformer::widget(['htmlTag' => 'span', 'offerUrl' => 'site/index', 'text' => '{c}']); ?>
                                         </span>
                                 </a>
@@ -138,13 +168,13 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/" class="link black-menu-link__a">Главная</a>
+                                    <a href="/" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');" >Главная</a>
                                 </li>
                                 <li>
-                                    <a href="/cake" class="link black-menu-link__a">Каталог тортов</a>
+                                    <a href="/cake" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candy" class="link black-menu-link__a">Каталог десертов</a>
+                                    <a href="/candy" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Каталог десертов</a>
                                 </li>
                                 <li>
                                     <a href="/contact" class="link black-menu-link__a">Контакты</a>
@@ -155,7 +185,7 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/master-class" class="link black-menu-link__a">Мастер-классы</a>
+                                    <a href="/master-class" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Мастер-классы</a>
                                 </li>
                                 <li>
                                     <a href="/stock" class="link black-menu-link__a">Акции</a>
@@ -354,7 +384,7 @@ BaseAsset::register($this);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close opac__07" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
+                            aria-hidden="true">&times;</span></button>
             </div>
 
             <div class="modal-body">

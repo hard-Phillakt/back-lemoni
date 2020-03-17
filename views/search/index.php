@@ -30,7 +30,7 @@ use yii\widgets\LinkPager;
                            name="q" placeholder="поиск по товарам">
 
                     <div class="mt-15" style="text-align: right">
-                        <button type="submit" class="button button__rectangle" data-toggle="modal" data-target="#one-click">Найти</button>
+                        <button type="submit" class="button button__rectangle" data-toggle="modal" data-target="#one-click" onclick="fbq('track', 'Search');">Найти</button>
                     </div>
                 </form>
             </div>

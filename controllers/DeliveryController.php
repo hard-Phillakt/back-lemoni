@@ -31,8 +31,7 @@ class DeliveryController extends Controller
 
         $dataForm = Yii::$app->request->post();
 
-        if($dataForm['PickupDeliveryContact']){
-
+        if ($dataForm['PickupDeliveryContact']) {
             $dataUser = '';
             $dataUser .= "<style>
 
@@ -58,9 +57,7 @@ class DeliveryController extends Controller
             $dataUser .= '<p><strong>Дата приготовления: </strong>' . $dataForm['check_issue_date'];
             $dataUser .= '<p><strong>Способ получения: </strong>' . $dataForm['PickupDeliveryContact']['delivery'];
             $dataUser .= '</div>';
-
-        }else {
-
+        } else {
             $dataUser = '';
             $dataUser .= "<style>
 
@@ -89,25 +86,18 @@ class DeliveryController extends Controller
             $dataUser .= '<p><strong>Дата приготовления: </strong>' . $dataForm['check_issue_date'];
             $dataUser .= '<p><strong>Способ получения: </strong>' . $dataForm['DeliveryContact']['delivery'];
             $dataUser .= '</div>';
-
         }
 
         $data = '';
         $totalSumm = '';
-
         $i = 1;
-
         foreach ($elements as $key => $value) {
 
             if ($value->model == 'app\models\CakeGoods') {
-
                 $modelGoods = new CakeGoods();
-
-//          Вытаскиваю доп данные для отправки по id из корзины
+//              Вытаскиваю доп данные для отправки по id из корзины
                 $query = $modelGoods::findOne($value->item_id);
-
                 $json_decode = json_decode($value['options']);
-
                 $data .= "<style>
 
                         .table {
@@ -144,21 +134,15 @@ class DeliveryController extends Controller
                 $data .= '<td><strong>Сумма * количество: </strong><br>' . '<span>' . $value['price'] * $value['count'] . ' руб';
                 $data .= '</tr>';
                 $data .= '</table>';
-
-
                 $data .= '<table class="table" style="font-weight: 600; margin-top: 30px; width: 100%;">';
                 $data .= '<tr>';
                 if ($value['options']) {
-
                     foreach ($json_decode as $key => $value) {
-
                         $explode_str = explode('-', $value);
-
                         if (!(int)$explode_str[0]) {
                             $data .= '<td style="padding: 5px;"><strong style="color:#8F5541;">Опция-' . $i . ': </strong><br>' . '<span>' . $explode_str[2] . ' - ' . $explode_str[1] . ' руб';
                             $i++;
                         }
-
                     }
                 }
                 $data .= '</tr>';
@@ -167,14 +151,10 @@ class DeliveryController extends Controller
                 $data .= '<hr>';
 
             } else {
-
                 $modelGoods = new CandieGoods();
-
 //              Вытаскиваю доп данные для отправки по id из корзины
                 $query = $modelGoods::findOne($value->item_id);
-
                 $json_decode = json_decode($value['options']);
-
                 $data .= '<style>
 
                         .table {
@@ -202,7 +182,7 @@ class DeliveryController extends Controller
                 $data .= '<p><strong><h3>Товар:</h3></strong><p>';
                 $data .= '<table class="table">';
                 $data .= '<tr>';
-                $data .= '<td style=""><strong>Id товара: </strong><br>' . '<span>' . $value['item_id'];
+                $data .= '<td><strong>Id товара: </strong><br>' . '<span>' . $value['item_id'];
                 $data .= '<td><strong>Название товара: </strong><br>' . '<span>' . $query->lm_title;
                 $data .= '<td><strong>Количество: </strong><br>' . '<span>' . $value['count'] . ' шт';
                 $data .= '<td><strong>Сумма: </strong><br>' . '<span>' . $value['price'] . ' руб';
@@ -214,16 +194,12 @@ class DeliveryController extends Controller
                 $data .= '<table class="table" style="font-weight: 600; margin-top: 30px; width: 100%;">';
                 $data .= '<tr>';
                 if ($value['options']) {
-
                     foreach ($json_decode as $key => $value) {
-
                         $explode_str = explode('-', $value);
-
                         if (!(int)$explode_str[0]) {
                             $data .= '<td style="padding: 5px;"><strong style="color:#8F5541;">Опция-' . $i . ': </strong><br>' . '<span>' . $explode_str[2] . ' - ' . $explode_str[1] . ' руб';
                             $i++;
                         }
-
                     }
                 }
                 $data .= '</tr>';
@@ -231,27 +207,25 @@ class DeliveryController extends Controller
                 $data .= '</div>';
                 $data .= '<hr>';
             }
-
-
         }
 
         $price = CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']);
 
         $data .= "<div><h3><strong>Итоговая сумма:</strong></h3>  <h3>{$price} <strong>руб</strong></h3></div>";
 
-
+//      Отправщик сформированных данных
         if (!empty($data) && $modelDeliveryContact->load(Yii::$app->request->post()) && Yii::$app->request->isAjax && !empty($dataUser)) {
 
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
-                    'hard-phillakt@mail.ru' => 'Заказ с сайта: cafelemoni.ru',
-                    'sale@cafelemoni.ru' => 'Заказ с сайта: cafelemoni.ru',
-                    'info@cafelemoni.ru' => 'Заказ с сайта: cafelemoni.ru',
-                    'info@webmedia31.ru' => 'Заказ с сайта: cafelemoni.ru',
+                    'hard-phillakt@mail.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
                 ])
-                ->setSubject('Заказ с сайта Cafelemoni')
-                ->setTextBody('Заказ с сайта Cafelemoni')
+                ->setSubject('Сформирован заказ на оплату с сайта Cafelemoni.ru')
+                ->setTextBody('Сформирован заказ на оплату с сайта Cafelemoni.ru')
                 ->setHtmlBody("<div>{$dataUser}<div><div>{$data}</div><div>{$totalSumm}</div>")
                 ->send();
         }
@@ -381,6 +355,34 @@ class DeliveryController extends Controller
         $model->panMasked = $data->panMasked;
         $model->paymentSystem = $data->paymentSystem;
         $model->save();
+
+//      Отправщик оплаченных данных
+        if ($post && Yii::$app->request->isAjax) {
+
+            $dataUser = "<div>Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru</div>";
+            $dataUser .= "<div>Список товаров: {$data->orderDescription}<div>";
+            $dataUser .= "<div>Дата оплаты: {$data->transDate}<div>";
+            $dataUser .= "<div>Сумма покупки: {$data->formattedAmount}<div>";
+            $dataUser .= "<div>Почта покупателя: {$data->email}<div>";
+            $dataUser .= "<div>Ip адрес покупателя: {$data->ip}<div>";
+            $dataUser .= "<div>Банковская карточка покупателя: {$data->panMasked}<div>";
+            $dataUser .= "<div>Система оплаты: {$data->paymentSystem}<div>";
+
+            Yii::$app->mailer->compose()
+                ->setFrom('info@cafelemoni.ru')
+                ->setTo([
+                    "hard-phillakt@mail.ru" => "Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru",
+//                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+//                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+//                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                ])
+                ->setSubject("Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru")
+                ->setTextBody("Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru")
+                ->setHtmlBody("<div>{$dataUser}</div>")
+                ->send();
+        }
+
+        return 'success';
     }
 
 

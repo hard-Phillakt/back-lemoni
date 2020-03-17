@@ -57,6 +57,10 @@ BaseAsset::register($this);
                     <div class="mt-15">
                         <?= Html::a('Отзывы', Url::to('/admin/review'), ['class' => 'link link__a']) ?>
                     </div>
+
+                    <div class="mt-15">
+                        <?= Html::a('Онлайн оплаты', Url::to('/admin/sb-order'), ['class' => 'link link__a']) ?>
+                    </div>
                 </div>
 
                 <div class="col-lg-2">
@@ -127,7 +131,7 @@ BaseAsset::register($this);
     <section class="content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <?= $content ?>
                 </div>
             </div>

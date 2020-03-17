@@ -50,14 +50,14 @@ class SbOrder extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'orderNumber' => 'Order Number',
-            'orderDescription' => 'Order Description',
-            'transDate' => 'Trans Date',
-            'formattedAmount' => 'Formatted Amount',
-            'email' => 'Email',
-            'ip' => 'Ip',
-            'panMasked' => 'Pan Masked',
-            'paymentSystem' => 'Payment System',
+            'orderNumber' => 'Номер заказа',
+            'orderDescription' => 'Описание заказа',
+            'transDate' => 'Время транзакции',
+            'formattedAmount' => 'Сумма заказа',
+            'email' => 'Почта',
+            'ip' => 'Ip покупателя',
+            'panMasked' => 'Маска дебетовой карточки',
+            'paymentSystem' => 'Система оплаты',
         ];
     }
 }

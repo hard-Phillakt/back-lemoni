@@ -163,15 +163,13 @@ $(document).on('pjax:success', function (e) {
             var count = $('#delivery-form')[0].length;
 
             // Callback Уведомление об успешном отправки сообщения
-            $('#modal-delivery').modal('show');
+            // $('#modal-delivery').modal('show');
 
             for (var i = 0; i < count; i++) {
-
                 // очищаем поля формы кроме кнопки
-                if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT') {
+                if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT' && $('#delivery-form')[0][i].type != 'hidden' && $('#delivery-form')[0][i].name != 'check_issue_date') {
                     $('#delivery-form')[0][i].value = '';
                 }
-
             }
         }
     }
@@ -559,7 +557,10 @@ $(document).ready(function () {
 
 
 
-    // Delivery Sber bank
+
+
+    // Delivery Sberbank
+    var openModal = false;
 
     function sbPay() {
 
@@ -568,8 +569,6 @@ $(document).ready(function () {
             url: '/delivery/cart',
             data: {},
             success: function (res) {
-
-                var openModal = false;
 
                 var sbData = JSON.parse(res);
 
@@ -580,8 +579,14 @@ $(document).ready(function () {
                     var inpVal = [];
 
                     $(form).each(function (i, item) {
+
                         $(item)[0].value ? inpVal.push($(item)[0].value) : false;
-                        (form.length - 1) === inpVal.length ? openModal = true : openModal = false;
+
+                        if((form.length - 1) <= inpVal.length){
+                            openModal = true
+                        }else {
+                            openModal = false
+                        }
                     });
 
                     var itemDesc = '';
@@ -593,6 +598,7 @@ $(document).ready(function () {
                     }
 
                     if(openModal){
+
                         ipayCheckout({
                                 amount: amount ? amount : '',
                                 currency: 'RUB',
@@ -606,12 +612,15 @@ $(document).ready(function () {
                                     data: {
                                         order: JSON.stringify(order)
                                     },
-                                    url: '/check-out/sb-order',
+                                    url: '/delivery/sb-order',
                                     success: function (res) {
-                                        console.log('/check-out/sb-order: ', res);
+                                        if(res === 'success') {
+                                            // Callback success order
+                                            $('#modal-delivery').modal('show');
+                                        }
                                     },
                                     error: function (err) {
-                                        console.log('/check-out/sb-order: ', err);
+                                        console.log('err: ', err);
                                     }
                                 });
                             },
@@ -623,28 +632,23 @@ $(document).ready(function () {
                 });
             },
             error: function (err) {
-                console.log(err);
+                console.log('err: ', err);
             }
         });
     }
-    sbPay();
+    // sbPay();
 
+    $('#SB__btn').attr('disabled', 'disabled');
+
+    // Callback pjax
     $(document).on('pjax:success', function (e) {
-        sbPay();
+        // sbPay();
+        $('#SB__btn').attr('disabled', 'disabled');
     });
 
     // Delivery Sber bank end
 
-
-
-
-
-
-
-
-
     // SB pay end
-
 
     // Gallery light-box end
 

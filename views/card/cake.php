@@ -136,12 +136,14 @@ OwlAsset::register($this);
 
                 <div class="flter-min-max mt-35">
 
-                    <?= BuyButton::widget([
-                        'model' => $model,
-                        'text' => 'В корзину',
-                        'htmlTag' => 'a',
-                        'cssClass' => 'custom_class button button__rectangle',
-                    ]) ?>
+                    <div onclick="fbq('track', 'AddToCart');">
+                        <?= BuyButton::widget([
+                            'model' => $model,
+                            'text' => 'В корзину',
+                            'htmlTag' => 'a',
+                            'cssClass' => 'custom_class button button__rectangle',
+                        ]) ?>
+                    </div>
 
                     <!-- Modal start -->
                     <?php Modal::begin([

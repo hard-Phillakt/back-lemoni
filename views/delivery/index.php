@@ -91,15 +91,11 @@ use yii\widgets\MaskedInput;
                                     </p>
                                 </div>
                             </div>
-
                         </div>
 
-
                         <div class="col-lg-6 col-lg-offset-1">
-
                             <div class="form-group field-deliverycontact-name required">
                                 <label class="control-label">Выберите дату доставки</label>
-
                                 <?= DatePicker::widget([
                                     'language' => 'ru',
                                     'name' => 'check_issue_date',
@@ -107,7 +103,6 @@ use yii\widgets\MaskedInput;
                                     'options' => [
                                         'placeholder' => 'Выберите дату приготовления',
                                         'class' => 'global-form__input',
-
                                     ],
                                     'pluginOptions' => [
                                         'todayHighlight' => true,
@@ -181,23 +176,18 @@ use yii\widgets\MaskedInput;
                             </div>
                         </div>
 
-<!--                        <div class="row mt-35">-->
-<!--                            <div class="col-lg-12">-->
-<!---->
-<!---->
-<!--                                <div class="SB_box djc-c pt-25 pb-25">-->
-<!---->
-<!--                                    --><?//= Html::submitButton('<span class="bg-sb-logo"></span>Купить онлайн', ['id' => 'SB__btn']) ?>
-<!---->
-<!--                                </div>-->
-<!---->
-<!--                            </div>-->
-<!--                        </div>-->
-
+                        <div class="row mt-35">
+                            <div class="col-lg-12">
+                                <div class="SB_box djc-c dai-c dfd-column pt-25 pb-25">
+                                    <?= Html::submitButton('<span class="bg-sb-logo"></span>Оплата заказа', ['id' => 'SB__btn']) ?>
+                                    <div class="mt-35" style="text-align: center; color: red;">
+                                        В данный момент онлайн оплата не принимается!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
 
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2  mt-35">
@@ -209,13 +199,14 @@ use yii\widgets\MaskedInput;
 <!--                            или у нашего менеджера-->
 <!--                        </div>-->
 
-                        <div class="djc-c">
+                        <div class="djc-c" onclick="fbq('track', 'Lead');">
                             <?= Html::submitButton('Заказать', ['class' => 'button button__rectangle']) ?>
                         </div>
+
                     </div>
                 </div>
 
-                <?= $form->field($modelDeliveryContact, 'delivery')->hiddenInput(['value' => 'Самовывоз'])->label('') ?>
+                <?= $form->field($modelDeliveryContact, 'delivery')->hiddenInput(['value' => 'Доставка'])->label('') ?>
 
             </div>
 
