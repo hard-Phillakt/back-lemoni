@@ -147,6 +147,14 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Муссовые 
                                             МИР, Visa Int., MasterCard Europe Sprl, JCB.
                                         </p>
                                     </div>
+
+
+                                    <div class="mt-35">
+                                        <p>
+                                            <a href="https://cafelemoni.ru/politics" class="link link__a">Политика конфиденциальности</a>
+                                        </p>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

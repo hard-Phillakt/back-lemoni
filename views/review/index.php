@@ -92,7 +92,7 @@ OwlAsset::register($this);
                                                        class="global-form__checkbox mt-35">
                                                 <div>
                                                     Я соглашаюсь на передачу персональных данных согласно
-                                                    <a href="#!">политике конфиденциальности</a>
+                                                    <a href="https://cafelemoni.ru/politics" class="link link__a">политике конфиденциальности</a>
                                                 </div>
                                             </span>
                                     </div>
