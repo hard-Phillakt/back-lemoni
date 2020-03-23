@@ -37,3 +37,7 @@ tests/_support/_generated
 
 #files global
 /web/files/global
+
+
+#db
+/config/db.php
