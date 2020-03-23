@@ -89,12 +89,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
             <div class="col-lg-3">
                 <div class="category-cake-box">
                     <div class="category-cake-box__img mb-25">
-                        <a href="/candy?param=dessert">
+                        <a href="/candy">
                             <span class="category-cake-box__img_4"></span>
                         </a>
                     </div>
                     <h3 class="title title__h3">
-                        <a href="/candy?param=dessert" class="link black-link__a">Десерты</a>
+                        <a href="/candy" class="link black-link__a">Десерты</a>
                     </h3>
                 </div>
             </div>
