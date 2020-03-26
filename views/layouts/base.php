@@ -20,9 +20,9 @@ BaseAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['web/favicon.ico'])]); ?>
-    <link rel="stylesheet" href="https://securepayments.sberbank.ru/demopayment/docsite/assets/css/modal.css">
-    <script src="https://securepayments.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>
-    <script>
+    <link rel="stylesheet" type="text/css" href="https://securepayments.sberbank.ru/demopayment/docsite/assets/css/modal.css">
+    <script type="application/javascript" src="https://securepayments.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>
+    <script type="application/javascript">
         var ipay = new IPAY({api_token: 't5ntb5a8sneugo2tnvc7ri4cuv'});
     </script>
 
@@ -80,9 +80,9 @@ BaseAsset::register($this);
         <img height="1" width="1"
              src="https://www.facebook.com/tr?id=611835906039047&ev=PageView&noscript=1"/>
     </noscript>
-    <!-- End Facebook Pixel Code -->
+     End Facebook Pixel Code
 
-    <!-- End Vk Pixel Code -->
+     End Vk Pixel Code
     <script type="text/javascript">!function () {
             var t = document.createElement("script");
             t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?167", t.onload = function () {
