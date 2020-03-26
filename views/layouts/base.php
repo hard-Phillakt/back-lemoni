@@ -20,14 +20,16 @@ BaseAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['web/favicon.ico'])]); ?>
-    <!--    <link rel="stylesheet" href="https://3dsec.sberbank.ru/demopayment/docsite/assets/css/modal.css">-->
-    <!--    <script src="https://3dsec.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>-->
-    <!--    <script>-->
-    <!--        var ipay = new IPAY({api_token: 'cklqt85rcoakk4585eommqnpfb'});-->
-    <!--    </script>-->
+    <link rel="stylesheet" href="https://securepayments.sberbank.ru/demopayment/docsite/assets/css/modal.css">
+    <script src="https://securepayments.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>
+    <script>
+        var ipay = new IPAY({api_token: 't5ntb5a8sneugo2tnvc7ri4cuv'});
+    </script>
+
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
@@ -79,6 +81,17 @@ BaseAsset::register($this);
              src="https://www.facebook.com/tr?id=611835906039047&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Facebook Pixel Code -->
+
+    <!-- End Vk Pixel Code -->
+    <script type="text/javascript">!function () {
+            var t = document.createElement("script");
+            t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?167", t.onload = function () {
+                VK.Retargeting.Init("VK-RTRG-469069-aCsr8"), VK.Retargeting.Hit()
+            }, document.head.appendChild(t)
+        }();</script>
+    <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-469069-aCsr8" style="position:fixed; left:-999px;" alt=""/>
+    </noscript>
+    <!-- End Vk Pixel Code end -->
 
     <?php $this->head() ?>
 </head>
@@ -168,13 +181,15 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');" >Главная</a>
+                                    <a href="/" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Главная</a>
                                 </li>
                                 <li>
-                                    <a href="/cake" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Каталог тортов</a>
+                                    <a href="/cake" class="link black-menu-link__a"
+                                       onclick="fbq('track', 'ViewContent');">Каталог тортов</a>
                                 </li>
                                 <li>
-                                    <a href="/candy" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Каталог десертов</a>
+                                    <a href="/candy" class="link black-menu-link__a"
+                                       onclick="fbq('track', 'ViewContent');">Каталог десертов</a>
                                 </li>
                                 <li>
                                     <a href="/contact" class="link black-menu-link__a">Контакты</a>
@@ -185,7 +200,8 @@ BaseAsset::register($this);
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <ul class="header-box-full__ul">
                                 <li>
-                                    <a href="/master-class" class="link black-menu-link__a" onclick="fbq('track', 'ViewContent');">Мастер-классы</a>
+                                    <a href="/master-class" class="link black-menu-link__a"
+                                       onclick="fbq('track', 'ViewContent');">Мастер-классы</a>
                                 </li>
                                 <li>
                                     <a href="/stock" class="link black-menu-link__a">Акции</a>

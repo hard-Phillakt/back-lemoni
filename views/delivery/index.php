@@ -180,9 +180,9 @@ use yii\widgets\MaskedInput;
                             <div class="col-lg-12">
                                 <div class="SB_box djc-c dai-c dfd-column pt-25 pb-25">
                                     <?= Html::submitButton('<span class="bg-sb-logo"></span>Оплата заказа', ['id' => 'SB__btn']) ?>
-                                    <div class="mt-35" style="text-align: center; color: red;">
-                                        В данный момент онлайн оплата не принимается!
-                                    </div>
+<!--                                    <div class="mt-35" style="text-align: center; color: red;">-->
+<!--                                        В данный момент онлайн оплата не принимается!-->
+<!--                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -199,9 +199,9 @@ use yii\widgets\MaskedInput;
 <!--                            или у нашего менеджера-->
 <!--                        </div>-->
 
-                        <div class="djc-c" onclick="fbq('track', 'Lead');">
-                            <?= Html::submitButton('Заказать', ['class' => 'button button__rectangle']) ?>
-                        </div>
+<!--                        <div class="djc-c" onclick="fbq('track', 'Lead');">-->
+<!--                            --><?//= Html::submitButton('Заказать', ['class' => 'button button__rectangle']) ?>
+<!--                        </div>-->
 
                     </div>
                 </div>

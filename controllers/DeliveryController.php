@@ -344,8 +344,8 @@ class DeliveryController extends Controller
 //        status: "DEPOSITED"
 
 
+//      Делаем запись в базу
         $model = new SbOrder();
-
         $model->orderNumber = $data->orderNumber;
         $model->orderDescription = $data->orderDescription;
         $model->transDate = $data->transDate;
@@ -355,6 +355,7 @@ class DeliveryController extends Controller
         $model->panMasked = $data->panMasked;
         $model->paymentSystem = $data->paymentSystem;
         $model->save();
+
 
 //      Отправщик оплаченных данных
         if ($post && Yii::$app->request->isAjax) {
@@ -372,9 +373,9 @@ class DeliveryController extends Controller
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
                     "hard-phillakt@mail.ru" => "Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru",
-//                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
                 ])
                 ->setSubject("Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru")
                 ->setTextBody("Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru")

@@ -555,10 +555,6 @@ $(document).ready(function () {
     }
 
 
-
-
-
-
     // Delivery Sberbank
     var openModal = false;
 
@@ -581,12 +577,12 @@ $(document).ready(function () {
                     $(form).each(function (i, item) {
 
                         $(item)[0].value ? inpVal.push($(item)[0].value) : false;
-
                         if((form.length - 1) <= inpVal.length){
                             openModal = true
                         }else {
                             openModal = false
                         }
+
                     });
 
                     var itemDesc = '';
@@ -636,17 +632,24 @@ $(document).ready(function () {
             }
         });
     }
-    // sbPay();
+    sbPay();
 
-    $('#SB__btn').attr('disabled', 'disabled');
+    // $('#SB__btn').attr('disabled', 'disabled');
 
     // Callback pjax
     $(document).on('pjax:success', function (e) {
-        // sbPay();
-        $('#SB__btn').attr('disabled', 'disabled');
+        sbPay();
+        // $('#SB__btn').attr('disabled', 'disabled');
     });
 
     // Delivery Sber bank end
+
+
+
+
+
+
+
 
     // SB pay end
 
