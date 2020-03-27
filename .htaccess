@@ -10,6 +10,8 @@ RewriteRule ^img/(.*)$ web/img/$1 [L]
 RewriteRule ^rinsta/(.*)$ web/rinsta/$1 [L]
 RewriteRule ^static/media/(.*)$ web/rinsta/static/media/$1 [L]
 RewriteRule ^files/(.*)$ web/files/$1 [L]
+RewriteRule ^robots.txt$ web/robots.txt [L]
+RewriteRule ^sitemap.xml$ web/sitemap.xml [L]
 RewriteRule (.*) /web/$1
 
 RewriteCond %{REQUEST_FILENAME} !-f

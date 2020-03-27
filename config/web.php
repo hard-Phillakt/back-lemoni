@@ -100,7 +100,7 @@ $config = [
                 'cake/<id:\d+>' => 'card/cake',
                 'shadlaw/<id:\d+>' => 'card/shadlaw',
                 'candy/<id:\d+>' => 'card/candie',
-                'bouquet/<id:\d+>' => 'card/bouquet'
+                'bouquet/<id:\d+>' => 'card/bouquet',
             ],
         ],
         'cart' => [
