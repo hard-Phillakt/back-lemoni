@@ -21,11 +21,10 @@ BaseAsset::register($this);
     <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['./web/favicon.ico'])]); ?>
     <link rel="stylesheet" type="text/css" href="https://securepayments.sberbank.ru/demopayment/docsite/assets/css/modal.css">
-    <script type="application/javascript" src="https://securepayments.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>
-    <script type="application/javascript">
+    <script type="text/javascript" src="https://securepayments.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>
+    <script type="text/javascript">
         var ipay = new IPAY({api_token: 't5ntb5a8sneugo2tnvc7ri4cuv'});
     </script>
-
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a927f738-0c06-46da-9330-37a4e3010060&lang=ru_RU"
             type="text/javascript">
     </script>
@@ -81,7 +80,7 @@ BaseAsset::register($this);
              src="https://www.facebook.com/tr?id=611835906039047&ev=PageView&noscript=1"/>
     </noscript>
 <!--     End Facebook Pixel Code-->
-<!---->
+
 <!--     End Vk Pixel Code-->
     <script type="text/javascript">!function () {
             var t = document.createElement("script");

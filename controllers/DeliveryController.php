@@ -220,9 +220,9 @@ class DeliveryController extends Controller
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
                     'hard-phillakt@mail.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
                 ])
                 ->setSubject('Сформирован заказ на оплату с сайта Cafelemoni.ru')
                 ->setTextBody('Сформирован заказ на оплату с сайта Cafelemoni.ru')
