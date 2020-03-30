@@ -42,6 +42,7 @@ function GlobalOptionsCard() {
             }
 
             if(glogalPriceTotal){
+
                 customClass.dataset.price = glogalPriceTotal;
                 dvizhCartPrice.innerHTML = glogalPriceTotal;
             }
@@ -134,7 +135,6 @@ function GlobalOptionsCard() {
                     total = price + summ;
                     guest--;
 
-                    console.log(total);
                     // cardGoods__price.innerHTML = total;
                     cardGoods__price.dataset.oldstate = total;
 
@@ -169,7 +169,6 @@ function GlobalOptionsCard() {
                 total = price + summ;
                 guest++;
 
-                console.log(total);
                 // cardGoods__price.innerHTML = total;
                 cardGoods__price.dataset.oldstate = total;
 
@@ -185,8 +184,6 @@ function GlobalOptionsCard() {
 
                 // toFixed фиксирую шлак
                 dvizhOption_inputKg.value = kgTotal.toFixed(2) + ' кг';
-
-                console.log(kgTotal);
             }
 
             // инкремент

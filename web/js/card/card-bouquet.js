@@ -4,7 +4,10 @@ var mainCard = new GlobalOptionsCard();
 // удаление опций: class - optDesabled
 
 // Колличество гостей:
-mainCard.optGuests(0, 'optDesabled', [0, 1, 2, 3, 4, 5]);
+mainCard.optPieces(0, 'optPieces', [0, 1, 2]);
+
+// для тортов с гостями
+// mainCard.optGuests(0, 'optDesabled', [0, 1, 2, 3, 4, 5]);
 
 // Выберите цвет глазури:
 mainCard.optGlaze(1, 'optDesabled', ['C76445', 'F5ECDF', 'C75A5A', '8CA5E3', '8CE3A5', 'E38CCB']);

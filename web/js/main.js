@@ -644,7 +644,30 @@ $(document).ready(function () {
 
     // Delivery Sber bank end
 
+    // Pay One click SB
 
+    var stateCard = {
+        title: '',
+        countGuest: 1,
+        countKG: 1,
+        price: 1,
+        kg: ''
+    };
+
+    $('#one-click-sb').on('click', function (e) {
+        e.preventDefault();
+
+        $('.optGuests__input');
+
+        stateCard.title = $('.title.title__h2').html();
+        stateCard.countGuest = $('.optGuests__input').eq(0).val();
+        stateCard.price = $('.dvizh-cart-price-total span').html();
+
+        console.log(stateCard);
+
+    })
+
+    // Pay One click SB end
 
 
 
