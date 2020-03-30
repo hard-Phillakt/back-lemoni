@@ -20,8 +20,8 @@ BaseAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="yandex-verification" content="da2913ff66454a5b"/>
     <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Url::to(['./web/favicon.ico'])]); ?>
-    <link rel="stylesheet" type="text/css" href="https://securepayments.sberbank.ru/demopayment/docsite/assets/css/modal.css">
-    <script type="text/javascript" src="https://securepayments.sberbank.ru/demopayment/docsite/assets/js/ipay.js"></script>
+    <link href="https://securepayments.sberbank.ru/payment/docsite/assets/css/modal.css" rel="stylesheet"/>
+    <script src="https://securepayments.sberbank.ru/payment/docsite/assets/js/ipay.js" type="text/javascript"></script>
     <script type="text/javascript">
         var ipay = new IPAY({api_token: 't5ntb5a8sneugo2tnvc7ri4cuv'});
     </script>
