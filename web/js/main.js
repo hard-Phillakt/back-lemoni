@@ -555,7 +555,30 @@ $(document).ready(function () {
     }
 
 
-    // Delivery Sberbank
+    // Delivery Sberbank ###########################################################
+
+    console.log($('#deliverycontact-city').val());
+
+    $('#deliverycontact-city').on('change', function () {
+        // console.log($(this).val());
+        //
+        // $('#total-delivery__courier').html($(this).val());
+
+      // var summ = parseInt($('.dvizh-cart-price span').html()) + parseInt($(this).val());
+      //
+      //   $('.dvizh-cart-price span').html(summ);
+    });
+
+
+
+
+
+
+
+
+
+
+
     var openModal = false;
 
     function sbPay() {
@@ -577,6 +600,7 @@ $(document).ready(function () {
                     $(form).each(function (i, item) {
 
                         $(item)[0].value ? inpVal.push($(item)[0].value) : false;
+
                         if((form.length - 1) <= inpVal.length){
                             openModal = true
                         }else {
@@ -642,32 +666,65 @@ $(document).ready(function () {
         // $('#SB__btn').attr('disabled', 'disabled');
     });
 
-    // Delivery Sber bank end
+    // Delivery Sber bank end #########################################################
 
-    // Pay One click SB
+
+
+
+
+    // Pay One click SB ###############################################################
 
     var stateCard = {
         title: '',
-        countGuest: 1,
-        countKG: 1,
-        price: 1,
-        kg: ''
+        countPieces: 1,
+        countKG: '',
+        price: 0
     };
 
     $('#one-click-sb').on('click', function (e) {
         e.preventDefault();
 
-        $('.optGuests__input');
-
         stateCard.title = $('.title.title__h2').html();
-        stateCard.countGuest = $('.optGuests__input').eq(0).val();
+        stateCard.countPieces = $('.optGuests__input').eq(0).val();
+        stateCard.countKG = $('.optGuests__input').eq(1).val();
         stateCard.price = $('.dvizh-cart-price-total span').html();
 
-        console.log(stateCard);
+        var CakeCard = 'Товар: ' + stateCard.title + '; количество (гостей): ' + stateCard.countPieces + '; вес: ' + stateCard.countKG;
+        var CandyCard = 'Товар: ' + stateCard.title + '; количество (штук): ' + stateCard.countPieces;
 
-    })
+        ipayCheckout({
+                amount: stateCard.price ? stateCard.price : '',
+                currency: 'RUB',
+                order_number: '',
+                description: stateCard.countKG ? CakeCard : CandyCard
+            },
+            function (order) {
 
-    // Pay One click SB end
+                $.ajax({
+                    type: 'post',
+                    data: {
+                        order: JSON.stringify(order)
+                    },
+                    url: '/delivery/sb-order',
+                    success: function (res) {
+                        if(res === 'success') {
+                            // Callback success order
+                            $('#modal-delivery').modal('show');
+                        }
+                    },
+                    error: function (err) {
+                        console.log('err: ', err);
+                    }
+                });
+            },
+            function (order) {
+                showFailurefulPurchase(order)
+            }
+        )
+
+    });
+
+    // Pay One click SB end ###############################################################
 
 
 

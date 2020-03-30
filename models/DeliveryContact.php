@@ -36,7 +36,7 @@ class DeliveryContact extends Model
             ['dateCreate', 'required', 'message' => 'Введите дату приготовления'],
             [['dateCreate', 'required'], 'integer', 'message' => 'В поле должны быть только цифры'],
             ['comment', 'safe'],
-            ['delivery', 'safe']
+            ['delivery', 'safe'],
         ];
 
     }

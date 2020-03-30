@@ -153,21 +153,9 @@ OwlAsset::register($this);
                         ]) ?>
                     </div>
 
-                    <?php
-
-                    $product = [
-                        'title' => $model->lm_title,
-                        'price' => $model->lm_price_for_kg
-                    ];
-
-//                    debug($product);
-
-                    ?>
-
                     <?= Html::submitButton('Купить в один клик', [
                         'id' => 'one-click-sb',
-                        'class' => 'custom_class button button__rectangle',
-                        'data-product' => '123']); ?>
+                        'class' => 'custom_class button button__rectangle']); ?>
 
                     <!-- Modal start -->
                     <?php Modal::begin([

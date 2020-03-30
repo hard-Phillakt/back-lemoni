@@ -144,15 +144,20 @@ OwlAsset::register($this);
                         ]) ?>
                     </div>
 
+
+                    <?= Html::submitButton('Купить в один клик', [
+                        'id' => 'one-click-sb',
+                        'class' => 'custom_class button button__rectangle']); ?>
+
                     <!-- Modal start -->
                     <?php Modal::begin([
                         'options' => [
                             'id' => 'one-click'
                         ],
-                        'toggleButton' => [
-                            'label' => 'Купить в один клик',
-                            'class' => 'button button__rectangle'
-                        ],
+//                        'toggleButton' => [
+//                            'label' => 'Купить в один клик',
+//                            'class' => 'button button__rectangle'
+//                        ],
                     ]); ?>
 
                     <?php $masterClassForm = new MasterClassForm(); ?>
