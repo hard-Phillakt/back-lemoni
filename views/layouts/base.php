@@ -84,7 +84,7 @@ BaseAsset::register($this);
 <!--     End Vk Pixel Code-->
     <script type="text/javascript">!function () {
             var t = document.createElement("script");
-            t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?167", t.onload = function () {
+            t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?167&price_list_id=7273", t.onload = function () {
                 VK.Retargeting.Init("VK-RTRG-469069-aCsr8"), VK.Retargeting.Hit()
             }, document.head.appendChild(t)
         }();</script>

@@ -168,6 +168,7 @@ $(document).on('pjax:success', function (e) {
             for (var i = 0; i < count; i++) {
                 // очищаем поля формы кроме кнопки
                 if ($('#delivery-form')[0][i].nodeName != 'BUTTON' && $('#delivery-form')[0][i].nodeName != 'SELECT' && $('#delivery-form')[0][i].type != 'hidden' && $('#delivery-form')[0][i].name != 'check_issue_date') {
+
                     $('#delivery-form')[0][i].value = '';
                 }
             }
@@ -557,25 +558,61 @@ $(document).ready(function () {
 
     // Delivery Sberbank ###########################################################
 
-    console.log($('#deliverycontact-city').val());
-
-    $('#deliverycontact-city').on('change', function () {
-        // console.log($(this).val());
-        //
-        // $('#total-delivery__courier').html($(this).val());
-
-      // var summ = parseInt($('.dvizh-cart-price span').html()) + parseInt($(this).val());
-      //
-      //   $('.dvizh-cart-price span').html(summ);
-    });
 
 
 
+    // Change delivery price
 
+    if(window.location.pathname === '/delivery')  {
+        // Итого:
+        var totalCart = 0;
 
+        // Если сумма заказа меньше 5000 то доставка по умолчанию 300 (Белгород)
+        var priceCity = parseInt($('.dvizh-cart-price span').html()) < 5000 ? 300 : 0;
 
+        // Начальная цена (без доставки)
+        var oldPrice = parseInt($('.dvizh-cart-price span').html());
 
+        // Начальная цена + доставка
+        var delivPrice = parseInt($('.dvizh-cart-price span').html()) + priceCity;
 
+        // Отображаем цену достаки
+        $('#total-delivery__courier').html(priceCity);
+
+        // Отображаем цену товара + достака
+        $('.dvizh-cart-price span').html(delivPrice);
+
+        function changeDelivery() {
+
+            // Если сумма доставки равна 0
+            if(priceCity === 0){
+                // Обнуляем первый options (Белгород)
+                $('#deliverycontact-city')[0].options[0].label = 'Белгород — 0 руб';
+                $('#deliverycontact-city')[0].options[0].value = 'Белгород — 0';
+                $('#total-delivery__courier').html(0);
+            }
+
+            $('#deliverycontact-city').on('change', function () {
+
+                // Режем строку в массив цена[1]
+                var addresPrice = $(this).val().split('—');
+
+                // Изменяем цену доствки в зависимости от города
+                $('#total-delivery__courier').html(addresPrice[1]);
+
+                // Цена доставки:
+                // priceCity для изменения доставки в функцию СберБанка
+                priceCity = parseInt(addresPrice[1]);
+
+                // Итого + сумма корзины:
+                totalCart = $('.dvizh-cart-price span').html(oldPrice + parseInt(addresPrice[1]));
+            });
+        }
+
+        changeDelivery();
+    }
+
+    // Change delivery price end
 
 
 
@@ -620,10 +657,10 @@ $(document).ready(function () {
                     if(openModal){
 
                         ipayCheckout({
-                                amount: amount ? amount : '',
+                                amount: amount ? amount + priceCity : '',
                                 currency: 'RUB',
                                 order_number: '',
-                                description: itemDesc
+                                description: itemDesc + ' доставка: ' + priceCity + ' руб'
                             },
                             function (order) {
 
@@ -658,12 +695,15 @@ $(document).ready(function () {
     }
     sbPay();
 
-    // $('#SB__btn').attr('disabled', 'disabled');
-
     // Callback pjax
     $(document).on('pjax:success', function (e) {
         sbPay();
-        // $('#SB__btn').attr('disabled', 'disabled');
+
+        if(window.location.pathname === '/delivery'){
+
+            changeDelivery();
+        }
+
     });
 
     // Delivery Sber bank end #########################################################
