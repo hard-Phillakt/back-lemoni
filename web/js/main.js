@@ -593,7 +593,12 @@ $(document).ready(function () {
             // Отображаем цену товара + достака
             $('.dvizh-cart-price span').html(delivPrice);
 
+
+            // Условия для самовывоза
             if(window.location.pathname === '/pickup'){
+
+                $('.dvizh-cart-price span').html(oldPrice);
+
                 if($('.dvizh-cart-count').html() == 0){
                     $('.dvizh-cart-price span').html(0)
                 }
