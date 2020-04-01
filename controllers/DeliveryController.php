@@ -211,13 +211,12 @@ class DeliveryController extends Controller
 
         $price = CartInformer::widget(['htmlTag' => 'span', 'text' => '{p}']);
 
+        $DeliveryType = $dataForm['DeliveryContact']['city'] ? 'Доставка: ' . $dataForm['DeliveryContact']['city'] . ' руб' : 'Способ получения: ' . $dataForm['PickupDeliveryContact']['delivery'];
+
         $data .= "<div>
+                    <h3>{$DeliveryType}</h3>
                     <h3>
-                    <strong>Цена доставки:</strong>
-                    </h3>  
-                    <h3>{$dataForm['DeliveryContact']['city']} руб</h3>
-                    <h3>
-                    <strong>Сумма товаров:</strong>
+                    Сумма товаров:
                     </h3>  
                     <h3>{$price} руб</h3>
                     </div>";
@@ -228,10 +227,10 @@ class DeliveryController extends Controller
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
-//                    'hard-phillakt@mail.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'hard-phillakt@mail.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
                 ])
                 ->setSubject('Сформирован заказ на оплату с сайта Cafelemoni.ru')
                 ->setTextBody('Сформирован заказ на оплату с сайта Cafelemoni.ru')
@@ -381,10 +380,10 @@ class DeliveryController extends Controller
             Yii::$app->mailer->compose()
                 ->setFrom('info@cafelemoni.ru')
                 ->setTo([
-//                    "hard-phillakt@mail.ru" => "Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru",
-//                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
-//                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    "hard-phillakt@mail.ru" => "Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru",
+                    'sale@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@cafelemoni.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
+                    'info@webmedia31.ru' => 'Сформирован заказ на оплату: cafelemoni.ru',
                 ])
                 ->setSubject("Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru")
                 ->setTextBody("Оплаченный заказ № {$data->orderNumber} с сайта: Cafelemoni.ru")

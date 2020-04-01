@@ -563,7 +563,7 @@ $(document).ready(function () {
 
     // Change delivery price
 
-    if(window.location.pathname === '/delivery')  {
+    // if(window.location.pathname === '/delivery')  {
         // Итого:
         var totalCart = 0;
 
@@ -579,16 +579,25 @@ $(document).ready(function () {
         // Отображаем цену достаки
         $('#total-delivery__courier').html(priceCity);
 
-        // Отображаем цену товара + достака
-        $('.dvizh-cart-price span').html(delivPrice);
-
         function changeDelivery() {
 
+            // Если сумма заказа меньше 5000 то доставка по умолчанию 300 (Белгород)
+            if(parseInt($('.dvizh-cart-price span').html()) < 5000){
+                $('#total-delivery__courier').html(300);
+            }else {
+                $('#total-delivery__courier').html(0);
+            }
+
+            // Отображаем цену товара + достака
+            $('.dvizh-cart-price span').html(delivPrice);
+
+            console.log("priceCity:", priceCity);
             // Если сумма доставки равна 0
             if(priceCity === 0){
                 // Обнуляем первый options (Белгород)
                 $('#deliverycontact-city')[0].options[0].label = 'Белгород — 0 руб';
                 $('#deliverycontact-city')[0].options[0].value = 'Белгород — 0';
+
                 $('#total-delivery__courier').html(0);
             }
 
@@ -610,7 +619,7 @@ $(document).ready(function () {
         }
 
         changeDelivery();
-    }
+    // }
 
     // Change delivery price end
 
@@ -656,6 +665,12 @@ $(document).ready(function () {
 
                     if(openModal){
 
+                        // Если заказ без доставки или не определен
+                        if(window.location.pathname === '/pickup' || priceCity == undefined){
+                            // Обнуляем доставку
+                            priceCity = 0;
+                        }
+
                         ipayCheckout({
                                 amount: amount ? amount + priceCity : '',
                                 currency: 'RUB',
@@ -699,11 +714,7 @@ $(document).ready(function () {
     $(document).on('pjax:success', function (e) {
         sbPay();
 
-        if(window.location.pathname === '/delivery'){
-
-            changeDelivery();
-        }
-
+        changeDelivery();
     });
 
     // Delivery Sber bank end #########################################################
