@@ -9,10 +9,10 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 
 ?>
 
-<div itemscope itemtype="http://schema.org/Organization">
-    <a itemprop="url" href="https://cafelemoni.ru/">Главная</a>
-    <img itemprop="logo" src="https://cafelemoni.ru/img/header/header-bg.png" />
-</div>
+<!--<div itemscope itemtype="http://schema.org/Organization">-->
+<!--    <a itemprop="url" href="https://cafelemoni.ru/">Главная</a>-->
+<!--    <img itemprop="logo" src="https://cafelemoni.ru/img/header/header-bg.png" />-->
+<!--</div>-->
 
 <!-- section-cake start -->
 <section class="section-cake">
