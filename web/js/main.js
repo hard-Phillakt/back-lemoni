@@ -563,7 +563,8 @@ $(document).ready(function () {
 
     // Change delivery price
 
-    // if(window.location.pathname === '/delivery')  {
+    if(window.location.pathname === '/delivery' || window.location.pathname === '/pickup')  {
+
         // Итого:
         var totalCart = 0;
 
@@ -577,7 +578,8 @@ $(document).ready(function () {
         var delivPrice = parseInt($('.dvizh-cart-price span').html()) + priceCity;
 
         // Отображаем цену достаки
-        $('#total-delivery__courier').html(priceCity);
+        $('#total-delivery__courier').html(oldPrice);
+
 
         function changeDelivery() {
 
@@ -591,9 +593,14 @@ $(document).ready(function () {
             // Отображаем цену товара + достака
             $('.dvizh-cart-price span').html(delivPrice);
 
-            console.log("priceCity:", priceCity);
+            if(window.location.pathname === '/pickup'){
+                if($('.dvizh-cart-count').html() == 0){
+                    $('.dvizh-cart-price span').html(0)
+                }
+            }
+
             // Если сумма доставки равна 0
-            if(priceCity === 0){
+            if(priceCity === 0 && $('#deliverycontact-city')){
                 // Обнуляем первый options (Белгород)
                 $('#deliverycontact-city')[0].options[0].label = 'Белгород — 0 руб';
                 $('#deliverycontact-city')[0].options[0].value = 'Белгород — 0';
@@ -619,7 +626,9 @@ $(document).ready(function () {
         }
 
         changeDelivery();
-    // }
+
+
+    }
 
     // Change delivery price end
 
@@ -712,9 +721,15 @@ $(document).ready(function () {
 
     // Callback pjax
     $(document).on('pjax:success', function (e) {
+
         sbPay();
 
         changeDelivery();
+
+        if($('.dvizh-cart-count').html() == 0){
+            $('.dvizh-cart-price span').html(oldPrice)
+        }
+
     });
 
     // Delivery Sber bank end #########################################################
