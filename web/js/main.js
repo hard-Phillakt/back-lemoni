@@ -637,8 +637,7 @@ $(document).ready(function () {
 
     // Change delivery price end
 
-
-
+    
     var openModal = false;
 
     function sbPay() {
