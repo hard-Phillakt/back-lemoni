@@ -258,9 +258,9 @@ BaseAsset::register($this);
 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <!-- section-logo -->
-                    <div class="section-logo">
-                        <a href="/">
-                            <img src="/img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
+                    <div itemscope itemtype="http://schema.org/Organization" class="section-logo">
+                        <a itemprop="url" href="/">
+                            <img itemprop="logo" src="/img/logo/logo-brown.svg" alt="logo-brown" class="img-responsive">
                         </a>
                     </div>
                 </div>

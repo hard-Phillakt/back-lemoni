@@ -9,12 +9,12 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'У нас вы м
 
 ?>
 
-<div class="add-item-none">
-    <div itemscope itemtype="http://schema.org/Organization">
-        <a itemprop="url" href="https://cafelemoni.ru/">Главная</a>
-        <img itemprop="logo" src="https://cafelemoni.ru/img/header/header-bg.png" />
-    </div>
-</div>
+<!--<div class="add-item-none">-->
+<!--    <div itemscope itemtype="http://schema.org/Organization">-->
+<!--        <a itemprop="url" href="https://cafelemoni.ru/">Главная</a>-->
+<!--        <img itemprop="logo" src="https://cafelemoni.ru/img/header/header-bg.png" />-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <!-- section-cake start -->
