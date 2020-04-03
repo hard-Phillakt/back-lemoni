@@ -797,6 +797,27 @@ $(document).ready(function () {
     // Pay One click SB end ###############################################################
 
 
+    // deliv-cake
+    
+    $('.table__humburger').on('click', function () {
+
+        if($('.table_price').hasClass('table_price-hidden')){
+            $('.table_price').removeClass('table_price-hidden');
+
+            setTimeout(function () {
+                $('.table_price').removeClass('table_price-none');
+            }, 300)
+        }else {
+            $('.table_price').addClass('table_price-hidden');
+            setTimeout(function () {
+                $('.table_price').addClass('table_price-none');
+            }, 300)
+        }
+
+    });
+    
+    
+    // deliv-cake end 
 
 
 

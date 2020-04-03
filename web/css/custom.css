@@ -1904,3 +1904,65 @@ table a:focus {
 
 
 
+.table_price {
+    transition: all 0.3s ease-in-out;
+}
+
+.table > tbody > tr > td:nth-child(2n) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.table__humburger {
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.table__humburger span {
+    display: inline-flex;
+    width: 30px;
+    height: 1px;
+    background: #8f5541;
+    margin-bottom: 1.5px;
+    margin-top: 1.5px;
+}
+
+.table_price-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.table_price-none {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
