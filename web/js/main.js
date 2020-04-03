@@ -813,7 +813,7 @@ $(document).ready(function () {
                 $('.table_price').addClass('table_price-none');
             }, 300)
         }
-
+        
     });
     
     

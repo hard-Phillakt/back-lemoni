@@ -42,15 +42,15 @@ $this->registerMetaTag(['name' => 'description', 'content' => 'Бесплатн�
 
                         <div>
 
-                            <div class="dai-c mt-35">
-                                <div>
+                            <div class="dai-c mt-35 mb-35">
+                                <div class="table__humburger link link__a active-link-a">
                                     Посмотреть прайс городов:
                                 </div>
-                                <div class="table__humburger">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
+<!--                                <div class="table__humburger">-->
+<!--                                    <span></span>-->
+<!--                                    <span></span>-->
+<!--                                    <span></span>-->
+<!--                                </div>-->
                             </div>
 
                             <table class="table table_price table_price-hidden table_price-none mt-35">

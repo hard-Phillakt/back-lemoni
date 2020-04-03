@@ -1902,8 +1902,6 @@ table a:focus {
     }
 }
 
-
-
 .table_price {
     transition: all 0.3s ease-in-out;
 }
@@ -1917,7 +1915,6 @@ table a:focus {
     cursor: pointer;
     display: inline-flex;
     flex-direction: column;
-    margin-left: 30px;
 }
 
 .table__humburger span {
