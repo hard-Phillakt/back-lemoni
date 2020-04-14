@@ -90,7 +90,7 @@ use yii\widgets\MaskedInput;
                                     <div role="presentation" class="dropdown">
                                             <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"
                                                   role="button" aria-haspopup="true" aria-expanded="false">
-                                                Доставка
+                                                Самовывоз
                                                 <span class="caret"></span>
                                             </span>
                                         <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
