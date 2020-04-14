@@ -69,6 +69,27 @@ use yii\widgets\MaskedInput;
                                     ]
                                 ]); ?>
                             </p>
+
+
+                            <div class="row">
+                                <div class="col-lg-7 mt-35 mb-25">
+                                    <span class="title title__h5 pb-15">Способ получения:</span>
+                                </div>
+                                <div class="col-lg-5 mt-35 mb-25">
+                                    <div role="presentation" class="dropdown">
+                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                  role="button" aria-haspopup="true" aria-expanded="false">
+                                                Доставка
+                                                <span class="caret"></span>
+                                            </span>
+                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                                            <li><a href="/pickup">Самовывоз</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="global-form__select mt-35">
 
                                 <label class="title title__h5 pb-15" for="deliverycontact-city">Город</label>
@@ -105,23 +126,23 @@ use yii\widgets\MaskedInput;
                                     <option value="Графовка Шебекинский р-н — 800">Графовка Шебекинский р-н — 800 руб</option>
                                     <option value="Дубовое — 300">Дубовое — 300 руб</option>
                                     <option value="Драгунское Белгородский р-н — 300">Драгунское Белгородский р-н — 300 руб</option>
-                                    <option value="Ивица Корочанский р-н — 1800 ">Ивица Корочанский р-н — 1800 руб</option>
+                                    <option value="Ивица Корочанский р-н — 1800">Ивица Корочанский р-н — 1800 руб</option>
                                     <option value="Ивня — 1850">Ивня — 1850 руб</option>
                                     <option value="Игуменка дальняя — 550">Игуменка дальняя — 550 руб</option>
                                     <option value="Иловка Алексеевский р-н — 4100">Иловка Алексеевский р-н — 4100 руб</option>
                                     <option value="Комсомольский — 500">Комсомольский — 500 руб</option>
                                     <option value="Короча — 1350 ">Короча — 1350 руб</option>
-                                    <option value="Красная яруга — 1900 ">Красная яруга — 1900 руб</option>
-                                    <option value="Курск — 3500 ">Курск — 3500 руб</option>
-                                    <option value="Лопухинка с. Губкинский р-н — 2670 ">Лопухинка с. Губкинский р-н — 2670 руб</option>
+                                    <option value="Красная яруга — 1900">Красная яруга — 1900 руб</option>
+                                    <option value="Курск — 3500">Курск — 3500 руб</option>
+                                    <option value="Лопухинка с. Губкинский р-н — 2670">Лопухинка с. Губкинский р-н — 2670 руб</option>
                                     <option value="Майский — 400">Майский — 400 руб</option>
                                     <option value="Маслова Пристань — 600">Маслова Пристань — 600 руб</option>
-                                    <option value="Никольское — 500 ">Никольское — 500 руб</option>
-                                    <option value="Новая Дерявня — 350 ">Новая Дерявня — 350 руб</option>
+                                    <option value="Никольское — 500">Никольское — 500 руб</option>
+                                    <option value="Новая Дерявня — 350">Новая Дерявня — 350 руб</option>
                                     <option value="Ново Дубовской — 300">Ново Дубовской — 300 руб</option>
-                                    <option value="Новосадовый — 350 ">Новосадовый — 350 руб</option>
-                                    <option value="Новый Оскол — 2650 ">Новый Оскол — 2650 руб</option>
-                                    <option value="Октябрьский — 700 ">Октябрьский — 700 руб</option>
+                                    <option value="Новосадовый — 350">Новосадовый — 350 руб</option>
+                                    <option value="Новый Оскол — 2650">Новый Оскол — 2650 руб</option>
+                                    <option value="Октябрьский — 700">Октябрьский — 700 руб</option>
                                     <option value="Пролетарский — 1700 ">Пролетарский — 1700 руб</option>
                                     <option value="Прохоровка — 1600">Прохоровка — 1600 руб</option>
                                     <option value="Пушкарное — 300 ">Пушкарное — 300 руб</option>
@@ -213,30 +234,30 @@ use yii\widgets\MaskedInput;
                             <h2 class="total-delivery__box_title">Ваш заказ:</h2>
                         </div>
 
-                        <div class="row mt-35 line-white">
-                            <div class="col-lg-7">
-                                <span class="total-delivery__box_key opac__07">Способ получения:</span>
-                            </div>
-
-                            <div class="col-lg-5">
-                                <div>
-                                    <div role="presentation" class="dropdown">
-                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                  role="button" aria-haspopup="true" aria-expanded="false">
-                                                Доставка
-                                                <span class="caret"></span>
-                                            </span>
-                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
-                                            <li><a href="/pickup">Самовывоз</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!--                        <div class="row mt-35 line-white">-->
+<!--                            <div class="col-lg-7">-->
+<!--                                <span class="total-delivery__box_key opac__07">Способ получения:</span>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="col-lg-5">-->
+<!--                                <div>-->
+<!--                                    <div role="presentation" class="dropdown">-->
+<!--                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"-->
+<!--                                                  role="button" aria-haspopup="true" aria-expanded="false">-->
+<!--                                                Доставка-->
+<!--                                                <span class="caret"></span>-->
+<!--                                            </span>-->
+<!--                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">-->
+<!--                                            <li><a href="/pickup">Самовывоз</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="row mt-35">
                             <div class="col-lg-7">
-                                <span class="total-delivery__box_key opac__07">Товары:</span>
+                                <span class="total-delivery__box_key">Количество:</span>
                             </div>
 
                             <div class="col-lg-5">
@@ -248,7 +269,7 @@ use yii\widgets\MaskedInput;
 
                         <div class="row mt-35">
                             <div class="col-lg-7">
-                                <span class="total-delivery__box_key opac__07">Цена доставки:</span>
+                                <span class="total-delivery__box_key">Цена доставки:</span>
                             </div>
 
                             <div class="col-lg-5">

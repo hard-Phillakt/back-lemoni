@@ -580,7 +580,6 @@ $(document).ready(function () {
         // Отображаем цену достаки
         $('#total-delivery__courier').html(oldPrice);
 
-
         function changeDelivery() {
 
             // Если сумма заказа меньше 5000 то доставка по умолчанию 300 (Белгород)

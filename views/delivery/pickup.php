@@ -81,11 +81,31 @@ use yii\widgets\MaskedInput;
 
                             </p>
 
+
+                            <div class="row">
+                                <div class="col-lg-7 mt-35 mb-25">
+                                    <span class="title title__h5 pb-15">Способ получения:</span>
+                                </div>
+                                <div class="col-lg-5 mt-35 mb-25">
+                                    <div role="presentation" class="dropdown">
+                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                  role="button" aria-haspopup="true" aria-expanded="false">
+                                                Доставка
+                                                <span class="caret"></span>
+                                            </span>
+                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                                            <li><a href="/delivery">Доставка</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="global-form__select mt-35">
 
                                 <label class="title title__h5 pb-15" for="deliverycontact-city">Город</label>
                                 <select name="PickupDeliveryContact[city]" id="deliverycontact-city">
-                                    <option value="Белгород">Белгород</option>
+                                    <option value="Белгород — 0">Белгород — 0 руб</option>
                                 </select>
 
                             </div>
@@ -127,29 +147,10 @@ use yii\widgets\MaskedInput;
                         <div>
                             <h2 class="total-delivery__box_title">Ваш заказ:</h2>
                         </div>
-                        <div class="row mt-35 line-white">
-                            <div class="col-lg-7">
-                                <span class="total-delivery__box_key opac__07">Способ получения:</span>
-                            </div>
-                            <div class="col-lg-5">
-                                <div>
-                                    <?//= $form->field($modelDeliveryContact, 'delivery')->dropDownList(['Самовывоз' => 'Самовывоз', 'Доставка' => 'Доставка'])->label(false) ?>
-                                    <div role="presentation" class="dropdown">
-                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                Самовывоз
-                                                <span class="caret"></span>
-                                            </span>
-                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
-                                            <li><a href="/delivery">Доставка</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row mt-35">
                             <div class="col-lg-7">
-                                <span class="total-delivery__box_key opac__07">Товары:</span>
+                                <span class="total-delivery__box_key">Количество:</span>
                             </div>
 
                             <div class="col-lg-5">
