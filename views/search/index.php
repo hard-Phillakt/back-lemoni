@@ -68,9 +68,19 @@ use yii\widgets\LinkPager;
                         </a>
 
                         <div class="mt-15 mb-30">
-                        <span class="card-price pl-15 opac__07">
-                            <?= $value['lm_price_for_kg']; ?> руб/кг
-                        </span>
+                            <span class="card-price pl-15 opac__07">
+
+                                <?php if($value['lm_essence'] === 'candy'): ?>
+
+                                    <?= $value['lm_price_for_kg']; ?> руб/шт
+
+                                <?php else : ?>
+
+                                    <?= $value['lm_price_for_kg']; ?> руб/кг
+
+                                <?php endif; ?>
+                                
+                            </span>
                         </div>
 
                         <div class="link-full-description">

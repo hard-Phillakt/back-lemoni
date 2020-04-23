@@ -1,8 +1,7 @@
-
-<?php if($model): ?>
+<?php if ($model): ?>
 
     <?php foreach ($model as $kay => $value): ?>
-    
+
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 
             <div class="glob-module-card mb-35 shadow-card pb-35">
@@ -19,7 +18,15 @@
 
                     <div class="mt-15 mb-30">
                             <span class="card-price pl-15 opac__07">
-                                <?= $value['lm_price_for_kg']; ?> руб/кг
+                                <?php if ($value['lm_essence'] === 'candy'): ?>
+
+                                    <?= $value['lm_price_for_kg']; ?> руб/шт
+
+                                <?php else : ?>
+
+                                    <?= $value['lm_price_for_kg']; ?> руб/кг
+
+                                <?php endif; ?>
                             </span>
                     </div>
 

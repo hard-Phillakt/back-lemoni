@@ -88,7 +88,6 @@ class CandieGoodsController extends Controller
 
             $data_cake = $cake->asArray()->orderBy('id DESC')->all();
 
-
             if (empty($data_cake)) {
                 return self::noProducts();
             }
