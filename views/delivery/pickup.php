@@ -83,20 +83,25 @@ use yii\widgets\MaskedInput;
 
 
                             <div class="row">
-                                <div class="col-lg-7 mt-35 mb-25">
-                                    <span class="title title__h5 pb-15">Способ получения:</span>
+                                <div class="col-lg-12 mt-35 mb-25">
+                                    <span class="title title__h5 pb-15">Выбрать способ получения:</span>
                                 </div>
-                                <div class="col-lg-5 mt-35 mb-25">
-                                    <div role="presentation" class="dropdown">
-                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                  role="button" aria-haspopup="true" aria-expanded="false">
-                                                Самовывоз
-                                                <span class="caret"></span>
-                                            </span>
-                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
-                                            <li><a href="/delivery">Доставка</a></li>
-                                        </ul>
-                                    </div>
+                                <div class="col-lg-12 mt-35 mb-25">
+
+                                    <ul class="production-method">
+                                        <li><a href="/delivery" class="link link__a">Доставка</a></li>
+                                    </ul>
+
+<!--                                    <div role="presentation" class="dropdown">-->
+<!--                                            <span id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown"-->
+<!--                                                  role="button" aria-haspopup="true" aria-expanded="false">-->
+<!--                                                Самовывоз-->
+<!--                                                <span class="caret"></span>-->
+<!--                                            </span>-->
+<!--                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">-->
+<!--                                            <li><a href="/delivery">Доставка</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
                                 </div>
                             </div>
 

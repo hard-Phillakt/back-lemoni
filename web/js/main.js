@@ -743,55 +743,55 @@ $(document).ready(function () {
 
     // Pay One click SB ###############################################################
 
-    var stateCard = {
-        title: '',
-        countPieces: 1,
-        countKG: '',
-        price: 0
-    };
-
-    $('#one-click-sb').on('click', function (e) {
-        e.preventDefault();
-
-        stateCard.title = $('.title.title__h2').html();
-        stateCard.countPieces = $('.optGuests__input').eq(0).val();
-        stateCard.countKG = $('.optGuests__input').eq(1).val();
-        stateCard.price = $('.dvizh-cart-price-total span').html();
-
-        var CakeCard = 'Товар: ' + stateCard.title + '; количество (гостей): ' + stateCard.countPieces + '; вес: ' + stateCard.countKG;
-        var CandyCard = 'Товар: ' + stateCard.title + '; количество (штук): ' + stateCard.countPieces;
-
-        ipayCheckout({
-                amount: stateCard.price ? stateCard.price : '',
-                currency: 'RUB',
-                order_number: '',
-                description: stateCard.countKG ? CakeCard : CandyCard
-            },
-            function (order) {
-
-                $.ajax({
-                    type: 'post',
-                    data: {
-                        order: JSON.stringify(order)
-                    },
-                    url: '/delivery/sb-order',
-                    success: function (res) {
-                        if(res === 'success') {
-                            // Callback success order
-                            $('#modal-delivery').modal('show');
-                        }
-                    },
-                    error: function (err) {
-                        console.log('err: ', err);
-                    }
-                });
-            },
-            function (order) {
-                showFailurefulPurchase(order)
-            }
-        )
-
-    });
+    // var stateCard = {
+    //     title: '',
+    //     countPieces: 1,
+    //     countKG: '',
+    //     price: 0
+    // };
+    //
+    // $('#one-click-sb').on('click', function (e) {
+    //     e.preventDefault();
+    //
+    //     stateCard.title = $('.title.title__h2').html();
+    //     stateCard.countPieces = $('.optGuests__input').eq(0).val();
+    //     stateCard.countKG = $('.optGuests__input').eq(1).val();
+    //     stateCard.price = $('.dvizh-cart-price-total span').html();
+    //
+    //     var CakeCard = 'Товар: ' + stateCard.title + '; количество (гостей): ' + stateCard.countPieces + '; вес: ' + stateCard.countKG;
+    //     var CandyCard = 'Товар: ' + stateCard.title + '; количество (штук): ' + stateCard.countPieces;
+    //
+    //     ipayCheckout({
+    //             amount: stateCard.price ? stateCard.price : '',
+    //             currency: 'RUB',
+    //             order_number: '',
+    //             description: stateCard.countKG ? CakeCard : CandyCard
+    //         },
+    //         function (order) {
+    //
+    //             $.ajax({
+    //                 type: 'post',
+    //                 data: {
+    //                     order: JSON.stringify(order)
+    //                 },
+    //                 url: '/delivery/sb-order',
+    //                 success: function (res) {
+    //                     if(res === 'success') {
+    //                         // Callback success order
+    //                         $('#modal-delivery').modal('show');
+    //                     }
+    //                 },
+    //                 error: function (err) {
+    //                     console.log('err: ', err);
+    //                 }
+    //             });
+    //         },
+    //         function (order) {
+    //             showFailurefulPurchase(order)
+    //         }
+    //     )
+    //
+    // });
 
     // Pay One click SB end ###############################################################
 
@@ -818,6 +818,21 @@ $(document).ready(function () {
     
     // deliv-cake end 
 
+
+    // One touch buy
+
+    $('.one-touch-buy').on('click', function (e) {
+
+        $(this).css({
+            display: 'none'
+        });
+
+        setTimeout(function () {
+            window.location.assign('/delivery');
+        }, 300);
+    });
+
+    // One touch buy end
 
 
 

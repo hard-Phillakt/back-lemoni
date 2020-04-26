@@ -116,7 +116,7 @@ function GlobalOptionsCard() {
         if (cardGoods__price) {
 
             // делаем выборку кнопки "В корзину"
-            var custom_class = document.querySelector('.custom_class');
+            var custom_class = document.querySelectorAll('.custom_class');
 
             // мнимальное колличество гостей
             var guest = 5;
@@ -140,8 +140,11 @@ function GlobalOptionsCard() {
 
                     _setGlogalPrice('card-price', total);
 
-                    // добавляю в дата атрибут сумму после декримента
-                    custom_class.dataset.price = total;
+                    custom_class.forEach(function (item, i) {
+                        // добавляю в дата атрибут сумму после декримента
+                        item.dataset.price = total;
+                    });
+
                     dvizhOption_inputGuests.value = guest;
 
                     // уменьшаю кг в value
@@ -174,10 +177,12 @@ function GlobalOptionsCard() {
 
                 _setGlogalPrice('card-price', total);
 
-                // добавляю в дата атрибут сумму после инкремент
-                custom_class.dataset.price = total;
-                dvizhOption_inputGuests.value = guest;
+                custom_class.forEach(function (item, i) {
+                    // добавляю в дата атрибут сумму после декримента
+                    item.dataset.price = total;
+                });
 
+                dvizhOption_inputGuests.value = guest;
 
                 // увеличиваю кг в value
                 kgTotal += .20;
@@ -526,7 +531,7 @@ function GlobalOptionsCard() {
 
         var total = parseInt(cardGoods__price.innerText);
 
-        var custom_class = document.querySelector('.custom_class');
+        var custom_class = document.querySelectorAll('.custom_class');
 
         var c = 1;
 
@@ -538,7 +543,9 @@ function GlobalOptionsCard() {
 
             dvizhOption_inputPieces.value = c;
 
-            custom_class.dataset.count = c;
+            custom_class.forEach(function (item, i) {
+                item.dataset.count = c;
+            });
 
             _setGlogalPrice('card-price', total);
 
@@ -555,8 +562,10 @@ function GlobalOptionsCard() {
 
                 c--;
 
-                custom_class.dataset.count = c;
-
+                custom_class.forEach(function (item, i) {
+                    item.dataset.count = c;
+                });
+                
                 dvizhOption_inputPieces.value = c;
             }
 

@@ -145,10 +145,19 @@ OwlAsset::register($this);
                         ]) ?>
                     </div>
 
+                    <div onclick="fbq('track', 'AddToCart');">
+                        <?= BuyButton::widget([
+                            'model' => $model,
+                            'text' => 'Купить в один клик',
+                            'htmlTag' => 'a',
+                            'cssClass' => 'custom_class button button__rectangle one-touch-buy',
+                        ]) ?>
+                    </div>
 
-                    <?= Html::submitButton('Купить в один клик', [
-                        'id' => 'one-click-sb',
-                        'class' => 'custom_class button button__rectangle']); ?>
+
+<!--                    --><?//= Html::submitButton('Купить в один клик', [
+//                        'id' => 'one-click-sb',
+//                        'class' => 'custom_class button button__rectangle']); ?>
 
                     <!-- Modal start -->
                     <?php Modal::begin([
