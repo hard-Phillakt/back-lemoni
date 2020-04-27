@@ -341,6 +341,7 @@ BaseAsset::register($this);
                         <li><a href="/contact" class="link link__a_w">Контакты</a></li>
                         <li><a href="/review" class="link link__a_w">Отзывы</a></li>
                         <li><a href="/about" class="link link__a_w">О нас</a></li>
+                        <li><a href="/politics" class="link link__a_w">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
 

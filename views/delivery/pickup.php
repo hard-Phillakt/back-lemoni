@@ -89,7 +89,28 @@ use yii\widgets\MaskedInput;
                                 <div class="col-lg-12 mt-35 mb-25">
 
                                     <ul class="production-method">
-                                        <li><a href="/delivery" class="link link__a">Доставка</a></li>
+<!--                                        <li><a href="/delivery" class="link link__a">Доставка</a></li>-->
+
+                                        <label class="djc-s unpacked circle-dots-wrapper">
+                                            <div class="circle-dots">
+                                                <span></span>
+                                            </div>
+                                            <div class="ml-10 fs fs__12">
+                                                <a href="/delivery" class="circle-dots__link">Курьером</a>
+                                            </div>
+
+                                        </label>
+
+                                        <label class="djc-s unpacked circle-dots-wrapper">
+                                            <div class="circle-dots">
+                                                <span class="circle-dots-active"></span>
+                                            </div>
+                                            <div class="ml-10 fs fs__12">
+                                                <a href="/pickup" class="circle-dots__link">Самовывоз</a>
+                                            </div>
+
+                                        </label>
+
                                     </ul>
 
 <!--                                    <div role="presentation" class="dropdown">-->
@@ -106,14 +127,14 @@ use yii\widgets\MaskedInput;
                             </div>
 
 
-                            <div class="global-form__select mt-35">
-
-                                <label class="title title__h5 pb-15" for="deliverycontact-city">Город</label>
-                                <select name="PickupDeliveryContact[city]" id="deliverycontact-city">
-                                    <option value="Белгород — 0">Белгород — 0 руб</option>
-                                </select>
-
-                            </div>
+<!--                            <div class="global-form__select mt-35">-->
+<!---->
+<!--                                <label class="title title__h5 pb-15" for="deliverycontact-city">Город</label>-->
+<!--                                <select name="PickupDeliveryContact[city]" id="deliverycontact-city">-->
+<!--                                    <option value="Белгород — 0">Белгород — 0 руб</option>-->
+<!--                                </select>-->
+<!---->
+<!--                            </div>-->
 
                         </div>
 
@@ -121,8 +142,7 @@ use yii\widgets\MaskedInput;
                         <div class="col-lg-6 col-lg-offset-1">
 
                             <div class="form-group field-deliverycontact-name required">
-                                <label class="control-label">Выберите дату доставки</label>
-
+                                <label class="control-label"></label>
                                 <?= DatePicker::widget([
                                     'language' => 'ru',
                                     'name' => 'check_issue_date',
@@ -140,6 +160,23 @@ use yii\widgets\MaskedInput;
                             <p class="mt-35">
                                 <?= $form->field($modelDeliveryContact, 'comment')->textarea(['rows' => 6, 'class' => 'global-form__input', 'placeholder' => 'Введите текст']); ?>
                             </p>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="filter-sidebar-catalog__box_ul global-form mt-35">
+                                <span for="global-form__input_el1"><span
+                                        class="shadow-checkbox mr-15 check-true"></span>
+                                    <input type="checkbox" id="global-form__input_el1"
+                                           class="global-form__checkbox mt-35">
+                                    <div class="djc-c">
+                                        <div>Я соглашаюсь на передачу персональных данных согласно</div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div>
+                                <a href="https://cafelemoni.ru/politics" class="ml-30 link link__a">политике
+                                    конфиденциальности</a>
+                            </div>
                         </div>
                     </div>
                 </div>

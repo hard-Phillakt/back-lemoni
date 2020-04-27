@@ -6389,7 +6389,7 @@ button.swiper-pagination-bullet {
       display: flex;
       align-items: center;
       cursor: pointer;
-      line-height: 2.5; }
+      line-height: 1; }
     .filter-sidebar-catalog__box_ul .check-true {
       background: url("../../img/icons/form/glog-form-chekbox-chek.svg") no-repeat !important;
       background-position: center !important;
@@ -6887,9 +6887,55 @@ body {
   height: 400px; }
 
 .production-method {
+  display: flex;
+  justify-content: space-around;
   padding: 0;
 }
 
 .production-method li{
   list-style: none;
+}
+
+
+.circle-dots-wrapper {
+  display: inline-flex !important;
+  cursor: pointer;
+  position: relative; }
+.circle-dots-wrapper input[type='radio'] {
+  display: none; }
+.circle-dots-wrapper .circle-dots {
+  position: absolute;
+  top: 3px;
+  left: -25px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #F6D8CB;}
+.circle-dots-wrapper .circle-dots .circle-dots-active {
+  width: 11px;
+  height: 11px;
+  border-radius: 10em;
+  background: #8f5541;
+  border: 2px solid #fff;
+  transform: scale(1); }
+.circle-dots-wrapper .circle-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 10em;
+  background: transparent;
+  border: 2px solid #f6f6f6;
+  transition: all .3s ease-in-out;
+  transform: scale(0); }
+
+.circle-dots__link {
+  color: #000;
+}
+
+.circle-dots__link:hover {
+  color: #000;
+  text-decoration: none;
 }
