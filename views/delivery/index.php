@@ -116,7 +116,7 @@ use yii\widgets\MaskedInput;
 
                             <div class="global-form__select mt-35">
 
-                                <label class="title title__h5 pb-15" for="deliverycontact-city">Район</label>
+                                <label class="title title__h5 pb-15" for="deliverycontact-city">Выберите район доставки:</label>
                                 <select name="DeliveryContact[city]" id="deliverycontact-city">
                                     <option value=">Белгород — 300">Белгород — 300 руб</option>
                                     <option value="Алексеевка ближ. Короч. р-н — 1000">Алексеевка ближ. Короч. р-н —
@@ -294,7 +294,7 @@ use yii\widgets\MaskedInput;
                             </div>
 
                             <p class="mt-35">
-                                <?= $form->field($modelDeliveryContact, 'comment')->textarea(['rows' => 6, 'class' => 'global-form__input', 'placeholder' => 'Введите текст']); ?>
+                                <?= $form->field($modelDeliveryContact, 'comment')->textarea(['rows' => 6, 'class' => 'global-form__input', 'placeholder' => 'Напишите свои пожелания: В какое время вам будет удобно забрать продукцию? Например с 8:00 до 11:00']); ?>
                             </p>
                         </div>
                         <div class="col-lg-12">

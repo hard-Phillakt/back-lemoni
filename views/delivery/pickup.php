@@ -158,7 +158,7 @@ use yii\widgets\MaskedInput;
                             </div>
 
                             <p class="mt-35">
-                                <?= $form->field($modelDeliveryContact, 'comment')->textarea(['rows' => 6, 'class' => 'global-form__input', 'placeholder' => 'Введите текст']); ?>
+                                <?= $form->field($modelDeliveryContact, 'comment')->textarea(['rows' => 6, 'class' => 'global-form__input', 'placeholder' => 'Напишите свои пожелания: В какое время вам будет удобно забрать продукцию? Например с 8:00 до 11:00']); ?>
                             </p>
                         </div>
 
